@@ -1,27 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create Account • TKM</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <title>TKM VitalMetric – Create Account</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="app.js"></script>
 </head>
+<body class="page page--auth">
+  <header class="site-header">
+    <div class="site-header__left">
+      <a href="index.html" class="brand">
+        <img src="assets/tkm-logo.png" alt="TKM VitalMetric logo" class="brand__logo" />
+        <div class="brand__text">
+          <span class="brand__name">TKM VitalMetric</span>
+          <span class="brand__tagline">Create account</span>
+        </div>
+      </a>
+    </div>
+    <nav class="site-header__right">
+      <a href="index.html" class="nav-link nav-link--muted">Home</a>
+      <a href="login.html" class="nav-link">Sign in</a>
+    </nav>
+  </header>
 
-<body>
+  <main class="auth-layout">
+    <section class="card card--auth">
+      <h1 class="card__title">Create your TKM account</h1>
+      <p class="card__body">
+        In the full product, this would store your plans securely. For this prototype, we’ll skip straight to onboarding.
+      </p>
 
-<section class="form-container">
-    <h2>Create Account</h2>
+      <form class="form">
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Todd Myers" />
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@example.com" />
+        </div>
+        <div class="form-field">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="Create a password" />
+        </div>
 
-    <input class="input-field" type="email" placeholder="Email">
-    <input class="input-field" type="password" placeholder="Password">
-    <input class="input-field" type="password" placeholder="Confirm Password">
+        <a href="onboarding.html" class="button button--primary button--full">
+          Continue to onboarding
+        </a>
 
-    <button>Create Account</button>
+        <p class="form-footer">
+          Already have an account? <a href="login.html" class="link-inline">Sign in</a>.
+        </p>
+      </form>
+    </section>
+  </main>
 
-    <p style="margin-top: 14px; text-align:center;">
-        <a href="login.html" style="color:#7bb7ff;">Already have an account?</a>
-    </p>
-</section>
-
+  <footer class="site-footer">
+    <p>Prototype only – account creation is simulated.</p>
+  </footer>
 </body>
 </html>
