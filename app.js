@@ -19,7 +19,6 @@
     form.addEventListener("submit", function (event) {
       event.preventDefault();
 
-      // Read key fields we want to carry to the dashboard
       var name = (document.getElementById("name") || {}).value || "";
       var startDate = (document.getElementById("start-date") || {}).value || "";
       var endDate = (document.getElementById("end-date") || {}).value || "";
@@ -32,14 +31,11 @@
         endDate: endDate,
         calories: calories,
         budget: budget
-        // Later we can add more onboarding fields here as needed.
       };
 
       try {
         localStorage.setItem("tkmOnboarding", JSON.stringify(payload));
-      } catch (e) {
-        // If localStorage is not available, just ignore and continue
-      }
+      } catch (e) {}
 
       window.location.href = "dashboard.html";
     });
@@ -75,7 +71,6 @@
       updateView();
     }
 
-    // Click handling for Next / Back buttons
     form.addEventListener("click", function (event) {
       var target = event.target;
 
@@ -157,7 +152,6 @@
 
     form.addEventListener("submit", function (event) {
       event.preventDefault();
-      // We could check that passwords match here, but since it's a demo we just proceed.
       goToDashboardWithMessage(
         "Demo only – pretending to create an account and taking you to the Weekly Snapshot."
       );
@@ -178,7 +172,7 @@
       !snapshotBudget &&
       !dashboardTitle
     ) {
-      return; // Not on the dashboard page
+      return;
     }
 
     var stored;
@@ -190,13 +184,11 @@
 
     if (!stored) return;
 
-    // Optional personalization of title
     if (dashboardTitle && stored.name) {
       dashboardTitle.textContent =
         "Weekly Snapshot – Mission Control for " + stored.name;
     }
 
-    // Date range
     if (snapshotDateRange && (stored.startDate || stored.endDate)) {
       var rangeText;
       if (stored.startDate && stored.endDate) {
@@ -209,12 +201,10 @@
       snapshotDateRange.textContent = rangeText;
     }
 
-    // Calories
     if (snapshotCalories && stored.calories) {
       snapshotCalories.textContent = stored.calories + " kcal / day";
     }
 
-    // Budget
     if (snapshotBudget && stored.budget) {
       var budgetNumber = parseFloat(stored.budget);
       var budgetText = isNaN(budgetNumber)
