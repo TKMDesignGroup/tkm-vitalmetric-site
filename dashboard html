@@ -1,39 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TKM Dashboard</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <title>TKM VitalMetric – Weekly Snapshot Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="app.js"></script>
 </head>
-
-<body>
-
-<header class="hero small-hero">
-    <h1 class="hero-title">Weekly Snapshot</h1>
-    <p class="hero-subtitle">Preview mode — sample data only</p>
-</header>
-
-<section class="dashboard-wrapper">
-    <div class="dashboard-card">
-        <h2>Calories & Goals</h2>
-        <p>Daily Target: <strong>2200</strong></p>
-        <p>Sodium Goal: <strong>Low Sodium Focus</strong></p>
-        <p>Projected Weekly Spending: <strong>$62.40</strong></p>
+<body class="page">
+  <header class="site-header">
+    <div class="site-header__left">
+      <a href="index.html" class="brand">
+        <img src="assets/tkm-logo.png" alt="TKM VitalMetric logo" class="brand__logo" />
+        <div class="brand__text">
+          <span class="brand__name">TKM VitalMetric</span>
+          <span class="brand__tagline">Demo Dashboard</span>
+        </div>
+      </a>
     </div>
+    <nav class="site-header__right">
+      <a href="index.html" class="nav-link nav-link--muted">Home</a>
+      <a href="onboarding.html" class="nav-link">Restart plan</a>
+      <a href="login.html" class="button button--small button--outline">Sign in</a>
+    </nav>
+  </header>
 
-    <div class="dashboard-card">
-        <h2>Movement Summary</h2>
-        <p>Radio Taiso: <strong>3 mins/day</strong></p>
-        <p>Tai Chi: <strong>10–20 mins/day</strong></p>
-        <p>Walking: <strong>2500 steps/day</strong></p>
-    </div>
+  <main class="dashboard-layout">
+    <section class="card card--primary">
+      <p class="card__eyebrow">Weekly Snapshot • Demo</p>
+      <h1 class="card__title">This is your “mission control” for the week.</h1>
+      <p class="card__body">
+        All numbers here are example data. In the working app, this view would be generated from your
+        onboarding answers, pantry list, and exercise targets.
+      </p>
 
-    <div class="dashboard-card">
-        <h2>Next Step</h2>
-        <a class="btn primary" href="onboarding.html">Start Full Onboarding</a>
-    </div>
-</section>
+      <div class="snapshot-grid snapshot-grid--wide">
+        <div>
+          <dt>Date range</dt>
+          <dd>Dec 1 – Dec 7</dd>
+        </div>
+        <div>
+          <dt>Daily calorie target</dt>
+          <dd>2,200 kcal / day</dd>
+        </div>
+        <div>
+          <dt>Sodium focus</dt>
+          <dd>Aggressive reduction</dd>
+        </div>
+        <div>
+          <dt>Weekly food budget</dt>
+          <dd>$75.00 (example)</dd>
+        </div>
+        <div>
+          <dt>Movement stack</dt>
+          <dd>Radio Taiso • Tai Chi • 2,500 steps</dd>
+        </div>
+        <div>
+          <dt>Report style</dt>
+          <dd>Printable multi-page PDF</dd>
+        </div>
+      </div>
+    </section>
 
+    <section class="dashboard-columns">
+      <article class="card">
+        <h2 class="card__title">1 · Weekly Meal Plan</h2>
+        <p class="card__body">
+          <strong>Breakfast, Lunch, Dinner + 3 snacks</strong> per day, with planned leftovers to make
+          weeknights easier.
+        </p>
+        <ul class="card-list">
+          <li>Emphasis on lower-sodium choices vs. your old pattern</li>
+          <li>Pantry-first planning to use what you already have</li>
+          <li>Clear weekly summary you can print or keep on your phone</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2 class="card__title">2 · Smart Shopping List</h2>
+        <p class="card__body">
+          Built from recipes + pantry + store prices (later, the AI engine will compare stores you care about).
+        </p>
+        <ul class="card-list">
+          <li>Flags lower-sodium products where available</li>
+          <li>Groups by store aisle (produce, dairy, frozen, etc.)</li>
+          <li>Shows estimated total and “cheapest combo” scenario</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2 class="card__title">3 · Movement & Metrics</h2>
+        <p class="card__body">
+          Gentle, sustainable movement stack designed for beginners, with room to level up later.
+        </p>
+        <ul class="card-list">
+          <li>Daily stack: Radio Taiso, Tai Chi, and walking</li>
+          <li>Tracks calories burned vs. calories eaten (prototype only)</li>
+          <li>Trend lines for weight, sodium, and overall energy</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Prototype interface – nothing here is medical advice. Consult your doctor before making changes.</p>
+  </footer>
 </body>
 </html>
