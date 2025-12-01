@@ -1,26 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login • TKM</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <title>TKM VitalMetric – Sign In</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="app.js"></script>
 </head>
+<body class="page page--auth">
+  <header class="site-header">
+    <div class="site-header__left">
+      <a href="index.html" class="brand">
+        <img src="assets/tkm-logo.png" alt="TKM VitalMetric logo" class="brand__logo" />
+        <div class="brand__text">
+          <span class="brand__name">TKM VitalMetric</span>
+          <span class="brand__tagline">Sign in</span>
+        </div>
+      </a>
+    </div>
+    <nav class="site-header__right">
+      <a href="index.html" class="nav-link nav-link--muted">Home</a>
+      <a href="signup.html" class="nav-link">Create account</a>
+    </nav>
+  </header>
 
-<body>
+  <main class="auth-layout">
+    <section class="card card--auth">
+      <h1 class="card__title">Welcome back</h1>
+      <p class="card__body">This prototype treats sign-in as a visual walkthrough only – no passwords are stored.</p>
 
-<section class="form-container">
-    <h2>Sign In</h2>
+      <form class="form">
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@example.com" />
+        </div>
+        <div class="form-field">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="••••••••" />
+        </div>
 
-    <input class="input-field" type="email" placeholder="Email address">
-    <input class="input-field" type="password" placeholder="Password">
+        <a href="dashboard.html" class="button button--primary button--full">
+          Sign in to demo dashboard
+        </a>
 
-    <button>Sign In</button>
+        <p class="form-footer">
+          Don’t have an account? <a href="signup.html" class="link-inline">Create one</a>.
+        </p>
+      </form>
+    </section>
+  </main>
 
-    <p style="margin-top: 14px; text-align:center;">
-        <a href="signup.html" style="color:#7bb7ff;">Create an account</a>
-    </p>
-</section>
-
+  <footer class="site-footer">
+    <p>Prototype only – authentication is simulated for demo purposes.</p>
+  </footer>
 </body>
 </html>
