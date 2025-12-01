@@ -2,78 +2,88 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Create account – TKM VitalMetric</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Create account · TKM VitalMetric</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
+  <script src="app.js" defer></script>
 </head>
-<body>
-  <div class="app-shell">
-    <header class="app-header">
-      <div class="app-header-left">
-        <div class="brand-icon">
-          <img src="assets/tkm-logo.png" alt="TKM VitalMetric logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-          <div class="brand-icon-fallback" style="display:none;">TKM</div>
+<body class="theme-dark">
+  <div class="page-shell page-auth">
+    <div class="page-glow"></div>
+
+    <header class="nav nav-compact">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-logo-wrap">
+          <img src="assets/tkm-logo.png" alt="TKM VitalMetric logo" class="nav-logo" />
         </div>
-        <div>
-          <div class="app-title-main">TKM VITALMETRIC V1</div>
-          <div class="app-title-sub">Dietary • Exercise • Budget • Metrics (AI-Guided)</div>
+        <div class="nav-title">
+          <span class="nav-title-main">TKM VitalMetric</span>
+          <span class="nav-title-sub">Create your prototype account</span>
         </div>
-      </div>
-      <div class="app-header-right">
-        <button class="top-nav-button ghost" onclick="location.href='index.html'">
-          ⬅ Back to overview
-        </button>
-        <button class="top-nav-button primary" onclick="location.href='login.html'">
-          Sign in
-        </button>
+      </a>
+      <div class="nav-auth">
+        <span class="nav-inline-text">Already have an account?</span>
+        <a href="login.html" class="btn btn-ghost btn-sm">Sign in</a>
       </div>
     </header>
 
-    <main class="app-main">
-      <div class="page-width page-centered">
-        <section class="card">
-          <h1 class="card-title">Create your TKM VitalMetric account</h1>
-          <p class="card-subtitle">
-            In the full version, this will store your plans, pantry, and progress. For now, it routes you into the
-            onboarding preview.
+    <main class="auth-main">
+      <section class="auth-card card card-glass">
+        <h1 class="auth-title">Let’s get you set up</h1>
+        <p class="auth-sub">
+          In the production version, this account would store your pantry, preferences, and weekly plans.
+          Here, it’s just a demo experience.
+        </p>
+
+        <form class="form" id="signup-form">
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="signup-name">Name</label>
+              <input id="signup-name" type="text" placeholder="Todd Myers" required />
+            </div>
+            <div class="form-field">
+              <label for="signup-email">Email</label>
+              <input id="signup-email" type="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="signup-password">Password</label>
+              <input id="signup-password" type="password" placeholder="Create a password" required />
+            </div>
+            <div class="form-field">
+              <label for="signup-confirm">Confirm password</label>
+              <input id="signup-confirm" type="password" placeholder="Re-enter password" required />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="signup-goal">Primary focus</label>
+            <select id="signup-goal">
+              <option>Lower sodium & protect heart</option>
+              <option>Weight loss with gentle calorie deficit</option>
+              <option>Stay steady, but get more organized</option>
+              <option>Boost movement & energy</option>
+            </select>
+          </div>
+
+          <label class="checkbox form-field">
+            <input type="checkbox" id="signup-terms" required />
+            <span>I understand this is a prototype and not medical advice.</span>
+          </label>
+
+          <button type="submit" class="btn btn-lg btn-primary btn-full">
+            Create demo account
+          </button>
+
+          <p class="form-helper">
+            After sign-up you’ll be taken straight into the
+            <a href="onboarding.html" class="link-inline">onboarding wizard</a> to walk through your sample week.
           </p>
-
-          <form class="form-grid" onsubmit="return goToOnboarding(event);">
-            <div class="form-row-inline">
-              <div>
-                <label class="label" for="signup-first">First name</label>
-                <input class="input" id="signup-first" type="text" required />
-              </div>
-              <div>
-                <label class="label" for="signup-last">Last name</label>
-                <input class="input" id="signup-last" type="text" required />
-              </div>
-            </div>
-
-            <div>
-              <label class="label" for="signup-email">Email</label>
-              <input class="input" id="signup-email" type="email" required />
-            </div>
-
-            <div>
-              <label class="label" for="signup-password">Password</label>
-              <input class="input" id="signup-password" type="password" required />
-            </div>
-
-            <div class="form-actions">
-              <button type="submit" class="btn-primary">Continue to onboarding &nbsp;→</button>
-              <a href="login.html" class="link-inline">Already have an account? Sign in</a>
-            </div>
-          </form>
-        </section>
-      </div>
+        </form>
+      </section>
     </main>
-
-    <footer class="app-footer">
-      TKM VitalMetric V1 • Account creation is visual only until backend is connected.
-    </footer>
   </div>
-
-  <script src="app.js"></script>
 </body>
 </html>
