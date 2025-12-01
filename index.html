@@ -1,168 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>TKM VitalMetric V1 · Design Your Week</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="app.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TKM VitalMetric • AI-Guided Nutrition & Movement</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
-<body class="theme-dark">
-  <div class="page-shell">
-    <!-- Top gradient bar -->
-    <div class="page-glow"></div>
 
-    <!-- NAVBAR -->
-    <header class="nav">
-      <a href="index.html" class="nav-brand">
-        <div class="nav-logo-wrap">
-          <img src="assets/tkm-logo.png" alt="TKM VitalMetric logo" class="nav-logo" />
+<body>
+
+    <!-- HERO SECTION WITH FUTURISTIC BACKGROUND -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img src="assets/tkm-logo.png" class="hero-logo" alt="TKM Logo">
+
+            <h1 class="hero-title">
+                Design your nutrition & movement week<br>
+                <span class="highlight">with AI-guided support.</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                TKM VitalMetric helps you plan meals, sodium, budget, and movement for a full week—then turns it into a printable report you can actually follow.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="dashboard.html" class="btn primary">Preview Dashboard</a>
+                <a href="onboarding.html" class="btn secondary">Start Onboarding</a>
+            </div>
+
+            <p class="free-preview">Free preview — no login required</p>
         </div>
-        <div class="nav-title">
-          <span class="nav-title-main">TKM VitalMetric V1</span>
-          <span class="nav-title-sub">Dietary · Exercise · Budget · Metrics (AI-Guided)</span>
-        </div>
-      </a>
-
-      <nav class="nav-links">
-        <a href="index.html" class="nav-link nav-link-active">Overview</a>
-        <a href="dashboard.html" class="nav-link">Demo dashboard</a>
-        <a href="onboarding.html" class="nav-link">Onboarding</a>
-      </nav>
-
-      <div class="nav-auth">
-        <a href="login.html" class="btn btn-ghost">Sign in</a>
-        <a href="signup.html" class="btn btn-primary">Create account</a>
-      </div>
     </header>
 
-    <!-- MAIN CONTENT -->
-    <main class="main main-hero">
-      <section class="hero-grid">
-        <!-- LEFT: MARKETING COPY -->
-        <div class="hero-left card card-glass">
-          <div class="badge-row">
-            <span class="pill pill-soft">Plan a full week like a pro coach</span>
-            <span class="pill pill-outline">Prototype · UI only</span>
-          </div>
 
-          <h1 class="hero-title">
-            Design your nutrition & movement week
-            <span class="hero-title-accent">with AI-guided support.</span>
-          </h1>
-
-          <p class="hero-lead">
-            TKM VitalMetric helps you plan meals, sodium, budget, and movement for a full week,
-            then turns it into a printable report you can actually follow.
-          </p>
-
-          <ul class="hero-bullets">
-            <li>Weekly meal plan with low-sodium, budget-friendly recipes</li>
-            <li>Smart shopping list built from your pantry and store prices</li>
-            <li>Movement stack (Radio Taiso, Tai Chi, walking) calibrated to you</li>
-            <li>Dashboard view of calories, sodium, budget, and trends</li>
-          </ul>
-
-          <div class="hero-cta-row">
-            <a href="dashboard.html" class="btn btn-lg btn-primary">
-              Preview demo dashboard
-            </a>
-            <a href="onboarding.html" class="btn btn-lg btn-outline">
-              Start onboarding (coming soon)
-            </a>
-          </div>
-
-          <p class="hero-footnote">
-            This is a visual prototype only. The full AI report generator, store comparison engine,
-            and Stripe billing will be wired in later.
-          </p>
-
-          <div class="hero-metrics-row">
-            <div class="mini-metric">
-              <span class="mini-label">This week’s calories</span>
-              <span class="mini-value">1,800 – 2,000 kcal / day</span>
-              <span class="mini-sub">Gentle reduction from current habits.</span>
-            </div>
-            <div class="mini-metric">
-              <span class="mini-label">Sodium focus</span>
-              <span class="mini-value">Aggressive reduction</span>
-              <span class="mini-sub">Targets ~1,500 mg/day on average.</span>
-            </div>
-            <div class="mini-metric">
-              <span class="mini-label">Weekly food budget</span>
-              <span class="mini-value">$75.00 (example)</span>
-              <span class="mini-sub">Uses pantry first to keep costs down.</span>
-            </div>
-          </div>
+    <!-- 3-COLUMN FEATURE SECTION -->
+    <section class="features">
+        <div class="feature-card">
+            <h2>Weekly Meal Plan</h2>
+            <ul>
+                <li>Breakfast • Lunch • Dinner • Snacks</li>
+                <li>Low-sodium, budget-friendly recipes</li>
+                <li>Uses your pantry first to reduce cost</li>
+                <li>Integrates leftovers intelligently</li>
+            </ul>
         </div>
 
-        <!-- RIGHT: WEEKLY SNAPSHOT CARD -->
-        <aside class="hero-right">
-          <article class="snapshot card card-neon">
-            <header class="snapshot-header">
-              <div>
-                <div class="snapshot-kicker">Weekly Snapshot · Demo</div>
-                <h2 class="snapshot-title">This is your “mission control” for the week.</h2>
-                <p class="snapshot-sub">
-                  Example of what your dashboard might show once a plan is generated.
-                </p>
-              </div>
-              <div class="snapshot-tag">Free preview · no login required</div>
-            </header>
+        <div class="feature-card">
+            <h2>Smart Shopping List</h2>
+            <ul>
+                <li>Built from your recipes + pantry</li>
+                <li>Shows cheapest store combinations</li>
+                <li>Flags low-sodium product options</li>
+                <li>Auto-totals your cost for the week</li>
+            </ul>
+        </div>
 
-            <div class="snapshot-grid">
-              <div class="snapshot-col">
-                <div class="snap-item">
-                  <span class="snap-label">Date range</span>
-                  <span class="snap-value">Dec 1 – Dec 7</span>
-                </div>
-                <div class="snap-item">
-                  <span class="snap-label">Calorie target</span>
-                  <span class="snap-value">2,200 kcal / day</span>
-                </div>
-                <div class="snap-item">
-                  <span class="snap-label">Sodium focus</span>
-                  <span class="snap-value">Aggressive reduction</span>
-                </div>
-                <div class="snap-item">
-                  <span class="snap-label">Weekly food budget</span>
-                  <span class="snap-value">$75.00 (example)</span>
-                </div>
-              </div>
+        <div class="feature-card">
+            <h2>Movement & Metrics</h2>
+            <ul>
+                <li>Custom movement stack (Tai Chi, Radio Taiso, steps)</li>
+                <li>Tracks calories burned vs intake</li>
+                <li>Weekly dashboard shows your trends</li>
+                <li>Beginner-friendly and sustainable</li>
+            </ul>
+        </div>
+    </section>
 
-              <div class="snapshot-col">
-                <div class="snap-item">
-                  <span class="snap-label">Planned days</span>
-                  <span class="snap-value">7 meals + 3 snacks / day</span>
-                </div>
-                <div class="snap-item">
-                  <span class="snap-label">Movement stack</span>
-                  <span class="snap-value">Radio Taiso · Tai Chi · 2,500 steps</span>
-                </div>
-                <div class="snap-item">
-                  <span class="snap-label">Report style</span>
-                  <span class="snap-value">Printable multi-page PDF</span>
-                </div>
-              </div>
-            </div>
 
-            <footer class="snapshot-footer">
-              <p>
-                In the working app, this panel will be populated from your answers: pantry, dislikes,
-                exercise level, store ads, and your weekly goals.
-              </p>
-              <a href="dashboard.html" class="link-inline">
-                Jump into the demo dashboard →
-              </a>
-            </footer>
-          </article>
-        </aside>
-      </section>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>Prototype interface for TKM VitalMetric. Data shown is demo-only.</p>
 
-      <footer class="site-footer">
-        <span>Prototype interface for TKM VitalMetric. Data shown is demo-only and not medical advice.</span>
-      </footer>
-    </main>
-  </div>
+        <div class="footer-links">
+            <a href="login.html">Sign In</a>
+            <a href="signup.html">Create Account</a>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
 </body>
 </html>
