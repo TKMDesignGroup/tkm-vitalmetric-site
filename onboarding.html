@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Onboarding – TKM VitalMetric</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="app-header-left">
+        <div class="brand-icon">
+          <img src="assets/tkm-logo.png" alt="TKM VitalMetric logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+          <div class="brand-icon-fallback" style="display:none;">TKM</div>
+        </div>
+        <div>
+          <div class="app-title-main">TKM VITALMETRIC V1</div>
+          <div class="app-title-sub">Weekly Nutrition + Movement + Budget Onboarding</div>
+        </div>
+      </div>
+      <div class="app-header-right">
+        <button class="top-nav-button ghost" onclick="location.href='index.html'">
+          ⬅ Back to overview
+        </button>
+        <button class="top-nav-button primary" onclick="location.href='dashboard.html'">
+          Skip to demo dashboard
+        </button>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <div class="page-width page-centered">
+        <section class="card">
+          <h1 class="card-title">Let’s describe your weekly plan</h1>
+          <p class="card-subtitle">
+            This is a preview of the onboarding flow. Later, these answers will drive your custom report,
+            shopping list, and movement stack.
+          </p>
+
+          <div class="step-indicator">
+            <div class="step-indicator-dot active" data-step-dot="1"></div>
+            <div class="step-indicator-dot" data-step-dot="2"></div>
+            <div class="step-indicator-dot" data-step-dot="3"></div>
+          </div>
+
+          <!-- Step 1 -->
+          <div class="onboarding-step active" data-step="1">
+            <h2 class="section-title">Step 1 · Basic weekly targets</h2>
+            <div class="form-grid">
+              <div class="form-row-inline">
+                <div>
+                  <label class="label" for="week-start">Week start date</label>
+                  <input class="input" id="week-start" type="date" />
+                </div>
+                <div>
+                  <label class="label" for="week-end">Week end date</label>
+                  <input class="input" id="week-end" type="date" />
+                </div>
+              </div>
+
+              <div class="form-row-inline">
+                <div>
+                  <label class="label" for="cal-target">Daily calorie target</label>
+                  <input class="input" id="cal-target" type="number" placeholder="Example: 2200" />
+                </div>
+                <div>
+                  <label class="label" for="budget">Weekly food budget ($)</label>
+                  <input class="input" id="budget" type="number" placeholder="Example: 75" />
+                </div>
+              </div>
+
+              <div>
+                <label class="label" for="sodium-focus">How hard are we pushing sodium down?</label>
+                <select id="sodium-focus">
+                  <option value="aggressive">Aggressive reduction (priority)</option>
+                  <option value="moderate">Moderate reduction</option>
+                  <option value="light">Just gentle improvements</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="onboarding-buttons">
+              <span></span>
+              <button class="btn-primary" type="button" onclick="goToStep(2)">Next · Pantry & dislikes</button>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="onboarding-step" data-step="2">
+            <h2 class="section-title">Step 2 · Pantry & dislikes</h2>
+            <div class="form-grid">
+              <div>
+                <label class="label" for="pantry-summary">Pantry summary</label>
+                <textarea id="pantry-summary" rows="3" placeholder="Example: frozen chicken breast, tater tots, canned green beans, pineapple, cereal, applesauce..."></textarea>
+              </div>
+              <div>
+                <label class="label" for="dislikes">Foods you dislike / want to avoid</label>
+                <textarea id="dislikes" rows="3" placeholder="Example: seafood, cottage cheese, mushrooms, peas, broccoli, tomato soup"></textarea>
+              </div>
+              <div>
+                <label class="label" for="breakfast-style">Breakfast style</label>
+                <textarea id="breakfast-style" rows="2" placeholder="Example: cereal + fruit, Eggo waffles + syrup, eggs + toast with bacon"></textarea>
+              </div>
+              <div>
+                <label class="label" for="snacks">Snack preferences</label>
+                <textarea id="snacks" rows="2" placeholder="Example: peanut butter sandwiches, canned fruit, popcorn, applesauce, yogurt"></textarea>
+              </div>
+            </div>
+
+            <div class="onboarding-buttons">
+              <button class="btn-secondary" type="button" onclick="goToStep(1)">← Back</button>
+              <button class="btn-primary" type="button" onclick="goToStep(3)">Next · Movement</button>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="onboarding-step" data-step="3">
+            <h2 class="section-title">Step 3 · Movement & report style</h2>
+            <div class="form-grid">
+              <div>
+                <label class="label" for="movement">Typical movement you can reliably do</label>
+                <textarea id="movement" rows="3" placeholder="Example: Radio Taiso (3 min), Tai Chi (10–20 min), ~2,500 steps, gentle stretching"></textarea>
+              </div>
+              <div>
+                <label class="label" for="report-style">How detailed should your report be?</label>
+                <select id="report-style">
+                  <option value="full">Full multi-page (cover, daily menus, dashboard, shopping list)</option>
+                  <option value="standard">Standard (daily menus + basic dashboard)</option>
+                  <option value="lite">Lite (one-page summary)</option>
+                </select>
+              </div>
+              <div>
+                <label class="label" for="notes">Anything else you want the AI to know?</label>
+                <textarea id="notes" rows="3" placeholder="Example: prefer simple recipes, need leftovers for lunch, avoid super-spicy foods..."></textarea>
+              </div>
+            </div>
+
+            <div class="onboarding-buttons">
+              <button class="btn-secondary" type="button" onclick="goToStep(2)">← Back</button>
+              <button class="btn-primary" type="button" onclick="finishOnboarding()">Finish & preview dashboard →</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      TKM VitalMetric V1 • Onboarding flow is a visual preview; data is not yet saved.
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
