@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>TKM VitalMetric – Onboarding</title>
+  <title>Start Your Plan – TKM VitalMetric</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
   <script defer src="app.js"></script>
@@ -11,72 +11,76 @@
   <header class="site-header">
     <div class="site-header__left">
       <a href="index.html" class="brand">
-        <img src="assets/tkm-logo.png" alt="TKM VitalMetric logo" class="brand__logo" />
+        <img src="assets/TKM-logo-final.png" alt="TKM VitalMetric Logo" class="brand__logo" />
         <div class="brand__text">
           <span class="brand__name">TKM VitalMetric</span>
-          <span class="brand__tagline">Weekly Plan Prototype</span>
+          <span class="brand__tagline">Tell us about your week</span>
         </div>
       </a>
     </div>
-    <nav class="site-header__right">
-      <a href="index.html" class="nav-link nav-link--muted">Home</a>
+    <nav class="site-header__nav">
+      <a href="index.html" class="nav-link">Home</a>
       <a href="login.html" class="nav-link">Sign in</a>
-      <a href="signup.html" class="button button--small button--outline">Create account</a>
     </nav>
   </header>
 
-  <main class="onboarding-layout">
-    <section class="onboarding-hero">
-      <h1 class="hero__title">Start Your Plan</h1>
-      <p class="hero__subtitle">Tell us about your week. This prototype just shows where your data will go.</p>
-    </section>
-
+  <main class="centered">
     <section class="card card--onboarding">
-      <h2 class="card__title">Basic Info</h2>
+      <header class="card__header">
+        <p class="card__eyebrow">Start Your Plan</p>
+        <h1 class="card__title">Tell us about your week</h1>
+      </header>
 
-      <!-- IMPORTANT: this form actually goes to dashboard.html -->
-      <form action="dashboard.html" method="GET" class="form">
-        <div class="form-grid">
-          <div class="form-field form-field--full">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" value="Todd Myers" />
-          </div>
+      <form class="form" id="onboarding-form">
+        <fieldset class="form__fieldset">
+          <legend class="form__legend">Basic Info</legend>
 
-          <div class="form-field">
-            <label for="start">Plan start</label>
-            <input id="start" name="start" type="date" />
-          </div>
+          <label class="form__field">
+            <span class="form__label">Name</span>
+            <input type="text" class="form__input" value="Todd Myers" />
+          </label>
 
-          <div class="form-field">
-            <label for="end">Plan end</label>
-            <input id="end" name="end" type="date" />
-          </div>
+          <label class="form__field">
+            <span class="form__label">Plan start</span>
+            <input type="date" class="form__input" value="2025-12-01" />
+          </label>
 
-          <div class="form-field">
-            <label for="calories">Daily calories</label>
-            <input id="calories" name="calories" type="number" placeholder="e.g. 2200" value="2200" />
-          </div>
+          <label class="form__field">
+            <span class="form__label">Plan end</span>
+            <input type="date" class="form__input" value="2025-12-07" />
+          </label>
 
-          <div class="form-field">
-            <label for="budget">Weekly food budget ($)</label>
-            <input id="budget" name="budget" type="number" placeholder="e.g. 80" value="80" />
-          </div>
-        </div>
+          <label class="form__field">
+            <span class="form__label">Daily calories</span>
+            <input type="number" class="form__input" value="2200" />
+          </label>
 
-        <p class="form-hint">
-          In the full app, this step would feed into your AI-generated weekly report. For now, we’ll just
-          jump to the demo dashboard so you can click around.
+          <label class="form__field">
+            <span class="form__label">Weekly food budget ($)</span>
+            <input type="number" class="form__input" value="80" />
+          </label>
+        </fieldset>
+
+        <p class="card__subtitle card__subtitle--small">
+          In the full app, this step would feed into your AI-generated weekly report.  
+          For now, we’ll just jump to the <strong>demo dashboard</strong> so you can click around.
         </p>
 
-        <button type="submit" class="button button--primary button--full">
+        <button type="submit" class="btn btn--primary btn--full">
           Continue to demo dashboard
         </button>
       </form>
+
+      <p class="card__hint">
+        Prototype only. No data is saved yet – this is just a visual walkthrough.
+      </p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>Prototype only. No data is saved yet – this is just a visual walkthrough.</p>
+    <p class="site-footer__text">
+      Prototype interface for TKM VitalMetric. Data shown is demo only and not medical advice.
+    </p>
   </footer>
 </body>
 </html>
