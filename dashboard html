@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Weekly Dashboard – TKM VitalMetric</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="app-header-left">
+        <div class="brand-icon">
+          <img src="assets/tkm-logo.png" alt="TKM VitalMetric logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+          <div class="brand-icon-fallback" style="display:none;">TKM</div>
+        </div>
+        <div>
+          <div class="app-title-main">TKM VITALMETRIC V1</div>
+          <div class="app-title-sub">Weekly Nutrition + Movement + Budget Dashboard (Demo)</div>
+        </div>
+      </div>
+      <div class="app-header-right">
+        <button class="top-nav-button ghost" onclick="location.href='index.html'">
+          ⬅ Back to overview
+        </button>
+        <button class="top-nav-button primary" onclick="location.href='onboarding.html'">
+          Re-run onboarding
+        </button>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <div class="page-width dashboard-grid">
+        <!-- Main dashboard -->
+        <section class="dashboard-main-card">
+          <h1 class="card-title">Demo weekly snapshot</h1>
+          <p class="card-subtitle">
+            This preview shows the style of your weekly “control center” once AI and data are wired in.
+          </p>
+
+          <div class="hero-metrics">
+            <div class="metric-chip">
+              <div class="metric-label">Calories</div>
+              <div class="metric-value">Average net: ~2,200 kcal/day</div>
+              <div class="metric-note">Improved from prior 3,950–5,640 kcal/day pattern.</div>
+            </div>
+            <div class="metric-chip">
+              <div class="metric-label">Sodium trend</div>
+              <div class="metric-value">Marked reduction vs last report</div>
+              <div class="metric-note">Fewer processed meats, smarter soups, more fruit.</div>
+            </div>
+            <div class="metric-chip">
+              <div class="metric-label">Budget</div>
+              <div class="metric-value">$75 planned · $72 estimated spend</div>
+              <div class="metric-note">Pantry-first strategy with a short, focused list.</div>
+            </div>
+          </div>
+
+          <div class="dashboard-subgrid">
+            <div class="dashboard-subcard">
+              <div class="snapshot-label">This week’s priorities</div>
+              <div class="chip-row">
+                <span class="chip good">Sodium cut is main focus</span>
+                <span class="chip good">Steady daily movement</span>
+                <span class="chip warn">Watch evening snacks</span>
+              </div>
+            </div>
+
+            <div class="dashboard-subcard">
+              <div class="snapshot-label">Movement stack (daily)</div>
+              <ul class="hero-footnote" style="margin-top:6px;">
+                <li>Radio Taiso (3 min)</li>
+                <li>Tai Chi (10–20 min)</li>
+                <li>Walking (~2,500 steps)</li>
+                <li>Gentle stretching (2–4 min)</li>
+              </ul>
+            </div>
+
+            <div class="dashboard-subcard">
+              <div class="snapshot-label">Report structure</div>
+              <ul class="hero-footnote" style="margin-top:6px;">
+                <li>Cover page with goals & dates</li>
+                <li>Daily pages with meals & snacks</li>
+                <li>Shopping list & sodium tools</li>
+                <li>Movement summary & closing notes</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Right-hand panel -->
+        <aside class="panel-card">
+          <h2 class="panel-title">What this demo represents</h2>
+          <p class="panel-sub">
+            In the full app, this dashboard will reflect your real data from onboarding, pantry, and weekly progress.
+          </p>
+
+          <div class="snapshot-grid">
+            <div class="snapshot-item">
+              <div class="snapshot-label">Current phase</div>
+              <div class="snapshot-value">Prototype preview</div>
+            </div>
+            <div class="snapshot-item">
+              <div class="snapshot-label">Planned upgrades</div>
+              <div class="snapshot-value">
+                Live AI report generation, smart store comparisons, and PDF export.
+              </div>
+            </div>
+            <div class="snapshot-item">
+              <div class="snapshot-label">Account features</div>
+              <div class="snapshot-value">
+                Saved plans, pantry profiles, and multi-week trend views (future).
+              </div>
+            </div>
+          </div>
+
+          <p class="snapshot-note">
+            For now, you can explore how the pages look and feel. When we connect the backend, these cards will show
+            your real numbers.
+          </p>
+
+          <div class="tag-pill">
+            <span>Coming soon · AI-powered plans & history</span>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      TKM VitalMetric V1 • Dashboard is a visual preview; data is demo-only.
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
