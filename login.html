@@ -2,66 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Sign in – TKM VitalMetric</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign in · TKM VitalMetric</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
+  <script src="app.js" defer></script>
 </head>
-<body>
-  <div class="app-shell">
-    <header class="app-header">
-      <div class="app-header-left">
-        <div class="brand-icon">
-          <img src="assets/tkm-logo.png" alt="TKM VitalMetric logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-          <div class="brand-icon-fallback" style="display:none;">TKM</div>
+<body class="theme-dark">
+  <div class="page-shell page-auth">
+    <div class="page-glow"></div>
+
+    <header class="nav nav-compact">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-logo-wrap">
+          <img src="assets/tkm-logo.png" alt="TKM VitalMetric logo" class="nav-logo" />
         </div>
-        <div>
-          <div class="app-title-main">TKM VITALMETRIC V1</div>
-          <div class="app-title-sub">Dietary • Exercise • Budget • Metrics (AI-Guided)</div>
+        <div class="nav-title">
+          <span class="nav-title-main">TKM VitalMetric</span>
+          <span class="nav-title-sub">Sign in to continue</span>
         </div>
-      </div>
-      <div class="app-header-right">
-        <button class="top-nav-button ghost" onclick="location.href='index.html'">
-          ⬅ Back to overview
-        </button>
-        <button class="top-nav-button primary" onclick="location.href='signup.html'">
-          Create account
-        </button>
+      </a>
+      <div class="nav-auth">
+        <span class="nav-inline-text">Need an account?</span>
+        <a href="signup.html" class="btn btn-primary btn-sm">Create account</a>
       </div>
     </header>
 
-    <main class="app-main">
-      <div class="page-width page-centered">
-        <section class="card">
-          <h1 class="card-title">Sign in</h1>
-          <p class="card-subtitle">
-            In the future, this will connect to real authentication. For now, it’s a visual preview of the sign-in flow.
-          </p>
+    <main class="auth-main">
+      <section class="auth-card card card-glass">
+        <h1 class="auth-title">Welcome back</h1>
+        <p class="auth-sub">
+          Use the demo sign-in to preview how your weekly dashboard will feel once the full AI engine is wired up.
+        </p>
 
-          <form class="form-grid" onsubmit="return goToDashboard(event);">
-            <div>
-              <label class="label" for="login-email">Email</label>
-              <input class="input" id="login-email" type="email" required />
-            </div>
+        <form class="form" id="login-form">
+          <div class="form-field">
+            <label for="login-email">Email</label>
+            <input id="login-email" type="email" placeholder="you@example.com" required />
+          </div>
 
-            <div>
-              <label class="label" for="login-password">Password</label>
-              <input class="input" id="login-password" type="password" required />
-            </div>
+          <div class="form-field">
+            <label for="login-password">Password</label>
+            <input id="login-password" type="password" placeholder="••••••••" required />
+          </div>
 
-            <div class="form-actions">
-              <button type="submit" class="btn-primary">Sign in &nbsp;→</button>
-              <a href="signup.html" class="link-inline">Don’t have an account? Create one</a>
-            </div>
-          </form>
-        </section>
-      </div>
-    </main>
+          <div class="form-row">
+            <label class="checkbox">
+              <input type="checkbox" id="remember-me" />
+              <span>Remember me on this device</span>
+            </label>
+            <a href="#" class="link-inline disabled-link">Forgot password (demo only)</a>
+          </div>
 
-    <footer class="app-footer">
-      TKM VitalMetric V1 • Auth screens are UI previews only for now.
-    </footer>
-  </div>
+          <button type="submit" class="btn btn-lg btn-primary btn-full">
+            Sign in to demo
+          </button>
 
-  <script src="app.js"></script>
-</body>
-</html>
+          <p class="form-helper">
+            For this prototype, any email + password combination will “sign you in” and take you to the
+            <a href="
