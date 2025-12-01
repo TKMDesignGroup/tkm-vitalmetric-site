@@ -1,164 +1,239 @@
-// Simple front-end-only auth prototype for TKM VitalMetric
+// Simple front-end session + view switching for TKM VitalMetric prototype
 
-(function () {
-  const STORAGE_KEY = "tkmVitalmetricUser";
+document.addEventListener("DOMContentLoaded", () => {
+  const loginScreen = document.getElementById("loginScreen");
+  const dashboard = document.getElementById("dashboard");
 
+  const loginForm = document.getElementById("loginForm");
+  const loginEmailInput = document.getElementById("loginEmail");
+  const loginNameInput = document.getElementById("loginName");
+
+  const fakeGoogleBtn = document.getElementById("fakeGoogleBtn");
+
+  const userNameDisplay = document.getElementById("userNameDisplay");
+  const snapshotStatus = document.getElementById("snapshotStatus");
+
+  const logoutBtn = document.getElementById("logoutBtn");
+  const startPlanBtn = document.getElementById("startPlanBtn");
+  const resumePlanBtn = document.getElementById("resumePlanBtn");
+  const exerciseBtn = document.getElementById("exerciseBtn");
+  const pantryHelperBtn = document.getElementById("pantryHelperBtn");
+  const shoppingHelperBtn = document.getElementById("shoppingHelperBtn");
+
+  const weeksTrackedEl = document.getElementById("weeksTracked");
+  const avgCaloriesEl = document.getElementById("avgCalories");
+  const sodiumTrendEl = document.getElementById("sodiumTrend");
+  const historyListEl = document.getElementById("historyList");
+
+  // Keys for localStorage
+  const STORAGE_KEY_USER = "tkmUser";
+  const STORAGE_KEY_PLANS = "tkmPlans";
+
+  // --------------------------
   // Helpers
-  function $(selector) {
-    return document.querySelector(selector);
+  // --------------------------
+
+  function setSnapshotStatus(text, isActive) {
+    if (!snapshotStatus) return;
+    snapshotStatus.textContent = text;
+    snapshotStatus.style.backgroundColor = isActive
+      ? "rgba(16, 185, 129, 0.25)"
+      : "rgba(15, 23, 42, 0.2)";
   }
 
-  function loadUser() {
+  function loadUserFromStorage() {
     try {
-      const raw = localStorage.getItem(STORAGE_KEY);
+      const raw = localStorage.getItem(STORAGE_KEY_USER);
       if (!raw) return null;
       return JSON.parse(raw);
     } catch (e) {
-      console.warn("Could not read stored user", e);
+      console.warn("Could not parse stored user", e);
       return null;
     }
   }
 
-  function saveUser(user) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
-  }
-
-  function clearUser() {
-    localStorage.removeItem(STORAGE_KEY);
-  }
-
-  // UI elements
-  const authStatusText = $("#auth-status-text");
-  const headerSigninBtn = $("#header-signin-btn");
-  const headerCreateBtn = $("#header-create-btn");
-  const headerSignoutBtn = $("#header-signout-btn");
-
-  const signinForm = $("#signin-form");
-  const createForm = $("#create-form");
-  const signinEmail = $("#signin-email");
-  const signinPassword = $("#signin-password");
-  const createName = $("#create-name");
-  const createEmail = $("#create-email");
-  const createPassword = $("#create-password");
-  const googleBtn = $("#google-signin-btn");
-
-  function updateAuthUI(user) {
-    if (user) {
-      authStatusText.textContent = `Signed in as ${user.name || user.email}`;
-      authStatusText.classList.remove("status-pill--unsigned");
-      authStatusText.classList.add("status-pill--signed");
-      headerSignoutBtn.classList.remove("is-hidden");
-      headerSigninBtn.textContent = "Go to Sign In";
-    } else {
-      authStatusText.textContent = "Not signed in";
-      authStatusText.classList.add("status-pill--unsigned");
-      authStatusText.classList.remove("status-pill--signed");
-      headerSignoutBtn.classList.add("is-hidden");
-      headerSigninBtn.textContent = "Sign In";
+  function saveUserToStorage(user) {
+    try {
+      localStorage.setItem(STORAGE_KEY_USER, JSON.stringify(user));
+    } catch (e) {
+      console.warn("Could not save user", e);
     }
   }
 
-  function scrollToCard(cardId) {
-    const el = document.getElementById(cardId);
-    if (!el) return;
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  function loadPlansFromStorage() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY_PLANS);
+      if (!raw) return [];
+      return JSON.parse(raw);
+    } catch (e) {
+      console.warn("Could not parse stored plans", e);
+      return [];
+    }
   }
 
-  // Initial state
-  const existingUser = loadUser();
-  updateAuthUI(existingUser);
-
-  // Header nav buttons
-  if (headerSigninBtn) {
-    headerSigninBtn.addEventListener("click", function () {
-      scrollToCard("signin-card");
-      signinEmail.focus();
-    });
+  function savePlansToStorage(plans) {
+    try {
+      localStorage.setItem(STORAGE_KEY_PLANS, JSON.stringify(plans));
+    } catch (e) {
+      console.warn("Could not save plans", e);
+    }
   }
 
-  if (headerCreateBtn) {
-    headerCreateBtn.addEventListener("click", function () {
-      scrollToCard("create-card");
-      createName.focus();
-    });
+  function showDashboard(user) {
+    if (!userNameDisplay) return;
+
+    userNameDisplay.textContent = user.name || "Friend";
+    loginScreen.classList.add("hidden");
+    dashboard.classList.remove("hidden");
+    setSnapshotStatus(`Signed in as ${user.email}`, true);
+
+    // Populate basic prototype stats
+    const plans = loadPlansFromStorage();
+    weeksTrackedEl.textContent = plans.length.toString();
+
+    if (plans.length > 0) {
+      const avg = Math.round(
+        plans.reduce((sum, p) => sum + (p.avgCalories || 2200), 0) /
+          plans.length
+      );
+      avgCaloriesEl.textContent = `${avg.toLocaleString()} kcal`;
+      sodiumTrendEl.textContent = "Improving vs. baseline (prototype)";
+      renderHistory(plans);
+    } else {
+      avgCaloriesEl.textContent = "—";
+      sodiumTrendEl.textContent = "Not enough data";
+      renderHistory([]);
+    }
   }
 
-  if (headerSignoutBtn) {
-    headerSignoutBtn.addEventListener("click", function () {
-      clearUser();
-      updateAuthUI(null);
-      alert("Signed out (prototype only).");
-    });
+  function showLogin() {
+    loginScreen.classList.remove("hidden");
+    dashboard.classList.add("hidden");
+    setSnapshotStatus("Not signed in", false);
   }
 
-  // Create account
-  if (createForm) {
-    createForm.addEventListener("submit", function (e) {
+  function renderHistory(plans) {
+    if (!historyListEl) return;
+
+    historyListEl.innerHTML = "";
+    if (!plans || plans.length === 0) {
+      const li = document.createElement("li");
+      li.textContent = "No saved plans yet on this device.";
+      historyListEl.appendChild(li);
+      return;
+    }
+
+    plans
+      .slice(-4) // last 4 plans
+      .reverse() // newest first
+      .forEach((p) => {
+        const li = document.createElement("li");
+        li.textContent = `${p.label || "Weekly plan"} – approx ${
+          p.avgCalories || 2200
+        } kcal/day, $${(p.budget || 75).toFixed(2)} budget`;
+        historyListEl.appendChild(li);
+      });
+  }
+
+  // --------------------------
+  // Initial load: check session
+  // --------------------------
+
+  const existingUser = loadUserFromStorage();
+  if (existingUser) {
+    showDashboard(existingUser);
+  } else {
+    showLogin();
+  }
+
+  // --------------------------
+  // Login form submit
+  // --------------------------
+
+  if (loginForm) {
+    loginForm.addEventListener("submit", (e) => {
       e.preventDefault();
 
+      const email = (loginEmailInput.value || "").trim();
+      const name = (loginNameInput.value || "").trim() || "Friend";
+
+      if (!email) {
+        alert("Please enter your email.");
+        return;
+      }
+
+      const user = { email, name };
+      saveUserToStorage(user);
+      showDashboard(user);
+    });
+  }
+
+  // --------------------------
+  // Fake Google button (demo only)
+  // --------------------------
+
+  if (fakeGoogleBtn) {
+    fakeGoogleBtn.addEventListener("click", () => {
       const user = {
-        name: createName.value.trim() || "User",
-        email: createEmail.value.trim(),
-        password: createPassword.value || "",
+        email: "demo-user+google@example.com",
+        name: "Demo User",
+      };
+      saveUserToStorage(user);
+      showDashboard(user);
+      alert(
+        "In the real app this will use Google Sign-In. For now, we’re just simulating a demo login."
+      );
+    });
+  }
+
+  // --------------------------
+  // Logout
+  // --------------------------
+
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+      localStorage.removeItem(STORAGE_KEY_USER);
+      // We can keep plans for now – or clear them if you want a hard reset:
+      // localStorage.removeItem(STORAGE_KEY_PLANS);
+      showLogin();
+    });
+  }
+
+  // --------------------------
+  // Demo buttons
+  // --------------------------
+
+  if (startPlanBtn) {
+    startPlanBtn.addEventListener("click", () => {
+      const plans = loadPlansFromStorage();
+      const newPlan = {
+        label: `Prototype plan #${plans.length + 1}`,
+        avgCalories: 2200,
+        budget: 75,
         createdAt: new Date().toISOString(),
       };
-
-      if (!user.email) {
-        alert("Please enter an email address.");
-        return;
-      }
-
-      saveUser(user);
-      updateAuthUI(user);
-
-      // Prefill sign-in form for convenience
-      signinEmail.value = user.email;
-      signinPassword.value = user.password;
+      plans.push(newPlan);
+      savePlansToStorage(plans);
+      renderHistory(plans);
+      weeksTrackedEl.textContent = plans.length.toString();
+      avgCaloriesEl.textContent = "2,200 kcal (prototype)";
+      sodiumTrendEl.textContent = "Assuming improved vs. old baseline";
 
       alert(
-        "Account created in this browser (prototype only). You can now sign in."
+        "In the full system this will launch the real onboarding wizard.\n\nRight now it just logs a sample plan in your local history on this device."
       );
     });
   }
 
-  // Sign in
-  if (signinForm) {
-    signinForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const stored = loadUser();
-      const email = signinEmail.value.trim();
-      const password = signinPassword.value;
-
-      if (!stored) {
-        alert(
-          "No prototype account found yet. Please create an account first (data is stored only on this device)."
-        );
-        return;
-      }
-
-      if (stored.email !== email) {
-        alert("Email does not match the saved prototype account.");
-        return;
-      }
-
-      // For prototype we just compare raw strings
-      if (stored.password !== password) {
-        alert("Password does not match the saved prototype account.");
-        return;
-      }
-
-      updateAuthUI(stored);
-      alert("Signed in (prototype only). You are now 'logged in' on this page.");
-    });
-  }
-
-  // Google test button
-  if (googleBtn) {
-    googleBtn.addEventListener("click", function () {
+  if (resumePlanBtn) {
+    resumePlanBtn.addEventListener("click", () => {
       alert(
-        "Google sign-in will be wired up later.\n\nFor now, this button is just a visual placeholder in the prototype."
+        "Resume wizard is not wired up yet in this prototype.\n\nIn the real app, this will jump back into your last incomplete onboarding flow."
       );
     });
   }
-})();
+
+  if (exerciseBtn) {
+    exerciseBtn.addEventListener("click", () => {
+      alert(
+        "

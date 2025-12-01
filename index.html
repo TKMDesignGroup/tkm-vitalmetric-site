@@ -2,220 +2,237 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>TKM VitalMetric – Dietary & Exercise AI System</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TKM VitalMetric V.1 – Dietary & Exercise AI System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
-  <script src="app.js" defer></script>
 </head>
 <body>
-  <div class="app-shell">
-    <!-- ===== Header / Top Bar ===== -->
-    <header class="app-header">
-      <div class="app-header-left">
-        <div class="brand-mark">
-          <img src="tkm-logo.png" alt="TKM VitalMetric logo" class="brand-logo" />
-          <div class="brand-text">
-            <span class="brand-name">TKM VitalMetric</span>
-            <span class="brand-tagline">Dietary &amp; Exercise AI System</span>
-          </div>
+  <div class="page">
+    <!-- Top bar / header -->
+    <header class="top-bar">
+      <div class="brand-block">
+        <img src="tkm-logo.png" alt="TKM VitalMetric logo" class="brand-logo" />
+        <div class="brand-text">
+          <h1>TKM VitalMetric V.1</h1>
+          <p>Dietary • Exercise • Budget • Metrics (AI-Guided)</p>
         </div>
       </div>
-
-      <div class="app-header-right">
-        <span id="auth-status-text" class="status-pill status-pill--unsigned">
-          Not signed in
-        </span>
-        <div class="header-actions">
-          <button id="header-signin-btn" class="btn btn-ghost">
-            Sign In
-          </button>
-          <button id="header-create-btn" class="btn btn-primary btn-small">
-            Create Account
-          </button>
-          <button id="header-signout-btn" class="btn btn-ghost btn-small is-hidden">
-            Sign Out
-          </button>
-        </div>
+      <div class="snapshot-pill" id="snapshotStatus">
+        Not signed in
       </div>
     </header>
 
-    <!-- ===== Main Content ===== -->
-    <main class="main-layout">
-      <!-- Left column: auth forms -->
-      <div class="main-column main-column--left">
-        <!-- Sign in card -->
-        <section class="card card-auth" id="signin-card">
-          <h2 class="card-title">Welcome back</h2>
-          <p class="card-subtitle">
-            Sign in to access your TKM VitalMetric dashboard.
-          </p>
-
-          <form id="signin-form" class="form">
-            <div class="input-group">
-              <label for="signin-email">Email</label>
-              <input
-                type="email"
-                id="signin-email"
-                name="email"
-                placeholder="you@example.com"
-                autocomplete="email"
-                required
-              />
-            </div>
-
-            <div class="input-group">
-              <label for="signin-password">Password</label>
-              <input
-                type="password"
-                id="signin-password"
-                name="password"
-                placeholder="Enter your password"
-                autocomplete="current-password"
-                required
-              />
-            </div>
-
-            <div class="form-actions">
-              <button type="submit" class="btn btn-primary">Sign In</button>
-
-              <button
-                type="button"
-                id="google-signin-btn"
-                class="btn btn-google"
-              >
-                Continue with Google (test)
-              </button>
-            </div>
-
-            <p class="form-helper">
-              For now, this is a prototype. Accounts are stored only in this
-              browser for testing.
+    <!-- MAIN CONTENT AREA -->
+    <main class="content-area">
+      <!-- LOGIN SCREEN -->
+      <section id="loginScreen" class="screen">
+        <div class="two-column">
+          <div class="column-left">
+            <h2 class="hero-title">Design your week like a pro coach.</h2>
+            <p class="hero-subtitle">
+              TKM VitalMetric builds a weekly plan that balances
+              <span class="highlight">calories, sodium, budget, movement,</span>
+              and your pantry — then turns it into a printable report.
             </p>
-          </form>
-        </section>
 
-        <!-- Create account card -->
-        <section class="card card-auth" id="create-card">
-          <h2 class="card-title">Create your account</h2>
-          <p class="card-subtitle">
-            Set up your TKM VitalMetric profile so we can build plans around you.
-          </p>
+            <ul class="benefit-list">
+              <li>• Smart weekly meal plan with sodium-aware recipes</li>
+              <li>• Grocery list built from your pantry + store prices</li>
+              <li>• Exercise “movement stack” tailored to your level</li>
+              <li>• Dashboard cards: calories, sodium, budget, weight trend</li>
+            </ul>
 
-          <form id="create-form" class="form">
-            <div class="input-group">
-              <label for="create-name">Name</label>
-              <input
-                type="text"
-                id="create-name"
-                name="name"
-                placeholder="Your name"
-                autocomplete="name"
-                required
-              />
-            </div>
-
-            <div class="input-group">
-              <label for="create-email">Email</label>
-              <input
-                type="email"
-                id="create-email"
-                name="email"
-                placeholder="you@example.com"
-                autocomplete="email"
-                required
-              />
-            </div>
-
-            <div class="input-group">
-              <label for="create-password">Password</label>
-              <input
-                type="password"
-                id="create-password"
-                name="password"
-                placeholder="Create a password"
-                autocomplete="new-password"
-                required
-              />
-            </div>
-
-            <div class="form-actions">
-              <button type="submit" class="btn btn-primary">
-                Create Account
-              </button>
-            </div>
-
-            <p class="form-helper">
-              This is a front-end prototype only. Passwords are not secure yet —
-              testing use only.
-            </p>
-          </form>
-        </section>
-      </div>
-
-      <!-- Right column: value + preview -->
-      <div class="main-column main-column--right">
-        <!-- What TKM does -->
-        <section class="card card-features">
-          <h2 class="card-title">What TKM VitalMetric will do for you</h2>
-          <ul class="feature-list">
-            <li>
-              <span class="checkmark">✔</span>
-              Budget-aware weekly meal planning
-            </li>
-            <li>
-              <span class="checkmark">✔</span>
-              Low-sodium, calorie-targeted meals
-            </li>
-            <li>
-              <span class="checkmark">✔</span>
-              Pantry-based smart shopping lists
-            </li>
-            <li>
-              <span class="checkmark">✔</span>
-              Tai Chi, Radio Taiso, &amp; low-impact movement stacks
-            </li>
-            <li>
-              <span class="checkmark">✔</span>
-              Printable weekly reports and dashboards
-            </li>
-          </ul>
-        </section>
-
-        <!-- Prototype preview -->
-        <section class="card card-preview">
-          <h2 class="card-title">Prototype preview</h2>
-          <p class="card-subtitle">
-            After you sign in, you’ll see a simple demo dashboard showing how
-            meal plans, movement goals, and weekly reports could look.
-          </p>
-
-          <div class="snapshot-grid">
-            <div class="snapshot-card">
-              <h3>This week’s calories</h3>
-              <p class="snapshot-value">1,800–2,000 / day</p>
-              <p class="snapshot-tag">With low-sodium focus</p>
-            </div>
-            <div class="snapshot-card">
-              <h3>Movement stack</h3>
-              <p class="snapshot-value">Tai Chi + Radio Taiso</p>
-              <p class="snapshot-tag">Light daily routine</p>
-            </div>
-            <div class="snapshot-card">
-              <h3>Smart shopping</h3>
-              <p class="snapshot-value">Pantry-aware lists</p>
-              <p class="snapshot-tag">Budget &amp; sodium friendly</p>
+            <div class="small-note">
+              You’re viewing the prototype. Actual AI report generation
+              and store comparison logic will be added in the next phase.
             </div>
           </div>
-        </section>
-      </div>
+
+          <div class="column-right">
+            <div class="card login-card">
+              <h2>Sign in to continue</h2>
+              <p class="card-subtitle">
+                Use the same email each time and we’ll remember your settings
+                on this device.
+              </p>
+
+              <form id="loginForm" class="form">
+                <label class="form-label" for="loginEmail">
+                  Email address
+                </label>
+                <input
+                  type="email"
+                  id="loginEmail"
+                  class="form-input"
+                  placeholder="you@example.com"
+                  required
+                />
+
+                <label class="form-label" for="loginName">
+                  First name (for your dashboard)
+                </label>
+                <input
+                  type="text"
+                  id="loginName"
+                  class="form-input"
+                  placeholder="Todd"
+                  required
+                />
+
+                <button type="submit" class="btn btn-primary">
+                  Continue to my dashboard
+                </button>
+
+                <button type="button" class="btn btn-ghost" id="fakeGoogleBtn">
+                  Continue with Google (demo only)
+                </button>
+
+                <p class="tiny-text">
+                  This prototype stores your session only in this browser using
+                  local storage. No real accounts are created yet.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DASHBOARD SCREEN -->
+      <section id="dashboard" class="screen hidden">
+        <div class="dashboard-header">
+          <div>
+            <h2>Welcome back, <span id="userNameDisplay">Friend</span> 👋</h2>
+            <p class="dash-subtitle">
+              Here’s your TKM VitalMetric control center. From here you’ll
+              launch weekly plans, track calories & sodium, and monitor your
+              exercise streak.
+            </p>
+          </div>
+          <button class="btn btn-outline" id="logoutBtn">
+            Log out
+          </button>
+        </div>
+
+        <div class="dash-grid">
+          <!-- Card 1: Current plan status -->
+          <article class="card dash-card wide">
+            <h3>Current Meal Plan</h3>
+            <p class="card-subtitle">Plan status on this device</p>
+            <div class="plan-status-row">
+              <div>
+                <div class="label">Status</div>
+                <div class="value" id="planStatus">
+                  No active plan yet
+                </div>
+              </div>
+              <div>
+                <div class="label">Target calories</div>
+                <div class="value" id="planCalories">
+                  2,200 kcal/day (example)
+                </div>
+              </div>
+              <div>
+                <div class="label">Focus</div>
+                <div class="value" id="planFocus">
+                  Low sodium • Budget-friendly
+                </div>
+              </div>
+            </div>
+            <div class="plan-actions">
+              <button class="btn btn-primary" id="startPlanBtn">
+                Start a new weekly plan
+              </button>
+              <button class="btn btn-secondary" id="resumePlanBtn">
+                Resume onboarding wizard (coming soon)
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 2: Quick stats -->
+          <article class="card dash-card">
+            <h3>Quick Weekly Snapshot</h3>
+            <ul class="stat-list">
+              <li>
+                <span class="stat-label">Weeks tracked (on this device)</span>
+                <span class="stat-value" id="weeksTracked">0</span>
+              </li>
+              <li>
+                <span class="stat-label">Average daily calories</span>
+                <span class="stat-value" id="avgCalories">—</span>
+              </li>
+              <li>
+                <span class="stat-label">Sodium trend</span>
+                <span class="stat-value" id="sodiumTrend">Improvement pending</span>
+              </li>
+              <li>
+                <span class="stat-label">Exercise streak</span>
+                <span class="stat-value" id="exerciseStreak">7-day goal</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Card 3: Exercise panel -->
+          <article class="card dash-card">
+            <h3>Movement Stack Overview</h3>
+            <p class="card-subtitle">
+              Based on your prototype: Radio Taiso + Tai Chi + ~2,500 steps.
+            </p>
+            <ul class="bullet-list">
+              <li>• Daily burn estimate: ~225 kcal</li>
+              <li>• Gentle, joint-friendly progression</li>
+              <li>• Designed for 7 days/week consistency</li>
+            </ul>
+            <button class="btn btn-secondary" id="exerciseBtn">
+              View exercise ideas (demo)
+            </button>
+          </article>
+
+          <!-- Card 4: Pantry / shopping helper -->
+          <article class="card dash-card wide">
+            <h3>Pantry & Shopping Helper</h3>
+            <p class="card-subtitle">
+              In the full system, this will parse your pantry, match recipes,
+              and build a low-sodium, budget-friendly list.
+            </p>
+            <div class="helper-row">
+              <button class="btn btn-secondary" id="pantryHelperBtn">
+                Open “What can I cook?” helper (demo)
+              </button>
+              <button class="btn btn-outline" id="shoppingHelperBtn">
+                See smart shopping list (demo)
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 5: History -->
+          <article class="card dash-card">
+            <h3>Recent Plans (Prototype)</h3>
+            <ul class="history-list" id="historyList">
+              <li>No saved plans yet on this device.</li>
+            </ul>
+          </article>
+
+          <!-- Card 6: Coming soon -->
+          <article class="card dash-card">
+            <h3>Coming Soon</h3>
+            <ul class="bullet-list">
+              <li>• Full AI-generated weekly PDF reports</li>
+              <li>• Store ad comparison (Aldi, Acme, Walmart, etc.)</li>
+              <li>• Recipe health scoring with heart icons</li>
+              <li>• Multi-user accounts, Stripe billing, and trials</li>
+            </ul>
+          </article>
+        </div>
+      </section>
     </main>
 
-    <!-- ===== Footer ===== -->
-    <footer class="app-footer">
+    <footer class="site-footer">
       <p>
-        Prototype only. Data is stored locally in your browser for testing.
+        TKM VitalMetric V.1 • Prototype interface designed by Todd Myers using ChatGPT
       </p>
     </footer>
   </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
