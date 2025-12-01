@@ -2,135 +2,183 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Weekly Dashboard – TKM VitalMetric</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo dashboard · TKM VitalMetric</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
+  <script src="app.js" defer></script>
 </head>
-<body>
-  <div class="app-shell">
-    <header class="app-header">
-      <div class="app-header-left">
-        <div class="brand-icon">
-          <img src="assets/tkm-logo.png" alt="TKM VitalMetric logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-          <div class="brand-icon-fallback" style="display:none;">TKM</div>
+<body class="theme-dark">
+  <div class="page-shell">
+    <div class="page-glow"></div>
+
+    <header class="nav">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-logo-wrap">
+          <img src="assets/tkm-logo.png" alt="TKM VitalMetric logo" class="nav-logo" />
         </div>
-        <div>
-          <div class="app-title-main">TKM VITALMETRIC V1</div>
-          <div class="app-title-sub">Weekly Nutrition + Movement + Budget Dashboard (Demo)</div>
+        <div class="nav-title">
+          <span class="nav-title-main">TKM VitalMetric</span>
+          <span class="nav-title-sub">Weekly snapshot · Demo dashboard</span>
         </div>
-      </div>
-      <div class="app-header-right">
-        <button class="top-nav-button ghost" onclick="location.href='index.html'">
-          ⬅ Back to overview
-        </button>
-        <button class="top-nav-button primary" onclick="location.href='onboarding.html'">
-          Re-run onboarding
-        </button>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Overview</a>
+        <a href="dashboard.html" class="nav-link nav-link-active">Demo dashboard</a>
+        <a href="onboarding.html" class="nav-link">Onboarding</a>
+      </nav>
+
+      <div class="nav-auth">
+        <a href="login.html" class="btn btn-ghost btn-sm">Sign out (demo)</a>
       </div>
     </header>
 
-    <main class="app-main">
-      <div class="page-width dashboard-grid">
-        <!-- Main dashboard -->
-        <section class="dashboard-main-card">
-          <h1 class="card-title">Demo weekly snapshot</h1>
-          <p class="card-subtitle">
-            This preview shows the style of your weekly “control center” once AI and data are wired in.
-          </p>
+    <main class="main main-dashboard">
+      <!-- TOP ROW: SNAPSHOT + MOVEMENT -->
+      <section class="dash-grid-top">
+        <article class="card card-neon dash-snapshot">
+          <header class="dash-card-header">
+            <div>
+              <span class="pill pill-soft">Weekly snapshot · Demo</span>
+              <h1>Dec 1 – Dec 7 · Aggressive sodium reduction</h1>
+            </div>
+            <button class="btn btn-ghost btn-sm" id="btn-refresh-demo">
+              Shuffle demo numbers
+            </button>
+          </header>
 
-          <div class="hero-metrics">
-            <div class="metric-chip">
-              <div class="metric-label">Calories</div>
-              <div class="metric-value">Average net: ~2,200 kcal/day</div>
-              <div class="metric-note">Improved from prior 3,950–5,640 kcal/day pattern.</div>
+          <div class="dash-metric-row">
+            <div class="dash-metric">
+              <span class="dash-metric-label">Target calories</span>
+              <span class="dash-metric-value" data-metric="calories">2,200 kcal / day</span>
+              <span class="dash-metric-sub">Gentle deficit vs. your old 2,600–2,800.</span>
             </div>
-            <div class="metric-chip">
-              <div class="metric-label">Sodium trend</div>
-              <div class="metric-value">Marked reduction vs last report</div>
-              <div class="metric-note">Fewer processed meats, smarter soups, more fruit.</div>
+            <div class="dash-metric">
+              <span class="dash-metric-label">Average sodium</span>
+              <span class="dash-metric-value" data-metric="sodium">1,550 mg / day</span>
+              <span class="dash-metric-sub">Down from a 3,900–5,600 mg baseline.</span>
             </div>
-            <div class="metric-chip">
-              <div class="metric-label">Budget</div>
-              <div class="metric-value">$75 planned · $72 estimated spend</div>
-              <div class="metric-note">Pantry-first strategy with a short, focused list.</div>
+            <div class="dash-metric">
+              <span class="dash-metric-label">Food budget (week)</span>
+              <span class="dash-metric-value" data-metric="budget">$75.00</span>
+              <span class="dash-metric-sub">Built around your pantry + store ads.</span>
             </div>
           </div>
 
-          <div class="dashboard-subgrid">
-            <div class="dashboard-subcard">
-              <div class="snapshot-label">This week’s priorities</div>
-              <div class="chip-row">
-                <span class="chip good">Sodium cut is main focus</span>
-                <span class="chip good">Steady daily movement</span>
-                <span class="chip warn">Watch evening snacks</span>
+          <div class="dash-progress-row">
+            <div class="progress-card">
+              <div class="progress-label-row">
+                <span>Meal plan completion</span>
+                <span class="progress-percent" data-metric="meals-progress">72%</span>
               </div>
-            </div>
-
-            <div class="dashboard-subcard">
-              <div class="snapshot-label">Movement stack (daily)</div>
-              <ul class="hero-footnote" style="margin-top:6px;">
-                <li>Radio Taiso (3 min)</li>
-                <li>Tai Chi (10–20 min)</li>
-                <li>Walking (~2,500 steps)</li>
-                <li>Gentle stretching (2–4 min)</li>
-              </ul>
-            </div>
-
-            <div class="dashboard-subcard">
-              <div class="snapshot-label">Report structure</div>
-              <ul class="hero-footnote" style="margin-top:6px;">
-                <li>Cover page with goals & dates</li>
-                <li>Daily pages with meals & snacks</li>
-                <li>Shopping list & sodium tools</li>
-                <li>Movement summary & closing notes</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <!-- Right-hand panel -->
-        <aside class="panel-card">
-          <h2 class="panel-title">What this demo represents</h2>
-          <p class="panel-sub">
-            In the full app, this dashboard will reflect your real data from onboarding, pantry, and weekly progress.
-          </p>
-
-          <div class="snapshot-grid">
-            <div class="snapshot-item">
-              <div class="snapshot-label">Current phase</div>
-              <div class="snapshot-value">Prototype preview</div>
-            </div>
-            <div class="snapshot-item">
-              <div class="snapshot-label">Planned upgrades</div>
-              <div class="snapshot-value">
-                Live AI report generation, smart store comparisons, and PDF export.
+              <div class="progress-bar">
+                <div class="progress-fill" data-metric="meals-progress-bar" style="width:72%"></div>
               </div>
+              <p class="progress-sub">5 of 7 dinner slots already have leftovers planned.</p>
             </div>
-            <div class="snapshot-item">
-              <div class="snapshot-label">Account features</div>
-              <div class="snapshot-value">
-                Saved plans, pantry profiles, and multi-week trend views (future).
+
+            <div class="progress-card">
+              <div class="progress-label-row">
+                <span>Movement stack adherence</span>
+                <span class="progress-percent" data-metric="movement-progress">64%</span>
               </div>
+              <div class="progress-bar">
+                <div class="progress-fill" data-metric="movement-progress-bar" style="width:64%"></div>
+              </div>
+              <p class="progress-sub">Radio Taiso streak: <strong>4 days</strong> · Tai Chi streak: <strong>3 days</strong>.</p>
             </div>
           </div>
+        </article>
 
-          <p class="snapshot-note">
-            For now, you can explore how the pages look and feel. When we connect the backend, these cards will show
-            your real numbers.
-          </p>
+        <article class="card card-glass dash-movement">
+          <header class="dash-card-header">
+            <div>
+              <h2>Today’s movement stack</h2>
+              <p>Gentle, repeatable movements to keep joints happy and energy up.</p>
+            </div>
+          </header>
 
-          <div class="tag-pill">
-            <span>Coming soon · AI-powered plans & history</span>
-          </div>
-        </aside>
-      </div>
+          <ul class="stack-list">
+            <li class="stack-item">
+              <div class="stack-main">
+                <span class="stack-title">Radio Taiso</span>
+                <span class="stack-meta">6–8 minutes · morning</span>
+              </div>
+              <span class="stack-tag">Warm-up</span>
+            </li>
+            <li class="stack-item">
+              <div class="stack-main">
+                <span class="stack-title">Tai Chi sequence</span>
+                <span class="stack-meta">10–15 minutes · afternoon / evening</span>
+              </div>
+              <span class="stack-tag">Balance</span>
+            </li>
+            <li class="stack-item">
+              <div class="stack-main">
+                <span class="stack-title">Walking</span>
+                <span class="stack-meta">2,300–2,800 steps · broken into chunks</span>
+              </div>
+              <span class="stack-tag">Low impact</span>
+            </li>
+          </ul>
+
+          <footer class="dash-card-footer">
+            <p>
+              As the AI engine matures, this panel will adjust in real-time as your steps and check-ins
+              come in from wearables or manual entries.
+            </p>
+          </footer>
+        </article>
+      </section>
+
+      <!-- SECOND ROW: PANELS -->
+      <section class="dash-grid-bottom">
+        <article class="card card-glass">
+          <header class="dash-card-header">
+            <h2>1 · Weekly meal plan</h2>
+            <span class="pill pill-soft">Breakfast · Lunch · Dinner · 3 snacks / day</span>
+          </header>
+          <ul class="bullet-list">
+            <li>Emphasis on lower-sodium choices vs. your old pattern.</li>
+            <li>Uses your pantry first to keep costs down.</li>
+            <li>Integrates “planned leftovers” so busy nights are easier.</li>
+          </ul>
+          <a href="#" class="link-inline disabled-link">View full 7-day menu (coming later)</a>
+        </article>
+
+        <article class="card card-glass">
+          <header class="dash-card-header">
+            <h2>2 · Smart shopping list</h2>
+            <span class="pill pill-soft">Built from recipes · pantry · store prices</span>
+          </header>
+          <ul class="bullet-list">
+            <li>Flags low-sodium products wherever realistic.</li>
+            <li>Compares stores you care about (e.g., Aldi, Walmart).</li>
+            <li>Shows estimated total and “cheapest combo” scenario.</li>
+          </ul>
+          <a href="#" class="link-inline disabled-link">View sample shopping list (coming later)</a>
+        </article>
+
+        <article class="card card-glass">
+          <header class="dash-card-header">
+            <h2>3 · Movement & metrics</h2>
+            <span class="pill pill-soft">Gentle, sustainable movement · trend tracking</span>
+          </header>
+          <ul class="bullet-list">
+            <li>Daily movement stack summarized in your weekly report.</li>
+            <li>Tracks calories burned vs. calories eaten (prototype).</li>
+            <li>Designed to work for beginners and higher-level plans later.</li>
+          </ul>
+          <a href="#" class="link-inline disabled-link">See multi-week trend view (future feature)</a>
+        </article>
+      </section>
+
+      <footer class="site-footer site-footer-tight">
+        <span>
+          Prototype demo for TKM VitalMetric. Numbers are illustrative only and not medical advice.
+        </span>
+      </footer>
     </main>
-
-    <footer class="app-footer">
-      TKM VitalMetric V1 • Dashboard is a visual preview; data is demo-only.
-    </footer>
   </div>
-
-  <script src="app.js"></script>
 </body>
 </html>
