@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="page">
-    <!-- Top bar / header -->
+    <!-- Top bar -->
     <header class="top-bar">
       <div class="brand-block">
         <img src="tkm-logo.png" alt="TKM VitalMetric logo" class="brand-logo" />
@@ -17,218 +17,141 @@
           <p>Dietary • Exercise • Budget • Metrics (AI-Guided)</p>
         </div>
       </div>
-      <div class="snapshot-pill" id="snapshotStatus">
-        Not signed in
+      <div class="snapshot-pill">
+        Prototype · UI only · No login required
       </div>
     </header>
 
-    <!-- MAIN CONTENT AREA -->
+    <!-- Main content -->
     <main class="content-area">
-      <!-- LOGIN SCREEN -->
-      <section id="loginScreen" class="screen">
-        <div class="two-column">
-          <div class="column-left">
-            <h2 class="hero-title">Design your week like a pro coach.</h2>
-            <p class="hero-subtitle">
-              TKM VitalMetric builds a weekly plan that balances
-              <span class="highlight">calories, sodium, budget, movement,</span>
-              and your pantry — then turns it into a printable report.
-            </p>
+      <section class="hero-layout">
+        <div class="hero-left">
+          <h2 class="hero-title">
+            Design your nutrition & movement week like a pro coach.
+          </h2>
+          <p class="hero-subtitle">
+            TKM VitalMetric helps you plan
+            <span class="highlight">meals, sodium, budget, and movement</span>
+            for a full week, then turns it into a printable report you can
+            actually follow.
+          </p>
 
-            <ul class="benefit-list">
-              <li>• Smart weekly meal plan with sodium-aware recipes</li>
-              <li>• Grocery list built from your pantry + store prices</li>
-              <li>• Exercise “movement stack” tailored to your level</li>
-              <li>• Dashboard cards: calories, sodium, budget, weight trend</li>
-            </ul>
+          <ul class="benefit-list">
+            <li>• Weekly meal plan with low-sodium, budget-friendly recipes</li>
+            <li>• Smart shopping list built from your pantry and store prices</li>
+            <li>• Movement stack (Radio Taiso, Tai Chi, walking) calibrated to you</li>
+            <li>• Dashboard view of calories, sodium, budget, and trends</li>
+          </ul>
 
-            <div class="small-note">
-              You’re viewing the prototype. Actual AI report generation
-              and store comparison logic will be added in the next phase.
-            </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#mock-dashboard">
+              Preview weekly dashboard
+            </a>
+            <button class="btn btn-secondary" type="button">
+              Onboarding wizard (coming soon)
+            </button>
           </div>
 
-          <div class="column-right">
-            <div class="card login-card">
-              <h2>Sign in to continue</h2>
-              <p class="card-subtitle">
-                Use the same email each time and we’ll remember your settings
-                on this device.
-              </p>
+          <p class="tiny-note">
+            This is a visual prototype only. The full AI report generator,
+            store comparison engine, and Stripe billing will be wired in later.
+          </p>
+        </div>
 
-              <form id="loginForm" class="form">
-                <label class="form-label" for="loginEmail">
-                  Email address
-                </label>
-                <input
-                  type="email"
-                  id="loginEmail"
-                  class="form-input"
-                  placeholder="you@example.com"
-                  required
-                />
+        <div class="hero-right">
+          <div class="card snapshot-card" id="mock-dashboard">
+            <h3>Weekly Snapshot · Demo</h3>
+            <p class="card-subtitle">
+              Example of what your dashboard might show once a plan is generated.
+            </p>
 
-                <label class="form-label" for="loginName">
-                  First name (for your dashboard)
-                </label>
-                <input
-                  type="text"
-                  id="loginName"
-                  class="form-input"
-                  placeholder="Todd"
-                  required
-                />
-
-                <button type="submit" class="btn btn-primary">
-                  Continue to my dashboard
-                </button>
-
-                <button type="button" class="btn btn-ghost" id="fakeGoogleBtn">
-                  Continue with Google (demo only)
-                </button>
-
-                <p class="tiny-text">
-                  This prototype stores your session only in this browser using
-                  local storage. No real accounts are created yet.
-                </p>
-              </form>
+            <div class="snapshot-grid">
+              <div class="snapshot-item">
+                <div class="label">Date range</div>
+                <div class="value">Dec 1 – Dec 7</div>
+              </div>
+              <div class="snapshot-item">
+                <div class="label">Calorie target</div>
+                <div class="value">2,200 kcal / day</div>
+              </div>
+              <div class="snapshot-item">
+                <div class="label">Sodium focus</div>
+                <div class="value">Aggressive reduction</div>
+              </div>
+              <div class="snapshot-item">
+                <div class="label">Weekly food budget</div>
+                <div class="value">$75.00 (example)</div>
+              </div>
             </div>
+
+            <div class="divider"></div>
+
+            <ul class="stat-list">
+              <li>
+                <span class="stat-label">Planned days</span>
+                <span class="stat-value">7 meals + 3 snacks / day</span>
+              </li>
+              <li>
+                <span class="stat-label">Movement stack</span>
+                <span class="stat-value">Radio Taiso · Tai Chi · 2,500 steps</span>
+              </li>
+              <li>
+                <span class="stat-label">Report style</span>
+                <span class="stat-value">Printable multi-page PDF</span>
+              </li>
+            </ul>
+
+            <p class="card-footnote">
+              In the working app, this panel will be populated from your answers:
+              pantry, dislikes, exercise level, store ads, and your weekly goals.
+            </p>
           </div>
         </div>
       </section>
 
-      <!-- DASHBOARD SCREEN -->
-      <section id="dashboard" class="screen hidden">
-        <div class="dashboard-header">
-          <div>
-            <h2>Welcome back, <span id="userNameDisplay">Friend</span> 👋</h2>
-            <p class="dash-subtitle">
-              Here’s your TKM VitalMetric control center. From here you’ll
-              launch weekly plans, track calories & sodium, and monitor your
-              exercise streak.
-            </p>
-          </div>
-          <button class="btn btn-outline" id="logoutBtn">
-            Log out
-          </button>
-        </div>
+      <!-- Lower cards row -->
+      <section class="dash-grid">
+        <article class="card dash-card">
+          <h3>1 · Weekly Meal Plan</h3>
+          <p class="card-subtitle">
+            Breakfast · Lunch · Dinner · 3 snacks per day.
+          </p>
+          <ul class="bullet-list">
+            <li>• Emphasis on lower-sodium choices vs. your old pattern</li>
+            <li>• Uses your pantry first to keep costs down</li>
+            <li>• Integrates “planned leftovers” to save time and money</li>
+          </ul>
+        </article>
 
-        <div class="dash-grid">
-          <!-- Card 1: Current plan status -->
-          <article class="card dash-card wide">
-            <h3>Current Meal Plan</h3>
-            <p class="card-subtitle">Plan status on this device</p>
-            <div class="plan-status-row">
-              <div>
-                <div class="label">Status</div>
-                <div class="value" id="planStatus">
-                  No active plan yet
-                </div>
-              </div>
-              <div>
-                <div class="label">Target calories</div>
-                <div class="value" id="planCalories">
-                  2,200 kcal/day (example)
-                </div>
-              </div>
-              <div>
-                <div class="label">Focus</div>
-                <div class="value" id="planFocus">
-                  Low sodium • Budget-friendly
-                </div>
-              </div>
-            </div>
-            <div class="plan-actions">
-              <button class="btn btn-primary" id="startPlanBtn">
-                Start a new weekly plan
-              </button>
-              <button class="btn btn-secondary" id="resumePlanBtn">
-                Resume onboarding wizard (coming soon)
-              </button>
-            </div>
-          </article>
+        <article class="card dash-card">
+          <h3>2 · Smart Shopping List</h3>
+          <p class="card-subtitle">
+            Built from recipes + pantry + store prices.
+          </p>
+          <ul class="bullet-list">
+            <li>• Flags low-sodium products where available</li>
+            <li>• Compares stores you care about (e.g., Aldi, Acme, Walmart)</li>
+            <li>• Shows estimated total and “cheapest combo” scenario</li>
+          </ul>
+        </article>
 
-          <!-- Card 2: Quick stats -->
-          <article class="card dash-card">
-            <h3>Quick Weekly Snapshot</h3>
-            <ul class="stat-list">
-              <li>
-                <span class="stat-label">Weeks tracked (on this device)</span>
-                <span class="stat-value" id="weeksTracked">0</span>
-              </li>
-              <li>
-                <span class="stat-label">Average daily calories</span>
-                <span class="stat-value" id="avgCalories">—</span>
-              </li>
-              <li>
-                <span class="stat-label">Sodium trend</span>
-                <span class="stat-value" id="sodiumTrend">Improvement pending</span>
-              </li>
-              <li>
-                <span class="stat-label">Exercise streak</span>
-                <span class="stat-value" id="exerciseStreak">7-day goal</span>
-              </li>
-            </ul>
-          </article>
-
-          <!-- Card 3: Exercise panel -->
-          <article class="card dash-card">
-            <h3>Movement Stack Overview</h3>
-            <p class="card-subtitle">
-              Based on your prototype: Radio Taiso + Tai Chi + ~2,500 steps.
-            </p>
-            <ul class="bullet-list">
-              <li>• Daily burn estimate: ~225 kcal</li>
-              <li>• Gentle, joint-friendly progression</li>
-              <li>• Designed for 7 days/week consistency</li>
-            </ul>
-            <button class="btn btn-secondary" id="exerciseBtn">
-              View exercise ideas (demo)
-            </button>
-          </article>
-
-          <!-- Card 4: Pantry / shopping helper -->
-          <article class="card dash-card wide">
-            <h3>Pantry & Shopping Helper</h3>
-            <p class="card-subtitle">
-              In the full system, this will parse your pantry, match recipes,
-              and build a low-sodium, budget-friendly list.
-            </p>
-            <div class="helper-row">
-              <button class="btn btn-secondary" id="pantryHelperBtn">
-                Open “What can I cook?” helper (demo)
-              </button>
-              <button class="btn btn-outline" id="shoppingHelperBtn">
-                See smart shopping list (demo)
-              </button>
-            </div>
-          </article>
-
-          <!-- Card 5: History -->
-          <article class="card dash-card">
-            <h3>Recent Plans (Prototype)</h3>
-            <ul class="history-list" id="historyList">
-              <li>No saved plans yet on this device.</li>
-            </ul>
-          </article>
-
-          <!-- Card 6: Coming soon -->
-          <article class="card dash-card">
-            <h3>Coming Soon</h3>
-            <ul class="bullet-list">
-              <li>• Full AI-generated weekly PDF reports</li>
-              <li>• Store ad comparison (Aldi, Acme, Walmart, etc.)</li>
-              <li>• Recipe health scoring with heart icons</li>
-              <li>• Multi-user accounts, Stripe billing, and trials</li>
-            </ul>
-          </article>
-        </div>
+        <article class="card dash-card">
+          <h3>3 · Movement & Metrics</h3>
+          <p class="card-subtitle">
+            Gentle, sustainable movement + trend tracking.
+          </p>
+          <ul class="bullet-list">
+            <li>• Daily movement stack summarized in your report</li>
+            <li>• Tracks calories burned vs. calories eaten (prototype)</li>
+            <li>• Designed to work for beginners and higher-level plans later</li>
+          </ul>
+        </article>
       </section>
     </main>
 
     <footer class="site-footer">
       <p>
-        TKM VitalMetric V.1 • Prototype interface designed by Todd Myers using ChatGPT
+        TKM VitalMetric V.1 · Prototype interface created by Todd Myers using ChatGPT
       </p>
     </footer>
   </div>

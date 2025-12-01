@@ -1,6 +1,4 @@
-/* ------------------------------
-   Base styles / layout
------------------------------- */
+/* Base */
 
 *,
 *::before,
@@ -22,9 +20,7 @@ body {
   flex-direction: column;
 }
 
-/* ------------------------------
-   Top bar / branding
------------------------------- */
+/* Top bar */
 
 .top-bar {
   display: flex;
@@ -65,19 +61,14 @@ body {
 }
 
 .snapshot-pill {
-  background: rgba(15, 23, 42, 0.2);
+  background: rgba(15, 23, 42, 0.25);
   border-radius: 999px;
   padding: 0.4rem 0.85rem;
   font-size: 0.78rem;
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
   white-space: nowrap;
 }
 
-/* ------------------------------
-   Main content
------------------------------- */
+/* Content */
 
 .content-area {
   flex: 1;
@@ -87,28 +78,19 @@ body {
   width: 100%;
 }
 
-.screen {
-  width: 100%;
-}
-
-.hidden {
-  display: none;
-}
-
-/* ------------------------------
-   Login layout
------------------------------- */
-
-.two-column {
+.hero-layout {
   display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
-  gap: 1.5rem;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+  gap: 1.4rem;
   align-items: flex-start;
+  margin-bottom: 1.4rem;
 }
+
+/* Hero text */
 
 .hero-title {
-  margin: 0 0 0.4rem;
-  font-size: 1.45rem;
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
 }
 
 .hero-subtitle {
@@ -124,7 +106,7 @@ body {
 
 .benefit-list {
   list-style: none;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.9rem;
   padding: 0;
   font-size: 0.9rem;
 }
@@ -133,68 +115,20 @@ body {
   margin-bottom: 0.25rem;
 }
 
-.small-note {
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.tiny-note {
   font-size: 0.78rem;
   color: #4b5563;
   max-width: 420px;
 }
 
-/* ------------------------------
-   Cards / panels
------------------------------- */
-
-.card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 1.1rem 1.2rem;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-  border: 1px solid rgba(15, 23, 42, 0.06);
-}
-
-.login-card h2 {
-  margin-top: 0;
-  margin-bottom: 0.4rem;
-  font-size: 1.2rem;
-}
-
-.card-subtitle {
-  margin: 0 0 0.8rem;
-  font-size: 0.87rem;
-  color: #4b5563;
-}
-
-/* ------------------------------
-   Forms
------------------------------- */
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-}
-
-.form-label {
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-.form-input {
-  width: 100%;
-  padding: 0.55rem 0.65rem;
-  border-radius: 10px;
-  border: 1px solid #cbd5e1;
-  font-size: 0.9rem;
-}
-
-.form-input:focus {
-  outline: 2px solid #2563eb;
-  outline-offset: 1px;
-  border-color: #2563eb;
-}
-
-/* ------------------------------
-   Buttons
------------------------------- */
+/* Buttons */
 
 .btn {
   display: inline-flex;
@@ -215,6 +149,7 @@ body {
   background: linear-gradient(90deg, #2563eb, #0ea5e9);
   color: #ffffff;
   box-shadow: 0 8px 18px rgba(37, 99, 235, 0.4);
+  text-decoration: none;
 }
 
 .btn-primary:hover {
@@ -233,106 +168,66 @@ body {
   transform: translateY(-1px);
 }
 
-.btn-outline {
-  background: transparent;
-  border: 1px solid #d1d5db;
-  color: #111827;
+/* Cards */
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.1rem 1.2rem;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(15, 23, 42, 0.06);
 }
 
-.btn-outline:hover {
-  background: #e5e7eb;
+.snapshot-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
 }
 
-.btn-ghost {
-  background: #eff6ff;
-  color: #1d4ed8;
-  border-radius: 999px;
-  border: 1px dashed rgba(37, 99, 235, 0.4);
-}
-
-.btn-ghost:hover {
-  background: #dbeafe;
-}
-
-/* tiny text */
-
-.tiny-text {
-  font-size: 0.75rem;
-  color: #6b7280;
-}
-
-/* ------------------------------
-   Dashboard
------------------------------- */
-
-.dashboard-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.dash-subtitle {
-  margin-top: 0.3rem;
-  font-size: 0.9rem;
+.card-subtitle {
+  margin: 0 0 0.8rem;
+  font-size: 0.86rem;
   color: #4b5563;
 }
 
-/* Grid of dashboard cards */
+/* Snapshot grid */
 
-.dash-grid {
+.snapshot-grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin-bottom: 0.8rem;
 }
 
-.dash-card {
-  grid-column: span 4;
-  font-size: 0.9rem;
-}
-
-.dash-card.wide {
-  grid-column: span 12;
-}
-
-.plan-status-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.2rem;
-  margin-top: 0.5rem;
-}
-
-.plan-status-row .label {
+.snapshot-item .label {
   font-size: 0.78rem;
   color: #6b7280;
 }
 
-.plan-status-row .value {
+.snapshot-item .value {
+  font-size: 0.9rem;
   font-weight: 600;
-  margin-top: 0.1rem;
 }
 
-.plan-actions {
-  margin-top: 0.9rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
+.divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 0.6rem 0 0.5rem;
 }
 
-/* Stats list */
+/* Stat list */
 
 .stat-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 0.7rem;
   font-size: 0.86rem;
 }
 
 .stat-list li {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.25rem;
 }
 
 .stat-label {
@@ -343,12 +238,29 @@ body {
   font-weight: 600;
 }
 
-/* Bullet / helper lists */
+.card-footnote {
+  font-size: 0.78rem;
+  color: #6b7280;
+}
+
+/* Dash grid */
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.dash-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}
 
 .bullet-list {
   list-style: none;
   padding: 0;
-  margin: 0.2rem 0 0.7rem;
+  margin: 0.3rem 0 0;
   font-size: 0.86rem;
 }
 
@@ -356,24 +268,7 @@ body {
   margin-bottom: 0.25rem;
 }
 
-.helper-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-
-/* History list */
-
-.history-list {
-  list-style: none;
-  padding: 0;
-  margin: 0.2rem 0 0;
-  font-size: 0.86rem;
-}
-
-/* ------------------------------
-   Footer
------------------------------- */
+/* Footer */
 
 .site-footer {
   padding: 0.7rem 1.4rem 1rem;
@@ -382,39 +277,32 @@ body {
   text-align: center;
 }
 
-/* ------------------------------
-   Responsive
------------------------------- */
+/* Layout helpers */
+
+.hero-left {
+  min-width: 0;
+}
+
+.hero-right {
+  min-width: 0;
+}
+
+/* Responsive */
 
 @media (max-width: 900px) {
-  .two-column {
+  .hero-layout {
     grid-template-columns: 1fr;
-  }
-
-  .brand-text h1 {
-    font-size: 1rem;
-  }
-
-  .content-area {
-    padding: 0.9rem;
   }
 
   .dash-grid {
     grid-template-columns: 1fr;
   }
 
-  .dash-card,
-  .dash-card.wide {
-    grid-column: span 1;
-  }
-
-  .dashboard-header {
-    flex-direction: column;
-    align-items: stretch;
+  .content-area {
+    padding: 0.9rem;
   }
 
   .snapshot-pill {
-    display: none; /* hide status pill on very small screens if needed */
+    display: none;
   }
 }
-
