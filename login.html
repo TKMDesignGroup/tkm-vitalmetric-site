@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>TKM VitalMetric – Sign In</title>
+  <title>Sign in – TKM VitalMetric</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
   <script defer src="app.js"></script>
@@ -11,47 +11,50 @@
   <header class="site-header">
     <div class="site-header__left">
       <a href="index.html" class="brand">
-        <img src="assets/tkm-logo.png" alt="TKM VitalMetric logo" class="brand__logo" />
+        <img src="assets/TKM-logo-final.png" alt="TKM VitalMetric Logo" class="brand__logo" />
         <div class="brand__text">
           <span class="brand__name">TKM VitalMetric</span>
-          <span class="brand__tagline">Sign in</span>
+          <span class="brand__tagline">Weekly nutrition & movement planner</span>
         </div>
       </a>
     </div>
-    <nav class="site-header__right">
-      <a href="index.html" class="nav-link nav-link--muted">Home</a>
-      <a href="signup.html" class="nav-link">Create account</a>
+    <nav class="site-header__nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="signup.html" class="nav-link nav-link--primary">Create account</a>
     </nav>
   </header>
 
-  <main class="auth-layout">
+  <main class="centered">
     <section class="card card--auth">
-      <h1 class="card__title">Welcome back</h1>
-      <p class="card__body">This prototype treats sign-in as a visual walkthrough only – no passwords are stored.</p>
+      <h1 class="card__title">Sign in</h1>
+      <p class="card__subtitle">
+        Prototype only – this sign-in does not connect to a real database yet.
+      </p>
 
-      <form class="form">
-        <div class="form-field">
-          <label for="email">Email</label>
-          <input id="email" type="email" placeholder="you@example.com" />
-        </div>
-        <div class="form-field">
-          <label for="password">Password</label>
-          <input id="password" type="password" placeholder="••••••••" />
-        </div>
+      <form class="form" id="login-form">
+        <label class="form__field">
+          <span class="form__label">Email</span>
+          <input type="email" class="form__input" placeholder="you@example.com" required />
+        </label>
 
-        <a href="dashboard.html" class="button button--primary button--full">
-          Sign in to demo dashboard
-        </a>
+        <label class="form__field">
+          <span class="form__label">Password</span>
+          <input type="password" class="form__input" placeholder="••••••••" required />
+        </label>
 
-        <p class="form-footer">
-          Don’t have an account? <a href="signup.html" class="link-inline">Create one</a>.
-        </p>
+        <button type="submit" class="btn btn--primary btn--full">
+          Sign in (demo – go to dashboard)
+        </button>
       </form>
+
+      <p class="card__hint">
+        New here? <a href="signup.html" class="link">Create an account</a>
+      </p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>Prototype only – authentication is simulated for demo purposes.</p>
+    <p class="site-footer__text">Prototype only. No real accounts are created or stored.</p>
   </footer>
 </body>
 </html>
