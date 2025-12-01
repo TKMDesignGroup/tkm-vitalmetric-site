@@ -2,108 +2,142 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>TKM VitalMetric – Weekly Snapshot Demo</title>
+  <title>Dashboard – TKM VitalMetric</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
   <script defer src="app.js"></script>
 </head>
-<body class="page">
+<body class="page page--dashboard">
   <header class="site-header">
     <div class="site-header__left">
       <a href="index.html" class="brand">
-        <img src="assets/tkm-logo.png" alt="TKM VitalMetric logo" class="brand__logo" />
+        <img src="assets/TKM-logo-final.png" alt="TKM VitalMetric Logo" class="brand__logo" />
         <div class="brand__text">
           <span class="brand__name">TKM VitalMetric</span>
-          <span class="brand__tagline">Demo Dashboard</span>
+          <span class="brand__tagline">Weekly Snapshot • Demo</span>
         </div>
       </a>
     </div>
-    <nav class="site-header__right">
-      <a href="index.html" class="nav-link nav-link--muted">Home</a>
+    <nav class="site-header__nav">
+      <a href="index.html" class="nav-link">Home</a>
       <a href="onboarding.html" class="nav-link">Restart plan</a>
-      <a href="login.html" class="button button--small button--outline">Sign in</a>
+      <a href="login.html" class="nav-link nav-link--primary">Sign in</a>
     </nav>
   </header>
 
-  <main class="dashboard-layout">
-    <section class="card card--primary">
-      <p class="card__eyebrow">Weekly Snapshot • Demo</p>
-      <h1 class="card__title">This is your “mission control” for the week.</h1>
-      <p class="card__body">
-        All numbers here are example data. In the working app, this view would be generated from your
-        onboarding answers, pantry list, and exercise targets.
-      </p>
+  <main class="dashboard">
+    <section class="dashboard__primary">
+      <div class="card card--snapshot">
+        <p class="card__eyebrow">Weekly Snapshot • Demo</p>
+        <h1 class="card__title">This is your “mission control” for the week.</h1>
 
-      <div class="snapshot-grid snapshot-grid--wide">
-        <div>
-          <dt>Date range</dt>
-          <dd>Dec 1 – Dec 7</dd>
-        </div>
-        <div>
-          <dt>Daily calorie target</dt>
-          <dd>2,200 kcal / day</dd>
-        </div>
-        <div>
-          <dt>Sodium focus</dt>
-          <dd>Aggressive reduction</dd>
-        </div>
-        <div>
-          <dt>Weekly food budget</dt>
-          <dd>$75.00 (example)</dd>
-        </div>
-        <div>
-          <dt>Movement stack</dt>
-          <dd>Radio Taiso • Tai Chi • 2,500 steps</dd>
-        </div>
-        <div>
-          <dt>Report style</dt>
-          <dd>Printable multi-page PDF</dd>
-        </div>
+        <p class="card__subtitle">
+          All numbers here are example data. In the working app, this view would be generated from your onboarding
+          answers, pantry list, and exercise targets.
+        </p>
+
+        <dl class="snapshot">
+          <div class="snapshot__item">
+            <dt>Date range</dt>
+            <dd>Dec 1 – Dec 7</dd>
+          </div>
+          <div class="snapshot__item">
+            <dt>Daily calorie target</dt>
+            <dd>2,200 kcal / day</dd>
+          </div>
+          <div class="snapshot__item">
+            <dt>Sodium focus</dt>
+            <dd>Aggressive reduction</dd>
+          </div>
+          <div class="snapshot__item">
+            <dt>Weekly food budget</dt>
+            <dd>$75.00 (example)</dd>
+          </div>
+          <div class="snapshot__item">
+            <dt>Movement stack</dt>
+            <dd>Radio Taiso • Tai Chi • 2,500 steps</dd>
+          </div>
+          <div class="snapshot__item">
+            <dt>Report style</dt>
+            <dd>Printable multi-page PDF</dd>
+          </div>
+        </dl>
       </div>
-    </section>
 
-    <section class="dashboard-columns">
-      <article class="card">
-        <h2 class="card__title">1 · Weekly Meal Plan</h2>
-        <p class="card__body">
-          <strong>Breakfast, Lunch, Dinner + 3 snacks</strong> per day, with planned leftovers to make
-          weeknights easier.
+      <section class="card card--section">
+        <h2 class="card__title">1 • Weekly Meal Plan</h2>
+        <p class="card__subtitle">
+          Breakfast, Lunch, Dinner + 3 snacks per day, with planned leftovers to make weeknights easier.
         </p>
-        <ul class="card-list">
+        <ul class="card__list">
           <li>Emphasis on lower-sodium choices vs. your old pattern</li>
-          <li>Pantry-first planning to use what you already have</li>
-          <li>Clear weekly summary you can print or keep on your phone</li>
+          <li>Pantry-first planning to use what you already own</li>
+          <li>Flexible “swap options” for busy days</li>
         </ul>
-      </article>
+      </section>
 
-      <article class="card">
-        <h2 class="card__title">2 · Smart Shopping List</h2>
-        <p class="card__body">
-          Built from recipes + pantry + store prices (later, the AI engine will compare stores you care about).
-        </p>
-        <ul class="card-list">
-          <li>Flags lower-sodium products where available</li>
-          <li>Groups by store aisle (produce, dairy, frozen, etc.)</li>
-          <li>Shows estimated total and “cheapest combo” scenario</li>
+      <section class="card card--section">
+        <h2 class="card__title">2 • Grocery & Pantry Snapshot</h2>
+        <ul class="card__list">
+          <li>Smart grocery list sorted by aisle / store section</li>
+          <li>Highlights which items are already in your pantry</li>
+          <li>Flags higher-sodium “watch items” with simple swaps</li>
         </ul>
-      </article>
+      </section>
 
-      <article class="card">
-        <h2 class="card__title">3 · Movement & Metrics</h2>
-        <p class="card__body">
-          Gentle, sustainable movement stack designed for beginners, with room to level up later.
+      <section class="card card--section">
+        <h2 class="card__title">3 • Movement Stack</h2>
+        <p class="card__subtitle">
+          Your daily low-impact movement “stack,” tuned to your current baseline.
         </p>
-        <ul class="card-list">
-          <li>Daily stack: Radio Taiso, Tai Chi, and walking</li>
-          <li>Tracks calories burned vs. calories eaten (prototype only)</li>
-          <li>Trend lines for weight, sodium, and overall energy</li>
+        <ul class="card__list">
+          <li>Radio Taiso and Tai Chi blocks</li>
+          <li>Step target calibrated to your existing habits</li>
+          <li>Weekly movement total & streak tracker (coming in full app)</li>
         </ul>
-      </article>
+      </section>
     </section>
+
+    <aside class="dashboard__sidebar">
+      <section class="card card--metrics">
+        <h2 class="card__title">At-a-glance metrics</h2>
+        <ul class="metrics">
+          <li class="metrics__item">
+            <span class="metrics__label">Avg daily calories</span>
+            <span class="metrics__value">2,180</span>
+            <span class="metrics__pill metrics__pill--ok">On target</span>
+          </li>
+          <li class="metrics__item">
+            <span class="metrics__label">Avg daily sodium</span>
+            <span class="metrics__value">1,950 mg</span>
+            <span class="metrics__pill metrics__pill--good">Below goal</span>
+          </li>
+          <li class="metrics__item">
+            <span class="metrics__label">Weekly food spend</span>
+            <span class="metrics__value">$73.40</span>
+            <span class="metrics__pill metrics__pill--ok">Under budget</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card card--note">
+        <h2 class="card__title">What this prototype does</h2>
+        <ul class="card__list card__list--compact">
+          <li>Shows the layout & flow of your future dashboard</li>
+          <li>Allows you to click through navigation & onboarding</li>
+          <li>Uses fixed example numbers (no real data yet)</li>
+        </ul>
+        <p class="card__subtitle card__subtitle--small">
+          In the real app, these tiles will update from your AI-generated weekly report and your saved history.
+        </p>
+      </section>
+    </aside>
   </main>
 
   <footer class="site-footer">
-    <p>Prototype interface – nothing here is medical advice. Consult your doctor before making changes.</p>
+    <p class="site-footer__text">
+      Prototype only. No health data stored. Not medical advice.
+    </p>
   </footer>
 </body>
 </html>
