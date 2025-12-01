@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Create account – TKM VitalMetric</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="app-header-left">
+        <div class="brand-icon">
+          <img src="assets/tkm-logo.png" alt="TKM VitalMetric logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+          <div class="brand-icon-fallback" style="display:none;">TKM</div>
+        </div>
+        <div>
+          <div class="app-title-main">TKM VITALMETRIC V1</div>
+          <div class="app-title-sub">Dietary • Exercise • Budget • Metrics (AI-Guided)</div>
+        </div>
+      </div>
+      <div class="app-header-right">
+        <button class="top-nav-button ghost" onclick="location.href='index.html'">
+          ⬅ Back to overview
+        </button>
+        <button class="top-nav-button primary" onclick="location.href='login.html'">
+          Sign in
+        </button>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <div class="page-width page-centered">
+        <section class="card">
+          <h1 class="card-title">Create your TKM VitalMetric account</h1>
+          <p class="card-subtitle">
+            In the full version, this will store your plans, pantry, and progress. For now, it routes you into the
+            onboarding preview.
+          </p>
+
+          <form class="form-grid" onsubmit="return goToOnboarding(event);">
+            <div class="form-row-inline">
+              <div>
+                <label class="label" for="signup-first">First name</label>
+                <input class="input" id="signup-first" type="text" required />
+              </div>
+              <div>
+                <label class="label" for="signup-last">Last name</label>
+                <input class="input" id="signup-last" type="text" required />
+              </div>
+            </div>
+
+            <div>
+              <label class="label" for="signup-email">Email</label>
+              <input class="input" id="signup-email" type="email" required />
+            </div>
+
+            <div>
+              <label class="label" for="signup-password">Password</label>
+              <input class="input" id="signup-password" type="password" required />
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-primary">Continue to onboarding &nbsp;→</button>
+              <a href="login.html" class="link-inline">Already have an account? Sign in</a>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      TKM VitalMetric V1 • Account creation is visual only until backend is connected.
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
