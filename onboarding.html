@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Start Your Weekly Plan – TKM VitalMetric Wellness</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Prototype onboarding for TKM VitalMetric Wellness – set your weekly calories, budget, and dates." />
+  <meta name="description" content="Full onboarding wizard for TKM VitalMetric Wellness – profile, goals, budget, sodium, and cooking context." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -46,117 +46,441 @@
     <main class="page-main">
       <div class="page-inner">
         <div class="badge-prototype">
-          Prototype · UI only · your answers are not saved
+          Prototype · UI only · your answers are not saved to a server
         </div>
 
         <section class="form-shell" aria-labelledby="onboarding-title">
           <div class="form-card">
             <header class="card-header">
               <h1 class="form-title" id="onboarding-title">Start Your Weekly Plan</h1>
-              <p class="form-subtitle">
-                Set a simple target for this week so you can preview what your “mission control”
-                dashboard could look like.
+              <p class="form-subtitle" id="onboarding-step-label">
+                Step 1 of 4 · Welcome
               </p>
             </header>
 
             <form id="onboarding-form" autocomplete="off">
-              <div class="form-grid">
-                <!-- Name -->
-                <div class="form-row">
-                  <label for="name" class="form-label">Your name (optional)</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    class="form-input"
-                    placeholder="Todd Myers"
-                  />
+              <!-- ========== STEP 0 – Welcome & Consent ========== -->
+              <div class="onboarding-step" data-step-label="Welcome & consent">
+                <div class="form-grid">
+                  <div class="form-row">
+                    <p class="form-label">
+                      Welcome to <strong>TKM VitalMetric Wellness</strong>.
+                    </p>
+                    <p class="form-hint">
+                      We’ll ask about your food preferences, pantry, budget, sodium goals, and
+                      movement habits so we can build a realistic weekly plan. This prototype
+                      only runs in your browser – nothing is sent to a real database yet.
+                    </p>
+                  </div>
+
+                  <div class="form-row">
+                    <label class="form-label">
+                      <input
+                        type="checkbox"
+                        id="consent"
+                        name="consent"
+                        required
+                        style="margin-right: 6px;"
+                      />
+                      I understand this is a prototype and not medical advice.
+                    </label>
+                  </div>
+
+                  <div class="form-row">
+                    <span class="form-label">What’s your main goal right now?</span>
+                    <div>
+                      <label class="form-label">
+                        <input type="radio" name="goalMain" value="Weight loss" />
+                        Weight loss
+                      </label><br />
+                      <label class="form-label">
+                        <input type="radio" name="goalMain" value="Weight maintenance" />
+                        Weight maintenance
+                      </label><br />
+                      <label class="form-label">
+                        <input
+                          type="radio"
+                          name="goalMain"
+                          value="Improve blood pressure / sodium control"
+                        />
+                        Improve blood pressure / sodium control
+                      </label><br />
+                      <label class="form-label">
+                        <input
+                          type="radio"
+                          name="goalMain"
+                          value="Better organization & budget"
+                        />
+                        Better organization & budget
+                      </label><br />
+                      <label class="form-label">
+                        <input type="radio" name="goalMain" value="Other" />
+                        Other (explain)
+                      </label>
+                    </div>
+                    <input
+                      type="text"
+                      id="goalMainOther"
+                      name="goalMainOther"
+                      class="form-input"
+                      placeholder="Describe your main goal"
+                    />
+                  </div>
                 </div>
 
-                <!-- Start date -->
-                <div class="form-row">
-                  <label for="start-date" class="form-label">Plan start date</label>
-                  <input
-                    type="date"
-                    id="start-date"
-                    name="startDate"
-                    class="form-input"
-                  />
-                </div>
-
-                <!-- End date -->
-                <div class="form-row">
-                  <label for="end-date" class="form-label">Plan end date</label>
-                  <input
-                    type="date"
-                    id="end-date"
-                    name="endDate"
-                    class="form-input"
-                  />
-                </div>
-
-                <!-- Daily calories -->
-                <div class="form-row">
-                  <label for="calories" class="form-label">Daily calorie target</label>
-                  <input
-                    type="number"
-                    id="calories"
-                    name="calories"
-                    class="form-input"
-                    inputmode="numeric"
-                    min="1200"
-                    max="5000"
-                    step="50"
-                    value="2200"
-                  />
-                </div>
-
-                <!-- Weekly budget -->
-                <div class="form-row">
-                  <label for="budget" class="form-label">Weekly food budget (USD)</label>
-                  <input
-                    type="number"
-                    id="budget"
-                    name="budget"
-                    class="form-input"
-                    inputmode="numeric"
-                    min="0"
-                    step="1"
-                    value="75"
-                  />
+                <div class="onboarding-nav">
+                  <button type="button" class="btn btn-primary onboarding-next">
+                    Next
+                  </button>
                 </div>
               </div>
 
-              <button type="submit" class="btn btn-primary" id="onboarding-continue">
-                Continue to demo dashboard
-              </button>
+              <!-- ========== STEP 1 – Basic Profile & Goals ========== -->
+              <div class="onboarding-step" data-step-label="Basic profile & goals">
+                <div class="form-grid">
+                  <div class="form-row">
+                    <label for="name" class="form-label">What should we call you?</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      class="form-input"
+                      placeholder="Todd Myers"
+                    />
+                  </div>
 
-              <p class="form-footer-text">
-                This prototype simulates what will eventually become a full AI-generated weekly report.
-                In the real app, your 7-day free trial would start here and continue at
-                <strong>$9.99/month</strong> after that. For now, it simply sends you to a demo dashboard.
-              </p>
-            </form>
-          </div>
-        </section>
-      </div>
-    </main>
+                  <div class="form-row">
+                    <label for="age" class="form-label">Age (optional)</label>
+                    <input
+                      type="number"
+                      id="age"
+                      name="age"
+                      class="form-input"
+                      min="10"
+                      max="120"
+                      inputmode="numeric"
+                    />
+                  </div>
 
-    <!-- ================= Footer ================= -->
-    <footer class="site-footer">
-      <div class="site-footer-inner">
-        <p class="footer-disclaimer">
-          This page is part of a concept prototype for TKM VitalMetric Wellness.
-          It does not provide medical advice, diagnosis, or treatment.
-        </p>
-        <p class="footer-meta">
-          Visual demo only · Your inputs on this page are not stored or transmitted and are used
-          for front-end demonstration purposes only.
-        </p>
-      </div>
-    </footer>
-  </div>
+                  <div class="form-row">
+                    <label for="height" class="form-label">Height (optional)</label>
+                    <input
+                      type="text"
+                      id="height"
+                      name="height"
+                      class="form-input"
+                      placeholder="e.g., 5'10&quot; or 178 cm"
+                    />
+                  </div>
 
-  <script src="app.js"></script>
-</body>
-</html>
+                  <div class="form-row">
+                    <label for="weight" class="form-label">Current weight (optional)</label>
+                    <input
+                      type="number"
+                      id="weight"
+                      name="weight"
+                      class="form-input"
+                      inputmode="numeric"
+                    />
+                  </div>
+
+                  <div class="form-row">
+                    <label for="targetOutcome" class="form-label">
+                      Target weight or main health outcome (optional)
+                    </label>
+                    <input
+                      type="text"
+                      id="targetOutcome"
+                      name="targetOutcome"
+                      class="form-input"
+                      placeholder="e.g., 20 lbs down, better BP, more energy"
+                    />
+                  </div>
+
+                  <div class="form-row">
+                    <span class="form-label">How quickly are you hoping to see progress?</span>
+                    <div>
+                      <label class="form-label">
+                        <input
+                          type="radio"
+                          name="timeframe"
+                          value="Slow and steady (6+ months)"
+                        />
+                        Slow and steady (6+ months)
+                      </label><br />
+                      <label class="form-label">
+                        <input
+                          type="radio"
+                          name="timeframe"
+                          value="Moderate (3–6 months)"
+                        />
+                        Moderate (3–6 months)
+                      </label><br />
+                      <label class="form-label">
+                        <input
+                          type="radio"
+                          name="timeframe"
+                          value="Faster (1–3 months)"
+                        />
+                        Faster (1–3 months)
+                      </label><br />
+                      <label class="form-label">
+                        <input
+                          type="radio"
+                          name="timeframe"
+                          value="Not sure / just starting"
+                        />
+                        Not sure / just starting
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <label for="weeklyLoss" class="form-label">
+                      If weight loss is a goal, how many pounds per week would you like to aim for?
+                      (optional)
+                    </label>
+                    <input
+                      type="number"
+                      id="weeklyLoss"
+                      name="weeklyLoss"
+                      class="form-input"
+                      min="0.5"
+                      max="3"
+                      step="0.1"
+                      placeholder="e.g., 1.5"
+                    />
+                  </div>
+                </div>
+
+                <div class="onboarding-nav">
+                  <button type="button" class="btn btn-secondary onboarding-prev">
+                    Back
+                  </button>
+                  <button type="button" class="btn btn-primary onboarding-next">
+                    Next
+                  </button>
+                </div>
+              </div>
+
+              <!-- ========== STEP 2 – Plan Settings (Dates, Calories, Budget, Sodium) ========== -->
+              <div class="onboarding-step" data-step-label="Plan settings">
+                <div class="form-grid">
+                  <div class="form-row">
+                    <label class="form-label">Plan date range</label>
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                      <div style="flex: 1 1 130px;">
+                        <label for="start-date" class="form-label">Start date</label>
+                        <input
+                          type="date"
+                          id="start-date"
+                          name="startDate"
+                          class="form-input"
+                        />
+                      </div>
+                      <div style="flex: 1 1 130px;">
+                        <label for="end-date" class="form-label">End date</label>
+                        <input
+                          type="date"
+                          id="end-date"
+                          name="endDate"
+                          class="form-input"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <span class="form-label">
+                      Which meals/snacks should we plan each day?
+                    </span>
+                    <div>
+                      <label class="form-label">
+                        <input type="checkbox" name="mealsPlanned" value="Breakfast" checked />
+                        Breakfast
+                      </label><br />
+                      <label class="form-label">
+                        <input type="checkbox" name="mealsPlanned" value="Lunch" checked />
+                        Lunch
+                      </label><br />
+                      <label class="form-label">
+                        <input type="checkbox" name="mealsPlanned" value="Dinner" checked />
+                        Dinner
+                      </label><br />
+                      <label class="form-label">
+                        <input type="checkbox" name="mealsPlanned" value="Morning snack" />
+                        Morning snack
+                      </label><br />
+                      <label class="form-label">
+                        <input type="checkbox" name="mealsPlanned" value="Afternoon snack" />
+                        Afternoon snack
+                      </label><br />
+                      <label class="form-label">
+                        <input type="checkbox" name="mealsPlanned" value="Evening snack" />
+                        Evening snack
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <label for="calories" class="form-label">
+                      Typical daily calorie target (approx.)
+                    </label>
+                    <input
+                      type="number"
+                      id="calories"
+                      name="calories"
+                      class="form-input"
+                      inputmode="numeric"
+                      min="1200"
+                      max="5000"
+                      step="50"
+                      value="2200"
+                    />
+                  </div>
+
+                  <div class="form-row">
+                    <label for="budget" class="form-label">
+                      Weekly food budget (USD)
+                    </label>
+                    <input
+                      type="number"
+                      id="budget"
+                      name="budget"
+                      class="form-input"
+                      inputmode="numeric"
+                      min="0"
+                      step="1"
+                      value="75"
+                    />
+                  </div>
+
+                  <div class="form-row">
+                    <label for="budgetStrictness" class="form-label">
+                      How important is staying under budget?
+                    </label>
+                    <input
+                      type="range"
+                      id="budgetStrictness"
+                      name="budgetStrictness"
+                      min="1"
+                      max="5"
+                      step="1"
+                      value="3"
+                      class="form-input"
+                    />
+                    <p class="form-hint">
+                      1 = not strict at all · 5 = very strict (we’ll lean hard on pantry and sales).
+                    </p>
+                  </div>
+
+                  <div class="form-row">
+                    <span class="form-label">
+                      How aggressive should we be with sodium reduction?
+                    </span>
+                    <div>
+                      <label class="form-label">
+                        <input
+                          type="radio"
+                          name="sodiumFocus"
+                          value="Normal / no special focus"
+                        />
+                        Normal / no special focus
+                      </label><br />
+                      <label class="form-label">
+                        <input type="radio" name="sodiumFocus" value="Mild reduction" />
+                        Mild reduction
+                      </label><br />
+                      <label class="form-label">
+                        <input type="radio" name="sodiumFocus" value="Moderate reduction" />
+                        Moderate reduction
+                      </label><br />
+                      <label class="form-label">
+                        <input
+                          type="radio"
+                          name="sodiumFocus"
+                          value="Aggressive reduction (priority)"
+                          checked
+                        />
+                        Aggressive reduction (priority)
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <span class="form-label">
+                      Are there other things you’d like us to focus on?
+                    </span>
+                    <div>
+                      <label class="form-label">
+                        <input type="checkbox" name="otherFocus" value="Lower added sugar" />
+                        Lower added sugar
+                      </label><br />
+                      <label class="form-label">
+                        <input type="checkbox" name="otherFocus" value="More fiber" />
+                        More fiber
+                      </label><br />
+                      <label class="form-label">
+                        <input type="checkbox" name="otherFocus" value="Higher protein" />
+                        Higher protein
+                      </label><br />
+                      <label class="form-label">
+                        <input type="checkbox" name="otherFocus" value="Lower saturated fat" />
+                        Lower saturated fat
+                      </label><br />
+                      <label class="form-label">
+                        <input
+                          type="checkbox"
+                          name="otherFocus"
+                          value="More fruits & vegetables"
+                        />
+                        More fruits &amp; vegetables
+                      </label><br />
+                      <label class="form-label">
+                        <input type="checkbox" name="otherFocus" value="None / not sure" />
+                        None of these / not sure
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="onboarding-nav">
+                  <button type="button" class="btn btn-secondary onboarding-prev">
+                    Back
+                  </button>
+                  <button type="button" class="btn btn-primary onboarding-next">
+                    Next
+                  </button>
+                </div>
+              </div>
+
+              <!-- ========== STEP 3 – Cooking Context & Kitchen Setup ========== -->
+              <div class="onboarding-step" data-step-label="Cooking context & kitchen">
+                <div class="form-grid">
+                  <div class="form-row">
+                    <label for="householdSize" class="form-label">
+                      How many people are you planning for (including you)?
+                    </label>
+                    <input
+                      type="number"
+                      id="householdSize"
+                      name="householdSize"
+                      class="form-input"
+                      min="1"
+                      max="10"
+                      inputmode="numeric"
+                      value="1"
+                    />
+                  </div>
+
+                  <div class="form-row">
+                    <span class="form-label">How comfortable are you in the kitchen?</span>
+                    <div>
+                      <label class="form-label">
+                        <input
+                          type="radio"
+                          name="cookingSkill"
+                          value="Very beginner"
+                        />
+                        1 – Very beginner (need simple instructions)
+                      </label><
