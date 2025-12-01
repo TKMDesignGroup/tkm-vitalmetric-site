@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign in – TKM VitalMetric</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="app-header-left">
+        <div class="brand-icon">
+          <img src="assets/tkm-logo.png" alt="TKM VitalMetric logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+          <div class="brand-icon-fallback" style="display:none;">TKM</div>
+        </div>
+        <div>
+          <div class="app-title-main">TKM VITALMETRIC V1</div>
+          <div class="app-title-sub">Dietary • Exercise • Budget • Metrics (AI-Guided)</div>
+        </div>
+      </div>
+      <div class="app-header-right">
+        <button class="top-nav-button ghost" onclick="location.href='index.html'">
+          ⬅ Back to overview
+        </button>
+        <button class="top-nav-button primary" onclick="location.href='signup.html'">
+          Create account
+        </button>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <div class="page-width page-centered">
+        <section class="card">
+          <h1 class="card-title">Sign in</h1>
+          <p class="card-subtitle">
+            In the future, this will connect to real authentication. For now, it’s a visual preview of the sign-in flow.
+          </p>
+
+          <form class="form-grid" onsubmit="return goToDashboard(event);">
+            <div>
+              <label class="label" for="login-email">Email</label>
+              <input class="input" id="login-email" type="email" required />
+            </div>
+
+            <div>
+              <label class="label" for="login-password">Password</label>
+              <input class="input" id="login-password" type="password" required />
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-primary">Sign in &nbsp;→</button>
+              <a href="signup.html" class="link-inline">Don’t have an account? Create one</a>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      TKM VitalMetric V1 • Auth screens are UI previews only for now.
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
