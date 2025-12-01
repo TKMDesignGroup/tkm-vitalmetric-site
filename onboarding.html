@@ -1,31 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Onboarding • TKM</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Onboarding • TKM VitalMetric</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="app app--onboarding">
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="app-header__brand">
+          <a href="index.html" class="logo-link">
+            <img src="tkm-logo.png" alt="TKM VitalMetric logo" class="logo" />
+            <span class="logo-text">TKM VitalMetric</span>
+          </a>
+        </div>
+        <nav class="app-header__nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="login.html" class="nav-link">Sign in</a>
+        </nav>
+      </header>
 
-<body>
+      <main class="app-main app-main--centered">
+        <section class="onboarding">
+          <div class="onboarding__intro">
+            <h1 class="page-title">Start Your Plan</h1>
+            <p class="page-subtitle">Tell us about your week</p>
+          </div>
 
-<header class="hero small-hero">
-    <h1 class="hero-title">Start Your Plan</h1>
-    <p class="hero-subtitle">Tell us about your week</p>
-</header>
+          <div class="card card--elevated onboarding-card">
+            <h2 class="card-title">Basic Info</h2>
 
-<section class="form-container">
-    <h2>Basic Info</h2>
+            <!-- IMPORTANT: this ID must match app.js -->
+            <form id="onboardingForm" class="form form--stacked">
+              <div class="form-group">
+                <label for="userName">Name</label>
+                <input
+                  id="userName"
+                  name="userName"
+                  type="text"
+                  class="input"
+                  placeholder="Your name"
+                  value="Todd Myers"
+                  required
+                />
+              </div>
 
-    <input class="input-field" type="text" placeholder="Your Name">
-    <input class="input-field" type="date" placeholder="Week Start">
-    <input class="input-field" type="date" placeholder="Week End">
+              <div class="form-row form-row--two">
+                <div class="form-group">
+                  <label for="startDate">Plan start</label>
+                  <input
+                    id="startDate"
+                    name="startDate"
+                    type="date"
+                    class="input"
+                    required
+                  />
+                </div>
 
-    <input class="input-field" type="number" placeholder="Daily Calories (ex: 2200)">
-    <input class="input-field" type="number" placeholder="Budget for Week (ex: 75)">
+                <div class="form-group">
+                  <label for="endDate">Plan end</label>
+                  <input
+                    id="endDate"
+                    name="endDate"
+                    type="date"
+                    class="input"
+                    required
+                  />
+                </div>
+              </div>
 
-    <button>Continue</button>
-</section>
+              <div class="form-row form-row--two">
+                <div class="form-group">
+                  <label for="calorieTarget">Daily calories</label>
+                  <input
+                    id="calorieTarget"
+                    name="calorieTarget"
+                    type="number"
+                    class="input"
+                    placeholder="e.g. 2200"
+                    required
+                  />
+                </div>
 
-</body>
+                <div class="form-group">
+                  <label for="weeklyBudget">Weekly food budget ($)</label>
+                  <input
+                    id="weeklyBudget"
+                    name="weeklyBudget"
+                    type="number"
+                    class="input"
+                    placeholder="e.g. 80"
+                    required
+                  />
+                </div>
+              </div>
+
+              <button type="submit" class="button button--primary button--full">
+                Continue
+              </button>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Wire up navigation + demo behavior -->
+    <script src="app.js"></script>
+  </body>
 </html>
