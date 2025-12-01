@@ -2,85 +2,161 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Start Your Plan – TKM VitalMetric</title>
+  <title>Start Your Weekly Plan – TKM VitalMetric Wellness</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Prototype onboarding for TKM VitalMetric Wellness – set your weekly calories, budget, and dates." />
   <link rel="stylesheet" href="style.css" />
-  <script defer src="app.js"></script>
 </head>
-<body class="page">
-  <header class="site-header">
-    <div class="site-header__left">
-      <a href="index.html" class="brand">
-        <img src="assets/TKM-logo-final.png" alt="TKM VitalMetric Logo" class="brand__logo" />
-        <div class="brand__text">
-          <span class="brand__name">TKM VitalMetric</span>
-          <span class="brand__tagline">Tell us about your week</span>
+<body>
+  <div class="page">
+    <!-- ================= Header ================= -->
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a href="index.html" class="brand" aria-label="TKM VitalMetric Wellness home">
+          <div class="brand-logo-wrap">
+            <img
+              src="assets/tkm-vitalmetric-logo.png"
+              alt="TKM VitalMetric Wellness logo"
+              class="brand-logo"
+            />
+          </div>
+          <div class="brand-text">
+            <div class="brand-title">TKM VitalMetric Wellness</div>
+            <div class="brand-subtitle">Weekly coaching · food · movement</div>
+          </div>
+        </a>
+
+        <div class="header-right">
+          <nav class="nav" aria-label="Main navigation">
+            <div class="nav-links">
+              <a href="index.html" class="nav-link">Home</a>
+              <a href="onboarding.html" class="nav-link">Start Plan</a>
+              <a href="dashboard.html" class="nav-link">Demo Dashboard</a>
+              <a href="login.html" class="nav-link nav-link-primary">Sign In</a>
+            </div>
+          </nav>
+          <div class="header-offer">
+            7-day free trial · then $9.99/mo
+          </div>
         </div>
-      </a>
-    </div>
-    <nav class="site-header__nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="login.html" class="nav-link">Sign in</a>
-    </nav>
-  </header>
+      </div>
+    </header>
 
-  <main class="centered">
-    <section class="card card--onboarding">
-      <header class="card__header">
-        <p class="card__eyebrow">Start Your Plan</p>
-        <h1 class="card__title">Tell us about your week</h1>
-      </header>
+    <!-- ================= Main ================= -->
+    <main class="page-main">
+      <div class="page-inner">
+        <div class="badge-prototype">
+          Prototype · UI only · your answers are not saved
+        </div>
 
-      <form class="form" id="onboarding-form">
-        <fieldset class="form__fieldset">
-          <legend class="form__legend">Basic Info</legend>
+        <section class="form-shell" aria-labelledby="onboarding-title">
+          <div class="form-card">
+            <header class="card-header">
+              <h1 class="form-title" id="onboarding-title">Start Your Weekly Plan</h1>
+              <p class="form-subtitle">
+                Set a simple target for this week so you can preview what your “mission control”
+                dashboard could look like.
+              </p>
+            </header>
 
-          <label class="form__field">
-            <span class="form__label">Name</span>
-            <input type="text" class="form__input" value="Todd Myers" />
-          </label>
+            <form id="onboarding-form" autocomplete="off">
+              <div class="form-grid">
+                <!-- Name -->
+                <div class="form-row">
+                  <label for="name" class="form-label">Your name (optional)</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-input"
+                    placeholder="Todd Myers"
+                  />
+                </div>
 
-          <label class="form__field">
-            <span class="form__label">Plan start</span>
-            <input type="date" class="form__input" value="2025-12-01" />
-          </label>
+                <!-- Start date -->
+                <div class="form-row">
+                  <label for="start-date" class="form-label">Plan start date</label>
+                  <input
+                    type="date"
+                    id="start-date"
+                    name="startDate"
+                    class="form-input"
+                  />
+                </div>
 
-          <label class="form__field">
-            <span class="form__label">Plan end</span>
-            <input type="date" class="form__input" value="2025-12-07" />
-          </label>
+                <!-- End date -->
+                <div class="form-row">
+                  <label for="end-date" class="form-label">Plan end date</label>
+                  <input
+                    type="date"
+                    id="end-date"
+                    name="endDate"
+                    class="form-input"
+                  />
+                </div>
 
-          <label class="form__field">
-            <span class="form__label">Daily calories</span>
-            <input type="number" class="form__input" value="2200" />
-          </label>
+                <!-- Daily calories -->
+                <div class="form-row">
+                  <label for="calories" class="form-label">Daily calorie target</label>
+                  <input
+                    type="number"
+                    id="calories"
+                    name="calories"
+                    class="form-input"
+                    inputmode="numeric"
+                    min="1200"
+                    max="5000"
+                    step="50"
+                    value="2200"
+                  />
+                </div>
 
-          <label class="form__field">
-            <span class="form__label">Weekly food budget ($)</span>
-            <input type="number" class="form__input" value="80" />
-          </label>
-        </fieldset>
+                <!-- Weekly budget -->
+                <div class="form-row">
+                  <label for="budget" class="form-label">Weekly food budget (USD)</label>
+                  <input
+                    type="number"
+                    id="budget"
+                    name="budget"
+                    class="form-input"
+                    inputmode="numeric"
+                    min="0"
+                    step="1"
+                    value="75"
+                  />
+                </div>
+              </div>
 
-        <p class="card__subtitle card__subtitle--small">
-          In the full app, this step would feed into your AI-generated weekly report.  
-          For now, we’ll just jump to the <strong>demo dashboard</strong> so you can click around.
+              <button type="submit" class="btn btn-primary" id="onboarding-continue">
+                Continue to demo dashboard
+              </button>
+
+              <p class="form-footer-text">
+                This prototype simulates what will eventually become a full AI-generated weekly report.
+                In the real app, your 7-day free trial would start here and continue at
+                <strong>$9.99/month</strong> after that. For now, it simply sends you to a demo dashboard.
+              </p>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- ================= Footer ================= -->
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <p class="footer-disclaimer">
+          This page is part of a concept prototype for TKM VitalMetric Wellness.
+          It does not provide medical advice, diagnosis, or treatment.
         </p>
+        <p class="footer-meta">
+          Visual demo only · Your inputs on this page are not stored or transmitted and are used
+          for front-end demonstration purposes only.
+        </p>
+      </div>
+    </footer>
+  </div>
 
-        <button type="submit" class="btn btn--primary btn--full">
-          Continue to demo dashboard
-        </button>
-      </form>
-
-      <p class="card__hint">
-        Prototype only. No data is saved yet – this is just a visual walkthrough.
-      </p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p class="site-footer__text">
-      Prototype interface for TKM VitalMetric. Data shown is demo only and not medical advice.
-    </p>
-  </footer>
+  <script src="app.js"></script>
 </body>
 </html>
