@@ -2,64 +2,152 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Create account – TKM VitalMetric</title>
+  <title>Create Account – TKM VitalMetric Wellness</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Create a demo account in the TKM VitalMetric Wellness prototype (no real accounts created)." />
   <link rel="stylesheet" href="style.css" />
-  <script defer src="app.js"></script>
 </head>
-<body class="page page--auth">
-  <header class="site-header">
-    <div class="site-header__left">
-      <a href="index.html" class="brand">
-        <img src="assets/TKM-logo-final.png" alt="TKM VitalMetric Logo" class="brand__logo" />
-        <div class="brand__text">
-          <span class="brand__name">TKM VitalMetric</span>
-          <span class="brand__tagline">Weekly nutrition & movement planner</span>
+<body>
+  <div class="page">
+    <!-- ================= Header ================= -->
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a href="index.html" class="brand" aria-label="TKM VitalMetric Wellness home">
+          <div class="brand-logo-wrap">
+            <img
+              src="assets/tkm-vitalmetric-logo.png"
+              alt="TKM VitalMetric Wellness logo"
+              class="brand-logo"
+            />
+          </div>
+          <div class="brand-text">
+            <div class="brand-title">TKM VitalMetric Wellness</div>
+            <div class="brand-subtitle">Weekly coaching · food · movement</div>
+          </div>
+        </a>
+
+        <div class="header-right">
+          <nav class="nav" aria-label="Main navigation">
+            <div class="nav-links">
+              <a href="index.html" class="nav-link">Home</a>
+              <a href="onboarding.html" class="nav-link">Start Plan</a>
+              <a href="dashboard.html" class="nav-link">Demo Dashboard</a>
+              <a href="login.html" class="nav-link nav-link-primary">Sign In</a>
+            </div>
+          </nav>
+          <div class="header-offer">
+            7-day free trial · then $9.99/mo
+          </div>
         </div>
-      </a>
-    </div>
-    <nav class="site-header__nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="login.html" class="nav-link">Sign in</a>
-    </nav>
-  </header>
+      </div>
+    </header>
 
-  <main class="centered">
-    <section class="card card--auth">
-      <h1 class="card__title">Create your free account</h1>
-      <p class="card__subtitle">
-        In the full app, this would secure your plans and reports. For now, it jumps to the demo dashboard.
-      </p>
+    <!-- ================= Main ================= -->
+    <main class="page-main">
+      <div class="page-inner">
+        <div class="badge-prototype">
+          Prototype · UI only · no real accounts created
+        </div>
 
-      <form class="form" id="signup-form">
-        <label class="form__field">
-          <span class="form__label">Name</span>
-          <input type="text" class="form__input" placeholder="Todd Myers" required />
-        </label>
+        <section class="form-shell" aria-labelledby="signup-title">
+          <div class="form-card">
+            <header class="card-header">
+              <h1 class="form-title" id="signup-title">Create your account (demo)</h1>
+              <p class="form-subtitle">
+                Try out how sign-up could feel. This does not create a real account or charge you.
+              </p>
+            </header>
 
-        <label class="form__field">
-          <span class="form__label">Email</span>
-          <input type="email" class="form__input" placeholder="you@example.com" required />
-        </label>
+            <form id="signup-form" autocomplete="off">
+              <!-- Fake Google sign-up (demo only) -->
+              <div class="form-row" style="margin-bottom: 10px;">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  id="signup-google"
+                  style="width: 100%; justify-content: center;"
+                >
+                  Sign up with Google (demo only)
+                </button>
+              </div>
 
-        <label class="form__field">
-          <span class="form__label">Password</span>
-          <input type="password" class="form__input" placeholder="Create a password" required />
-        </label>
+              <p class="form-hint">
+                In the live app, this would connect to real Google authentication. Here it just
+                simulates success and takes you to the Weekly Snapshot dashboard.
+              </p>
 
-        <button type="submit" class="btn btn--primary btn--full">
-          Create account (demo)
-        </button>
-      </form>
+              <hr style="margin: 14px 0; border: none; border-top: 1px solid rgba(255,255,255,0.08);" />
 
-      <p class="card__hint">
-        Already have an account? <a href="login.html" class="link">Sign in</a>
-      </p>
-    </section>
-  </main>
+              <div class="form-grid">
+                <div class="form-row">
+                  <label for="signup-email" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    id="signup-email"
+                    name="email"
+                    class="form-input"
+                    placeholder="you@example.com"
+                    required
+                  />
+                </div>
 
-  <footer class="site-footer">
-    <p class="site-footer__text">Prototype only. No real accounts are created or stored.</p>
-  </footer>
+                <div class="form-row">
+                  <label for="signup-password" class="form-label">Password</label>
+                  <input
+                    type="password"
+                    id="signup-password"
+                    name="password"
+                    class="form-input"
+                    placeholder="Create any demo password"
+                    required
+                  />
+                </div>
+
+                <div class="form-row">
+                  <label for="signup-password-confirm" class="form-label">Confirm password</label>
+                  <input
+                    type="password"
+                    id="signup-password-confirm"
+                    name="passwordConfirm"
+                    class="form-input"
+                    placeholder="Re-type your demo password"
+                    required
+                  />
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 6px;">
+                Create account (demo only)
+              </button>
+
+              <p class="form-footer-text" id="signup-message">
+                Prototype only – this does not start a real 7-day trial or charge $9.99/month yet.
+              </p>
+
+              <p class="form-footer-text">
+                Already have a demo account? <a href="login.html">Sign in</a>.
+              </p>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- ================= Footer ================= -->
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <p class="footer-disclaimer">
+          This sign-up screen is part of a concept prototype for TKM VitalMetric Wellness.
+          It does not connect to a real authentication or billing system.
+        </p>
+        <p class="footer-meta">
+          Front-end only · Example 7-day free trial and $9.99/month pricing shown for demonstration
+          purposes only.
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
