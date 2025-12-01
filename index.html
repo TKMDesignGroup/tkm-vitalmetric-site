@@ -1,161 +1,461 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>TKM VitalMetric V.1 – Dietary & Exercise AI System</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="page">
-    <!-- Top bar -->
-    <header class="top-bar">
-      <div class="brand-block">
-        <img src="tkm-logo.png" alt="TKM VitalMetric logo" class="brand-logo" />
-        <div class="brand-text">
-          <h1>TKM VitalMetric V.1</h1>
-          <p>Dietary • Exercise • Budget • Metrics (AI-Guided)</p>
-        </div>
-      </div>
-      <div class="snapshot-pill">
-        Prototype · UI only · No login required
-      </div>
-    </header>
+/* ===== Reset & base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-    <!-- Main content -->
-    <main class="content-area">
-      <section class="hero-layout">
-        <div class="hero-left">
-          <h2 class="hero-title">
-            Design your nutrition & movement week like a pro coach.
-          </h2>
-          <p class="hero-subtitle">
-            TKM VitalMetric helps you plan
-            <span class="highlight">meals, sodium, budget, and movement</span>
-            for a full week, then turns it into a printable report you can
-            actually follow.
-          </p>
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #102a43;
+  background: #f3f6fb;
+}
 
-          <ul class="benefit-list">
-            <li>• Weekly meal plan with low-sodium, budget-friendly recipes</li>
-            <li>• Smart shopping list built from your pantry and store prices</li>
-            <li>• Movement stack (Radio Taiso, Tai Chi, walking) calibrated to you</li>
-            <li>• Dashboard view of calories, sodium, budget, and trends</li>
-          </ul>
+/* ===== Layout shell ===== */
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-          <div class="cta-row">
-            <a class="btn btn-primary" href="#mock-dashboard">
-              Preview weekly dashboard
-            </a>
-            <button class="btn btn-secondary" type="button">
-              Onboarding wizard (coming soon)
-            </button>
-          </div>
+/* ===== Top bar ===== */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 1.5rem;
+  background: linear-gradient(90deg, #045de9 0%, #09c6f9 100%);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
 
-          <p class="tiny-note">
-            This is a visual prototype only. The full AI report generator,
-            store comparison engine, and Stripe billing will be wired in later.
-          </p>
-        </div>
+.app-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
 
-        <div class="hero-right">
-          <div class="card snapshot-card" id="mock-dashboard">
-            <h3>Weekly Snapshot · Demo</h3>
-            <p class="card-subtitle">
-              Example of what your dashboard might show once a plan is generated.
-            </p>
+.brand-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff11;
+  border: 1px solid #ffffff40;
+  overflow: hidden;
+}
 
-            <div class="snapshot-grid">
-              <div class="snapshot-item">
-                <div class="label">Date range</div>
-                <div class="value">Dec 1 – Dec 7</div>
-              </div>
-              <div class="snapshot-item">
-                <div class="label">Calorie target</div>
-                <div class="value">2,200 kcal / day</div>
-              </div>
-              <div class="snapshot-item">
-                <div class="label">Sodium focus</div>
-                <div class="value">Aggressive reduction</div>
-              </div>
-              <div class="snapshot-item">
-                <div class="label">Weekly food budget</div>
-                <div class="value">$75.00 (example)</div>
-              </div>
-            </div>
+.brand-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
-            <div class="divider"></div>
+.app-title {
+  display: flex;
+  flex-direction: column;
+}
 
-            <ul class="stat-list">
-              <li>
-                <span class="stat-label">Planned days</span>
-                <span class="stat-value">7 meals + 3 snacks / day</span>
-              </li>
-              <li>
-                <span class="stat-label">Movement stack</span>
-                <span class="stat-value">Radio Taiso · Tai Chi · 2,500 steps</span>
-              </li>
-              <li>
-                <span class="stat-label">Report style</span>
-                <span class="stat-value">Printable multi-page PDF</span>
-              </li>
-            </ul>
+.app-title-main {
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  font-size: 0.95rem;
+}
 
-            <p class="card-footnote">
-              In the working app, this panel will be populated from your answers:
-              pantry, dislikes, exercise level, store ads, and your weekly goals.
-            </p>
-          </div>
-        </div>
-      </section>
+.app-title-sub {
+  font-size: 0.78rem;
+  opacity: 0.85;
+}
 
-      <!-- Lower cards row -->
-      <section class="dash-grid">
-        <article class="card dash-card">
-          <h3>1 · Weekly Meal Plan</h3>
-          <p class="card-subtitle">
-            Breakfast · Lunch · Dinner · 3 snacks per day.
-          </p>
-          <ul class="bullet-list">
-            <li>• Emphasis on lower-sodium choices vs. your old pattern</li>
-            <li>• Uses your pantry first to keep costs down</li>
-            <li>• Integrates “planned leftovers” to save time and money</li>
-          </ul>
-        </article>
+.app-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
 
-        <article class="card dash-card">
-          <h3>2 · Smart Shopping List</h3>
-          <p class="card-subtitle">
-            Built from recipes + pantry + store prices.
-          </p>
-          <ul class="bullet-list">
-            <li>• Flags low-sodium products where available</li>
-            <li>• Compares stores you care about (e.g., Aldi, Acme, Walmart)</li>
-            <li>• Shows estimated total and “cheapest combo” scenario</li>
-          </ul>
-        </article>
+.badge-pill {
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  background: #ffffff22;
+  border: 1px solid #ffffff55;
+}
 
-        <article class="card dash-card">
-          <h3>3 · Movement & Metrics</h3>
-          <p class="card-subtitle">
-            Gentle, sustainable movement + trend tracking.
-          </p>
-          <ul class="bullet-list">
-            <li>• Daily movement stack summarized in your report</li>
-            <li>• Tracks calories burned vs. calories eaten (prototype)</li>
-            <li>• Designed to work for beginners and higher-level plans later</li>
-          </ul>
-        </article>
-      </section>
-    </main>
+.top-nav-button {
+  font-size: 0.8rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
 
-    <footer class="site-footer">
-      <p>
-        TKM VitalMetric V.1 · Prototype interface created by Todd Myers using ChatGPT
-      </p>
-    </footer>
-  </div>
+.top-nav-button.primary {
+  background: #ffffff;
+  color: #045de9;
+  font-weight: 600;
+}
 
-  <script src="app.js"></script>
-</body>
-</html>
+.top-nav-button.ghost {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff55;
+}
+
+/* ===== Page container ===== */
+.app-main {
+  flex: 1;
+  padding: 1.5rem min(5vw, 2rem);
+}
+
+/* Constrain content */
+.page-width {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+/* ===== Landing page layout ===== */
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.hero-card,
+.panel-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1.25rem 1.4rem;
+  box-shadow:
+    0 12px 30px rgba(4, 93, 233, 0.08),
+    0 0 0 1px rgba(15, 23, 42, 0.04);
+}
+
+/* Hero text */
+.hero-eyebrow {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #3b82f6;
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+}
+
+.hero-title {
+  font-size: 1.45rem;
+  line-height: 1.35;
+  margin: 0 0 0.55rem;
+}
+
+.hero-subtitle {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-bottom: 0.75rem;
+}
+
+/* Feature bullets */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.feature-list li {
+  position: relative;
+  padding-left: 1.35rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+.feature-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #22c55e;
+  font-weight: 700;
+}
+
+/* Hero buttons */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 0.6rem;
+}
+
+.hero-button {
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+}
+
+.hero-button.primary {
+  background: #045de9;
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(4, 93, 233, 0.35);
+  font-weight: 600;
+}
+
+.hero-button.secondary {
+  background: #e5f0ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+/* Tiny helper text */
+.hero-footnote {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* ===== Snapshot panel (right column) ===== */
+.panel-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+}
+
+.panel-sub {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+}
+
+.snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin-bottom: 0.9rem;
+}
+
+.snapshot-item {
+  padding: 0.55rem 0.65rem;
+  border-radius: 0.75rem;
+  background: #f3f6ff;
+  border: 1px solid #e0e7ff;
+  font-size: 0.78rem;
+}
+
+.snapshot-label {
+  font-size: 0.72rem;
+  color: #6b7280;
+  margin-bottom: 0.1rem;
+}
+
+.snapshot-value {
+  font-weight: 600;
+}
+
+.snapshot-note {
+  font-size: 0.76rem;
+  color: #6b7280;
+}
+
+/* ===== Dashboard summary on landing page ===== */
+.dashboard-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.7rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: #e0f2fe;
+  color: #075985;
+}
+
+/* ===== Login / onboarding / dashboard common ===== */
+.main-layout-two {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.form-section-title {
+  font-size: 1.1rem;
+  margin: 0 0 0.4rem;
+}
+
+.form-section-sub {
+  font-size: 0.82rem;
+  color: #6b7280;
+  margin-bottom: 0.9rem;
+}
+
+/* Forms */
+.form-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1.1rem 1.3rem;
+  box-shadow:
+    0 12px 30px rgba(15, 23, 42, 0.08),
+    0 0 0 1px rgba(15, 23, 42, 0.04);
+}
+
+.input-group {
+  margin-bottom: 0.7rem;
+}
+
+.input-label {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+
+.input-control {
+  width: 100%;
+  padding: 0.45rem 0.55rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  font-size: 0.85rem;
+}
+
+.input-control:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 1px;
+  border-color: #2563eb;
+}
+
+/* Buttons generic */
+.btn {
+  font-size: 0.85rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.btn-outline {
+  background: #ffffff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+/* Social button */
+.btn-google {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+/* ===== Dashboard page ===== */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.kpi-card {
+  background: #ffffff;
+  border-radius: 0.9rem;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid #e5e7eb;
+  font-size: 0.78rem;
+}
+
+.kpi-label {
+  color: #6b7280;
+  margin-bottom: 0.15rem;
+}
+
+.kpi-value {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.kpi-tag {
+  font-size: 0.7rem;
+  color: #16a34a;
+}
+
+.dashboard-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.6fr);
+  gap: 0.9rem;
+}
+
+.list-section-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.bullet-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.8rem;
+  color: #4b5563;
+}
+
+.bullet-list li {
+  margin-bottom: 0.25rem;
+}
+
+/* ===== Footer ===== */
+.app-footer {
+  padding: 0.6rem 1.5rem;
+  text-align: center;
+  font-size: 0.74rem;
+  color: #6b7280;
+}
+
+/* ===== Responsive tweaks ===== */
+@media (max-width: 900px) {
+  .hero-layout,
+  .main-layout-two,
+  .dashboard-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  
+  .app-main {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .dashboard-mini-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+}
