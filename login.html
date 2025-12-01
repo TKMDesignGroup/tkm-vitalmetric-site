@@ -1,62 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Sign in · TKM VitalMetric</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="app.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login • TKM</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
-<body class="theme-dark">
-  <div class="page-shell page-auth">
-    <div class="page-glow"></div>
 
-    <header class="nav nav-compact">
-      <a href="index.html" class="nav-brand">
-        <div class="nav-logo-wrap">
-          <img src="assets/tkm-logo.png" alt="TKM VitalMetric logo" class="nav-logo" />
-        </div>
-        <div class="nav-title">
-          <span class="nav-title-main">TKM VitalMetric</span>
-          <span class="nav-title-sub">Sign in to continue</span>
-        </div>
-      </a>
-      <div class="nav-auth">
-        <span class="nav-inline-text">Need an account?</span>
-        <a href="signup.html" class="btn btn-primary btn-sm">Create account</a>
-      </div>
-    </header>
+<body>
 
-    <main class="auth-main">
-      <section class="auth-card card card-glass">
-        <h1 class="auth-title">Welcome back</h1>
-        <p class="auth-sub">
-          Use the demo sign-in to preview how your weekly dashboard will feel once the full AI engine is wired up.
-        </p>
+<section class="form-container">
+    <h2>Sign In</h2>
 
-        <form class="form" id="login-form">
-          <div class="form-field">
-            <label for="login-email">Email</label>
-            <input id="login-email" type="email" placeholder="you@example.com" required />
-          </div>
+    <input class="input-field" type="email" placeholder="Email address">
+    <input class="input-field" type="password" placeholder="Password">
 
-          <div class="form-field">
-            <label for="login-password">Password</label>
-            <input id="login-password" type="password" placeholder="••••••••" required />
-          </div>
+    <button>Sign In</button>
 
-          <div class="form-row">
-            <label class="checkbox">
-              <input type="checkbox" id="remember-me" />
-              <span>Remember me on this device</span>
-            </label>
-            <a href="#" class="link-inline disabled-link">Forgot password (demo only)</a>
-          </div>
+    <p style="margin-top: 14px; text-align:center;">
+        <a href="signup.html" style="color:#7bb7ff;">Create an account</a>
+    </p>
+</section>
 
-          <button type="submit" class="btn btn-lg btn-primary btn-full">
-            Sign in to demo
-          </button>
-
-          <p class="form-helper">
-            For this prototype, any email + password combination will “sign you in” and take you to the
-            <a href="
+</body>
+</html>
