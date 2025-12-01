@@ -8,15 +8,18 @@
     hydrateDashboardFromOnboarding();
   });
 
-  // ------------ Onboarding ------------
+  // ------------ Onboarding (wizard + save to localStorage) ------------
 
   function handleOnboarding() {
     var form = document.getElementById("onboarding-form");
     if (!form) return;
 
+    initOnboardingWizard(form);
+
     form.addEventListener("submit", function (event) {
       event.preventDefault();
 
+      // Read key fields we want to carry to the dashboard
       var name = (document.getElementById("name") || {}).value || "";
       var startDate = (document.getElementById("start-date") || {}).value || "";
       var endDate = (document.getElementById("end-date") || {}).value || "";
@@ -29,6 +32,7 @@
         endDate: endDate,
         calories: calories,
         budget: budget
+        // Later we can add more onboarding fields here as needed.
       };
 
       try {
@@ -37,9 +41,58 @@
         // If localStorage is not available, just ignore and continue
       }
 
-      // Simple inline message could be added here; for now just redirect
       window.location.href = "dashboard.html";
     });
+  }
+
+  function initOnboardingWizard(form) {
+    var steps = Array.prototype.slice.call(
+      form.querySelectorAll(".onboarding-step")
+    );
+    if (!steps.length) return;
+
+    var progressLabel = document.getElementById("onboarding-step-label");
+    var currentIndex = 0;
+
+    function updateView() {
+      steps.forEach(function (step, index) {
+        step.style.display = index === currentIndex ? "block" : "none";
+      });
+
+      if (progressLabel) {
+        var total = steps.length;
+        var label =
+          steps[currentIndex].getAttribute("data-step-label") || "Onboarding";
+        progressLabel.textContent =
+          "Step " + (currentIndex + 1) + " of " + total + " · " + label;
+      }
+    }
+
+    function go(delta) {
+      var next = currentIndex + delta;
+      if (next < 0 || next >= steps.length) return;
+      currentIndex = next;
+      updateView();
+    }
+
+    // Click handling for Next / Back buttons
+    form.addEventListener("click", function (event) {
+      var target = event.target;
+
+      if (target.closest(".onboarding-next")) {
+        event.preventDefault();
+        go(1);
+        return;
+      }
+
+      if (target.closest(".onboarding-prev")) {
+        event.preventDefault();
+        go(-1);
+        return;
+      }
+    });
+
+    updateView();
   }
 
   // ------------ Login (demo only) ------------
@@ -104,8 +157,7 @@
 
     form.addEventListener("submit", function (event) {
       event.preventDefault();
-
-      // You could add a simple "passwords match" check here; for now we skip real validation.
+      // We could check that passwords match here, but since it's a demo we just proceed.
       goToDashboardWithMessage(
         "Demo only – pretending to create an account and taking you to the Weekly Snapshot."
       );
@@ -120,7 +172,12 @@
     var snapshotBudget = document.getElementById("snapshot-budget");
     var dashboardTitle = document.getElementById("dashboard-title");
 
-    if (!snapshotDateRange && !snapshotCalories && !snapshotBudget && !dashboardTitle) {
+    if (
+      !snapshotDateRange &&
+      !snapshotCalories &&
+      !snapshotBudget &&
+      !dashboardTitle
+    ) {
       return; // Not on the dashboard page
     }
 
