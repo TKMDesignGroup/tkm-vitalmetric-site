@@ -1,83 +1,44 @@
-// ===== SIMPLE CLIENT-SIDE ROUTER FOR PROTOTYPE =====
+// app.js
+// Simple UI interactions for TKM VitalMetric prototype
 
-// Utility to show one panel and hide the rest
-function showPanel(id) {
-    document.querySelectorAll(".panel").forEach(p => p.style.display = "none");
-    document.getElementById(id).style.display = "block";
-    window.scrollTo(0, 0);
-}
+document.addEventListener("DOMContentLoaded", () => {
+  // Smooth scroll for any in-page links with data-scroll
+  document.querySelectorAll("[data-scroll]").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const targetId = btn.getAttribute("data-scroll");
+      const target = document.getElementById(targetId);
+      if (!target) return;
 
-// ===== BUTTON HANDLERS =====
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
 
-// Homepage → Login
-document.getElementById("btn-login").onclick = () => showPanel("login-panel");
+  // Add a subtle hover effect to main CTA buttons
+  document.querySelectorAll(".cta-button").forEach((btn) => {
+    btn.addEventListener("mouseenter", () => {
+      btn.classList.add("cta-button--hover");
+    });
+    btn.addEventListener("mouseleave", () => {
+      btn.classList.remove("cta-button--hover");
+    });
+  });
 
-// Homepage → Onboarding (if clicked before login)
-document.getElementById("btn-onboarding-from-home").onclick = () => {
-    alert("Please log in first!");
-    showPanel("login-panel");
-};
+  // Demo-only: fake login/signup handlers so forms feel alive
+  const demoForms = document.querySelectorAll("form[data-demo-form]");
+  demoForms.forEach((form) => {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-// Login → Dashboard (fake auth for now)
-document.getElementById("login-submit").onclick = (e) => {
-    e.preventDefault();
-    const email = document.getElementById("login-email").value.trim();
-    if (!email) {
-        alert("Enter an email to continue.");
-        return;
-    }
+      const type = form.getAttribute("data-demo-form"); // "login" or "signup" etc.
+      const message =
+        type === "signup"
+          ? "Demo only: your TKM VitalMetric account would be created here in the real app."
+          : type === "onboarding"
+          ? "Demo only: your answers would be saved and used to generate your weekly plan."
+          : "Demo only: in the real app you’d be signed in and taken to your dashboard.";
 
-    // Store fake session
-    localStorage.setItem("tkmUser", email);
-
-    // Update header state
-    document.getElementById("nav-user-email").textContent = email;
-    document.getElementById("nav-signed-out").style.display = "none";
-    document.getElementById("nav-signed-in").style.display = "flex";
-
-    showPanel("dashboard-panel");
-};
-
-// Create Account → Onboarding wizard (prototype)
-document.getElementById("create-submit").onclick = (e) => {
-    e.preventDefault();
-    const email = document.getElementById("create-email").value.trim();
-    if (!email) {
-        alert("Enter an email to continue.");
-        return;
-    }
-
-    localStorage.setItem("tkmUser", email);
-
-    document.getElementById("nav-user-email").textContent = email;
-    document.getElementById("nav-signed-out").style.display = "none";
-    document.getElementById("nav-signed-in").style.display = "flex";
-
-    showPanel("onboarding-panel");
-};
-
-// Onboarding “Continue to Dashboard”
-document.getElementById("onboarding-finish").onclick = () => {
-    showPanel("dashboard-panel");
-};
-
-// Sign out
-document.getElementById("nav-signout").onclick = () => {
-    localStorage.removeItem("tkmUser");
-    document.getElementById("nav-signed-out").style.display = "flex";
-    document.getElementById("nav-signed-in").style.display = "none";
-    showPanel("home-panel");
-};
-
-// ===== AUTO-LOGIN CHECK =====
-window.onload = () => {
-    const email = localStorage.getItem("tkmUser");
-    if (email) {
-        document.getElementById("nav-user-email").textContent = email;
-        document.getElementById("nav-signed-out").style.display = "none";
-        document.getElementById("nav-signed-in").style.display = "flex";
-        showPanel("dashboard-panel");
-    } else {
-        showPanel("home-panel");
-    }
-};
+      alert(message);
+    });
+  });
+});
