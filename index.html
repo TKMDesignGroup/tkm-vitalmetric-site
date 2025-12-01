@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TKM VitalMetric – Dietary & Exercise AI System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <!-- ===== Header / Top Bar ===== -->
+    <header class="app-header">
+      <div class="app-header-left">
+        <div class="brand-mark">
+          <img src="tkm-logo.png" alt="TKM VitalMetric logo" class="brand-logo" />
+          <div class="brand-text">
+            <span class="brand-name">TKM VitalMetric</span>
+            <span class="brand-tagline">Dietary &amp; Exercise AI System</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="app-header-right">
+        <span id="auth-status-text" class="status-pill status-pill--unsigned">
+          Not signed in
+        </span>
+        <div class="header-actions">
+          <button id="header-signin-btn" class="btn btn-ghost">
+            Sign In
+          </button>
+          <button id="header-create-btn" class="btn btn-primary btn-small">
+            Create Account
+          </button>
+          <button id="header-signout-btn" class="btn btn-ghost btn-small is-hidden">
+            Sign Out
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== Main Content ===== -->
+    <main class="main-layout">
+      <!-- Left column: auth forms -->
+      <div class="main-column main-column--left">
+        <!-- Sign in card -->
+        <section class="card card-auth" id="signin-card">
+          <h2 class="card-title">Welcome back</h2>
+          <p class="card-subtitle">
+            Sign in to access your TKM VitalMetric dashboard.
+          </p>
+
+          <form id="signin-form" class="form">
+            <div class="input-group">
+              <label for="signin-email">Email</label>
+              <input
+                type="email"
+                id="signin-email"
+                name="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="signin-password">Password</label>
+              <input
+                type="password"
+                id="signin-password"
+                name="password"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                required
+              />
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Sign In</button>
+
+              <button
+                type="button"
+                id="google-signin-btn"
+                class="btn btn-google"
+              >
+                Continue with Google (test)
+              </button>
+            </div>
+
+            <p class="form-helper">
+              For now, this is a prototype. Accounts are stored only in this
+              browser for testing.
+            </p>
+          </form>
+        </section>
+
+        <!-- Create account card -->
+        <section class="card card-auth" id="create-card">
+          <h2 class="card-title">Create your account</h2>
+          <p class="card-subtitle">
+            Set up your TKM VitalMetric profile so we can build plans around you.
+          </p>
+
+          <form id="create-form" class="form">
+            <div class="input-group">
+              <label for="create-name">Name</label>
+              <input
+                type="text"
+                id="create-name"
+                name="name"
+                placeholder="Your name"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="create-email">Email</label>
+              <input
+                type="email"
+                id="create-email"
+                name="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="create-password">Password</label>
+              <input
+                type="password"
+                id="create-password"
+                name="password"
+                placeholder="Create a password"
+                autocomplete="new-password"
+                required
+              />
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">
+                Create Account
+              </button>
+            </div>
+
+            <p class="form-helper">
+              This is a front-end prototype only. Passwords are not secure yet —
+              testing use only.
+            </p>
+          </form>
+        </section>
+      </div>
+
+      <!-- Right column: value + preview -->
+      <div class="main-column main-column--right">
+        <!-- What TKM does -->
+        <section class="card card-features">
+          <h2 class="card-title">What TKM VitalMetric will do for you</h2>
+          <ul class="feature-list">
+            <li>
+              <span class="checkmark">✔</span>
+              Budget-aware weekly meal planning
+            </li>
+            <li>
+              <span class="checkmark">✔</span>
+              Low-sodium, calorie-targeted meals
+            </li>
+            <li>
+              <span class="checkmark">✔</span>
+              Pantry-based smart shopping lists
+            </li>
+            <li>
+              <span class="checkmark">✔</span>
+              Tai Chi, Radio Taiso, &amp; low-impact movement stacks
+            </li>
+            <li>
+              <span class="checkmark">✔</span>
+              Printable weekly reports and dashboards
+            </li>
+          </ul>
+        </section>
+
+        <!-- Prototype preview -->
+        <section class="card card-preview">
+          <h2 class="card-title">Prototype preview</h2>
+          <p class="card-subtitle">
+            After you sign in, you’ll see a simple demo dashboard showing how
+            meal plans, movement goals, and weekly reports could look.
+          </p>
+
+          <div class="snapshot-grid">
+            <div class="snapshot-card">
+              <h3>This week’s calories</h3>
+              <p class="snapshot-value">1,800–2,000 / day</p>
+              <p class="snapshot-tag">With low-sodium focus</p>
+            </div>
+            <div class="snapshot-card">
+              <h3>Movement stack</h3>
+              <p class="snapshot-value">Tai Chi + Radio Taiso</p>
+              <p class="snapshot-tag">Light daily routine</p>
+            </div>
+            <div class="snapshot-card">
+              <h3>Smart shopping</h3>
+              <p class="snapshot-value">Pantry-aware lists</p>
+              <p class="snapshot-tag">Budget &amp; sodium friendly</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="app-footer">
+      <p>
+        Prototype only. Data is stored locally in your browser for testing.
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
