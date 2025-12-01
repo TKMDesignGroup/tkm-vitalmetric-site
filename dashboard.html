@@ -2,142 +2,207 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Dashboard – TKM VitalMetric</title>
+  <title>Weekly Snapshot – TKM VitalMetric Wellness</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Demo dashboard for TKM VitalMetric Wellness – Weekly Snapshot mission control view." />
   <link rel="stylesheet" href="style.css" />
-  <script defer src="app.js"></script>
 </head>
-<body class="page page--dashboard">
-  <header class="site-header">
-    <div class="site-header__left">
-      <a href="index.html" class="brand">
-        <img src="assets/TKM-logo-final.png" alt="TKM VitalMetric Logo" class="brand__logo" />
-        <div class="brand__text">
-          <span class="brand__name">TKM VitalMetric</span>
-          <span class="brand__tagline">Weekly Snapshot • Demo</span>
+<body>
+  <div class="page">
+    <!-- ================= Header ================= -->
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a href="index.html" class="brand" aria-label="TKM VitalMetric Wellness home">
+          <div class="brand-logo-wrap">
+            <img
+              src="assets/tkm-vitalmetric-logo.png"
+              alt="TKM VitalMetric Wellness logo"
+              class="brand-logo"
+            />
+          </div>
+          <div class="brand-text">
+            <div class="brand-title">TKM VitalMetric Wellness</div>
+            <div class="brand-subtitle">Weekly coaching · food · movement</div>
+          </div>
+        </a>
+
+        <div class="header-right">
+          <nav class="nav" aria-label="Main navigation">
+            <div class="nav-links">
+              <a href="index.html" class="nav-link">Home</a>
+              <a href="onboarding.html" class="nav-link">Start Plan</a>
+              <a href="dashboard.html" class="nav-link">Demo Dashboard</a>
+              <a href="login.html" class="nav-link nav-link-primary">Sign In</a>
+            </div>
+          </nav>
+          <div class="header-offer">
+            7-day free trial · then $9.99/mo
+          </div>
         </div>
-      </a>
-    </div>
-    <nav class="site-header__nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="onboarding.html" class="nav-link">Restart plan</a>
-      <a href="login.html" class="nav-link nav-link--primary">Sign in</a>
-    </nav>
-  </header>
-
-  <main class="dashboard">
-    <section class="dashboard__primary">
-      <div class="card card--snapshot">
-        <p class="card__eyebrow">Weekly Snapshot • Demo</p>
-        <h1 class="card__title">This is your “mission control” for the week.</h1>
-
-        <p class="card__subtitle">
-          All numbers here are example data. In the working app, this view would be generated from your onboarding
-          answers, pantry list, and exercise targets.
-        </p>
-
-        <dl class="snapshot">
-          <div class="snapshot__item">
-            <dt>Date range</dt>
-            <dd>Dec 1 – Dec 7</dd>
-          </div>
-          <div class="snapshot__item">
-            <dt>Daily calorie target</dt>
-            <dd>2,200 kcal / day</dd>
-          </div>
-          <div class="snapshot__item">
-            <dt>Sodium focus</dt>
-            <dd>Aggressive reduction</dd>
-          </div>
-          <div class="snapshot__item">
-            <dt>Weekly food budget</dt>
-            <dd>$75.00 (example)</dd>
-          </div>
-          <div class="snapshot__item">
-            <dt>Movement stack</dt>
-            <dd>Radio Taiso • Tai Chi • 2,500 steps</dd>
-          </div>
-          <div class="snapshot__item">
-            <dt>Report style</dt>
-            <dd>Printable multi-page PDF</dd>
-          </div>
-        </dl>
       </div>
+    </header>
 
-      <section class="card card--section">
-        <h2 class="card__title">1 • Weekly Meal Plan</h2>
-        <p class="card__subtitle">
-          Breakfast, Lunch, Dinner + 3 snacks per day, with planned leftovers to make weeknights easier.
+    <!-- ================= Main ================= -->
+    <main class="page-main">
+      <div class="page-inner">
+        <div class="badge-prototype">
+          Prototype · UI only · values below are sample data
+        </div>
+
+        <header class="dashboard-header-text">
+          <h1 id="dashboard-title">Weekly Snapshot – Mission Control</h1>
+          <p>
+            This is your one-screen rollup for the week: meals, sodium strategy, budget,
+            and movement – all in one place.
+          </p>
+        </header>
+
+        <section class="dashboard-shell" aria-labelledby="dashboard-title">
+          <div class="dashboard-grid">
+            <!-- Left: Main snapshot card -->
+            <div class="dashboard-main">
+              <div class="snapshot-card">
+                <div class="snapshot-inner">
+                  <header class="snapshot-header">
+                    <div class="snapshot-label">Weekly Snapshot · Demo</div>
+                    <div class="snapshot-chip">Sample values · Not medical advice</div>
+                  </header>
+
+                  <h2 class="snapshot-title">This is your mission control for the week.</h2>
+                  <p class="snapshot-subtitle">
+                    In the real app, this card would be generated from your onboarding answers,
+                    pantry list, and movement targets. For now, we’re using example values.
+                  </p>
+
+                  <div class="snapshot-rows">
+                    <div class="snapshot-row">
+                      <div class="snapshot-row-label">Date range</div>
+                      <div class="snapshot-row-value" id="snapshot-date-range">
+                        Dec 1 – Dec 7
+                      </div>
+                    </div>
+
+                    <div class="snapshot-row">
+                      <div class="snapshot-row-label">Calorie target</div>
+                      <div class="snapshot-row-value" id="snapshot-calories">
+                        2,200 kcal / day
+                      </div>
+                    </div>
+
+                    <div class="snapshot-row">
+                      <div class="snapshot-row-label">Sodium focus</div>
+                      <div class="snapshot-row-value">
+                        <span class="snapshot-tag" id="snapshot-sodium">
+                          Aggressive reduction
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="snapshot-row">
+                      <div class="snapshot-row-label">Weekly budget</div>
+                      <div class="snapshot-row-value" id="snapshot-budget">
+                        $75.00 (example)
+                      </div>
+                    </div>
+
+                    <div class="snapshot-row">
+                      <div class="snapshot-row-label">Movement stack</div>
+                      <div class="snapshot-row-value" id="snapshot-movement">
+                        Radio Taiso · Tai Chi · 2,500 steps
+                      </div>
+                    </div>
+
+                    <div class="snapshot-row">
+                      <div class="snapshot-row-label">Report style</div>
+                      <div class="snapshot-row-value" id="snapshot-report-style">
+                        Printable multi-page PDF
+                      </div>
+                    </div>
+                  </div>
+
+                  <p class="snapshot-footer-note">
+                    In the full product, tapping any row would take you to a deeper section of your
+                    weekly report – meals, sodium strategy, movement plan, or budget breakdown.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Info panels -->
+            <aside class="dashboard-side" aria-label="Weekly summary details">
+              <article class="info-panel">
+                <h2 class="info-panel-title">How meals are structured</h2>
+                <p class="info-panel-body">
+                  The goal is simple, repeatable meals that fit your week instead of fighting it:
+                </p>
+                <ul class="info-panel-list">
+                  <li>Breakfast anchors: eggs, oats, yogurt, or toast-based combos</li>
+                  <li>Lunches built from bowls, wraps, or leftovers</li>
+                  <li>Dinners drawn from a small set of “go-to” mains</li>
+                  <li>Snacks planned in (applesauce, crackers, light desserts)</li>
+                </ul>
+              </article>
+
+              <article class="info-panel">
+                <h2 class="info-panel-title">How sodium gets reduced</h2>
+                <p class="info-panel-body">
+                  The demo plan leans on swaps, not strict bans:
+                </p>
+                <ul class="info-panel-list">
+                  <li>Fewer canned soups and ultra-salty frozen meals</li>
+                  <li>More herbs, spice mixes, citrus, and vinegar instead of salt</li>
+                  <li>Higher-sodium meals paired with higher-activity days</li>
+                  <li>Room to adjust based on how your body responds</li>
+                </ul>
+              </article>
+
+              <article class="info-panel">
+                <h2 class="info-panel-title">Movement stack, baked in</h2>
+                <p class="info-panel-body">
+                  Light, realistic movement is slotted into your days by design:
+                </p>
+                <ul class="info-panel-list">
+                  <li>Daily Radio Taiso or similar warmup block</li>
+                  <li>Tai Chi sessions in calmer parts of the day</li>
+                  <li>Step goal centered around ~2,500 steps as a baseline</li>
+                  <li>Easy to scale up on days when you feel good</li>
+                </ul>
+              </article>
+
+              <article class="info-panel">
+                <h2 class="info-panel-title">Budget and real-life constraints</h2>
+                <p class="info-panel-body">
+                  The prototype assumes a weekly grocery budget like <strong>$75</strong> and
+                  makes choices around that:
+                </p>
+                <ul class="info-panel-list">
+                  <li>Start with pantry and freezer, then fill the gaps</li>
+                  <li>Use leftovers to stretch proteins and sides</li>
+                  <li>Reserve “flex” meals for store sales and specials</li>
+                  <li>Keep a printable list so grocery trips stay focused</li>
+                </ul>
+              </article>
+            </aside>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- ================= Footer ================= -->
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <p class="footer-disclaimer">
+          This Weekly Snapshot page is a concept prototype for TKM VitalMetric Wellness.
+          It is not medical advice and is not connected to any real tracking or coaching.
         </p>
-        <ul class="card__list">
-          <li>Emphasis on lower-sodium choices vs. your old pattern</li>
-          <li>Pantry-first planning to use what you already own</li>
-          <li>Flexible “swap options” for busy days</li>
-        </ul>
-      </section>
-
-      <section class="card card--section">
-        <h2 class="card__title">2 • Grocery & Pantry Snapshot</h2>
-        <ul class="card__list">
-          <li>Smart grocery list sorted by aisle / store section</li>
-          <li>Highlights which items are already in your pantry</li>
-          <li>Flags higher-sodium “watch items” with simple swaps</li>
-        </ul>
-      </section>
-
-      <section class="card card--section">
-        <h2 class="card__title">3 • Movement Stack</h2>
-        <p class="card__subtitle">
-          Your daily low-impact movement “stack,” tuned to your current baseline.
+        <p class="footer-meta">
+          Visual demo only · No accounts, payments, or databases are connected. All values shown
+          are example numbers for design and layout testing.
         </p>
-        <ul class="card__list">
-          <li>Radio Taiso and Tai Chi blocks</li>
-          <li>Step target calibrated to your existing habits</li>
-          <li>Weekly movement total & streak tracker (coming in full app)</li>
-        </ul>
-      </section>
-    </section>
+      </div>
+    </footer>
+  </div>
 
-    <aside class="dashboard__sidebar">
-      <section class="card card--metrics">
-        <h2 class="card__title">At-a-glance metrics</h2>
-        <ul class="metrics">
-          <li class="metrics__item">
-            <span class="metrics__label">Avg daily calories</span>
-            <span class="metrics__value">2,180</span>
-            <span class="metrics__pill metrics__pill--ok">On target</span>
-          </li>
-          <li class="metrics__item">
-            <span class="metrics__label">Avg daily sodium</span>
-            <span class="metrics__value">1,950 mg</span>
-            <span class="metrics__pill metrics__pill--good">Below goal</span>
-          </li>
-          <li class="metrics__item">
-            <span class="metrics__label">Weekly food spend</span>
-            <span class="metrics__value">$73.40</span>
-            <span class="metrics__pill metrics__pill--ok">Under budget</span>
-          </li>
-        </ul>
-      </section>
-
-      <section class="card card--note">
-        <h2 class="card__title">What this prototype does</h2>
-        <ul class="card__list card__list--compact">
-          <li>Shows the layout & flow of your future dashboard</li>
-          <li>Allows you to click through navigation & onboarding</li>
-          <li>Uses fixed example numbers (no real data yet)</li>
-        </ul>
-        <p class="card__subtitle card__subtitle--small">
-          In the real app, these tiles will update from your AI-generated weekly report and your saved history.
-        </p>
-      </section>
-    </aside>
-  </main>
-
-  <footer class="site-footer">
-    <p class="site-footer__text">
-      Prototype only. No health data stored. Not medical advice.
-    </p>
-  </footer>
+  <script src="app.js"></script>
 </body>
 </html>
