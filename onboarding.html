@@ -1,204 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Onboarding · TKM VitalMetric</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="app.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onboarding • TKM</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="theme-dark">
-  <div class="page-shell">
-    <div class="page-glow"></div>
 
-    <header class="nav">
-      <a href="index.html" class="nav-brand">
-        <div class="nav-logo-wrap">
-          <img src="assets/tkm-logo.png" alt="TKM VitalMetric logo" class="nav-logo" />
-        </div>
-        <div class="nav-title">
-          <span class="nav-title-main">TKM VitalMetric</span>
-          <span class="nav-title-sub">Onboarding wizard (prototype)</span>
-        </div>
-      </a>
+<body>
 
-      <nav class="nav-links">
-        <a href="index.html" class="nav-link">Overview</a>
-        <a href="dashboard.html" class="nav-link">Demo dashboard</a>
-        <a href="onboarding.html" class="nav-link nav-link-active">Onboarding</a>
-      </nav>
+<header class="hero small-hero">
+    <h1 class="hero-title">Start Your Plan</h1>
+    <p class="hero-subtitle">Tell us about your week</p>
+</header>
 
-      <div class="nav-auth">
-        <a href="login.html" class="btn btn-ghost btn-sm">Sign in</a>
-        <a href="signup.html" class="btn btn-primary btn-sm">Create account</a>
-      </div>
-    </header>
+<section class="form-container">
+    <h2>Basic Info</h2>
 
-    <main class="main main-onboarding">
-      <section class="card card-glass onboarding-shell">
-        <header class="onboarding-header">
-          <h1>Dial in your week in three quick steps.</h1>
-          <p>
-            This wizard is a demo of how TKM VitalMetric could capture the essentials for your weekly plan:
-            calories, sodium, movement, and budget.
-          </p>
-        </header>
+    <input class="input-field" type="text" placeholder="Your Name">
+    <input class="input-field" type="date" placeholder="Week Start">
+    <input class="input-field" type="date" placeholder="Week End">
 
-        <!-- PROGRESS STEPS -->
-        <ol class="stepper" id="onboarding-steps">
-          <li class="stepper-item stepper-item-active" data-step="1">
-            <span class="step-number">1</span>
-            <span class="step-label">Goals & focus</span>
-          </li>
-          <li class="stepper-item" data-step="2">
-            <span class="step-number">2</span>
-            <span class="step-label">Pantry & stores</span>
-          </li>
-          <li class="stepper-item" data-step="3">
-            <span class="step-number">3</span>
-            <span class="step-label">Movement & schedule</span>
-          </li>
-        </ol>
+    <input class="input-field" type="number" placeholder="Daily Calories (ex: 2200)">
+    <input class="input-field" type="number" placeholder="Budget for Week (ex: 75)">
 
-        <!-- STEP CONTENT -->
-        <form class="onboarding-body" id="onboarding-form">
-          <!-- STEP 1 -->
-          <section class="onboarding-step" data-step="1">
-            <h2>Step 1 · Goals & focus</h2>
-            <p class="step-intro">
-              Tell the system how aggressive you want to be this week. You can always adjust later.
-            </p>
+    <button>Continue</button>
+</section>
 
-            <div class="form-grid">
-              <div class="form-field">
-                <label for="goal-type">Primary goal</label>
-                <select id="goal-type">
-                  <option>Lower sodium first, calories second</option>
-                  <option>Weight loss with strict calories</option>
-                  <option>Maintain, but get more organized</option>
-                  <option>Boost movement & stamina</option>
-                </select>
-              </div>
-
-              <div class="form-field">
-                <label for="calorie-target">Daily calorie target (approx.)</label>
-                <input id="calorie-target" type="number" min="1000" max="4000" value="2200" />
-              </div>
-            </div>
-
-            <div class="form-grid">
-              <div class="form-field">
-                <label for="sodium-aggressiveness">Sodium reduction level</label>
-                <select id="sodium-aggressiveness">
-                  <option>Gentle</option>
-                  <option selected>Aggressive</option>
-                  <option>Very strict</option>
-                </select>
-              </div>
-
-              <div class="form-field">
-                <label for="weekly-budget">Weekly food budget (approx.)</label>
-                <input id="weekly-budget" type="number" min="20" max="500" value="75" />
-              </div>
-            </div>
-          </section>
-
-          <!-- STEP 2 -->
-          <section class="onboarding-step" data-step="2" hidden>
-            <h2>Step 2 · Pantry & stores</h2>
-            <p class="step-intro">
-              The real app would scan your pantry + favorite stores. Here we’re just sketching the flow.
-            </p>
-
-            <div class="form-field">
-              <label for="pantry-level">How stocked is your pantry right now?</label>
-              <select id="pantry-level">
-                <option>Almost empty — starting fresh</option>
-                <option selected>Mixed — some staples, some gaps</option>
-                <option>Very full — use up what I have</option>
-              </select>
-            </div>
-
-            <div class="form-field">
-              <label for="store-preference">Preferred stores for this plan</label>
-              <input
-                id="store-preference"
-                type="text"
-                placeholder="e.g., Aldi for most items, Walmart for extras"
-              />
-            </div>
-
-            <div class="form-field">
-              <label for="strong-dislikes">Any strong dislikes or “never again” foods?</label>
-              <textarea
-                id="strong-dislikes"
-                rows="3"
-                placeholder="e.g., no cottage cheese, limit canned soups, no super spicy foods"
-              ></textarea>
-            </div>
-          </section>
-
-          <!-- STEP 3 -->
-          <section class="onboarding-step" data-step="3" hidden>
-            <h2>Step 3 · Movement & schedule</h2>
-            <p class="step-intro">
-              This is where your movement stack and real-world schedule get blended into the plan.
-            </p>
-
-            <div class="form-grid">
-              <div class="form-field">
-                <label for="movement-level">Current movement level</label>
-                <select id="movement-level">
-                  <option>Mostly seated, little movement</option>
-                  <option selected>Light — short walks, basic chores</option>
-                  <option>Moderate — walks most days</option>
-                  <option>High — regular workouts</option>
-                </select>
-              </div>
-
-              <div class="form-field">
-                <label for="movement-stack">Preferred movement stack</label>
-                <input
-                  id="movement-stack"
-                  type="text"
-                  value="Radio Taiso · Tai Chi · 2,500 steps"
-                />
-              </div>
-            </div>
-
-            <div class="form-field">
-              <label for="busy-days">Which days are the most chaotic?</label>
-              <textarea
-                id="busy-days"
-                rows="3"
-                placeholder="e.g., Mon & Thu nights are tight, keep those dinners simple."
-              ></textarea>
-            </div>
-
-            <div class="form-highlight">
-              <strong>What happens after this?</strong>
-              <p>
-                When this becomes a full product, these answers would generate:
-                a 7-day meal plan, smart shopping list, movement stack, and a
-                <em>printable multi-page PDF</em> like the weekly report you’ve been designing.
-              </p>
-            </div>
-          </section>
-
-          <!-- CONTROLS -->
-          <footer class="onboarding-footer">
-            <button type="button" class="btn btn-ghost" id="step-prev">Back</button>
-            <div class="onboarding-footer-spacer"></div>
-            <button type="button" class="btn btn-outline" id="step-skip">
-              Skip to dashboard
-            </button>
-            <button type="button" class="btn btn-primary" id="step-next">
-              Next step
-            </button>
-          </footer>
-        </form>
-      </section>
-    </main>
-  </div>
 </body>
 </html>
