@@ -1,1086 +1,1185 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Start Your Weekly Plan – TKM VitalMetric Wellness</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="app.js" defer></script>
-</head>
-<body>
-  <div class="page">
-    <!-- Shared header -->
-    <header class="site-header">
-      <div class="header-inner">
-        <a href="index.html" class="brand">
-          <div class="brand-logo">
-            <img src="images/tkm-logo.png" alt="TKM VitalMetric Wellness logo" />
-          </div>
-          <div class="brand-text">
-            <div class="brand-name">TKM VITALMETRIC WELLNESS</div>
-            <div class="brand-tagline">Weekly wellness mission control</div>
-          </div>
-        </a>
-
-        <nav class="main-nav">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="onboarding.html" class="nav-link active">Start Plan</a>
-          <a href="dashboard.html" class="nav-link">Demo Dashboard</a>
-          <a href="login.html" class="nav-link">Sign In</a>
-          <a href="signup.html" class="nav-link nav-pill nav-pill--trial">
-            7-day free trial · then $9.99/wk
-          </a>
-        </nav>
-      </div>
-    </header>
-
-    <main class="main-content">
-      <!-- Onboarding intro / overview -->
-      <section class="section section-light">
-        <div class="section-inner">
-          <div class="step-card">
-            <h1>Start Your Weekly Plan</h1>
-            <p style="font-size: 0.95rem; color: #64748b; margin-bottom: 0.75rem;">
-              We’ll walk through a guided onboarding to understand your food preferences,
-              pantry, budget, sodium goals, schedule, and movement habits.
-              This prototype does not store real data yet.
-            </p>
-
-            <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;">
-              You can scroll through all steps on one page right now. In a future version,
-              each step will be its own screen with a progress bar.
-            </p>
-
-            <!-- Static progress overview -->
-            <div style="margin-top: 0.5rem;">
-              <div style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; color: #64748b; margin-bottom: 0.25rem;">
-                ONBOARDING MAP · 13 STEPS
-              </div>
-              <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; font-size: 0.78rem;">
-                <div style="background:#e0edff;border-radius:999px;padding:4px 8px;">0. Welcome &amp; consent</div>
-                <div style="background:#e0edff;border-radius:999px;padding:4px 8px;">1. Profile &amp; goals</div>
-                <div style="background:#e0edff;border-radius:999px;padding:4px 8px;">2. Plan settings</div>
-                <div style="background:#e0edff;border-radius:999px;padding:4px 8px;">3. Kitchen &amp; skills</div>
-                <div style="background:#eefaf6;border-radius:999px;padding:4px 8px;">4. Food preferences</div>
-                <div style="background:#eefaf6;border-radius:999px;padding:4px 8px;">5. Avoid / medical</div>
-                <div style="background:#eefaf6;border-radius:999px;padding:4px 8px;">6. Pantry</div>
-                <div style="background:#eefaf6;border-radius:999px;padding:4px 8px;">7. Stores &amp; budget</div>
-                <div style="background:#e0edff;border-radius:999px;padding:4px 8px;">8. Sodium focus</div>
-                <div style="background:#e0edff;border-radius:999px;padding:4px 8px;">9. Movement stack</div>
-                <div style="background:#e0edff;border-radius:999px;padding:4px 8px;">10. Schedule</div>
-                <div style="background:#e0edff;border-radius:999px;padding:4px 8px;">11. Leftovers</div>
-                <div style="background:#fef9c3;border-radius:999px;padding:4px 8px;">12. Plan style</div>
-                <div style="background:#fef9c3;border-radius:999px;padding:4px 8px;">13. Summary</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-<!-- Onboarding form container -->
-      <section class="section">
-        <div class="section-inner">
-          <form class="onboarding-form" action="dashboard.html" method="get">
-            <!-- STEP 0 – Welcome & Consent -->
-            <section class="step-card" id="step-0">
-              <h2>Step 0 of 13 · Welcome &amp; Consent</h2>
-              <p style="font-size:0.9rem;color:#64748b;margin-top:0;">
-                This is a prototype. It is not medical advice. In a future version,
-                your answers will be used to generate a weekly plan.
-              </p>
-
-              <div class="form-label" style="margin-top:0.75rem;">
-                <span>Data use &amp; medical disclaimer</span>
-                <label style="font-size:0.84rem;color:#0f172a;display:flex;align-items:center;gap:6px;margin-top:4px;">
-                  <input type="checkbox" required />
-                  <span>
-                    I understand this is a prototype, not medical advice, and I will
-                    confirm any major changes with my healthcare provider.
-                  </span>
-                </label>
-              </div>
-
-              <div class="form-label" style="margin-top:0.75rem;">
-                <span>Main goal right now</span>
-                <select class="form-input" name="goal-main">
-                  <option value="">Choose one…</option>
-                  <option>Weight loss</option>
-                  <option>Weight maintenance</option>
-                  <option>Improve blood pressure / sodium control</option>
-                  <option>Better organization &amp; budget</option>
-                  <option>Other</option>
-                </select>
-              </div>
-
-              <div class="form-label">
-                <span>If “Other”, briefly describe</span>
-                <input
-                  type="text"
-                  class="form-input"
-                  name="goal-other"
-                  placeholder="e.g., better energy, support a specific condition"
-                />
-              </div>
-            </section>
-<!-- STEP 1 – Basic Profile & Goals -->
-            <section class="step-card" id="step-1" style="margin-top:24px;">
-              <h2>Step 1 of 13 · Basic Profile &amp; Goals</h2>
-
-              <div class="form-label">
-                <span>What should we call you?</span>
-                <input
-                  type="text"
-                  class="form-input"
-                  name="profile-name"
-                  placeholder="First name or nickname"
-                />
-              </div>
-
-              <div class="form-label">
-                <span>Age (optional)</span>
-                <input
-                  type="number"
-                  class="form-input"
-                  name="profile-age"
-                  min="1"
-                  max="120"
-                  placeholder="e.g., 54"
-                />
-              </div>
-
-              <div class="form-label">
-                <span>Height (optional)</span>
-                <input
-                  type="text"
-                  class="form-input"
-                  name="profile-height"
-                  placeholder="e.g., 5'10&quot; or 178 cm"
-                />
-              </div>
-
-              <div class="form-label">
-                <span>Current weight (optional)</span>
-                <input
-                  type="number"
-                  class="form-input"
-                  name="profile-weight"
-                  min="1"
-                  placeholder="For calorie &amp; movement estimates only"
-                />
-              </div>
-
-              <div class="form-label">
-                <span>Target weight or main outcome (optional)</span>
-                <input
-                  type="text"
-                  class="form-input"
-                  name="profile-target"
-                  placeholder="e.g., lose 25 lbs, improve blood pressure, etc."
-                />
-              </div>
-
-              <div class="form-label">
-                <span>Timeframe for progress (optional)</span>
-                <select class="form-input" name="profile-timeframe">
-                  <option value="">Select one…</option>
-                  <option>Slow and steady (6+ months)</option>
-                  <option>Moderate (3–6 months)</option>
-                  <option>Faster (1–3 months)</option>
-                  <option>Not sure / just starting</option>
-                </select>
-              </div>
-
-              <div class="form-label">
-                <span>If weight loss is a goal, preferred pace (lbs/week)</span>
-                <input
-                  type="number"
-                  step="0.1"
-                  min="0"
-                  max="3"
-                  class="form-input"
-                  name="profile-loss-rate"
-                  placeholder="e.g., 1.5"
-                />
-              </div>
-            </section>
-<!-- STEP 2 – Plan Settings -->
-            <section class="step-card" id="step-2" style="margin-top:24px;">
-              <h2>Step 2 of 13 · Plan Dates, Calories, Budget &amp; Sodium</h2>
-
-              <div class="form-label">
-                <span>Plan start date</span>
-                <input type="date" class="form-input" name="plan-start" />
-              </div>
-
-              <div class="form-label">
-                <span>Plan end date</span>
-                <input type="date" class="form-input" name="plan-end" />
-              </div>
-
-              <div class="form-label">
-                <span>Which meals/snacks should we plan each day?</span>
-                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;font-size:0.84rem;">
-                  <label><input type="checkbox" name="meals[]" value="Breakfast" /> Breakfast</label>
-                  <label><input type="checkbox" name="meals[]" value="Lunch" /> Lunch</label>
-                  <label><input type="checkbox" name="meals[]" value="Dinner" /> Dinner</label>
-                  <label><input type="checkbox" name="meals[]" value="Morning snack" /> Morning snack</label>
-                  <label><input type="checkbox" name="meals[]" value="Afternoon snack" /> Afternoon snack</label>
-                  <label><input type="checkbox" name="meals[]" value="Evening snack" /> Evening snack</label>
-                </div>
-              </div>
-
-              <div class="form-label">
-                <span>Typical daily calorie target (approx.)</span>
-                <input
-                  type="number"
-                  class="form-input"
-                  name="plan-calories"
-                  placeholder="e.g., 2200"
-                />
-              </div>
-
-              <div class="form-label">
-                <span>Weekly grocery budget for this plan</span>
-                <input
-                  type="number"
-                  class="form-input"
-                  name="plan-budget"
-                  placeholder="e.g., 75"
-                />
-              </div>
-
-              <div class="form-label">
-                <span>How important is staying under budget?</span>
-                <select class="form-input" name="plan-budget-strictness">
-                  <option value="">Choose a level…</option>
-                  <option>1 – Not strict</option>
-                  <option>2 – Slightly strict</option>
-                  <option>3 – Moderate</option>
-                  <option>4 – Quite strict</option>
-                  <option>5 – Very strict / priority</option>
-                </select>
-              </div>
-
-              <div class="form-label">
-                <span>How aggressive should we be with sodium reduction?</span>
-                <select class="form-input" name="plan-sodium">
-                  <option value="">Select one…</option>
-                  <option>Normal / no special focus</option>
-                  <option>Mild reduction</option>
-                  <option>Moderate reduction</option>
-                  <option>Aggressive reduction (priority)</option>
-                </select>
-              </div>
-
-              <div class="form-label">
-                <span>Other nutrition focus areas</span>
-                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;font-size:0.84rem;">
-                  <label><input type="checkbox" name="plan-nutrition[]" value="Lower added sugar" /> Lower added sugar</label>
-                  <label><input type="checkbox" name="plan-nutrition[]" value="More fiber" /> More fiber</label>
-                  <label><input type="checkbox" name="plan-nutrition[]" value="Higher protein" /> Higher protein</label>
-                  <label><input type="checkbox" name="plan-nutrition[]" value="Lower saturated fat" /> Lower saturated fat</label>
-                  <label><input type="checkbox" name="plan-nutrition[]" value="More fruits &amp; vegetables" /> More fruits &amp; vegetables</label>
-                  <label><input type="checkbox" name="plan-nutrition[]" value="None / not sure" /> None of these / not sure</label>
-                </div>
-              </div>
-            </section>
-<!-- STEP 3 – Cooking Context & Kitchen Setup -->
-            <section class="step-card" id="step-3" style="margin-top:24px;">
-              <h2>Step 3 of 13 · Cooking Context &amp; Kitchen Setup</h2>
-
-              <div class="form-label">
-                <span>How many people are you planning for (including you)?</span>
-                <input
-                  type="number"
-                  class="form-input"
-                  name="kitchen-household-size"
-                  min="1"
-                  placeholder="e.g., 1, 2, 4"
-                />
-              </div>
-
-              <div class="form-label">
-                <span>How comfortable are you in the kitchen?</span>
-                <select class="form-input" name="kitchen-skill">
-                  <option value="">Select one…</option>
-                  <option>1 – Very beginner (need simple instructions)</option>
-                  <option>2 – Beginner</option>
-                  <option>3 – Intermediate</option>
-                  <option>4 – Comfortable</option>
-                  <option>5 – Advanced / enjoy complex recipes</option>
-                </select>
-              </div>
-
-              <div class="form-label">
-                <span>Preferred recipe complexity</span>
-                <select class="form-input" name="kitchen-complexity">
-                  <option value="">Select one…</option>
-                  <option>Very simple (5–7 ingredients, few steps)</option>
-                  <option>Moderate (10–12 ingredients, normal steps)</option>
-                  <option>I’m fine with more complex recipes if they’re tasty</option>
-                </select>
-              </div>
-
-              <div class="form-label">
-                <span>On a typical day, how much time do you have to cook…</span>
-              </div>
-
-              <div class="form-label">
-                <span>Breakfast</span>
-                <select class="form-input" name="time-breakfast">
-                  <option value="">Choose…</option>
-                  <option>5 minutes</option>
-                  <option>10 minutes</option>
-                  <option>15 minutes</option>
-                  <option>20+ minutes</option>
-                </select>
-              </div>
-
-              <div class="form-label">
-                <span>Lunch</span>
-                <select class="form-input" name="time-lunch">
-                  <option value="">Choose…</option>
-                  <option>5 minutes</option>
-                  <option>10 minutes</option>
-                  <option>20 minutes</option>
-                  <option>30+ minutes</option>
-                </select>
-              </div>
-
-              <div class="form-label">
-                <span>Dinner</span>
-                <select class="form-input" name="time-dinner">
-                  <option value="">Choose…</option>
-                  <option>15 minutes</option>
-                  <option>20 minutes</option>
-                  <option>30 minutes</option>
-                  <option>45+ minutes</option>
-                </select>
-              </div>
-
-              <div class="form-label">
-                <span>Which kitchen equipment do you have?</span>
-                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;font-size:0.84rem;">
-                  <label><input type="checkbox" name="equip[]" value="Oven" /> Standard oven</label>
-                  <label><input type="checkbox" name="equip[]" value="Stovetop" /> Stovetop</label>
-                  <label><input type="checkbox" name="equip[]" value="Microwave" /> Microwave</label>
-                  <label><input type="checkbox" name="equip[]" value="Slow cooker" /> Slow cooker</label>
-                  <label><input type="checkbox" name="equip[]" value="Instant Pot" /> Instant Pot / pressure cooker</label>
-                  <label><input type="checkbox" name="equip[]" value="Air fryer" /> Air fryer</label>
-                  <label><input type="checkbox" name="equip[]" value="Toaster" /> Toaster / toaster oven</label>
-                  <label><input type="checkbox" name="equip[]" value="Blender" /> Blender</label>
-                  <label><input type="checkbox" name="equip[]" value="Food processor" /> Food processor</label>
-                  <label><input type="checkbox" name="equip[]" value="Grill" /> Grill / grill pan</label>
-                  <label><input type="checkbox" name="equip[]" value="Knives" /> Basic knives &amp; cutting board</label>
-                </div>
-              </div>
-
-              <div class="form-label">
-                <span>Any kitchen limitations or notes?</span>
-                <textarea
-                  class="form-input"
-                  name="kitchen-notes"
-                  rows="3"
-                  placeholder="e.g., no oven, tiny fridge, limited cookware"
-                ></textarea>
-              </div>
-            </section>
-<!-- STEP 4 – Food Preferences (part 1) -->
-            <section class="step-card" id="step-4" style="margin-top:24px;">
-              <h2>Step 4 of 13 · Food Preferences</h2>
-              <p style="font-size:0.88rem;color:#64748b;margin-top:0;">
-                For each category, mark foods you like, neutral about, or dislike. In a
-                future version, these will be clickable pill buttons with full logic.
-              </p>
-
-              <!-- Proteins -->
-              <h3 style="margin-top:0.75rem;">4.1 Proteins</h3>
-              <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;font-size:0.84rem;">
-                <label><input type="checkbox" name="protein-like[]" value="Chicken breast" /> Chicken breast</label>
-                <label><input type="checkbox" name="protein-like[]" value="Chicken thighs" /> Chicken thighs</label>
-                <label><input type="checkbox" name="protein-like[]" value="Ground chicken" /> Ground chicken</label>
-                <label><input type="checkbox" name="protein-like[]" value="Turkey breast" /> Turkey breast</label>
-                <label><input type="checkbox" name="protein-like[]" value="Ground turkey" /> Ground turkey</label>
-                <label><input type="checkbox" name="protein-like[]" value="Lean ground beef" /> Lean ground beef</label>
-                <label><input type="checkbox" name="protein-like[]" value="Steak" /> Steak / beef cuts</label>
-                <label><input type="checkbox" name="protein-like[]" value="Pork chops" /> Pork chops</label>
-                <label><input type="checkbox" name="protein-like[]" value="Ham" /> Ham</label>
-                <label><input type="checkbox" name="protein-like[]" value="Bacon" /> Bacon</label>
-                <label><input type="checkbox" name="protein-like[]" value="Breakfast sausage" /> Breakfast sausage</label>
-                <label><input type="checkbox" name="protein-like[]" value="Smoked sausage" /> Smoked sausage / kielbasa</label>
-                <label><input type="checkbox" name="protein-like[]" value="Deli meats" /> Deli meats</label>
-                <label><input type="checkbox" name="protein-like[]" value="Mild fish" /> Fish – mild (cod, tilapia)</label>
-                <label><input type="checkbox" name="protein-like[]" value="Strong fish" /> Fish – stronger (salmon, tuna)</label>
-                <label><input type="checkbox" name="protein-like[]" value="Shellfish" /> Shellfish (shrimp, crab, etc.)</label>
-                <label><input type="checkbox" name="protein-like[]" value="Eggs" /> Eggs</label>
-                <label><input type="checkbox" name="protein-like[]" value="Egg whites" /> Egg whites</label>
-                <label><input type="checkbox" name="protein-like[]" value="Tofu" /> Tofu</label>
-                <label><input type="checkbox" name="protein-like[]" value="Tempeh" /> Tempeh</label>
-                <label><input type="checkbox" name="protein-like[]" value="Beans" /> Beans (black, pinto, etc.)</label>
-                <label><input type="checkbox" name="protein-like[]" value="Lentils" /> Lentils</label>
-                <label><input type="checkbox" name="protein-like[]" value="Chickpeas" /> Chickpeas / garbanzo beans</label>
-              </div>
-
-              <div class="form-label" style="margin-top:0.5rem;">
-                <span>Protein notes (dislikes or “never include” within proteins)</span>
-                <textarea
-                  class="form-input"
-                  name="protein-notes"
-                  rows="2"
-                  placeholder="List any proteins you strongly dislike or never want."
-                ></textarea>
-              </div>
-
-              <!-- Dairy -->
-              <h3 style="margin-top:1rem;">4.2 Dairy &amp; Alternatives</h3>
-              <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;font-size:0.84rem;">
-                <label><input type="checkbox" name="dairy-like[]" value="Skim milk" /> Skim milk</label>
-                <label><input type="checkbox" name="dairy-like[]" value="1-2% milk" /> 1–2% milk</label>
-                <label><input type="checkbox" name="dairy-like[]" value="Whole milk" /> Whole milk</label>
-                <label><input type="checkbox" name="dairy-like[]" value="Lactose-free milk" /> Lactose-free milk</label>
-                <label><input type="checkbox" name="dairy-like[]" value="Plain yogurt" /> Yogurt – plain</label>
-                <label><input type="checkbox" name="dairy-like[]" value="Flavored yogurt" /> Yogurt – flavored</label>
-                <label><input type="checkbox" name="dairy-like[]" value="Cottage cheese" /> Cottage cheese</label>
-                <label><input type="checkbox" name="dairy-like[]" value="Hard cheese" /> Hard cheeses (cheddar, Swiss, etc.)</label>
-                <label><input type="checkbox" name="dairy-like[]" value="Soft cheese" /> Soft cheeses (mozzarella, provolone)</label>
-                <label><input type="checkbox" name="dairy-like[]" value="Cream cheese" /> Cream cheese</label>
-                <label><input type="checkbox" name="dairy-like[]" value="Sour cream" /> Sour cream</label>
-                <label><input type="checkbox" name="dairy-like[]" value="Non-dairy milks" /> Non-dairy milks (almond, soy, oat)</label>
-              </div>
-
-              <div class="form-label" style="margin-top:0.5rem;">
-                <span>Dairy notes (dislikes, limits, or lactose issues)</span>
-                <textarea
-                  class="form-input"
-                  name="dairy-notes"
-                  rows="2"
-                  placeholder="e.g., avoid whole milk, okay with yogurt but not milk, etc."
-                ></textarea>
-              </div>
-
-              <!-- Grains & Carbs -->
-              <h3 style="margin-top:1rem;">4.3 Grains, Starches &amp; Carbs</h3>
-              <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;font-size:0.84rem;">
-                <label><input type="checkbox" name="grain-like[]" value="White bread" /> White bread</label>
-                <label><input type="checkbox" name="grain-like[]" value="Wheat bread" /> Wheat / whole-grain bread</label>
-                <label><input type="checkbox" name="grain-like[]" value="Buns" /> Buns / rolls</label>
-                <label><input type="checkbox" name="grain-like[]" value="Flour tortillas" /> Tortillas – flour</label>
-                <label><input type="checkbox" name="grain-like[]" value="Corn tortillas" /> Tortillas – corn</label>
-                <label><input type="checkbox" name="grain-like[]" value="White rice" /> White rice</label>
-                <label><input type="checkbox" name="grain-like[]" value="Brown rice" /> Brown rice</label>
-                <label><input type="checkbox" name="grain-like[]" value="Instant rice" /> Instant rice cups</label>
-                <label><input type="checkbox" name="grain-like[]" value="Pasta regular" /> Pasta – regular</label>
-                <label><input type="checkbox" name="grain-like[]" value="Pasta whole wheat" /> Pasta – whole wheat</label>
-                <label><input type="checkbox" name="grain-like[]" value="Macaroni" /> Macaroni / elbows</label>
-                <label><input type="checkbox" name="grain-like[]" value="Noodles" /> Noodles (ramen, etc.)</label>
-                <label><input type="checkbox" name="grain-like[]" value="Potatoes baking" /> Potatoes – baking</label>
-                <label><input type="checkbox" name="grain-like[]" value="Potatoes mashed" /> Potatoes – mashed</label>
-                <label><input type="checkbox" name="grain-like[]" value="Potatoes roasted" /> Potatoes – roasted</label>
-                <label><input type="checkbox" name="grain-like[]" value="Tater tots" /> Tater tots</label>
-                <label><input type="checkbox" name="grain-like[]" value="Hash browns" /> Hash browns</label>
-                <label><input type="checkbox" name="grain-like[]" value="Sweet potatoes" /> Sweet potatoes</label>
-                <label><input type="checkbox" name="grain-like[]" value="Oatmeal" /> Oatmeal</label>
-                <label><input type="checkbox" name="grain-like[]" value="Kid cereal" /> Cold cereal – kid-style</label>
-                <label><input type="checkbox" name="grain-like[]" value="Bran cereal" /> Cold cereal – bran / higher fiber</label>
-                <label><input type="checkbox" name="grain-like[]" value="Crackers" /> Crackers</label>
-                <label><input type="checkbox" name="grain-like[]" value="Rice cakes" /> Rice cakes</label>
-              </div>
-
-              <div class="form-label" style="margin-top:0.5rem;">
-                <span>Grains &amp; carbs notes</span>
-                <textarea
-                  class="form-input"
-                  name="grain-notes"
-                  rows="2"
-                  placeholder="List any you dislike or want to limit."
-                ></textarea>
-              </div>
-            </section>
-<!-- STEP 4 – Food Preferences (part 2) -->
-            <section class="step-card" id="step-4b" style="margin-top:24px;">
-              <h2>Step 4 (continued) · Vegetables, Fruits, Snacks &amp; Flavors</h2>
-
-              <!-- Vegetables -->
-              <h3 style="margin-top:0.5rem;">4.4 Vegetables</h3>
-              <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;font-size:0.84rem;">
-                <label><input type="checkbox" name="veg-like[]" value="Onions" /> Onions</label>
-                <label><input type="checkbox" name="veg-like[]" value="Garlic" /> Garlic</label>
-                <label><input type="checkbox" name="veg-like[]" value="Carrots" /> Carrots</label>
-                <label><input type="checkbox" name="veg-like[]" value="Celery" /> Celery</label>
-                <label><input type="checkbox" name="veg-like[]" value="Potatoes" /> Potatoes</label>
-                <label><input type="checkbox" name="veg-like[]" value="Sweet potatoes" /> Sweet potatoes</label>
-                <label><input type="checkbox" name="veg-like[]" value="Peas" /> Peas</label>
-                <label><input type="checkbox" name="veg-like[]" value="Corn" /> Corn</label>
-                <label><input type="checkbox" name="veg-like[]" value="Green beans" /> Green beans</label>
-                <label><input type="checkbox" name="veg-like[]" value="Broccoli" /> Broccoli</label>
-                <label><input type="checkbox" name="veg-like[]" value="Cauliflower" /> Cauliflower</label>
-                <label><input type="checkbox" name="veg-like[]" value="Spinach" /> Spinach</label>
-                <label><input type="checkbox" name="veg-like[]" value="Lettuce" /> Lettuce / salad greens</label>
-                <label><input type="checkbox" name="veg-like[]" value="Tomatoes fresh" /> Tomatoes – fresh</label>
-                <label><input type="checkbox" name="veg-like[]" value="Tomatoes cooked" /> Tomatoes – sauces &amp; dishes</label>
-                <label><input type="checkbox" name="veg-like[]" value="Bell peppers" /> Bell peppers</label>
-                <label><input type="checkbox" name="veg-like[]" value="Cucumbers" /> Cucumbers</label>
-                <label><input type="checkbox" name="veg-like[]" value="Zucchini" /> Zucchini / squash</label>
-                <label><input type="checkbox" name="veg-like[]" value="Mushrooms" /> Mushrooms</label>
-                <label><input type="checkbox" name="veg-like[]" value="Cabbage" /> Cabbage / coleslaw mix</label>
-              </div>
-
-              <div class="form-label" style="margin-top:0.5rem;">
-                <span>Vegetable notes</span>
-                <textarea
-                  class="form-input"
-                  name="veg-notes"
-                  rows="2"
-                  placeholder="Which veggies do you love, hate, or only tolerate in certain forms?"
-                ></textarea>
-              </div>
-
-              <!-- Fruits -->
-              <h3 style="margin-top:1rem;">4.5 Fruits</h3>
-              <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;font-size:0.84rem;">
-                <label><input type="checkbox" name="fruit-like[]" value="Apples" /> Apples</label>
-                <label><input type="checkbox" name="fruit-like[]" value="Bananas" /> Bananas</label>
-                <label><input type="checkbox" name="fruit-like[]" value="Oranges" /> Oranges</label>
-                <label><input type="checkbox" name="fruit-like[]" value="Mandarins" /> Mandarins / clementines</label>
-                <label><input type="checkbox" name="fruit-like[]" value="Grapes" /> Grapes</label>
-                <label><input type="checkbox" name="fruit-like[]" value="Strawberries" /> Strawberries</label>
-                <label><input type="checkbox" name="fruit-like[]" value="Blueberries" /> Blueberries</label>
-                <label><input type="checkbox" name="fruit-like[]" value="Pineapple" /> Pineapple</label>
-                <label><input type="checkbox" name="fruit-like[]" value="Peaches" /> Peaches</label>
-                <label><input type="checkbox" name="fruit-like[]" value="Pears" /> Pears</label>
-                <label><input type="checkbox" name="fruit-like[]" value="Melons" /> Melons (cantaloupe, honeydew)</label>
-                <label><input type="checkbox" name="fruit-like[]" value="Fruit cocktail" /> Fruit cocktail / canned mixes</label>
-                <label><input type="checkbox" name="fruit-like[]" value="Applesauce" /> Applesauce</label>
-              </div>
-
-              <div class="form-label" style="margin-top:0.5rem;">
-                <span>Fruit notes</span>
-                <textarea
-                  class="form-input"
-                  name="fruit-notes"
-                  rows="2"
-                  placeholder="List fruits you avoid or want often."
-                ></textarea>
-              </div>
-
-              <!-- Snacks & Convenience -->
-              <h3 style="margin-top:1rem;">4.6 Snacks &amp; Convenience Foods</h3>
-              <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;font-size:0.84rem;">
-                <label><input type="checkbox" name="snack-like[]" value="Peanut butter" /> Peanut butter</label>
-                <label><input type="checkbox" name="snack-like[]" value="PB crackers" /> Peanut butter crackers</label>
-                <label><input type="checkbox" name="snack-like[]" value="Cheese crackers" /> Cheese &amp; crackers</label>
-                <label><input type="checkbox" name="snack-like[]" value="Popcorn" /> Popcorn</label>
-                <label><input type="checkbox" name="snack-like[]" value="Pretzels" /> Pretzels</label>
-                <label><input type="checkbox" name="snack-like[]" value="Chips" /> Chips</label>
-                <label><input type="checkbox" name="snack-like[]" value="Granola bars" /> Granola bars</label>
-                <label><input type="checkbox" name="snack-like[]" value="Yogurt cups" /> Yogurt cups</label>
-                <label><input type="checkbox" name="snack-like[]" value="Pudding cups" /> Pudding cups</label>
-                <label><input type="checkbox" name="snack-like[]" value="Jello" /> Jell-O</label>
-                <label><input type="checkbox" name="snack-like[]" value="Frozen waffles" /> Frozen waffles</label>
-                <label><input type="checkbox" name="snack-like[]" value="Frozen dinners" /> Frozen dinners / entrées</label>
-                <label><input type="checkbox" name="snack-like[]" value="Hot dogs" /> Hot dogs / chili dogs</label>
-                <label><input type="checkbox" name="snack-like[]" value="Canned soup" /> Canned soups</label>
-              </div>
-
-              <div class="form-label" style="margin-top:0.5rem;">
-                <span>Snack notes</span>
-                <textarea
-                  class="form-input"
-                  name="snack-notes"
-                  rows="2"
-                  placeholder="Favorite treats or snacks you want in moderation or often."
-                ></textarea>
-              </div>
-
-              <!-- Condiments, sauces, and cuisines -->
-              <h3 style="margin-top:1rem;">4.7 Condiments, Sauces &amp; Flavor Profiles</h3>
-              <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;font-size:0.84rem;">
-                <label><input type="checkbox" name="cond-like[]" value="Ketchup" /> Ketchup</label>
-                <label><input type="checkbox" name="cond-like[]" value="Mustard" /> Mustard</label>
-                <label><input type="checkbox" name="cond-like[]" value="Mayonnaise" /> Mayonnaise / light mayo</label>
-                <label><input type="checkbox" name="cond-like[]" value="BBQ sauce" /> Barbecue sauce</label>
-                <label><input type="checkbox" name="cond-like[]" value="Ranch" /> Ranch dressing</label>
-                <label><input type="checkbox" name="cond-like[]" value="Italian dressing" /> Italian dressing</label>
-                <label><input type="checkbox" name="cond-like[]" value="Salsa" /> Salsa</label>
-                <label><input type="checkbox" name="cond-like[]" value="Tomato sauce" /> Tomato sauce / marinara</label>
-                <label><input type="checkbox" name="cond-like[]" value="Alfredo" /> Alfredo sauce</label>
-                <label><input type="checkbox" name="cond-like[]" value="Soy sauce" /> Soy sauce (regular)</label>
-                <label><input type="checkbox" name="cond-like[]" value="Low sodium soy" /> Soy sauce (low-sodium)</label>
-                <label><input type="checkbox" name="cond-like[]" value="Hot sauce" /> Hot sauce</label>
-                <label><input type="checkbox" name="cond-like[]" value="Gravy" /> Gravy (packet or jar)</label>
-              </div>
-
-              <div class="form-label" style="margin-top:0.5rem;">
-                <span>Favorite cuisines &amp; flavor profiles</span>
-                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;font-size:0.84rem;">
-                  <label><input type="checkbox" name="cuisine[]" value="American comfort" /> American comfort</label>
-                  <label><input type="checkbox" name="cuisine[]" value="Italian" /> Italian</label>
-                  <label><input type="checkbox" name="cuisine[]" value="Mexican" /> Mexican / Tex-Mex</label>
-                  <label><input type="checkbox" name="cuisine[]" value="Asian-inspired" /> Asian-inspired</label>
-                  <label><input type="checkbox" name="cuisine[]" value="Soups & stews" /> Soups &amp; stews</label>
-                  <label><input type="checkbox" name="cuisine[]" value="Casseroles" /> Casseroles</label>
-                  <label><input type="checkbox" name="cuisine[]" value="Salads" /> Salads &amp; cold plates</label>
-                </div>
-              </div>
-            </section>
-<!-- STEP 5 – Foods to Avoid & Medical Constraints -->
-            <section class="step-card" id="step-5" style="margin-top:24px;">
-              <h2>Step 5 of 13 · Foods to Avoid &amp; Medical Constraints</h2>
-
-              <div class="form-label">
-                <span>Allergies or intolerances</span>
-                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;font-size:0.84rem;">
-                  <label><input type="checkbox" name="allergy[]" value="None" /> None</label>
-                  <label><input type="checkbox" name="allergy[]" value="Gluten" /> Gluten</label>
-                  <label><input type="checkbox" name="allergy[]" value="Dairy" /> Dairy / lactose</label>
-                  <label><input type="checkbox" name="allergy[]" value="Eggs" /> Eggs</label>
-                  <label><input type="checkbox" name="allergy[]" value="Soy" /> Soy</label>
-                  <label><input type="checkbox" name="allergy[]" value="Peanuts" /> Peanuts</label>
-                  <label><input type="checkbox" name="allergy[]" value="Tree nuts" /> Tree nuts</label>
-                  <label><input type="checkbox" name="allergy[]" value="Fish" /> Fish</label>
-                  <label><input type="checkbox" name="allergy[]" value="Shellfish" /> Shellfish</label>
-                  <label><input type="checkbox" name="allergy[]" value="Other" /> Other</label>
-                </div>
-              </div>
-
-              <div class="form-label">
-                <span>Medical conditions that affect food choices</span>
-                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;font-size:0.84rem;">
-                  <label><input type="checkbox" name="condition[]" value="Hypertension" /> High blood pressure / hypertension</label>
-                  <label><input type="checkbox" name="condition[]" value="Diabetes" /> Diabetes / pre-diabetes</label>
-                  <label><input type="checkbox" name="condition[]" value="Cholesterol" /> High cholesterol</label>
-                  <label><input type="checkbox" name="condition[]" value="Kidney" /> Kidney disease</label>
-                  <label><input type="checkbox" name="condition[]" value="GERD" /> GERD / reflux</label>
-                  <label><input type="checkbox" name="condition[]" value="Other" /> Other</label>
-                </div>
-              </div>
-
-              <div class="form-label">
-                <span>Foods or ingredients you absolutely do NOT want in your plan</span>
-                <textarea
-                  class="form-input"
-                  name="never-foods"
-                  rows="3"
-                  placeholder="List any foods you never want included."
-                ></textarea>
-              </div>
-
-              <div class="form-label">
-                <span>How strict should we be about avoiding these foods?</span>
-                <select class="form-input" name="avoid-strictness">
-                  <option value="">Select one…</option>
-                  <option>1 – Flexible</option>
-                  <option>2 – Mostly avoid, but not absolute</option>
-                  <option>3 – Try hard to avoid</option>
-                  <option>4 – Very strict</option>
-                  <option>5 – Never include under any circumstances</option>
-                </select>
-              </div>
-            </section>
-
-            <!-- STEP 6 – Pantry Inputs -->
-            <section class="step-card" id="step-6" style="margin-top:24px;">
-              <h2>Step 6 of 13 · Pantry Inputs</h2>
-
-              <div class="form-label">
-                <span>How would you like to share your pantry?</span>
-                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;font-size:0.84rem;">
-                  <label><input type="checkbox" name="pantry-method[]" value="Text list" /> Type or paste a text list</label>
-                  <label><input type="checkbox" name="pantry-method[]" value="File" /> Upload a text or spreadsheet file (future AI)</label>
-                  <label><input type="checkbox" name="pantry-method[]" value="Audio" /> Upload an audio description (future AI)</label>
-                </div>
-              </div>
-
-              <div class="form-label">
-                <span>Type or paste what you have on hand</span>
-                <textarea
-                  class="form-input"
-                  name="pantry-text"
-                  rows="4"
-                  placeholder="e.g., chicken breast (4), frozen broccoli, brown rice, eggs, canned beans, etc."
-                ></textarea>
-              </div>
-
-              <div class="form-label">
-                <span>Pantry usage priority</span>
-                <select class="form-input" name="pantry-aggressiveness">
-                  <option value="">How aggressively should we use pantry items first?</option>
-                  <option>1 – Don’t worry about using the pantry first</option>
-                  <option>2 – Use it when convenient</option>
-                  <option>3 – Moderate priority</option>
-                  <option>4 – High priority</option>
-                  <option>5 – Use pantry first whenever possible</option>
-                </select>
-              </div>
-            </section>
-
-            <!-- STEP 7 – Stores & Budget Considerations -->
-            <section class="step-card" id="step-7" style="margin-top:24px;">
-              <h2>Step 7 of 13 · Stores &amp; Budget Considerations</h2>
-
-              <div class="form-label">
-                <span>Which stores do you shop at most often?</span>
-                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;font-size:0.84rem;">
-                  <label><input type="checkbox" name="store[]" value="Walmart" /> Walmart</label>
-                  <label><input type="checkbox" name="store[]" value="Aldi" /> Aldi</label>
-                  <label><input type="checkbox" name="store[]" value="Kroger" /> Kroger / local supermarket</label>
-                  <label><input type="checkbox" name="store[]" value="Costco" /> Costco / Sam’s</label>
-                  <label><input type="checkbox" name="store[]" value="Dollar store" /> Dollar store</label>
-                  <label><input type="checkbox" name="store[]" value="Other" /> Other</label>
-                </div>
-              </div>
-
-              <div class="form-label">
-                <span>Would you visit more than one store to save money?</span>
-                <select class="form-input" name="store-visits">
-                  <option value="">Select one…</option>
-                  <option>No, one store only</option>
-                  <option>Maybe two, if savings are big enough</option>
-                  <option>Yes, I’m fine visiting multiple stores</option>
-                </select>
-              </div>
-
-              <div class="form-label">
-                <span>What matters most about your store choice?</span>
-                <select class="form-input" name="store-priority">
-                  <option value="">Select one…</option>
-                  <option>Lowest total cost</option>
-                  <option>Closest / most convenient</option>
-                  <option>Best selection / brands</option>
-                  <option>Mix of value and convenience</option>
-                </select>
-              </div>
-<!-- STEP 8 – Sodium & Other Nutrition Priorities -->
-            <section class="step-card" id="step-8" style="margin-top:24px;">
-              <h2>Step 8 of 13 · Sodium &amp; Other Nutrition Priorities</h2>
-
-              <div class="form-label">
-                <span>Key salty items you want to cut back on</span>
-                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;font-size:0.84rem;">
-                  <label><input type="checkbox" name="sodium-source[]" value="Processed meats" /> Processed meats (bacon, sausage, deli)</label>
-                  <label><input type="checkbox" name="sodium-source[]" value="Canned soups" /> Canned soups</label>
-                  <label><input type="checkbox" name="sodium-source[]" value="Packaged sides" /> Packaged rice / pasta sides</label>
-                  <label><input type="checkbox" name="sodium-source[]" value="Frozen dinners" /> Frozen dinners</label>
-                  <label><input type="checkbox" name="sodium-source[]" value="Salty snacks" /> Salty snacks (chips, pretzels)</label>
-                  <label><input type="checkbox" name="sodium-source[]" value="Restaurant" /> Restaurant / takeout</label>
-                  <label><input type="checkbox" name="sodium-source[]" value="Condiments" /> Sauces &amp; condiments (soy sauce, etc.)</label>
-                  <label><input type="checkbox" name="sodium-source[]" value="Not sure" /> Not sure</label>
-                </div>
-              </div>
-
-              <div class="form-label">
-                <span>Anything else we should know about your nutrition goals?</span>
-                <textarea
-                  class="form-input"
-                  name="nutrition-notes"
-                  rows="3"
-                  placeholder="e.g., focus on fiber, concern about cholesterol, etc."
-                ></textarea>
-              </div>
-            </section>
-
-            <!-- STEP 9 – Movement / Exercise Preferences -->
-            <section class="step-card" id="step-9" style="margin-top:24px;">
-              <h2>Step 9 of 13 · Movement / Exercise Preferences</h2>
-
-              <div class="form-label">
-                <span>How active are you currently?</span>
-                <select class="form-input" name="movement-activity">
-                  <option value="">Select one…</option>
-                  <option>Mostly sedentary</option>
-                  <option>Lightly active (some walking)</option>
-                  <option>Moderately active</option>
-                  <option>Very active</option>
-                </select>
-              </div>
-
-              <div class="form-label">
-                <span>Preferred movement types</span>
-                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;font-size:0.84rem;">
-                  <label><input type="checkbox" name="movement-type[]" value="Stretching" /> Gentle stretching</label>
-                  <label><input type="checkbox" name="movement-type[]" value="Radio Taiso" /> Radio Taiso / similar routines</label>
-                  <label><input type="checkbox" name="movement-type[]" value="Tai Chi" /> Tai Chi / Qigong</label>
-                  <label><input type="checkbox" name="movement-type[]" value="Light walking" /> Light walking (5–15 minutes)</label>
-                  <label><input type="checkbox" name="movement-type[]" value="Longer walking" /> Longer walking (20–40 minutes)</label>
-                  <label><input type="checkbox" name="movement-type[]" value="Bike" /> Stationary bike</label>
-                  <label><input type="checkbox" name="movement-type[]" value="Bands" /> Light resistance / bands</label>
-                  <label><input type="checkbox" name="movement-type[]" value="Gym" /> Gym / weights</label>
-                  <label><input type="checkbox" name="movement-type[]" value="Other" /> Other</label>
-                </div>
-              </div>
-
-              <div class="form-label">
-                <span>How many days per week would you like a movement plan?</span>
-                <select class="form-input" name="movement-days">
-                  <option value="">Select…</option>
-                  <option>3 days</option>
-                  <option>4 days</option>
-                  <option>5 days</option>
-                  <option>6 days</option>
-                  <option>7 days</option>
-                </select>
-              </div>
-
-              <div class="form-label">
-                <span>How many minutes per day can you realistically commit?</span>
-                <select class="form-input" name="movement-minutes">
-                  <option value="">Select…</option>
-                  <option>10–15 minutes</option>
-                  <option>20–30 minutes</option>
-                  <option>30–45 minutes</option>
-                  <option>45–60+ minutes</option>
-                </select>
-              </div>
-
-              <div class="form-label">
-                <span>Joint or mobility limitations</span>
-                <textarea
-                  class="form-input"
-                  name="movement-limitations"
-                  rows="3"
-                  placeholder="e.g., knee pain, back issues, balance concerns"
-                ></textarea>
-              </div>
-
-              <div class="form-label">
-                <span>Preferred intensity</span>
-                <select class="form-input" name="movement-intensity">
-                  <option value="">Select…</option>
-                  <option>Very gentle</option>
-                  <option>Gentle / light</option>
-                  <option>Moderate</option>
-                  <option>Challenging but safe</option>
-                </select>
-              </div>
-            </section>
-
-              <div class="form-label">
-                <span>Brand vs. store-brand preference</span>
-                <select class="form-input" name="brand-preference">
-                  <option value="">Select one…</option>
-                  <option>Mostly store brands / generic is fine</option>
-                  <option>Mix of store and name brands</option>
-                  <option>Prefer name brands when possible</option>
-                </select>
-              </div>
-            </section>
-<!-- STEP 10 – Daily Schedule & Meal Timing -->
-            <section class="step-card" id="step-10" style="margin-top:24px;">
-              <h2>Step 10 of 13 · Daily Schedule &amp; Meal Timing</h2>
-
-              <div class="form-label">
-                <span>Typical wake time</span>
-                <input type="time" class="form-input" name="schedule-wake" />
-              </div>
-
-              <div class="form-label">
-                <span>Typical bedtime</span>
-                <input type="time" class="form-input" name="schedule-bed" />
-              </div>
-
-              <div class="form-label">
-                <span>Typical meal times (if known)</span>
-              </div>
-
-              <div class="form-label">
-                <span>Breakfast time</span>
-                <input type="time" class="form-input" name="schedule-breakfast" />
-              </div>
-
-              <div class="form-label">
-                <span>Lunch time</span>
-                <input type="time" class="form-input" name="schedule-lunch" />
-              </div>
-
-              <div class="form-label">
-                <span>Dinner time</span>
-                <input type="time" class="form-input" name="schedule-dinner" />
-              </div>
-
-              <div class="form-label">
-                <span>Snack windows (if applicable)</span>
-                <input
-                  type="text"
-                  class="form-input"
-                  name="schedule-snacks"
-                  placeholder="e.g., mid-morning, mid-afternoon, evening"
-                />
-              </div>
-
-              <div class="form-label">
-                <span>Which days are especially busy or different?</span>
-                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;font-size:0.84rem;">
-                  <label><input type="checkbox" name="busy-day[]" value="Monday" /> Mon</label>
-                  <label><input type="checkbox" name="busy-day[]" value="Tuesday" /> Tue</label>
-                  <label><input type="checkbox" name="busy-day[]" value="Wednesday" /> Wed</label>
-                  <label><input type="checkbox" name="busy-day[]" value="Thursday" /> Thu</label>
-                  <label><input type="checkbox" name="busy-day[]" value="Friday" /> Fri</label>
-                  <label><input type="checkbox" name="busy-day[]" value="Saturday" /> Sat</label>
-                  <label><input type="checkbox" name="busy-day[]" value="Sunday" /> Sun</label>
-                </div>
-              </div>
-
-              <div class="form-label">
-                <span>What’s different about those busy days?</span>
-                <textarea
-                  class="form-input"
-                  name="busy-notes"
-                  rows="3"
-                  placeholder="e.g., late work, appointments, limited cooking time"
-                ></textarea>
-              </div>
-
-              <div class="form-label">
-                <span>Eating out frequency</span>
-                <select class="form-input" name="eating-out">
-                  <option value="">Select…</option>
-                  <option>No, plan everything at home</option>
-                  <option>Maybe 1–2 meals out per week</option>
-                  <option>More than 2 meals out per week</option>
-                </select>
-              </div>
-            </section>
-
-            <!-- STEP 11 – Leftovers, Batch Cooking & Repetition -->
-            <section class="step-card" id="step-11" style="margin-top:24px;">
-              <h2>Step 11 of 13 · Leftovers, Batch Cooking &amp; Repetition</h2>
-
-              <div class="form-label">
-                <span>How do you feel about leftovers?</span>
-                <select class="form-input" name="leftovers-attitude">
-                  <option value="">Select…</option>
-                  <option>Love them – please plan leftovers on purpose</option>
-                  <option>Okay with them sometimes</option>
-                  <option>Prefer fresh meals, minimal leftovers</option>
-                </select>
-              </div>
-
-              <div class="form-label">
-                <span>Maximum days in a row you’re okay with the same main dish</span>
-                <select class="form-input" name="leftovers-days">
-                  <option value="">Select…</option>
-                  <option>1 day</option>
-                  <option>2 days</option>
-                  <option>3 days</option>
-                  <option>4 days</option>
-                </select>
-              </div>
-
-              <div class="form-label">
-                <span>Interest in batch cooking</span>
-                <select class="form-input" name="batch-interest">
-                  <option value="">Select…</option>
-                  <option>Yes, please – I like cook-once, eat-many meals</option>
-                  <option>Maybe a little, not too much</option>
-                  <option>No, keep things varied and smaller batches</option>
-                </select>
-              </div>
-            </section>
-
-            <!-- STEP 12 – Guidance & Plan Style -->
-            <section class="step-card" id="step-12" style="margin-top:24px;">
-              <h2>Step 12 of 13 · Guidance &amp; Plan Style</h2>
-
-              <div class="form-label">
-                <span>How detailed should cooking instructions be?</span>
-                <select class="form-input" name="instructions-detail">
-                  <option value="">Select…</option>
-                  <option>Very detailed (step-by-step, like a beginner)</option>
-                  <option>Moderately detailed</option>
-                  <option>Short, high-level steps are fine</option>
-                </select>
-              </div>
-
-              <div class="form-label">
-                <span>Visual style preference for reports &amp; dashboard</span>
-                <select class="form-input" name="visual-style">
-                  <option value="">Select…</option>
-                  <option>Clean and simple</option>
-                  <option>More visual with icons and colors</option>
-                  <option>Doesn’t matter</option>
-                </select>
-              </div>
-
-              <div class="form-label">
-                <span>Flexibility of your plan</span>
-                <select class="form-input" name="plan-flexibility">
-                  <option value="">Select…</option>
-                  <option>1 – Very flexible suggestions</option>
-                  <option>2 – Mostly flexible</option>
-                  <option>3 – Balanced</option>
-                  <option>4 – Tend toward structure</option>
-                  <option>5 – Very strict schedule</option>
-                </select>
-              </div>
-
-              <div class="form-label">
-                <span>Anything else you want your “coach” to know?</span>
-                <textarea
-                  class="form-input"
-                  name="coach-notes"
-                  rows="4"
-                  placeholder="Habits, triggers, traditions, or important context."
-                ></textarea>
-              </div>
-            </section>
-
-            <!-- STEP 13 – Summary & Confirmation -->
-            <section class="step-card" id="step-13" style="margin-top:24px; margin-bottom:24px;">
-              <h2>Step 13 of 13 · Summary &amp; Confirmation</h2>
-
-              <p style="font-size:0.9rem;color:#64748b;">
-                In a full version, this screen would show a summary of your key answers:
-                date range, calories, budget, sodium focus, major likes/dislikes, allergies,
-                pantry priority, movement days, and leftovers preferences.
-              </p>
-
-              <div class="form-label">
-                <span>Ready to see the demo dashboard?</span>
-                <label style="font-size:0.84rem;color:#0f172a;display:flex;align-items:center;gap:6px;margin-top:4px;">
-                  <input type="checkbox" required />
-                  <span>
-                    I’ve reviewed my answers and I’m ready to generate a demo weekly plan
-                    (using sample data in this prototype).
-                  </span>
-                </label>
-              </div>
-
-              <p style="font-size:0.8rem;color:#64748b;margin-top:0.75rem;">
-                This prototype will take you to a demo Weekly Snapshot dashboard using
-                example values. In the full system, your real onboarding answers would
-                shape that report and your shopping list.
-              </p>
-
-              <div style="margin-top:1rem;">
-                <button type="submit" class="btn btn-primary btn-full">
-                  Continue to demo Weekly Snapshot
-                </button>
-              </div>
-            </section>
-          </form>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <div class="footer-logo-pill">
-            <img src="images/tkm-logo.png" alt="TKM VitalMetric Wellness logo" />
-          </div>
-          <div class="footer-text">
-            <div class="footer-name">TKM VITALMETRIC WELLNESS</div>
-            <div class="footer-tagline">
-              Prototype demonstration — not medical advice.
-            </div>
-          </div>
-        </div>
-
-        <div class="footer-meta">
-          <span>© 2025 TKM VitalMetric Wellness. All rights reserved.</span>
-        </div>
-      </div>
-    </footer>
-  </div> <!-- /.page -->
-</body>
-</html>
+/* ===============================
+   TKM VitalMetric Wellness
+   Global styles & variables
+   =============================== */
+
+:root {
+  /* Core palette */
+  --color-bg-page: #f4f6fb;
+  --color-bg-section-light: #ffffff;
+  --color-bg-section-alt: #f1f5ff;
+  --color-primary: #1b4fd8;      /* blue */
+  --color-primary-soft: #e0e8ff;
+  --color-accent: #19b77f;       /* green */
+  --color-accent-soft: #ddf7ee;
+  --color-accent-strong: #0f8e60;
+  --color-border-subtle: #d8e0f2;
+  --color-border-strong: #b0c3ec;
+  --color-text-main: #0f172a;
+  --color-text-muted: #6b7280;
+  --color-text-soft: #9ca3af;
+  --color-danger: #db2777;
+  --shadow-soft: 0 18px 35px rgba(15, 23, 42, 0.16);
+  --radius-card: 20px;
+  --radius-pill: 999px;
+  --max-width: 1120px;
+
+  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* Reset-ish */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text-main);
+  background: radial-gradient(circle at top left, #e4ebff, #f4f6fb 55%, #e0f7f0);
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.4rem;
+  border-radius: 999px;
+  border: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease,
+    color 0.12s ease;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary), #2563eb);
+  color: #ffffff;
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.35);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #1c4ac2, #1f5ee0);
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--color-primary);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.btn-secondary:hover {
+  background: #f3f4ff;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--color-border-subtle);
+  color: var(--color-primary);
+}
+
+.btn-ghost:hover {
+  background: #eef2ff;
+}
+
+.btn-full {
+  width: 100%;
+}
+/* ===============================
+   Header / Navigation
+   =============================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.92),
+      rgba(255, 255, 255, 0.88)
+    );
+  border-bottom: 1px solid rgba(209, 213, 219, 0.5);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.9rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+}
+
+.brand-logo img {
+  height: 46px;
+  width: 46px;
+  border-radius: 14px;
+  object-fit: contain;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.22);
+  background: #ffffff;
+  padding: 4px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+}
+
+.brand-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-main);
+}
+
+.brand-tagline {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav-link {
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  color: var(--color-text-main);
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background: rgba(226, 232, 255, 0.8);
+}
+
+.nav-link.active {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.nav-pill {
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.06),
+    rgba(34, 197, 94, 0.08)
+  );
+}
+
+.nav-pill--trial {
+  font-size: 0.8rem;
+}
+
+/* ===============================
+   Main layout / sections
+   =============================== */
+
+.main-content {
+  flex: 1;
+}
+
+.section {
+  padding: 2.5rem 1.25rem;
+}
+
+.section-light {
+  background: var(--color-bg-section-light);
+}
+
+.section-alt {
+  background: var(--color-bg-section-alt);
+}
+
+.section-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section-header {
+  max-width: 640px;
+  margin-bottom: 1.75rem;
+}
+
+.section-header h2 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.6rem;
+  letter-spacing: 0.02em;
+}
+
+.section-header p {
+  margin: 0;
+  font-size: 0.98rem;
+  color: var(--color-text-muted);
+}
+
+/* ===============================
+   Hero / Home snapshot preview
+   =============================== */
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.hero-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.prototype-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(15, 23, 42, 0.04);
+  color: var(--color-text-soft);
+}
+
+.hero-title {
+  margin: 0;
+  font-size: 2.1rem;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+}
+
+.hero-subtitle {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+}
+
+.hero-price-note {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--color-text-main);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.hero-trial-meta {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--color-text-soft);
+}
+
+/* Snapshot preview card */
+
+.hero-side {
+  display: flex;
+  align-items: stretch;
+}
+
+.snapshot-card {
+  position: relative;
+  flex: 1;
+  border-radius: var(--radius-card);
+  padding: 1.4rem 1.5rem;
+  background: radial-gradient(circle at top left, #1b4fd8, #020617 70%);
+  color: #e5ecff;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(148, 163, 230, 0.5);
+}
+
+.snapshot-card-main {
+  margin-top: 0.75rem;
+}
+
+.snapshot-header {
+  margin-bottom: 1rem;
+}
+
+.snapshot-eyebrow {
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(191, 219, 254, 0.9);
+}
+
+.snapshot-title {
+  margin: 0.1rem 0 0.2rem 0;
+  font-size: 1.45rem;
+}
+
+.snapshot-subtitle {
+  margin: 0;
+  font-size: 0.88rem;
+  color: rgba(209, 213, 219, 0.9);
+  }
+.snapshot-rows {
+  margin: 0;
+  padding: 0.75rem 0 0.7rem 0;
+}
+
+.snapshot-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.6fr);
+  gap: 0.75rem;
+  padding: 0.55rem 0;
+  border-top: 1px solid rgba(148, 163, 230, 0.4);
+}
+
+.snapshot-row:first-of-type {
+  border-top: none;
+}
+
+.snapshot-row dt {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(191, 219, 254, 0.9);
+}
+
+.snapshot-row dd {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.snapshot-note {
+  display: block;
+  font-size: 0.78rem;
+  color: rgba(209, 213, 219, 0.86);
+  margin-top: 0.18rem;
+}
+
+.snapshot-footer {
+  margin-top: 0.8rem;
+  font-size: 0.8rem;
+  color: rgba(209, 213, 219, 0.9);
+}
+
+/* Small tags / chips */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tag-sodium {
+  background: rgba(34, 197, 94, 0.2);
+  color: #bbf7d0;
+  border: 1px solid rgba(74, 222, 128, 0.7);
+}
+
+/* ===============================
+   How it works / Steps
+   =============================== */
+
+.step-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+.step-card-mini {
+  background: #ffffff;
+  border-radius: var(--radius-card);
+  padding: 1.1rem 1rem;
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+}
+
+.step-card-mini-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  margin-bottom: 0.6rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  opacity: 0.9;
+}
+
+/* Slightly different accents per step */
+.step-icon-1 {
+  background: linear-gradient(135deg, #2563eb, #22c55e);
+}
+
+.step-icon-2 {
+  background: linear-gradient(135deg, #1d4ed8, #14b8a6);
+}
+
+.step-icon-3 {
+  background: linear-gradient(135deg, #0ea5e9, #22c55e);
+}
+
+.step-icon-4 {
+  background: linear-gradient(135deg, #4f46e5, #22c55e);
+}
+
+.step-card-mini h3 {
+  margin: 0 0 0.35rem 0;
+  font-size: 0.96rem;
+}
+
+.step-card-mini p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* ===============================
+   Healthy meals / Features
+   =============================== */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+.feature-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: var(--radius-card);
+  padding: 1.1rem 1.05rem;
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+}
+
+.feature-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 18px;
+  margin-bottom: 0.6rem;
+  background: radial-gradient(circle at top left, #22c55e, #2563eb);
+  opacity: 0.9;
+}
+
+/* Slight variations if we want them later */
+.feature-icon-pantry {
+  background: radial-gradient(circle at top left, #22c55e, #0ea5e9);
+}
+.feature-icon-sodium {
+  background: radial-gradient(circle at top left, #22c55e, #4f46e5);
+}
+.feature-icon-movement {
+  background: radial-gradient(circle at top left, #0ea5e9, #22c55e);
+}
+.feature-icon-pdf {
+  background: radial-gradient(circle at top left, #4f46e5, #22c55e);
+}
+
+.feature-card h3 {
+  margin: 0 0 0.4rem 0;
+  font-size: 0.98rem;
+}
+
+.feature-card p {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--color-text-muted);
+}
+
+/* ===============================
+   Weekly benefits lists
+   =============================== */
+
+.weekly-benefits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.weekly-benefits-column ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  font-size: 0.9rem;
+  color: var(--color-text-main);
+}
+
+.weekly-benefits-column li + li {
+  margin-top: 0.3rem;
+}
+
+.weekly-benefits-note {
+  margin: 0;
+  font-size: 0.84rem;
+  color: var(--color-text-soft);
+}
+
+/* ===============================
+   Quick-swap helper
+   =============================== */
+
+.quickswap-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+  gap: 1.6rem;
+  align-items: center;
+}
+
+.quickswap-text p {
+  margin-top: 0;
+  margin-bottom: 0.7rem;
+  font-size: 0.94rem;
+  color: var(--color-text-main);
+}
+
+.quickswap-list {
+  margin: 0 0 0.6rem 0;
+  padding-left: 1.15rem;
+  font-size: 0.9rem;
+}
+
+.quickswap-note {
+  font-size: 0.82rem;
+  color: var(--color-text-soft);
+  margin: 0;
+}
+
+.quickswap-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.quickswap-card {
+  max-width: 340px;
+  border-radius: var(--radius-card);
+  padding: 1.1rem 1.15rem;
+  background: radial-gradient(circle at top left, #1b4fd8, #020617 76%);
+  color: #e5ecff;
+  border: 1px solid rgba(148, 163, 230, 0.5);
+  box-shadow: var(--shadow-soft);
+  font-size: 0.9rem;
+}
+
+.quickswap-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(34, 197, 94, 0.16);
+  color: #bbf7d0;
+  margin-bottom: 0.5rem;
+}
+
+/* ===============================
+   Brand band
+   =============================== */
+
+.section-brand-band {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #e5ecff;
+}
+
+.brand-band-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-band-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand-band-logo img {
+  height: 60px;
+  width: 60px;
+  border-radius: 20px;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 4px;
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.6);
+}
+
+.brand-band-text h2 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.3rem;
+}
+
+.brand-band-text p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #cbd5f5;
+}
+
+.brand-band-cta {
+  max-width: 320px;
+}
+
+.brand-band-price {
+  margin: 0 0 0.4rem 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.brand-band-meta {
+  margin: 0.45rem 0 0 0;
+  font-size: 0.8rem;
+  color: #9ca3ff;
+                              }
+/* ===============================
+   Auth layout (login / signup)
+   =============================== */
+
+.auth-layout {
+  display: flex;
+  justify-content: center;
+}
+
+.auth-card {
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: var(--radius-card);
+  padding: 1.6rem 1.8rem;
+  background: #ffffff;
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.12);
+}
+
+.auth-card h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.35rem;
+}
+
+.auth-intro {
+  margin: 0 0 1.1rem 0;
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.form-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+  color: var(--color-text-main);
+}
+
+.form-input,
+select,
+textarea {
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  padding: 0.55rem 0.7rem;
+  font-size: 0.9rem;
+  font-family: var(--font-main);
+}
+
+.form-input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid rgba(37, 99, 235, 0.4);
+  border-color: #2563eb;
+}
+
+.auth-remember-row {
+  margin-top: 0.2rem;
+}
+
+.auth-remember {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.auth-remember input[type="checkbox"] {
+  margin-top: 0.1rem;
+}
+
+.auth-prototype-note {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.78rem;
+  color: var(--color-text-soft);
+}
+
+.auth-switch {
+  margin: 0.45rem 0 0 0;
+  font-size: 0.8rem;
+}
+
+/* ===============================
+   Onboarding layout basics
+   =============================== */
+
+.onboarding-page-header {
+  margin-bottom: 1.5rem;
+}
+
+.onboarding-page-header h1 {
+  margin: 0 0 0.4rem 0;
+  font-size: 1.6rem;
+}
+
+.onboarding-page-header p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+}
+
+.onboarding-steps-map {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.7rem;
+  font-size: 0.76rem;
+}
+
+.onboarding-step-pill {
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border-subtle);
+  background: #f9fafb;
+  color: var(--color-text-soft);
+}
+
+.onboarding-step-pill--current {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  border-color: rgba(37, 99, 235, 0.5);
+}
+
+.onboarding-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-top: 1.2rem;
+}
+
+.onboarding-step-card {
+  border-radius: var(--radius-card);
+  padding: 1.1rem 1rem;
+  background: #ffffff;
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+.onboarding-step-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.45rem;
+}
+
+.onboarding-step-title {
+  margin: 0;
+  font-size: 1.02rem;
+}
+
+.onboarding-step-meta {
+  font-size: 0.78rem;
+  color: var(--color-text-soft);
+}
+
+.onboarding-step-card p {
+  margin: 0.2rem 0 0.4rem 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+/* ===============================
+   Pill-style Like / Neutral / Dislike
+   =============================== */
+
+.preference-group-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.6rem 0 0.35rem 0;
+  color: var(--color-text-main);
+}
+
+.preference-item-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.preference-item-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.pill-toggle-group {
+  display: inline-flex;
+  gap: 0.25rem;
+}
+
+/* Hide the actual radio buttons */
+.pill-toggle-group input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pill-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid #d1d5db;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  background: #ffffff;
+  user-select: none;
+}
+
+/* Selected states – rely on "is-selected" class so HTML can toggle */
+.pill-toggle.is-selected {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.pill-toggle--like.is-selected {
+  border-color: var(--color-accent);
+  color: var(--color-accent-strong);
+  background: var(--color-accent-soft);
+}
+
+.pill-toggle--dislike.is-selected {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+  background: #fce7f3;
+}
+
+/* ===============================
+   Dashboard layout / info panels
+   =============================== */
+
+.prototype-banner {
+  border-radius: var(--radius-card);
+  padding: 0.9rem 1rem;
+  background: #ecf2ff;
+  border: 1px solid var(--color-border-subtle);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.3rem;
+  font-size: 0.88rem;
+}
+
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1.1fr);
+  gap: 1.7rem;
+  align-items: flex-start;
+}
+
+.dashboard-main {
+  min-width: 0;
+}
+
+.dashboard-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.info-panel {
+  border-radius: var(--radius-card);
+  padding: 1rem 0.95rem;
+  background: #ffffff;
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
+  font-size: 0.88rem;
+}
+
+.info-panel h2 {
+  margin: 0 0 0.35rem 0;
+  font-size: 1rem;
+}
+
+.info-panel p {
+  margin: 0 0 0.4rem 0;
+}
+
+.info-panel ul {
+  margin: 0 0 0.5rem 0;
+  padding-left: 1.1rem;
+}
+
+.info-panel-note {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--color-text-soft);
+}
+/* ===============================
+   Future expansion cards
+   =============================== */
+
+.future-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+.future-card {
+  border-radius: var(--radius-card);
+  padding: 1rem 0.9rem;
+  background: #ffffff;
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
+  font-size: 0.88rem;
+}
+
+.future-card h3 {
+  margin: 0 0 0.3rem 0;
+  font-size: 0.98rem;
+}
+
+.future-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+/* ===============================
+   Footer
+   =============================== */
+
+.site-footer {
+  border-top: 1px solid rgba(209, 213, 219, 0.7);
+  background: #f9fafb;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.25rem 1.3rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.footer-logo-pill img {
+  height: 40px;
+  width: 40px;
+  border-radius: 999px;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 4px;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.2);
+}
+
+.footer-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.footer-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.footer-tagline {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.footer-meta {
+  font-size: 0.8rem;
+  color: var(--color-text-soft);
+}
+
+/* ===============================
+   Responsive tweaks
+   =============================== */
+
+@media (max-width: 960px) {
+  .header-inner {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .hero-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-side {
+    margin-top: 1rem;
+  }
+
+  .step-grid,
+  .feature-grid,
+  .future-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dashboard-side {
+    margin-top: 1rem;
+  }
+
+  .quickswap-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .weekly-benefits {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .brand-band-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-inner {
+    padding: 0.7rem 0.9rem;
+  }
+
+  .brand-name {
+    font-size: 0.8rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.7rem;
+  }
+
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .step-grid,
+  .feature-grid,
+  .future-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .auth-card {
+    padding: 1.3rem 1.2rem;
+  }
+
+  .snapshot-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .prototype-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* ===============================
+   Optional hero background image
+   (only applies if bg-hero.jpg exists)
+   =============================== */
+
+.hero-layout {
+  position: relative;
+}
+
+.hero-layout::before {
+  content: "";
+  position: absolute;
+  inset: -30px -40px auto auto;
+  pointer-events: none;
+  background-image: url("images/bg-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.16;
+  filter: saturate(1.1);
+  z-index: -1;
+}
