@@ -1,50 +1,87 @@
-// app.js – light front-end logic for prototype only
+// app.js
+// Light front-end behavior for the TKM VitalMetric Wellness prototype.
+// No real accounts, payments, or data storage yet.
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Onboarding "finish" button: go to dashboard demo
-  var onboardingForm = document.getElementById("onboarding-form");
-  if (onboardingForm) {
-    onboardingForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      // In a real app, we'd send data to backend.
-      alert("Prototype only – taking you to the demo Weekly Snapshot.");
-      window.location.href = "dashboard.html";
-    });
+"use strict";
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Helper: show a quick demo message and then redirect
+  function demoRedirect(message, href) {
+    if (message) {
+      alert(message);
+    }
+    if (href) {
+      window.location.href = href;
+    }
   }
 
-  // Fake login form
-  var loginForm = document.getElementById("login-form");
+  // -----------------------------
+  // DEMO LOGIN HANDLER
+  // -----------------------------
+  const loginForm = document.getElementById("login-form");
   if (loginForm) {
-    loginForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var msgEl = document.getElementById("auth-message");
-      if (msgEl) {
-        msgEl.textContent =
-          "Demo only – this doesn’t create a real session. Redirecting to Weekly Snapshot…";
-      } else {
-        alert("Demo only – redirecting to the Weekly Snapshot.");
+    loginForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const submitButton = loginForm.querySelector('button[type="submit"]');
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Signing you in (demo)…";
       }
-      setTimeout(function () {
-        window.location.href = "dashboard.html";
-      }, 700);
+
+      demoRedirect(
+        "Demo only – in the full system this would verify your account and load your personal Weekly Snapshot.",
+        "dashboard.html"
+      );
     });
   }
 
-  // Fake signup form
-  var signupForm = document.getElementById("signup-form");
+  // -----------------------------
+  // DEMO SIGNUP HANDLER
+  // -----------------------------
+  const signupForm = document.getElementById("signup-form");
   if (signupForm) {
-    signupForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var msgEl = document.getElementById("signup-message");
-      if (msgEl) {
-        msgEl.textContent =
-          "Demo only – no real account is created yet. Redirecting to onboarding…";
-      } else {
-        alert("Demo only – redirecting to onboarding.");
+    signupForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const submitButton = signupForm.querySelector('button[type="submit"]');
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Creating demo account…";
       }
-      setTimeout(function () {
-        window.location.href = "onboarding.html";
-      }, 700);
+
+      demoRedirect(
+        "Demo only – in the full system this would create your account, start your 7-day free trial, and connect billing.",
+        "onboarding.html"
+      );
     });
   }
+  // -----------------------------
+  // DEMO ONBOARDING HANDLER
+  // -----------------------------
+  const onboardingForm = document.querySelector(".onboarding-form");
+  if (onboardingForm) {
+    onboardingForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const submitButton = onboardingForm.querySelector('button[type="submit"]');
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Loading demo Weekly Snapshot…";
+      }
+
+      demoRedirect(
+        "Demo only – in the full system your onboarding answers would be saved and used to generate your weekly plan and shopping list.",
+        "dashboard.html"
+      );
+    });
+  }
+
+  // -----------------------------
+  // FUTURE: LocalStorage or personalization
+  // -----------------------------
+  // In a later phase, we can:
+  // - Save simple onboarding values to localStorage
+  // - Use them to personalize text on the dashboard
+  // For now, this is intentionally front-end only.
 });
