@@ -1,99 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign In • TKM VitalMetric Wellness</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign In • TKM VitalMetric Wellness</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <!-- Shared header -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="brand">
+          <div class="brand-logo">
+            <img src="images/tkm-logo.png" alt="TKM VitalMetric Wellness logo" />
+          </div>
+          <div class="brand-text">
+            <div class="brand-name">TKM VITALMETRIC WELLNESS</div>
+            <div class="brand-tagline">Weekly wellness mission control</div>
+          </div>
+        </a>
 
-  <body>
-    <div class="page">
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="onboarding.html" class="nav-link">Start Plan</a>
+          <a href="dashboard.html" class="nav-link">Demo Dashboard</a>
+          <a href="login.html" class="nav-link active">Sign In</a>
+          <a href="signup.html" class="nav-link nav-cta">7-day free trial · then $9.99/wk</a>
+        </nav>
+      </div>
+    </header>
 
-      <!-- ================= HEADER ================ -->
-      <header class="site-header">
-        <div class="header-inner">
-          <a href="index.html" class="header-brand">
-            <img src="images/tkm-logo.png" alt="TKM logo" class="header-logo" />
-            <span class="header-brand-text">TKM VitalMetric Wellness</span>
-          </a>
+    <main class="main-content auth-page">
+      <section class="card">
+        <div class="card-inner">
+          <h1 class="section-title">Sign in to your account</h1>
+          <p class="section-subtitle">
+            This is a prototype sign-in screen. No real accounts are created yet — we’ll send you
+            to the demo dashboard after a fake “sign in.”
+          </p>
+          <form id="login-form" class="auth-form">
+            <div class="form-section">
+              <div class="form-group">
+                <label class="field-label" for="login_email">Email</label>
+                <input
+                  type="email"
+                  id="login_email"
+                  name="login_email"
+                  class="text-input"
+                  required
+                />
+              </div>
 
-          <nav class="header-nav">
-            <a href="index.html">Home</a>
-            <a href="onboarding.html">Start Plan</a>
-            <a href="dashboard.html">Demo Dashboard</a>
-            <a class="active" href="login.html">Sign In</a>
-          </nav>
-        </div>
-      </header>
+              <div class="form-group">
+                <label class="field-label" for="login_password">Password</label>
+                <input
+                  type="password"
+                  id="login_password"
+                  name="login_password"
+                  class="text-input"
+                  required
+                />
+              </div>
 
-      <main class="content-area auth-page">
-        <section class="auth-card">
-          <h1 class="auth-title">Sign In</h1>
-          <p class="auth-subtitle">Access your wellness dashboard</p>
-          
-<form id="login-form" class="auth-form">
-            <div class="form-group">
-              <label class="field-label" for="login_email">Email</label>
-              <input
-                type="email"
-                id="login_email"
-                name="login_email"
-                class="text-input"
-                required
-              />
+              <button type="submit" class="btn btn-primary">
+                Sign In (demo)
+              </button>
+
+              <p class="auth-note">
+                Prototype only — this does not create or validate real credentials yet.
+              </p>
             </div>
+          </form>
 
-            <div class="form-group">
-              <label class="field-label" for="login_password">Password</label>
-              <input
-                type="password"
-                id="login_password"
-                name="login_password"
-                class="text-input"
-                required
-              />
-            </div>
-
-            <button type="submit" class="btn btn-primary auth-btn">
-              Sign In (demo)
-            </button>
-
-            <p class="auth-note">
-              Prototype only — no real accounts created
-            </p>
-</form>
-<div class="auth-alt-links">
+          <div class="auth-alt-links">
             <p>Don't have an account? <a href="signup.html">Create one</a></p>
           </div>
-        </section>
-      </main>
-
-      <!-- ================= FOOTER ================= -->
-      <footer class="site-footer">
-        <div class="footer-inner">
-          <div class="footer-left">
-            <img src="images/tkm-logo.png" class="footer-logo" alt="TKM small logo" />
-            <div>
-              <div class="footer-text-main">TKM VITALMETRIC WELLNESS</div>
-              <div class="footer-text-sub">Prototype demonstration — not medical advice</div>
-            </div>
+        </div>
+      </section>
+    </main>
+    <!-- Shared footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <div class="footer-logo">
+            <img src="images/tkm-logo.png" alt="TKM VitalMetric Wellness logo" />
           </div>
-
-          <div class="footer-right">
-            © <span id="year-login"></span> TKM VitalMetric Wellness
+          <div>
+            <div class="footer-text-main">TKM VITALMETRIC WELLNESS</div>
+            <div class="footer-text-sub">
+              Prototype demonstration — not medical advice.</div>
           </div>
         </div>
-      </footer>
-      </div> <!-- /.page -->
 
-    <script src="app.js"></script>
-    <script>
-      (function () {
-        var y = document.getElementById("year-login");
-        if (y) y.textContent = new Date().getFullYear();
-      })();
-    </script>
-
-  </body>
+        <div class="footer-right">
+          &copy; 2025 TKM VitalMetric Wellness. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
 </html>
