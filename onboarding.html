@@ -1,1 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Start Your Plan – TKM VitalMetric Wellness</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+<div class="page">
 
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-logo">
+        <img src="images/tkm-logo.png" alt="TKM VitalMetric Wellness logo" />
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">TKM VitalMetric Wellness</span>
+        <span class="brand-tagline">Weekly wellness mission control</span>
+      </span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="onboarding.html" class="nav-link active">Start Plan</a>
+      <a href="dashboard.html" class="nav-link">Demo Dashboard</a>
+      <a href="login.html" class="nav-link nav-pill">Sign In</a>
+    </nav>
+  </div>
+</header>
+
+<main class="main-content">
+<section class="section section-light">
+  <div class="section-inner">
+    <div class="onboarding-page-header">
+      <h1>Start Your Weekly Plan</h1>
+      <p>
+        Answer a few questions so we can personalize your weekly meals, sodium goals,
+        budget, pantry usage, and movement stack.
+      </p>
+    </div>
+
+    <!-- Progress pills (visual only for now) -->
+    <div class="onboarding-steps-map">
+      <span class="onboarding-step-pill onboarding-step-pill--current">Step 1</span>
+      <span class="onboarding-step-pill">Step 2</span>
+      <span class="onboarding-step-pill">Step 3</span>
+      <span class="onboarding-step-pill">Step 4</span>
+      <span class="onboarding-step-pill">Step 5</span>
+      <span class="onboarding-step-pill">Step 6</span>
+      <span class="onboarding-step-pill">Step 7</span>
+      <span class="onboarding-step-pill">Step 8</span>
+      <span class="onboarding-step-pill">Step 9</span>
+      <span class="onboarding-step-pill">Step 10</span>
+      <span class="onboarding-step-pill">Step 11</span>
+      <span class="onboarding-step-pill">Step 12</span>
+      <span class="onboarding-step-pill">Step 13</span>
+    </div>
+
+    <div class="onboarding-steps">
+
+      <!-- STEP 1 – Welcome & Consent -->
+      <div class="onboarding-step-card">
+        <div class="onboarding-step-header">
+          <h2 class="onboarding-step-title">Step 1 — Welcome &amp; Consent</h2>
+          <span class="onboarding-step-meta">1 of 13</span>
+        </div>
+
+        <p>
+          Welcome to TKM VitalMetric Wellness. Before we begin, please confirm you
+          understand this is a prototype and not medical advice.
+        </p>
+
+        <label class="form-label">
+          <input type="checkbox" />
+          I understand this is a prototype and not medical advice.
+        </label>
+
+        <label class="form-label">
+          Main goal right now
+          <select class="form-input">
+            <option>Weight loss</option>
+            <option>Weight maintenance</option>
+            <option>Improve blood pressure / sodium control</option>
+            <option>Better organization &amp; budget</option>
+            <option>Other</option>
+          </select>
+        </label>
+
+        <label class="form-label">
+          If “Other,” what is your main goal?
+          <input type="text" class="form-input" />
+        </label>
+      </div>
+      
+<!-- STEP 2 – Plan Settings -->
+      <div class="onboarding-step-card">
+        <div class="onboarding-step-header">
+          <h2 class="onboarding-step-title">Step 2 — Plan Settings</h2>
+          <span class="onboarding-step-meta">2 of 13</span>
+        </div>
+
+        <p>Set your basic plan dates, meal structure, calorie target, budget, and sodium focus.</p>
+
+        <div class="form-row">
+          <label class="form-label">
+            Plan start date
+            <input type="date" class="form-input" />
+          </label>
+          <label class="form-label">
+            Plan end date
+            <input type="date" class="form-input" />
+          </label>
+        </div>
+
+        <label class="form-label">
+          Which meals/snacks should we plan each day?
+          <div>
+            <label><input type="checkbox" /> Breakfast</label><br />
+            <label><input type="checkbox" /> Lunch</label><br />
+            <label><input type="checkbox" /> Dinner</label><br />
+            <label><input type="checkbox" /> Morning snack</label><br />
+            <label><input type="checkbox" /> Afternoon snack</label><br />
+            <label><input type="checkbox" /> Evening snack</label>
+          </div>
+        </label>
+
+        <label class="form-label">
+          Daily calorie target (approx.)
+          <input type="number" class="form-input" placeholder="e.g., 2200" />
+        </label>
+
+        <label class="form-label">
+          Weekly food budget
+          <input type="number" class="form-input" placeholder="e.g., 75" />
+        </label>
+
+        <label class="form-label">
+          How important is staying under budget? (1–5)
+          <input type="range" min="1" max="5" value="3" class="form-input" />
+        </label>
+
+        <label class="form-label">
+          Sodium reduction goal
+          <select class="form-input">
+            <option>Normal / no special focus</option>
+            <option>Mild reduction</option>
+            <option>Moderate reduction</option>
+            <option>Aggressive reduction (priority)</option>
+          </select>
+        </label>
+
+        <label class="form-label">
+          Other nutrition focus areas
+          <div>
+            <label><input type="checkbox" /> Lower added sugar</label><br />
+            <label><input type="checkbox" /> More fiber</label><br />
+            <label><input type="checkbox" /> Higher protein</label><br />
+            <label><input type="checkbox" /> Lower saturated fat</label><br />
+            <label><input type="checkbox" /> More fruits &amp; vegetables</label><br />
+            <label><input type="checkbox" /> None / not sure</label>
+          </div>
+        </label>
+      </div>
+      <!-- STEP 3 – Basic Profile & Goals -->
+      <div class="onboarding-step-card">
+        <div class="onboarding-step-header">
+          <h2 class="onboarding-step-title">Step 3 — Basic Profile &amp; Goals</h2>
+          <span class="onboarding-step-meta">3 of 13</span>
+        </div>
+
+        <p>Tell us a bit about yourself so we can better estimate your needs.</p>
+
+        <label class="form-label">
+          What should we call you?
+          <input type="text" class="form-input" placeholder="Name" />
+        </label>
+
+        <div class="form-row">
+          <label class="form-label">
+            Age (optional)
+            <input type="number" class="form-input" />
+          </label>
+          <label class="form-label">
+            Height (optional)
+            <input type="text" class="form-input" placeholder="e.g., 5'9&quot;" />
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label">
+            Current weight (optional)
+            <input type="number" class="form-input" />
+          </label>
+          <label class="form-label">
+            Target weight or main outcome (optional)
+            <input type="text" class="form-input" />
+          </label>
+        </div>
+
+        <label class="form-label">
+          How quickly are you hoping to see progress?
+          <select class="form-input">
+            <option>Slow and steady (6+ months)</option>
+            <option>Moderate (3–6 months)</option>
+            <option>Faster (1–3 months)</option>
+            <option>Not sure / just starting</option>
+          </select>
+        </label>
+
+        <label class="form-label">
+          If weight loss is a goal, how many pounds per week would you like to aim for? (0.5–3.0)
+          <input type="range" min="0" max="3" step="0.5" value="1.5" class="form-input" />
+        </label>
+      </div>
+
+      <!-- STEP 4 – Cooking Context & Kitchen Setup -->
+      <div class="onboarding-step-card">
+        <div class="onboarding-step-header">
+          <h2 class="onboarding-step-title">Step 4 — Cooking Context &amp; Kitchen Setup</h2>
+          <span class="onboarding-step-meta">4 of 13</span>
+        </div>
+
+        <p>Help us understand what you’re working with in your kitchen and schedule.</p>
+
+        <label class="form-label">
+          How many people are you planning for (including you)?
+          <input type="number" class="form-input" />
+        </label>
+
+        <label class="form-label">
+          How comfortable are you in the kitchen?
+          <select class="form-input">
+            <option>Very beginner (need simple instructions)</option>
+            <option>Beginner</option>
+            <option>Intermediate</option>
+            <option>Comfortable</option>
+            <option>Advanced / enjoy complex recipes</option>
+          </select>
+        </label>
+
+        <label class="form-label">
+          Preferred recipe complexity
+          <select class="form-input">
+            <option>Very simple (5–7 ingredients, few steps)</option>
+            <option>Moderate (10–12 ingredients, normal steps)</option>
+            <option>I’m fine with more complex recipes if they’re tasty</option>
+          </select>
+        </label>
+
+        <p class="preference-group-title">Time available on a typical day</p>
+        <div class="form-row">
+          <label class="form-label">
+            Breakfast
+            <select class="form-input">
+              <option>5 minutes</option>
+              <option>10 minutes</option>
+              <option>15 minutes</option>
+              <option>20+ minutes</option>
+            </select>
+          </label>
+          <label class="form-label">
+            Lunch
+            <select class="form-input">
+              <option>5 minutes</option>
+              <option>10 minutes</option>
+              <option>20 minutes</option>
+              <option>30+ minutes</option>
+            </select>
+          </label>
+          <label class="form-label">
+            Dinner
+            <select class="form-input">
+              <option>15 minutes</option>
+              <option>20 minutes</option>
+              <option>30 minutes</option>
+              <option>45+ minutes</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="form-label">
+          Kitchen equipment available
+          <div>
+            <label><input type="checkbox" /> Standard oven</label><br />
+            <label><input type="checkbox" /> Stovetop (electric/gas)</label><br />
+            <label><input type="checkbox" /> Microwave</label><br />
+            <label><input type="checkbox" /> Slow cooker / Crock-Pot</label><br />
+            <label><input type="checkbox" /> Instant Pot / pressure cooker</label><br />
+            <label><input type="checkbox" /> Air fryer</label><br />
+            <label><input type="checkbox" /> Toaster / toaster oven</label><br />
+            <label><input type="checkbox" /> Blender</label><br />
+            <label><input type="checkbox" /> Food processor</label><br />
+            <label><input type="checkbox" /> Grill / grill pan</label><br />
+            <label><input type="checkbox" /> Basic knives &amp; cutting board</label>
+          </div>
+        </label>
+
+        <label class="form-label">
+          Any kitchen limitations or notes?
+          <textarea class="form-input" rows="3" placeholder="e.g., no oven, tiny fridge, limited cookware"></textarea>
+        </label>
+      </div>
+      <!-- STEP 5 – Food Preferences: Proteins -->
+      <div class="onboarding-step-card">
+        <div class="onboarding-step-header">
+          <h2 class="onboarding-step-title">Step 5 — Food Preferences: Proteins</h2>
+          <span class="onboarding-step-meta">5 of 13</span>
+        </div>
+
+        <p>
+          Tell us how you feel about these proteins. We’ll prioritize what you like,
+          use “neutral” sometimes, and avoid what you dislike.
+        </p>
+
+        <div class="preference-group">
+          <p class="preference-group-title">Proteins</p>
+
+          <!-- pattern: label + pill-toggle group -->
+          <div class="preference-item">
+            <div class="preference-item-row">
+              <div class="preference-item-label">Chicken breast</div>
+              <div class="pill-toggle-group">
+                <label class="pill-toggle pill-toggle--like">Like</label>
+                <label class="pill-toggle">Neutral</label>
+                <label class="pill-toggle pill-toggle--dislike">Dislike</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Chicken thighs</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Ground chicken</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Turkey breast</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Ground turkey</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Lean ground beef</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Steak / beef cuts</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Pork chops</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Ham</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Bacon</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Sausage (breakfast)</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Sausage (smoked / kielbasa)</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Deli meats (ham/turkey)</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Fish – mild (e.g., cod, tilapia)</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Fish – stronger (e.g., salmon, tuna)</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Shellfish (shrimp, crab, etc.)</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Eggs</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Egg whites</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Tofu</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Tempeh</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Beans (black, pinto, kidney, etc.)</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Lentils</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Chickpeas / garbanzo beans</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+        </div>
+
+        <label class="form-label">
+          Any other proteins to include or avoid?
+          <textarea class="form-input" rows="2"></textarea>
+        </label>
+      </div>
+      <!-- STEP 6 – Dairy & Alternatives -->
+      <div class="onboarding-step-card">
+        <div class="onboarding-step-header">
+          <h2 class="onboarding-step-title">Step 6 — Food Preferences: Dairy &amp; Alternatives</h2>
+          <span class="onboarding-step-meta">6 of 13</span>
+        </div>
+
+        <p>Let us know which dairy items and alternatives fit your preferences.</p>
+
+        <div class="preference-group">
+          <p class="preference-group-title">Dairy &amp; Alternatives</p>
+
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Skim milk</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">1–2% milk</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Whole milk</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Lactose-free milk</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Yogurt – plain</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Yogurt – flavored / fruit</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Cottage cheese</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Hard cheeses (cheddar, Swiss, etc.)</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Soft cheeses (mozzarella, provolone)</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Cream cheese</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Sour cream</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Non-dairy milks (almond, soy, oat, etc.)</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+        </div>
+
+        <label class="form-label">
+          Any other dairy or alternatives to include or avoid?
+          <textarea class="form-input" rows="2"></textarea>
+        </label>
+      </div>
+
+      <!-- STEP 7 – Grains, Starches & Carbs -->
+      <div class="onboarding-step-card">
+        <div class="onboarding-step-header">
+          <h2 class="onboarding-step-title">Step 7 — Food Preferences: Grains, Starches &amp; Carbs</h2>
+          <span class="onboarding-step-meta">7 of 13</span>
+        </div>
+
+        <p>Tell us how you feel about these grains and starches.</p>
+
+        <div class="preference-group">
+          <p class="preference-group-title">Grains &amp; Starches</p>
+
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">White bread</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Wheat / whole-grain bread</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Buns / rolls</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Tortillas (flour)</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Tortillas (corn)</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">White rice</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Brown rice</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Instant rice cups</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Pasta – regular</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Pasta – whole wheat</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Macaroni / elbows</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Noodles (ramen, etc.)</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Potatoes (baking/roasted/mashed)</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Tater tots / hash browns</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Sweet potatoes</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Oatmeal</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Cold cereal – kid cereals</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Cold cereal – bran / oats</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Crackers</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Rice cakes</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+        </div>
+
+        <label class="form-label">
+          Any other grains or starches to include or avoid?
+          <textarea class="form-input" rows="2"></textarea>
+        </label>
+      </div>
+      <!-- STEP 8 – Vegetables -->
+      <div class="onboarding-step-card">
+        <div class="onboarding-step-header">
+          <h2 class="onboarding-step-title">Step 8 — Food Preferences: Vegetables</h2>
+          <span class="onboarding-step-meta">8 of 13</span>
+        </div>
+
+        <p>We’ll assume fresh, frozen, or canned versions of these where appropriate.</p>
+
+        <div class="preference-group">
+          <p class="preference-group-title">Vegetables</p>
+
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Onions</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Garlic</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Carrots</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Celery</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Potatoes</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Sweet potatoes</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Peas</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Corn</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Green beans</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Broccoli</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Cauliflower</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Spinach</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Lettuce (iceberg/romaine)</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Mixed salad greens</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Tomatoes (fresh)</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Tomatoes (in dishes/sauces)</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Bell peppers</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Cucumbers</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Zucchini / squash</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Mushrooms</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Cabbage / coleslaw mix</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+        </div>
+
+        <label class="form-label">
+          Any other vegetables to include or avoid?
+          <textarea class="form-input" rows="2"></textarea>
+        </label>
+      </div>
+
+      <!-- STEP 9 – Fruits -->
+      <div class="onboarding-step-card">
+        <div class="onboarding-step-header">
+          <h2 class="onboarding-step-title">Step 9 — Food Preferences: Fruits</h2>
+          <span class="onboarding-step-meta">9 of 13</span>
+        </div>
+
+        <p>Tell us how you feel about these fruits (fresh, canned, or frozen).</p>
+
+        <div class="preference-group">
+          <p class="preference-group-title">Fruits</p>
+
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Apples</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Bananas</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Oranges</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Mandarins / clementines</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Grapes</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Strawberries</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Blueberries</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Pineapple</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Peaches</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Pears</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Melons (cantaloupe, honeydew)</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Fruit cocktail / mixed canned fruit</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+        </div>
+
+        <label class="form-label">
+          Any other fruits to include or avoid?
+          <textarea class="form-input" rows="2"></textarea>
+        </label>
+      </div>
+      <!-- STEP 10 – Snacks, Sauces & Cuisines -->
+      <div class="onboarding-step-card">
+        <div class="onboarding-step-header">
+          <h2 class="onboarding-step-title">Step 10 — Snacks, Sauces &amp; Cuisines</h2>
+          <span class="onboarding-step-meta">10 of 13</span>
+        </div>
+
+        <p>Tell us how you feel about snacks, convenience foods, and flavor profiles.</p>
+
+        <div class="preference-group">
+          <p class="preference-group-title">Snacks &amp; Convenience Foods</p>
+
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Peanut butter</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Peanut butter crackers</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Cheese &amp; crackers</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Popcorn</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Pretzels</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Chips</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Granola bars</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Yogurt cups / pudding</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Applesauce / fruit cups</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Frozen waffles</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Frozen dinners / entrées</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Hot dogs / chili dogs</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Ready-made soups</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+        </div>
+
+        <div class="preference-group">
+          <p class="preference-group-title">Condiments, Sauces &amp; Dressings</p>
+
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Ketchup</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Mustard</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Mayonnaise / light mayo</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Barbecue sauce</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Ranch dressing</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Italian dressing</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Salsa</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Tomato sauce / marinara</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Alfredo sauce</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Soy sauce (regular / low-sodium)</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Hot sauce</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Gravy (packet or jar)</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+        </div>
+
+        <div class="preference-group">
+          <p class="preference-group-title">Cuisines &amp; Flavor Profiles</p>
+
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">American comfort food</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Italian (pasta, red sauce)</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Mexican / Tex-Mex</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Asian-inspired (stir-fries, rice bowls)</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Soups &amp; stews</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Casseroles</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+          <div class="preference-item"><div class="preference-item-row"><div class="preference-item-label">Salads &amp; cold plates</div><div class="pill-toggle-group"><label class="pill-toggle pill-toggle--like">Like</label><label class="pill-toggle">Neutral</label><label class="pill-toggle pill-toggle--dislike">Dislike</label></div></div></div>
+        </div>
+      </div>
+      <!-- STEP 11 – Allergies & Medical Constraints -->
+      <div class="onboarding-step-card">
+        <div class="onboarding-step-header">
+          <h2 class="onboarding-step-title">Step 11 — Allergies, “Never Include” Foods &amp; Medical Constraints</h2>
+          <span class="onboarding-step-meta">11 of 13</span>
+        </div>
+
+        <p>Let us know about any foods or medical conditions that affect what you can safely eat.</p>
+
+        <label class="form-label">
+          Allergies or intolerances
+          <div>
+            <label><input type="checkbox" /> None</label><br />
+            <label><input type="checkbox" /> Gluten</label><br />
+            <label><input type="checkbox" /> Dairy / lactose</label><br />
+            <label><input type="checkbox" /> Eggs</label><br />
+            <label><input type="checkbox" /> Soy</label><br />
+            <label><input type="checkbox" /> Peanuts</label><br />
+            <label><input type="checkbox" /> Tree nuts</label><br />
+            <label><input type="checkbox" /> Fish</label><br />
+            <label><input type="checkbox" /> Shellfish</label><br />
+            <label><input type="checkbox" /> Other (explain)</label>
+          </div>
+        </label>
+
+        <label class="form-label">
+          If “Other,” please explain:
+          <textarea class="form-input" rows="2"></textarea>
+        </label>
+
+        <label class="form-label">
+          Medical / health considerations that affect food choices
+          <div>
+            <label><input type="checkbox" /> High blood pressure / hypertension</label><br />
+            <label><input type="checkbox" /> Diabetes / pre-diabetes</label><br />
+            <label><input type="checkbox" /> High cholesterol</label><br />
+            <label><input type="checkbox" /> Kidney disease</label><br />
+            <label><input type="checkbox" /> GERD / reflux</label><br />
+            <label><input type="checkbox" /> Other (explain)</label>
+          </div>
+        </label>
+
+        <label class="form-label">
+          Other health notes
+          <textarea class="form-input" rows="2"></textarea>
+        </label>
+
+        <label class="form-label">
+          Foods or ingredients you never want included
+          <textarea class="form-input" rows="3"></textarea>
+        </label>
+
+        <label class="form-label">
+          How strict should we be about avoiding these foods? (1–5)
+          <input type="range" min="1" max="5" value="5" class="form-input" />
+        </label>
+      </div>
+      <!-- STEP 12 – Pantry, Stores & Budget Strategy -->
+      <div class="onboarding-step-card">
+        <div class="onboarding-step-header">
+          <h2 class="onboarding-step-title">Step 12 — Pantry, Stores &amp; Budget Strategy</h2>
+          <span class="onboarding-step-meta">12 of 13</span>
+        </div>
+
+        <p>Tell us about your pantry and where you shop so we can plan realistic, budget-friendly meals.</p>
+
+        <label class="form-label">
+          How would you like to share your pantry?
+          <div>
+            <label><input type="checkbox" /> Type or paste a text list</label><br />
+            <label><input type="checkbox" /> Upload a text or spreadsheet file (future)</label><br />
+            <label><input type="checkbox" /> Upload an audio description (future)</label>
+          </div>
+        </label>
+
+        <label class="form-label">
+          Type or paste your pantry (prototype only)
+          <textarea class="form-input" rows="4" placeholder="List what you have on hand—foods and amounts if known."></textarea>
+        </label>
+
+        <label class="form-label">
+          How aggressively should we prioritize using pantry items before buying more? (1–5)
+          <input type="range" min="1" max="5" value="4" class="form-input" />
+        </label>
+
+        <label class="form-label">
+          Primary grocery stores
+          <div>
+            <label><input type="checkbox" /> Walmart</label><br />
+            <label><input type="checkbox" /> Aldi</label><br />
+            <label><input type="checkbox" /> Kroger / local supermarket</label><br />
+            <label><input type="checkbox" /> Costco / Sam’s</label><br />
+            <label><input type="checkbox" /> Dollar store</label><br />
+            <label><input type="checkbox" /> Other</label>
+          </div>
+        </label>
+
+        <label class="form-label">
+          Other store notes (optional)
+          <input type="text" class="form-input" />
+        </label>
+
+        <label class="form-label">
+          Would you visit more than one store to save money?
+          <select class="form-input">
+            <option>No, one store only</option>
+            <option>Maybe two, if savings are big enough</option>
+            <option>Yes, I’m fine hitting multiple stores</option>
+          </select>
+        </label>
+
+        <label class="form-label">
+          What matters most about your store choice?
+          <select class="form-input">
+            <option>Lowest total cost</option>
+            <option>Closest / most convenient</option>
+            <option>Best selection / brands</option>
+            <option>Mix of value and convenience</option>
+          </select>
+        </label>
+
+        <label class="form-label">
+          Do you prefer name brands or store brands?
+          <select class="form-input">
+            <option>Mostly store brands / generic is fine</option>
+            <option>Mix of store and name brands</option>
+            <option>Prefer name brands when possible</option>
+          </select>
+        </label>
+      </div>
+      <!-- STEP 13 – Sodium Focus, Movement & Plan Style -->
+      <div class="onboarding-step-card">
+        <div class="onboarding-step-header">
+          <h2 class="onboarding-step-title">Step 13 — Sodium Focus, Movement &amp; Plan Style</h2>
+          <span class="onboarding-step-meta">13 of 13</span>
+        </div>
+
+        <p>Finally, tell us how aggressively we should push sodium down, how you like to move, and how structured your plan should feel.</p>
+
+        <label class="form-label">
+          Sodium reduction focus (confirm)
+          <select class="form-input">
+            <option>Normal / no special focus</option>
+            <option>Mild reduction</option>
+            <option>Moderate reduction</option>
+            <option>Aggressive reduction (priority)</option>
+          </select>
+        </label>
+
+        <label class="form-label">
+          Which salty items do you most want to cut back on?
+          <div>
+            <label><input type="checkbox" /> Processed meats (bacon, sausage, deli meat)</label><br />
+            <label><input type="checkbox" /> Canned soups</label><br />
+            <label><input type="checkbox" /> Packaged rice / pasta sides</label><br />
+            <label><input type="checkbox" /> Frozen dinners</label><br />
+            <label><input type="checkbox" /> Salty snacks (chips, pretzels)</label><br />
+            <label><input type="checkbox" /> Restaurant / takeout</label><br />
+            <label><input type="checkbox" /> Sauces &amp; condiments</label><br />
+            <label><input type="checkbox" /> Not sure</label>
+          </div>
+        </label>
+
+        <label class="form-label">
+          Anything else we should know about your nutrition goals?
+          <textarea class="form-input" rows="2"></textarea>
+        </label>
+
+        <hr style="margin: 1rem 0;" />
+
+        <p class="preference-group-title">Movement / exercise preferences</p>
+
+        <label class="form-label">
+          Current activity level
+          <select class="form-input">
+            <option>Mostly sedentary</option>
+            <option>Lightly active (some walking)</option>
+            <option>Moderately active</option>
+            <option>Very active</option>
+          </select>
+        </label>
+
+        <label class="form-label">
+          Preferred movement types
+          <div>
+            <label><input type="checkbox" /> Gentle stretching</label><br />
+            <label><input type="checkbox" /> Radio Taiso / similar routines</label><br />
+            <label><input type="checkbox" /> Tai Chi / Qigong</label><br />
+            <label><input type="checkbox" /> Light walking (5–15 minutes)</label><br />
+            <label><input type="checkbox" /> Longer walking (20–40 minutes)</label><br />
+            <label><input type="checkbox" /> Stationary bike</label><br />
+            <label><input type="checkbox" /> Light resistance / bands</label><br />
+            <label><input type="checkbox" /> Gym / weights</label><br />
+            <label><input type="checkbox" /> Other</label>
+          </div>
+        </label>
+
+        <label class="form-label">
+          If “Other,” please describe:
+          <textarea class="form-input" rows="2"></textarea>
+        </label>
+
+        <label class="form-label">
+          How many days per week would you like a movement plan? (3–7)
+          <input type="range" min="3" max="7" value="5" class="form-input" />
+        </label>
+
+        <label class="form-label">
+          How many minutes per day can you realistically commit?
+          <input type="range" min="10" max="60" value="20" class="form-input" />
+        </label>
+
+        <label class="form-label">
+          Any joint or mobility issues we should consider?
+          <textarea class="form-input" rows="2" placeholder="e.g., bad knees, back pain, balance issues"></textarea>
+        </label>
+
+        <label class="form-label">
+          How challenging should the movement plan feel?
+          <select class="form-input">
+            <option>Very gentle</option>
+            <option>Gentle / light</option>
+            <option>Moderate</option>
+            <option>Challenging but safe</option>
+          </select>
+        </label>
+
+        <hr style="margin: 1rem 0;" />
+
+        <p class="preference-group-title">Daily schedule &amp; leftovers</p>
+
+        <div class="form-row">
+          <label class="form-label">
+            Usual wake time
+            <input type="time" class="form-input" />
+          </label>
+          <label class="form-label">
+            Usual bedtime
+            <input type="time" class="form-input" />
+          </label>
+        </div>
+
+        <label class="form-label">
+          Any days that are especially busy or different (Mon–Sun)?
+          <input type="text" class="form-input" placeholder="e.g., Tue &amp; Thu evenings are hectic" />
+        </label>
+
+        <label class="form-label">
+          How do you feel about leftovers?
+          <select class="form-input">
+            <option>Love them – please plan them on purpose</option>
+            <option>Okay with them sometimes</option>
+            <option>Prefer fresh meals, minimal leftovers</option>
+          </select>
+        </label>
+
+        <label class="form-label">
+          How many days in a row are you okay eating the same main dish?
+          <input type="range" min="1" max="4" value="2" class="form-input" />
+        </label>
+
+        <label class="form-label">
+          Would you like some batch-cooked recipes (cook once, eat multiple times)?
+          <select class="form-input">
+            <option>Yes, please</option>
+            <option>Maybe a little</option>
+            <option>No, keep things varied</option>
+          </select>
+        </label>
+
+        <hr style="margin: 1rem 0;" />
+
+        <p class="preference-group-title">Guidance &amp; plan style</p>
+
+        <label class="form-label">
+          How detailed should the cooking instructions be?
+          <select class="form-input">
+            <option>Very detailed (step-by-step, like a beginner)</option>
+            <option>Moderately detailed</option>
+            <option>Short, high-level steps are fine</option>
+          </select>
+        </label>
+
+        <label class="form-label">
+          How would you like the plan to feel visually?
+          <select class="form-input">
+            <option>Clean and simple</option>
+            <option>More visual with icons and colors</option>
+            <option>Doesn’t matter</option>
+          </select>
+        </label>
+
+        <label class="form-label">
+          Do you want a strict schedule or flexible suggestions?
+          <input type="range" min="1" max="5" value="3" class="form-input" />
+        </label>
+
+        <label class="form-label">
+          Anything else we should know about your preferences, habits, or goals?
+          <textarea class="form-input" rows="3"></textarea>
+        </label>
+
+        <label class="form-label">
+          <input type="checkbox" />
+          I’ve reviewed my answers and I’m ready to generate a weekly plan (demo).
+        </label>
+
+        <p style="font-size: 0.85rem; color: var(--color-text-soft); margin-top: 0.4rem;">
+          In the full system, this button will send your answers to the AI planner.
+          In this prototype, it will simply take you to the demo dashboard layout.
+        </p>
+
+        <a href="dashboard.html" class="btn btn-primary">
+          Finish onboarding (go to demo dashboard)
+        </a>
+      </div>
+      </div><!-- /.onboarding-steps -->
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo-pill">
+        <img src="images/tkm-logo.png" alt="TKM VitalMetric Wellness logo" />
+      </div>
+      <div class="footer-text">
+        <div class="footer-name">TKM VitalMetric Wellness</div>
+        <div class="footer-tagline">
+          Weekly meal, movement, and sodium mission control.
+        </div>
+      </div>
+    </div>
+    <div class="footer-meta">
+      Prototype UI only · No medical advice · No real accounts or payments yet.
+    </div>
+  </div>
+</footer>
+
+</div><!-- /.page -->
+</body>
+</html>
