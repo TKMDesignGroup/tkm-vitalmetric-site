@@ -3,90 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <title>Sign In – TKM VitalMetric Wellness</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
   <script src="app.js" defer></script>
 </head>
 <body>
   <div class="page">
+    <!-- Shared header -->
     <header class="site-header">
-      <div class="site-header-inner">
+      <div class="header-inner">
         <a href="index.html" class="brand">
-          <div class="brand-logo-wrap">
-            <img
-              src="assets/tkm-vitalmetric-wellness-logo.png"
-              alt="TKM VitalMetric Wellness logo"
-              class="brand-logo"
-            />
+          <div class="brand-logo">
+            <img src="images/tkm-logo.png" alt="TKM VitalMetric Wellness logo" />
           </div>
           <div class="brand-text">
-            <span class="brand-name">TKM VitalMetric Wellness</span>
-            <span class="brand-tagline">Weekly wellness mission control</span>
+            <div class="brand-name">TKM VITALMETRIC WELLNESS</div>
+            <div class="brand-tagline">Weekly wellness mission control</div>
           </div>
         </a>
 
-        <nav class="site-nav">
+        <nav class="main-nav">
           <a href="index.html" class="nav-link">Home</a>
           <a href="onboarding.html" class="nav-link">Start Plan</a>
           <a href="dashboard.html" class="nav-link">Demo Dashboard</a>
-          <a href="login.html" class="nav-link nav-link-active nav-link-accent">Sign In</a>
+          <a href="login.html" class="nav-link active">Sign In</a>
+          <a href="signup.html" class="nav-link nav-pill nav-pill--trial">
+            7-day free trial · then $9.99/wk
+          </a>
         </nav>
       </div>
     </header>
 
-    <main class="site-main">
-      <div class="page-inner auth-layout">
-        <div class="auth-card">
-          <h1 class="auth-title">Sign in (demo only)</h1>
-          <p class="auth-subtitle">
-            This prototype does not create real accounts. Signing in will simply show the demo Weekly Snapshot.
-          </p>
+    <main class="main-content">
+      <section class="section section-light">
+        <div class="section-inner auth-layout">
+          <div class="auth-card">
+            <h1>Sign in to your weekly mission control</h1>
+            <p class="auth-intro">
+              In the full version, signing in would unlock your personal
+              Weekly Snapshot, shopping lists, and movement stack.
+              This prototype shows the <strong>front-end only</strong>.
+            </p>
+            <form id="login-form" class="auth-form" action="dashboard.html" method="post">
+              <div class="form-label">
+                <span>Email</span>
+                <input
+                  type="email"
+                  class="form-input"
+                  name="email"
+                  required
+                  placeholder="you@example.com"
+                />
+              </div>
 
-          <form id="login-form" class="form-grid" style="margin-top: 1rem;">
-            <div class="form-row">
-              <label for="login-email" class="form-label">Email</label>
-              <input
-                type="email"
-                id="login-email"
-                name="email"
-                class="form-input"
-                placeholder="you@example.com"
-                required
-              />
-            </div>
-            <div class="form-row">
-              <label for="login-password" class="form-label">Password</label>
-              <input
-                type="password"
-                id="login-password"
-                name="password"
-                class="form-input"
-                placeholder="••••••••"
-                required
-              />
-            </div>
-            <div class="form-row">
-              <button type="submit" class="btn btn-primary" style="width: 100%;">
-                Sign in (demo)
+              <div class="form-label">
+                <span>Password</span>
+                <input
+                  type="password"
+                  class="form-input"
+                  name="password"
+                  required
+                  placeholder="••••••••"
+                />
+              </div>
+
+              <div class="form-label auth-remember-row">
+                <label class="auth-remember">
+                  <input type="checkbox" name="remember" />
+                  <span>Remember me on this device (future feature)</span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full">
+                Sign in (demo only)
               </button>
+
+              <p class="auth-prototype-note">
+                Prototype only – no real accounts are created or stored yet.
+                The button below will simulate a successful sign-in and send you
+                to the demo Weekly Snapshot.
+              </p>
+
+              <p class="auth-switch">
+                New here?
+                <a href="signup.html">Start your 7-day free trial</a>
+                (prototype flow).
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+      </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo-pill">
+            <img src="images/tkm-logo.png" alt="TKM VitalMetric Wellness logo" />
+          </div>
+          <div class="footer-text">
+            <div class="footer-name">TKM VITALMETRIC WELLNESS</div>
+            <div class="footer-tagline">
+              Prototype demonstration — not medical advice.
             </div>
-          </form>
+          </div>
+        </div>
 
-          <p id="auth-message" class="auth-message"></p>
-
-          <p class="auth-footer">
-            Need an account? <a href="signup.html">Create a demo account</a>.
-          </p>
+        <div class="footer-meta">
+          <span>© 2025 TKM VitalMetric Wellness. All rights reserved.</span>
         </div>
       </div>
-    </main>
-
-    <footer class="site-footer">
-      <div class="site-footer-inner">
-        <p class="footer-disclaimer">Prototype only — authentication is simulated.</p>
-        <p class="footer-meta">© 2025 TKM VitalMetric Wellness.</p>
-      </div>
     </footer>
-  </div>
+  </div> <!-- /.page -->
 </body>
 </html>
