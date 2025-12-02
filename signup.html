@@ -3,112 +3,143 @@
 <head>
   <meta charset="UTF-8" />
   <title>Create Account – TKM VitalMetric Wellness</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
   <script src="app.js" defer></script>
 </head>
 <body>
   <div class="page">
+    <!-- Shared header -->
     <header class="site-header">
-      <div class="site-header-inner">
+      <div class="header-inner">
         <a href="index.html" class="brand">
-          <div class="brand-logo-wrap">
-            <img
-              src="assets/tkm-vitalmetric-wellness-logo.png"
-              alt="TKM VitalMetric Wellness logo"
-              class="brand-logo"
-            />
+          <div class="brand-logo">
+            <img src="images/tkm-logo.png" alt="TKM VitalMetric Wellness logo" />
           </div>
           <div class="brand-text">
-            <span class="brand-name">TKM VitalMetric Wellness</span>
-            <span class="brand-tagline">Weekly wellness mission control</span>
+            <div class="brand-name">TKM VITALMETRIC WELLNESS</div>
+            <div class="brand-tagline">Weekly wellness mission control</div>
           </div>
         </a>
 
-        <nav class="site-nav">
+        <nav class="main-nav">
           <a href="index.html" class="nav-link">Home</a>
           <a href="onboarding.html" class="nav-link">Start Plan</a>
           <a href="dashboard.html" class="nav-link">Demo Dashboard</a>
-          <a href="login.html" class="nav-link nav-link-accent">Sign In</a>
+          <a href="login.html" class="nav-link">Sign In</a>
+          <a href="signup.html" class="nav-link nav-pill nav-pill--trial active">
+            7-day free trial · then $9.99/wk
+          </a>
         </nav>
       </div>
     </header>
 
-    <main class="site-main">
-      <div class="page-inner auth-layout">
-        <div class="auth-card">
-          <h1 class="auth-title">Create your demo account</h1>
-          <p class="auth-subtitle">
-            In the full version, this would start your 7-day free trial. For now, it will send you into the onboarding flow.
-          </p>
+    <main class="main-content">
+      <section class="section section-light">
+        <div class="section-inner auth-layout">
+          <div class="auth-card">
+            <h1>Start your 7-day free trial</h1>
+            <p class="auth-intro">
+              In the full version, this is where you’d create your TKM VitalMetric
+              Wellness account, start your 7-day free trial, and then continue at
+              <strong>$9.99/week</strong> if it earns its place in your budget.
+              This prototype only simulates that flow.
+            </p>
+            <form id="signup-form" class="auth-form" action="onboarding.html" method="post">
+              <div class="form-label">
+                <span>Name</span>
+                <input
+                  type="text"
+                  class="form-input"
+                  name="name"
+                  required
+                  placeholder="First name or nickname"
+                />
+              </div>
 
-          <form id="signup-form" class="form-grid" style="margin-top: 1rem;">
-            <div class="form-row">
-              <label for="signup-name" class="form-label">Name</label>
-              <input
-                type="text"
-                id="signup-name"
-                name="name"
-                class="form-input"
-                placeholder="Your name"
-                required
-              />
-            </div>
-            <div class="form-row">
-              <label for="signup-email" class="form-label">Email</label>
-              <input
-                type="email"
-                id="signup-email"
-                name="email"
-                class="form-input"
-                placeholder="you@example.com"
-                required
-              />
-            </div>
-            <div class="form-row">
-              <label for="signup-password" class="form-label">Password</label>
-              <input
-                type="password"
-                id="signup-password"
-                name="password"
-                class="form-input"
-                placeholder="Create a password"
-                required
-              />
-            </div>
-            <div class="form-row">
-              <label for="signup-password2" class="form-label">Confirm password</label>
-              <input
-                type="password"
-                id="signup-password2"
-                name="password2"
-                class="form-input"
-                placeholder="Repeat your password"
-                required
-              />
-            </div>
-            <div class="form-row">
-              <button type="submit" class="btn btn-primary" style="width: 100%;">
-                Start demo onboarding
+              <div class="form-label">
+                <span>Email</span>
+                <input
+                  type="email"
+                  class="form-input"
+                  name="email"
+                  required
+                  placeholder="you@example.com"
+                />
+              </div>
+
+              <div class="form-label">
+                <span>Password</span>
+                <input
+                  type="password"
+                  class="form-input"
+                  name="password"
+                  required
+                  placeholder="Create a password"
+                />
+              </div>
+
+              <div class="form-label">
+                <span>Confirm password</span>
+                <input
+                  type="password"
+                  class="form-input"
+                  name="confirm-password"
+                  required
+                  placeholder="Re-type your password"
+                />
+              </div>
+
+              <div class="form-label">
+                <label class="auth-remember">
+                  <input type="checkbox" name="accept-terms" required />
+                  <span>
+                    I understand this is a <strong>prototype</strong>. No real accounts,
+                    payments, or medical advice are provided yet.
+                  </span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full">
+                Create account (demo) &amp; start onboarding
               </button>
+
+              <p class="auth-prototype-note">
+                Prototype only – in the real system, this would talk to Stripe and a
+                secure backend. For now, we’ll simulate a successful signup and send
+                you to the onboarding flow.
+              </p>
+
+              <p class="auth-switch">
+                Already have a demo account?
+                <a href="login.html">Sign in here</a>.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+      </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo-pill">
+            <img src="images/tkm-logo.png" alt="TKM VitalMetric Wellness logo" />
+          </div>
+          <div class="footer-text">
+            <div class="footer-name">TKM VITALMETRIC WELLNESS</div>
+            <div class="footer-tagline">
+              Prototype demonstration — not medical advice.
             </div>
-          </form>
+          </div>
+        </div>
 
-          <p id="signup-message" class="auth-message"></p>
-
-          <p class="auth-footer">
-            Already have a demo account? <a href="login.html">Sign in</a>.
-          </p>
+        <div class="footer-meta">
+          <span>© 2025 TKM VitalMetric Wellness. All rights reserved.</span>
         </div>
       </div>
-    </main>
-
-    <footer class="site-footer">
-      <div class="site-footer-inner">
-        <p class="footer-disclaimer">Prototype only — account creation is simulated.</p>
-        <p class="footer-meta">© 2025 TKM VitalMetric Wellness.</p>
-      </div>
     </footer>
-  </div>
+  </div> <!-- /.page -->
 </body>
 </html>
