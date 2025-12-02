@@ -854,3 +854,40 @@ body {
     padding: 0.5rem 0.4rem;
   }
 }
+/* === Onboarding wizard behaviour === */
+.form-section {
+  display: none;
+}
+
+.form-section.active {
+  display: block;
+}
+
+.progress-strip span {
+  opacity: 0.6;
+}
+
+.progress-strip span.current {
+  opacity: 1;
+  background: #ffffff;
+  color: #0b3c6a;
+  border-color: #0b3c6a;
+}
+
+.progress-strip span.completed {
+  opacity: 0.9;
+}
+
+.wizard-nav-row {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.wizard-finish-hint {
+  font-size: 0.8rem;
+  color: #6b7280; /* muted grey */
+  margin-top: 0.5rem;
+}
