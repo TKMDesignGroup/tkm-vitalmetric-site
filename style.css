@@ -5,16 +5,17 @@
 
 :root {
   /* Core palette */
-  --color-bg-page: #f4f6fb;
+  --color-bg-page: #f5f7fc;
   --color-bg-section-light: #ffffff;
   --color-bg-section-alt: #f1f5ff;
   --color-primary: #1b4fd8;      /* blue */
   --color-primary-soft: #e0e8ff;
-  --color-accent: #19b77f;       /* green */
-  --color-accent-soft: #ddf7ee;
-  --color-accent-strong: #0f8e60;
+  --color-accent: #16a34a;       /* green */
+  --color-accent-soft: #defce7;
+  --color-accent-strong: #15803d;
+  --color-accent-teal: #0d9488;  /* teal accent */
   --color-border-subtle: #d8e0f2;
-  --color-border-strong: #b0c3ec;
+  --color-border-strong: #9fb5f0;
   --color-text-main: #0f172a;
   --color-text-muted: #6b7280;
   --color-text-soft: #9ca3af;
@@ -46,7 +47,10 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: var(--color-text-main);
-  background: radial-gradient(circle at top left, #e4ebff, #f4f6fb 55%, #e0f7f0);
+  background:
+    radial-gradient(circle at top left, #e5edff, transparent 55%),
+    radial-gradient(circle at bottom right, #dcfce7, transparent 55%),
+    var(--color-bg-page);
 }
 
 .page {
@@ -55,7 +59,27 @@ body {
   flex-direction: column;
 }
 
+/* Headings & text */
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+h1 {
+  font-size: 2.1rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
 /* Links */
+
 a {
   color: var(--color-primary);
   text-decoration: none;
@@ -66,18 +90,22 @@ a:hover {
 }
 
 /* Buttons */
+
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 0.75rem 1.4rem;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   border: none;
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
   text-decoration: none;
-  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease,
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    background 0.12s ease,
     color 0.12s ease;
   white-space: nowrap;
 }
@@ -91,13 +119,13 @@ a:hover {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-primary), #2563eb);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
   color: #ffffff;
   box-shadow: 0 14px 30px rgba(37, 99, 235, 0.35);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #1c4ac2, #1f5ee0);
+  background: linear-gradient(135deg, #1d4ed8, #16a34a);
 }
 
 .btn-secondary {
@@ -107,7 +135,7 @@ a:hover {
 }
 
 .btn-secondary:hover {
-  background: #f3f4ff;
+  background: #eef2ff;
 }
 
 .btn-ghost {
@@ -117,7 +145,7 @@ a:hover {
 }
 
 .btn-ghost:hover {
-  background: #eef2ff;
+  background: #e5ecff;
 }
 
 .btn-full {
@@ -134,8 +162,8 @@ a:hover {
   backdrop-filter: blur(10px);
   background: linear-gradient(
       to bottom,
-      rgba(255, 255, 255, 0.92),
-      rgba(255, 255, 255, 0.88)
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0.9)
     );
   border-bottom: 1px solid rgba(209, 213, 219, 0.5);
 }
@@ -204,7 +232,7 @@ a:hover {
 }
 
 .nav-link:hover {
-  background: rgba(226, 232, 255, 0.8);
+  background: rgba(226, 232, 255, 0.9);
 }
 
 .nav-link.active {
@@ -217,7 +245,7 @@ a:hover {
   background: linear-gradient(
     135deg,
     rgba(37, 99, 235, 0.06),
-    rgba(34, 197, 94, 0.08)
+    rgba(22, 163, 74, 0.08)
   );
 }
 
@@ -234,7 +262,7 @@ a:hover {
 }
 
 .section {
-  padding: 2.5rem 1.25rem;
+  padding: 2.8rem 1.25rem;
 }
 
 .section-light {
@@ -242,7 +270,7 @@ a:hover {
 }
 
 .section-alt {
-  background: var(--color-bg-section-alt);
+  background: #ecfdf5;
 }
 
 .section-inner {
@@ -258,7 +286,6 @@ a:hover {
 .section-header h2 {
   margin: 0 0 0.25rem 0;
   font-size: 1.6rem;
-  letter-spacing: 0.02em;
 }
 
 .section-header p {
@@ -268,20 +295,15 @@ a:hover {
 }
 
 /* ===============================
-   Hero / Home snapshot preview
+   Hero / Home layout
    =============================== */
 
 .hero-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
-  gap: 2rem;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1.1fr);
+  gap: 2.1rem;
   align-items: stretch;
-}
-
-.hero-main {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+  position: relative;
 }
 
 .prototype-badge {
@@ -292,17 +314,31 @@ a:hover {
   border-radius: 999px;
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
   background: rgba(15, 23, 42, 0.04);
   color: var(--color-text-soft);
 }
 
+.hero-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  border-radius: 24px;
+  padding: 1.6rem 1.8rem;
+  border: 3px solid transparent;
+  background:
+    linear-gradient(135deg, #1d4ed8, #16a34a) border-box,
+    #ffffff padding-box;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.18);
+}
+
 .hero-title {
   margin: 0;
   font-size: 2.1rem;
-  line-height: 1.14;
+  line-height: 1.15;
   letter-spacing: 0.01em;
+  color: var(--color-text-main);
 }
 
 .hero-subtitle {
@@ -329,7 +365,22 @@ a:hover {
   color: var(--color-text-soft);
 }
 
-/* Snapshot preview card */
+/* Optional faint hero background image (if bg-hero.jpg exists) */
+.hero-layout::before {
+  content: "";
+  position: absolute;
+  inset: -40px -60px auto auto;
+  pointer-events: none;
+  background-image: url("images/bg-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.16;
+  filter: saturate(1.1);
+  z-index: -1;
+                               }
+/* ===============================
+   Snapshot preview (home & dashboard)
+   =============================== */
 
 .hero-side {
   display: flex;
@@ -339,12 +390,14 @@ a:hover {
 .snapshot-card {
   position: relative;
   flex: 1;
-  border-radius: var(--radius-card);
+  border-radius: 24px;
   padding: 1.4rem 1.5rem;
-  background: radial-gradient(circle at top left, #1b4fd8, #020617 70%);
+  border: 3px solid transparent;
+  background:
+    linear-gradient(135deg, #1d4ed8, #16a34a) border-box,
+    radial-gradient(circle at top left, #020617, #020617 70%) padding-box;
   color: #e5ecff;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid rgba(148, 163, 230, 0.5);
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.7);
 }
 
 .snapshot-card-main {
@@ -360,11 +413,11 @@ a:hover {
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(191, 219, 254, 0.9);
+  color: rgba(191, 219, 254, 0.95);
 }
 
 .snapshot-title {
-  margin: 0.1rem 0 0.2rem 0;
+  margin: 0.1rem 0 0.25rem 0;
   font-size: 1.45rem;
 }
 
@@ -372,7 +425,8 @@ a:hover {
   margin: 0;
   font-size: 0.88rem;
   color: rgba(209, 213, 219, 0.9);
-  }
+}
+
 .snapshot-rows {
   margin: 0;
   padding: 0.75rem 0 0.7rem 0;
@@ -380,7 +434,7 @@ a:hover {
 
 .snapshot-row {
   display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.6fr);
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
   gap: 0.75rem;
   padding: 0.55rem 0;
   border-top: 1px solid rgba(148, 163, 230, 0.4);
@@ -430,121 +484,13 @@ a:hover {
 }
 
 .tag-sodium {
-  background: rgba(34, 197, 94, 0.2);
+  background: rgba(22, 163, 74, 0.2);
   color: #bbf7d0;
   border: 1px solid rgba(74, 222, 128, 0.7);
 }
 
 /* ===============================
-   How it works / Steps
-   =============================== */
-
-.step-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.1rem;
-}
-
-.step-card-mini {
-  background: #ffffff;
-  border-radius: var(--radius-card);
-  padding: 1.1rem 1rem;
-  border: 1px solid var(--color-border-subtle);
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
-}
-
-.step-card-mini-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 16px;
-  margin-bottom: 0.6rem;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-  opacity: 0.9;
-}
-
-/* Slightly different accents per step */
-.step-icon-1 {
-  background: linear-gradient(135deg, #2563eb, #22c55e);
-}
-
-.step-icon-2 {
-  background: linear-gradient(135deg, #1d4ed8, #14b8a6);
-}
-
-.step-icon-3 {
-  background: linear-gradient(135deg, #0ea5e9, #22c55e);
-}
-
-.step-icon-4 {
-  background: linear-gradient(135deg, #4f46e5, #22c55e);
-}
-
-.step-card-mini h3 {
-  margin: 0 0 0.35rem 0;
-  font-size: 0.96rem;
-}
-
-.step-card-mini p {
-  margin: 0;
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-}
-
-/* ===============================
-   Healthy meals / Features
-   =============================== */
-
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.1rem;
-}
-
-.feature-card {
-  position: relative;
-  background: #ffffff;
-  border-radius: var(--radius-card);
-  padding: 1.1rem 1.05rem;
-  border: 1px solid var(--color-border-subtle);
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
-}
-
-.feature-icon {
-  width: 34px;
-  height: 34px;
-  border-radius: 18px;
-  margin-bottom: 0.6rem;
-  background: radial-gradient(circle at top left, #22c55e, #2563eb);
-  opacity: 0.9;
-}
-
-/* Slight variations if we want them later */
-.feature-icon-pantry {
-  background: radial-gradient(circle at top left, #22c55e, #0ea5e9);
-}
-.feature-icon-sodium {
-  background: radial-gradient(circle at top left, #22c55e, #4f46e5);
-}
-.feature-icon-movement {
-  background: radial-gradient(circle at top left, #0ea5e9, #22c55e);
-}
-.feature-icon-pdf {
-  background: radial-gradient(circle at top left, #4f46e5, #22c55e);
-}
-
-.feature-card h3 {
-  margin: 0 0 0.4rem 0;
-  font-size: 0.98rem;
-}
-
-.feature-card p {
-  margin: 0;
-  font-size: 0.86rem;
-  color: var(--color-text-muted);
-}
-
-/* ===============================
-   Weekly benefits lists
+   “What members get” / weekly benefits
    =============================== */
 
 .weekly-benefits {
@@ -569,6 +515,122 @@ a:hover {
   margin: 0;
   font-size: 0.84rem;
   color: var(--color-text-soft);
+}
+/* ===============================
+   How it works / Steps
+   =============================== */
+
+.step-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.1rem;
+  padding: 1.2rem 1.1rem;
+  border-radius: 26px;
+  border: 3px solid transparent;
+  background:
+    linear-gradient(135deg, #1d4ed8, #16a34a) border-box,
+    linear-gradient(135deg, #eef4ff, #f5fbff) padding-box;
+}
+
+.step-card-mini {
+  background: #ffffff;
+  border-radius: var(--radius-card);
+  padding: 1.1rem 1rem;
+  border: 1.5px solid rgba(148, 163, 230, 0.9);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+}
+
+.step-card-mini-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  margin-bottom: 0.6rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  opacity: 0.92;
+}
+
+/* Slightly different accents per step */
+.step-icon-1 {
+  background: linear-gradient(135deg, #2563eb, #16a34a);
+}
+.step-icon-2 {
+  background: linear-gradient(135deg, #1d4ed8, #0d9488);
+}
+.step-icon-3 {
+  background: linear-gradient(135deg, #0ea5e9, #16a34a);
+}
+.step-icon-4 {
+  background: linear-gradient(135deg, #4f46e5, #22c55e);
+}
+
+.step-card-mini h3 {
+  margin: 0 0 0.35rem 0;
+  font-size: 0.96rem;
+}
+
+.step-card-mini p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* ===============================
+   Healthy meals / Features
+   =============================== */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.1rem;
+  padding: 1.2rem 1.1rem;
+  border-radius: 26px;
+  border: 3px solid transparent;
+  background:
+    linear-gradient(135deg, #1d4ed8, #16a34a) border-box,
+    linear-gradient(135deg, #f3faf5, #eef4ff) padding-box;
+}
+
+.feature-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: var(--radius-card);
+  padding: 1.1rem 1.05rem;
+  border: 1.5px solid rgba(148, 163, 230, 0.9);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+}
+
+.feature-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 18px;
+  margin-bottom: 0.6rem;
+  background: radial-gradient(circle at top left, #22c55e, #2563eb);
+  opacity: 0.9;
+}
+
+/* Hooks for different icon flavors */
+.feature-icon-pantry {
+  background: radial-gradient(circle at top left, #22c55e, #0ea5e9);
+}
+.feature-icon-sodium {
+  background: radial-gradient(circle at top left, #22c55e, #4f46e5);
+}
+.feature-icon-movement {
+  background: radial-gradient(circle at top left, #0ea5e9, #22c55e);
+}
+.feature-icon-pdf {
+  background: radial-gradient(circle at top left, #4f46e5, #22c55e);
+}
+
+.feature-card h3 {
+  margin: 0 0 0.4rem 0;
+  font-size: 0.98rem;
+}
+
+.feature-card p {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--color-text-muted);
 }
 
 /* ===============================
@@ -610,9 +672,11 @@ a:hover {
   max-width: 340px;
   border-radius: var(--radius-card);
   padding: 1.1rem 1.15rem;
-  background: radial-gradient(circle at top left, #1b4fd8, #020617 76%);
+  border: 3px solid transparent;
+  background:
+    linear-gradient(135deg, #1d4ed8, #16a34a) border-box,
+    radial-gradient(circle at top left, #020617, #020617 76%) padding-box;
   color: #e5ecff;
-  border: 1px solid rgba(148, 163, 230, 0.5);
   box-shadow: var(--shadow-soft);
   font-size: 0.9rem;
 }
@@ -626,7 +690,7 @@ a:hover {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  background: rgba(34, 197, 94, 0.16);
+  background: rgba(22, 163, 74, 0.2);
   color: #bbf7d0;
   margin-bottom: 0.5rem;
 }
@@ -636,7 +700,7 @@ a:hover {
    =============================== */
 
 .section-brand-band {
-  background: linear-gradient(135deg, #0f172a, #1e293b);
+  background: linear-gradient(135deg, #0f172a, #065f46);
   color: #e5ecff;
 }
 
@@ -689,7 +753,7 @@ a:hover {
   margin: 0.45rem 0 0 0;
   font-size: 0.8rem;
   color: #9ca3ff;
-                              }
+}
 /* ===============================
    Auth layout (login / signup)
    =============================== */
@@ -705,9 +769,11 @@ a:hover {
   margin: 0 auto;
   border-radius: var(--radius-card);
   padding: 1.6rem 1.8rem;
-  background: #ffffff;
-  border: 1px solid var(--color-border-subtle);
-  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.12);
+  border: 3px solid transparent;
+  background:
+    linear-gradient(135deg, #1d4ed8, #16a34a) border-box,
+    #ffffff padding-box;
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.18);
 }
 
 .auth-card h1 {
@@ -748,7 +814,7 @@ textarea {
 .form-input:focus,
 select:focus,
 textarea:focus {
-  outline: 2px solid rgba(37, 99, 235, 0.4);
+  outline: 2px solid rgba(37, 99, 235, 0.35);
   border-color: #2563eb;
 }
 
@@ -817,7 +883,7 @@ textarea:focus {
 .onboarding-step-pill--current {
   background: var(--color-primary-soft);
   color: var(--color-primary);
-  border-color: rgba(37, 99, 235, 0.5);
+  border-color: rgba(37, 99, 235, 0.6);
 }
 
 .onboarding-steps {
@@ -830,9 +896,11 @@ textarea:focus {
 .onboarding-step-card {
   border-radius: var(--radius-card);
   padding: 1.1rem 1rem;
-  background: #ffffff;
-  border: 1px solid var(--color-border-subtle);
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  border: 3px solid transparent;
+  background:
+    linear-gradient(135deg, #1d4ed8, #16a34a) border-box,
+    #ffffff padding-box;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
 }
 
 .onboarding-step-header {
@@ -857,8 +925,7 @@ textarea:focus {
   margin: 0.2rem 0 0.4rem 0;
   font-size: 0.9rem;
   color: var(--color-text-muted);
-}
-
+   }
 /* ===============================
    Pill-style Like / Neutral / Dislike
    =============================== */
@@ -910,9 +977,13 @@ textarea:focus {
   cursor: pointer;
   background: #ffffff;
   user-select: none;
+  transition:
+    background 0.12s ease,
+    border-color 0.12s ease,
+    color 0.12s ease;
 }
 
-/* Selected states – rely on "is-selected" class so HTML can toggle */
+/* Selected states – rely on "is-selected" class so HTML or JS can toggle */
 .pill-toggle.is-selected {
   border-color: var(--color-primary);
   color: var(--color-primary);
@@ -992,6 +1063,7 @@ textarea:focus {
   font-size: 0.8rem;
   color: var(--color-text-soft);
 }
+
 /* ===============================
    Future expansion cards
    =============================== */
@@ -1020,7 +1092,6 @@ textarea:focus {
   margin: 0;
   color: var(--color-text-muted);
 }
-
 /* ===============================
    Footer
    =============================== */
@@ -1140,7 +1211,7 @@ textarea:focus {
   }
 
   .section {
-    padding: 2rem 1rem;
+    padding: 2.2rem 1rem;
   }
 
   .step-grid,
@@ -1161,102 +1232,4 @@ textarea:focus {
     flex-direction: column;
     align-items: flex-start;
   }
-}
-/* ===============================
-   Optional hero background image
-   (only applies if bg-hero.jpg exists)
-   =============================== */
-
-.hero-layout {
-  position: relative;
-}
-
-.hero-layout::before {
-  content: "";
-  position: absolute;
-  inset: -30px -40px auto auto;
-  pointer-events: none;
-  background-image: url("images/bg-hero.jpg");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.16;
-  filter: saturate(1.1);
-  z-index: -1;
-}
-/* =========================================
-   TKM – design tweaks after latest review
-   ========================================= */
-
-/* 1) Stronger boxed hero with green accent */
-.hero-main {
-  background: #ffffff;
-  border-radius: 22px;
-  border: 2px solid rgba(22, 163, 74, 0.5); /* green border */
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.16);
-  padding: 1.5rem 1.7rem;
-}
-
-/* Slightly stronger heading color so it doesn’t look washed out */
-.hero-title {
-  color: #0f172a;
-}
-
-/* 2) Make step cards clearly visible on white background */
-.step-card-mini {
-  background: #ffffff;
-  border-radius: 20px;
-  border: 1.5px solid rgba(148, 163, 230, 0.9); /* visible border */
-  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.10);
-}
-
-/* Add a faint colored panel behind the whole "How it works" row
-   (uses the container that already wraps the grid) */
-.step-grid {
-  padding: 1.2rem 1.1rem;
-  border-radius: 24px;
-  background: linear-gradient(
-    135deg,
-    #eef4ff,
-    #f5fbff
-  );
-  border: 1px solid rgba(148, 163, 230, 0.5);
-}
-
-/* 3) Same idea for “Healthy meals built around your real life” */
-.feature-card {
-  background: #ffffff;
-  border-radius: 20px;
-  border: 1.5px solid rgba(148, 163, 230, 0.9);
-  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.10);
-}
-
-.feature-grid {
-  padding: 1.2rem 1.1rem;
-  border-radius: 24px;
-  background: linear-gradient(
-    135deg,
-    #f3faf5,
-    #eef4ff
-  );
-  border: 1px solid rgba(34, 197, 94, 0.5); /* greenish frame */
-}
-
-/* 4) Add a bit more green into the overall sections */
-.section-light {
-  background: #f7fafc;
-}
-
-.section-alt {
-  background: #ecfdf5;
-}
-
-/* 5) Make the “Why TKM VitalMetric Wellness?” band pop a bit more green */
-.section-brand-band {
-  background: linear-gradient(135deg, #0f172a, #065f46); /* blue → green */
-}
-
-/* 6) Weekly snapshot – nudge border & glow so it feels special */
-.snapshot-card {
-  border: 2px solid rgba(34, 197, 94, 0.65); /* stronger green edge */
-  box-shadow: 0 22px 45px rgba(15, 23, 42, 0.55);
 }
