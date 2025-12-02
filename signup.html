@@ -1,1 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account • TKM VitalMetric Wellness</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
+  <body>
+    <div class="page">
+
+      <!-- ================= HEADER ================ -->
+      <header class="site-header">
+        <div class="header-inner">
+          <a href="index.html" class="header-brand">
+            <img src="images/tkm-logo.png" alt="TKM logo" class="header-logo" />
+            <span class="header-brand-text">TKM VitalMetric Wellness</span>
+          </a>
+
+          <nav class="header-nav">
+            <a href="index.html">Home</a>
+            <a href="onboarding.html">Start Plan</a>
+            <a href="dashboard.html">Demo Dashboard</a>
+            <a class="active" href="signup.html">Sign Up</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="content-area auth-page">
+        <section class="auth-card">
+          <h1 class="auth-title">Create Account</h1>
+          <p class="auth-subtitle">Start your wellness journey</p>
+          <form id="signup-form" class="auth-form">
+            <div class="form-group">
+              <label class="field-label" for="signup_email">Email</label>
+              <input
+                type="email"
+                id="signup_email"
+                name="signup_email"
+                class="text-input"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="field-label" for="signup_password">Password</label>
+              <input
+                type="password"
+                id="signup_password"
+                name="signup_password"
+                class="text-input"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="field-label" for="signup_password2">Confirm Password</label>
+              <input
+                type="password"
+                id="signup_password2"
+                name="signup_password2"
+                class="text-input"
+                required
+              />
+            </div>
+
+            <button type="submit" class="btn btn-primary auth-btn">
+              Create Account (demo)
+            </button>
+
+            <p class="auth-note">
+              Prototype only — no real accounts created yet
+            </p>
+          </form>
+          <div class="auth-alt-links">
+            <p>Already have an account? <a href="login.html">Sign in</a></p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-left">
+            <img src="images/tkm-logo.png" class="footer-logo" alt="TKM small logo" />
+            <div>
+              <div class="footer-text-main">TKM VITALMETRIC WELLNESS</div>
+              <div class="footer-text-sub">Prototype demonstration — not medical advice</div>
+            </div>
+          </div>
+
+          <div class="footer-right">
+            © <span id="year-signup"></span> TKM VitalMetric Wellness
+          </div>
+        </div>
+      </footer>
+      </div> <!-- /.page -->
+
+    <script src="app.js"></script>
+    <script>
+      (function () {
+        var y = document.getElementById("year-signup");
+        if (y) y.textContent = new Date().getFullYear();
+      })();
+    </script>
+
+  </body>
+</html>
