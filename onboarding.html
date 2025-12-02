@@ -1,1 +1,1690 @@
+        <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Onboarding · TKM VitalMetric Wellness</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
+  <body class="page-body">
+    <div class="page">
+      <!-- ======================== HEADER ======================== -->
+      <header class="site-header">
+        <div class="header-inner">
+          <a href="index.html" class="brand">
+            <img
+              src="images/tkm-logo.png"
+              alt="TKM VitalMetric Wellness logo"
+              class="brand-logo"
+            />
+            <div class="brand-text">
+              <span class="brand-title">TKM VitalMetric Wellness</span>
+              <span class="brand-tagline">Weekly Meal &amp; Movement Planning Prototype</span>
+            </div>
+          </a>
+
+          <nav class="main-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="onboarding.html" class="nav-link nav-link-active">Start Plan</a>
+            <a href="dashboard.html" class="nav-link">Demo Dashboard</a>
+            <a href="login.html" class="nav-link">Sign In</a>
+          </nav>
+        </div>
+      </header>
+      <!-- ======================== MAIN ======================== -->
+      <main class="main main-onboarding">
+        <div class="page-container">
+          <section class="page-intro-card">
+            <h1 class="page-title">Build your Weekly Wellness Mission Control</h1>
+            <p class="page-subtitle">
+              Answer a few focused steps about your goals, food preferences, pantry, budget, and movement.
+              In the full app, this would generate a personalized weekly plan and dashboard.
+            </p>
+            <div class="prototype-pill">Prototype · UI only · No real data stored</div>
+          </section>
+
+          <section class="wizard-shell">
+            <header class="wizard-header">
+              <div class="wizard-step-label">
+                Step <span id="wizard-step-number">1</span> of <span id="wizard-step-total">13</span>
+              </div>
+              <div class="wizard-step-title" id="wizard-step-title">
+                Welcome &amp; main goal
+              </div>
+              <div class="wizard-progress">
+                <div class="wizard-progress-bar" id="wizard-progress-bar"></div>
+              </div>
+            </header>
+
+            <form id="onboarding-form" class="onboarding-form">
+              <!-- ========================== STEP 1: WELCOME & GOAL ========================== -->
+              <section class="wizard-step" data-step="1">
+                <h2 class="wizard-step-heading">Welcome &amp; main goal</h2>
+                <p class="wizard-intro">
+                  This onboarding is a dry run for how the real TKM VitalMetric Wellness system will learn your
+                  preferences and build a weekly plan.
+                </p>
+
+                <div class="form-group">
+                  <p class="field-label">
+                    This is a prototype only and is not medical advice.
+                  </p>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="consent" required />
+                    <span>I understand this is a prototype and not medical advice.</span>
+                  </label>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label">What’s your main goal right now?</label>
+                  <div class="radio-column">
+                    <label><input type="radio" name="main_goal" value="weight_loss" />Weight loss</label>
+                    <label><input type="radio" name="main_goal" value="maintenance" />Weight maintenance</label>
+                    <label><input type="radio" name="main_goal" value="bp_sodium" />Improve blood pressure / sodium</label>
+                    <label><input type="radio" name="main_goal" value="budget" />Better organization &amp; budget</label>
+                    <label><input type="radio" name="main_goal" value="other" />Other</label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label" for="main_goal_other">If “Other”, what would you like to focus on?</label>
+                  <textarea id="main_goal_other" name="main_goal_other" class="textarea-input" rows="2"></textarea>
+                </div>
+              </section>
+              <!-- ========================== STEP 2: BASIC PROFILE ========================== -->
+              <section class="wizard-step" data-step="2">
+                <h2 class="wizard-step-heading">Basic profile</h2>
+                <p class="wizard-intro">
+                  You can share as much or as little as you like. In the real app, this would fine-tune calories and progress tracking.
+                </p>
+
+                <div class="form-group">
+                  <label class="field-label" for="name">What should we call you?</label>
+                  <input id="name" name="name" type="text" class="text-input" />
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="field-label" for="age">Age (optional)</label>
+                    <input id="age" name="age" type="number" class="text-input" min="1" />
+                  </div>
+                  <div class="form-group">
+                    <label class="field-label" for="height">Height (optional)</label>
+                    <input id="height" name="height" type="text" class="text-input" placeholder="e.g., 5'10&quot; or 178 cm" />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="field-label" for="weight">Current weight (optional)</label>
+                    <input id="weight" name="weight" type="number" class="text-input" />
+                  </div>
+                  <div class="form-group">
+                    <label class="field-label" for="target_weight">Target weight or main outcome (optional)</label>
+                    <input id="target_weight" name="target_weight" type="text" class="text-input" />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label">How quickly are you hoping to see progress?</label>
+                  <select name="timeframe" class="select-input">
+                    <option value="">Choose one…</option>
+                    <option value="slow">Slow &amp; steady (6+ months)</option>
+                    <option value="moderate">Moderate (3–6 months)</option>
+                    <option value="faster">Faster (1–3 months)</option>
+                    <option value="unsure">Not sure / just starting</option>
+                  </select>
+                </div>
+              </section>
+              <!-- ========================== STEP 3: PLAN SETTINGS ========================== -->
+              <section class="wizard-step" data-step="3">
+                <h2 class="wizard-step-heading">Plan settings</h2>
+                <p class="wizard-intro">
+                  These are the core settings for your week: dates, meals, calories, budget, and sodium focus.
+                </p>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="field-label" for="start_date">Plan start date</label>
+                    <input id="start_date" name="start_date" type="date" class="text-input" />
+                  </div>
+                  <div class="form-group">
+                    <label class="field-label" for="end_date">Plan end date</label>
+                    <input id="end_date" name="end_date" type="date" class="text-input" />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label">Which meals/snacks should we plan each day?</label>
+                  <div class="checkbox-group">
+                    <label><input type="checkbox" name="meals[]" value="breakfast" />Breakfast</label>
+                    <label><input type="checkbox" name="meals[]" value="lunch" />Lunch</label>
+                    <label><input type="checkbox" name="meals[]" value="dinner" />Dinner</label>
+                    <label><input type="checkbox" name="meals[]" value="snack_morning" />Morning snack</label>
+                    <label><input type="checkbox" name="meals[]" value="snack_afternoon" />Afternoon snack</label>
+                    <label><input type="checkbox" name="meals[]" value="snack_evening" />Evening snack</label>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="field-label" for="calories">Daily calorie target (approx.)</label>
+                    <input id="calories" name="calories" type="number" class="text-input" placeholder="e.g., 2200" />
+                  </div>
+                  <div class="form-group">
+                    <label class="field-label" for="weekly_budget">Weekly food budget ($)</label>
+                    <input id="weekly_budget" name="weekly_budget" type="number" class="text-input" placeholder="e.g., 75" />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label">Budget strictness</label>
+                  <select name="budget_strictness" class="select-input">
+                    <option value="1">1 — Not strict</option>
+                    <option value="2">2</option>
+                    <option value="3">3 — Middle of the road</option>
+                    <option value="4">4</option>
+                    <option value="5">5 — Very strict</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label">Sodium reduction goal</label>
+                  <select name="sodium_goal" class="select-input">
+                    <option value="none">Normal / no special focus</option>
+                    <option value="mild">Mild reduction</option>
+                    <option value="moderate">Moderate reduction</option>
+                    <option value="aggressive">Aggressive reduction (priority)</option>
+                  </select>
+                </div>
+              </section>
+              <!-- ========================== STEP 4: KITCHEN & COOKING CONTEXT ========================== -->
+              <section class="wizard-step" data-step="4">
+                <h2 class="wizard-step-heading">Kitchen &amp; cooking context</h2>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="field-label" for="household_size">How many people are you planning for?</label>
+                    <input id="household_size" name="household_size" type="number" class="text-input" min="1" />
+                  </div>
+                  <div class="form-group">
+                    <label class="field-label">Cooking skill level</label>
+                    <select name="cooking_skill" class="select-input">
+                      <option value="1">1 — Very beginner</option>
+                      <option value="2">2 — Beginner</option>
+                      <option value="3">3 — Intermediate</option>
+                      <option value="4">4 — Comfortable</option>
+                      <option value="5">5 — Advanced / enjoy complex recipes</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label">Preferred recipe complexity</label>
+                  <select name="recipe_complexity" class="select-input">
+                    <option value="simple">Very simple (5–7 ingredients)</option>
+                    <option value="moderate">Moderate (10–12 ingredients)</option>
+                    <option value="complex">I’m fine with more complex recipes</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label">Time available for cooking (typical day)</label>
+                  <div class="checkbox-group checkbox-group-columns">
+                    <div>
+                      <p class="field-label-small">Breakfast</p>
+                      <select name="time_breakfast" class="select-input">
+                        <option value="">—</option>
+                        <option value="5">5–10 min</option>
+                        <option value="15">15–20 min</option>
+                        <option value="20">20+ min</option>
+                      </select>
+                    </div>
+                    <div>
+                      <p class="field-label-small">Lunch</p>
+                      <select name="time_lunch" class="select-input">
+                        <option value="">—</option>
+                        <option value="5">5–10 min</option>
+                        <option value="20">20–30 min</option>
+                        <option value="30">30+ min</option>
+                      </select>
+                    </div>
+                    <div>
+                      <p class="field-label-small">Dinner</p>
+                      <select name="time_dinner" class="select-input">
+                        <option value="">—</option>
+                        <option value="15">15–20 min</option>
+                        <option value="30">30–40 min</option>
+                        <option value="45">45+ min</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="field-label">Kitchen equipment you have</label>
+                  <div class="checkbox-group checkbox-group-multi">
+                    <label><input type="checkbox" name="equipment[]" value="oven" />Standard oven</label>
+                    <label><input type="checkbox" name="equipment[]" value="stovetop" />Stovetop</label>
+                    <label><input type="checkbox" name="equipment[]" value="microwave" />Microwave</label>
+                    <label><input type="checkbox" name="equipment[]" value="slow_cooker" />Slow cooker / Crock-Pot</label>
+                    <label><input type="checkbox" name="equipment[]" value="instant_pot" />Instant Pot / pressure cooker</label>
+                    <label><input type="checkbox" name="equipment[]" value="air_fryer" />Air fryer</label>
+                    <label><input type="checkbox" name="equipment[]" value="toaster" />Toaster / toaster oven</label>
+                    <label><input type="checkbox" name="equipment[]" value="blender" />Blender</label>
+                    <label><input type="checkbox" name="equipment[]" value="food_processor" />Food processor</label>
+                    <label><input type="checkbox" name="equipment[]" value="grill" />Grill / grill pan</label>
+                    <label><input type="checkbox" name="equipment[]" value="basic_knives" />Basic knives &amp; cutting board</label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label" for="kitchen_limits">
+                    Any kitchen limitations or notes? (e.g., no oven, tiny fridge, limited cookware)
+                  </label>
+                  <textarea
+                    id="kitchen_limits"
+                    name="kitchen_limits"
+                    class="textarea-input"
+                    rows="3"
+                  ></textarea>
+                </div>
+              </section>
+              <!-- ========================== STEP 5: PROTEIN PREFERENCES ========================== -->
+              <section class="wizard-step" data-step="5">
+                <h2 class="wizard-step-heading">Protein preferences</h2>
+                <p class="wizard-intro">
+                  Tell us how you feel about these proteins. Tap one pill per row: Like, Neutral, or Avoid.
+                </p>
+
+                <div class="preference-section">
+                  <h3 class="pref-heading">Animal &amp; plant proteins</h3>
+
+                  <div class="option-row">
+                    <div class="option-label">Chicken breast</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="protein_chicken_breast" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Chicken thighs</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="protein_chicken_thighs" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Ground chicken</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="protein_ground_chicken" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Turkey breast</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="protein_turkey_breast" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Ground turkey</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="protein_ground_turkey" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Lean ground beef</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="protein_lean_beef" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Steak / beef cuts</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="protein_steak" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Pork chops</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="protein_pork_chops" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Ham</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="protein_ham" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Bacon</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="protein_bacon" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Breakfast sausage</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="protein_breakfast_sausage" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Smoked sausage / kielbasa</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="protein_smoked_sausage" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Deli meats (ham/turkey)</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="protein_deli_meats" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Mild fish (cod, tilapia)</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="protein_fish_mild" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Stronger fish (salmon, tuna)</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="protein_fish_strong" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Shellfish (shrimp, crab, etc.)</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="protein_shellfish" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Eggs</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="protein_eggs" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Egg whites</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="protein_egg_whites" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Tofu</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="protein_tofu" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Beans (black/pinto/kidney)</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="protein_beans" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Lentils</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="protein_lentils" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Chickpeas / garbanzo beans</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="protein_chickpeas" />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label" for="protein_notes">Any other proteins to include or avoid?</label>
+                  <textarea id="protein_notes" name="protein_notes" class="textarea-input" rows="2"></textarea>
+                </div>
+                        </section>
+                        <!-- ========================== STEP 6: DAIRY & ALTERNATIVES ========================== -->
+              <section class="wizard-step" data-step="6">
+                <h2 class="wizard-step-heading">Dairy &amp; alternatives</h2>
+
+                <div class="preference-section">
+                  <h3 class="pref-heading">Dairy choices</h3>
+
+                  <div class="option-row">
+                    <div class="option-label">Skim milk</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="dairy_skim_milk" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">1–2% milk</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="dairy_2pct_milk" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Whole milk</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="dairy_whole_milk" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Lactose-free milk</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="dairy_lactose_free" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Yogurt – plain</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="dairy_yogurt_plain" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Yogurt – flavored / fruit</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="dairy_yogurt_flavored" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Cottage cheese</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="dairy_cottage_cheese" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Hard cheeses (cheddar, Swiss, etc.)</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="dairy_hard_cheese" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Soft cheeses (mozzarella, provolone)</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="dairy_soft_cheese" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Cream cheese</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="dairy_cream_cheese" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Sour cream</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="dairy_sour_cream" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Non-dairy milks (almond, soy, oat)</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="dairy_non_dairy_milk" />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label" for="dairy_notes">Any other dairy preferences?</label>
+                  <textarea id="dairy_notes" name="dairy_notes" class="textarea-input" rows="2"></textarea>
+                </div>
+              </section>
+              <!-- ========================== STEP 7: GRAINS & STARCHES ========================== -->
+              <section class="wizard-step" data-step="7">
+                <h2 class="wizard-step-heading">Grains &amp; starches</h2>
+                <p class="wizard-intro">
+                  Tell us how you feel about common breads, grains, and starches. One pill per row.
+                </p>
+
+                <div class="preference-section">
+                  <h3 class="pref-heading">Grains &amp; starches</h3>
+
+                  <div class="option-row">
+                    <div class="option-label">White bread</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="grain_white_bread" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Wheat / whole-grain bread</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="grain_wheat_bread" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Buns / rolls</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="grain_buns_rolls" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Tortillas (flour)</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="grain_tortillas_flour" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Tortillas (corn)</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="grain_tortillas_corn" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">White rice</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="grain_white_rice" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Brown rice</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="grain_brown_rice" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Instant rice cups</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="grain_instant_rice" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Pasta – regular</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="grain_pasta_regular" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Pasta – whole wheat</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="grain_pasta_whole_wheat" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Potatoes (baked/roasted)</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="grain_potatoes_baked" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Mashed potatoes</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="grain_potatoes_mashed" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Tater tots / hash browns</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="grain_tater_tots" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Sweet potatoes</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="grain_sweet_potatoes" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Oatmeal</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="grain_oatmeal" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Cold cereal – “kid” cereals</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="grain_cereal_kid" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Cold cereal – bran / fiber</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="grain_cereal_bran" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Crackers</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="grain_crackers" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Rice cakes</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="grain_rice_cakes" />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label" for="grain_notes">Any other grain or carb preferences?</label>
+                  <textarea id="grain_notes" name="grain_notes" class="textarea-input" rows="2"></textarea>
+                </div>
+              </section>
+              <!-- ========================== STEP 8: VEGETABLES ========================== -->
+              <section class="wizard-step" data-step="8">
+                <h2 class="wizard-step-heading">Vegetables</h2>
+                <p class="wizard-intro">
+                  These help us build sides and mixed dishes you’ll actually eat.
+                </p>
+
+                <div class="preference-section">
+                  <h3 class="pref-heading">Vegetables</h3>
+
+                  <div class="option-row">
+                    <div class="option-label">Onions</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="veg_onions" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Garlic</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="veg_garlic" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Carrots</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="veg_carrots" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Celery</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="veg_celery" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Peas</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="veg_peas" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Corn</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="veg_corn" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Green beans</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="veg_green_beans" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Broccoli</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="veg_broccoli" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Cauliflower</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="veg_cauliflower" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Spinach</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="veg_spinach" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Lettuce (iceberg/romaine)</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="veg_lettuce" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Mixed salad greens</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="veg_salad_greens" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Tomatoes (fresh)</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="veg_tomatoes_fresh" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Tomatoes (in sauces)</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="veg_tomatoes_sauce" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Bell peppers</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="veg_bell_peppers" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Cucumbers</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="veg_cucumbers" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Zucchini / squash</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="veg_zucchini" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Mushrooms</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="veg_mushrooms" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Cabbage / coleslaw mix</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="veg_cabbage" />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label" for="veg_notes">Other vegetables you want to include or avoid?</label>
+                  <textarea id="veg_notes" name="veg_notes" class="textarea-input" rows="2"></textarea>
+                </div>
+              </section>
+              <!-- ========================== STEP 9: FRUITS ========================== -->
+              <section class="wizard-step" data-step="9">
+                <h2 class="wizard-step-heading">Fruits</h2>
+                <p class="wizard-intro">
+                  Fruits help fill in snacks, breakfasts, and dessert-style options while keeping sodium low.
+                </p>
+
+                <div class="preference-section">
+                  <h3 class="pref-heading">Fruits</h3>
+
+                  <div class="option-row">
+                    <div class="option-label">Apples</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="fruit_apples" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Bananas</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="fruit_bananas" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Oranges / mandarins</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="fruit_oranges" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Grapes</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="fruit_grapes" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Strawberries</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="fruit_strawberries" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Blueberries</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="fruit_blueberries" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Pineapple</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="fruit_pineapple" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Peaches / pears</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="fruit_peaches_pears" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Melons (cantaloupe, honeydew)</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="fruit_melons" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Applesauce / fruit cups</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="fruit_cups" />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label" for="fruit_notes">Any other fruits?</label>
+                  <textarea id="fruit_notes" name="fruit_notes" class="textarea-input" rows="2"></textarea>
+                </div>
+              </section>
+              <!-- ========================== STEP 10: SNACKS, SAUCES & CUISINES ========================== -->
+              <section class="wizard-step" data-step="10">
+                <h2 class="wizard-step-heading">Snacks, sauces &amp; flavors</h2>
+                <p class="wizard-intro">
+                  These decide how “fun” and realistic your snacks and flavor profiles feel.
+                </p>
+
+                <div class="preference-section">
+                  <h3 class="pref-heading">Snacks</h3>
+
+                  <div class="option-row">
+                    <div class="option-label">Peanut butter</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="snack_peanut_butter" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Cheese &amp; crackers</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="snack_cheese_crackers" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Popcorn</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="snack_popcorn" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Granola / snack bars</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="snack_granola_bars" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Yogurt cups / pudding cups</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="snack_cups" />
+                  </div>
+                </div>
+
+                <div class="preference-section">
+                  <h3 class="pref-heading">Sauces &amp; condiments</h3>
+
+                  <div class="option-row">
+                    <div class="option-label">Ketchup</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="sauce_ketchup" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Mustard</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="sauce_mustard" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Mayonnaise / light mayo</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="sauce_mayo" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Barbecue sauce</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="sauce_bbq" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Ranch / creamy dressings</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="sauce_ranch" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Italian / vinaigrette dressings</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="sauce_italian" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Tomato / marinara sauce</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="sauce_tomato" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Soy sauce (regular)</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="sauce_soy_regular" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Soy sauce (low sodium)</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="sauce_soy_low" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Hot sauce, salsa, spicy condiments</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="sauce_spicy" />
+                  </div>
+                </div>
+
+                <div class="preference-section">
+                  <h3 class="pref-heading">Cuisines &amp; styles</h3>
+
+                  <div class="option-row">
+                    <div class="option-label">American comfort food</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="cuisine_american" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Italian (pasta, red sauce)</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="cuisine_italian" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Mexican / Tex-Mex</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="cuisine_mexican" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Asian-inspired (stir-fries, rice bowls)</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="cuisine_asian" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Soups &amp; stews</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="cuisine_soups" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Casseroles &amp; one-pan meals</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="cuisine_casseroles" />
+                  </div>
+
+                  <div class="option-row">
+                    <div class="option-label">Salads &amp; cold plates</div>
+                    <div class="option-chips">
+                      <button type="button" class="option-chip" data-value="like">Like</button>
+                      <button type="button" class="option-chip" data-value="neutral">Neutral</button>
+                      <button type="button" class="option-chip" data-value="avoid">Avoid</button>
+                    </div>
+                    <input type="hidden" name="cuisine_salads" />
+                  </div>
+                </div>
+              </section>
+              <!-- ========================== STEP 11: ALLERGIES & MEDICAL ========================== -->
+              <section class="wizard-step" data-step="11">
+                <h2 class="wizard-step-heading">Allergies &amp; medical considerations</h2>
+                <p class="wizard-intro">
+                  These settings tell the planner what to absolutely avoid and what to adjust around.
+                </p>
+
+                <div class="form-group">
+                  <label class="field-label">Any allergies or intolerances?</label>
+                  <div class="checkbox-group">
+                    <label><input type="checkbox" name="allergies[]" value="none" />None</label>
+                    <label><input type="checkbox" name="allergies[]" value="gluten" />Gluten</label>
+                    <label><input type="checkbox" name="allergies[]" value="dairy" />Dairy / lactose</label>
+                    <label><input type="checkbox" name="allergies[]" value="eggs" />Eggs</label>
+                    <label><input type="checkbox" name="allergies[]" value="soy" />Soy</label>
+                    <label><input type="checkbox" name="allergies[]" value="peanuts" />Peanuts</label>
+                    <label><input type="checkbox" name="allergies[]" value="treenuts" />Tree nuts</label>
+                    <label><input type="checkbox" name="allergies[]" value="fish" />Fish</label>
+                    <label><input type="checkbox" name="allergies[]" value="shellfish" />Shellfish</label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label" for="other_allergies">Other allergies?</label>
+                  <textarea id="other_allergies" name="other_allergies" class="textarea-input" rows="2"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label">Medical considerations</label>
+                  <div class="checkbox-group">
+                    <label><input type="checkbox" name="medical[]" value="hypertension" />High blood pressure</label>
+                    <label><input type="checkbox" name="medical[]" value="diabetes" />Diabetes / pre-diabetes</label>
+                    <label><input type="checkbox" name="medical[]" value="cholesterol" />High cholesterol</label>
+                    <label><input type="checkbox" name="medical[]" value="kidney" />Kidney considerations</label>
+                    <label><input type="checkbox" name="medical[]" value="reflux" />GERD / reflux</label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label" for="never_include">
+                    Foods or ingredients you absolutely never want included:
+                  </label>
+                  <textarea id="never_include" name="never_include" class="textarea-input" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label">Strictness level</label>
+                  <select name="avoid_strictness" class="select-input">
+                    <option value="1">1 — Flexible</option>
+                    <option value="2">2</option>
+                    <option value="3">3 — Moderate</option>
+                    <option value="4">4</option>
+                    <option value="5">5 — Absolutely not</option>
+                  </select>
+                </div>
+              </section>
+              <!-- ========================== STEP 12: PANTRY, STORES & BUDGET ========================== -->
+              <section class="wizard-step" data-step="12">
+                <h2 class="wizard-step-heading">Pantry, stores &amp; weekly budget</h2>
+                <p class="wizard-intro">
+                  This is where the “save money” side of the system comes to life.
+                </p>
+
+                <div class="form-group">
+                  <label class="field-label" for="pantry_text">Your current pantry (optional)</label>
+                  <textarea
+                    id="pantry_text"
+                    name="pantry_text"
+                    class="textarea-input"
+                    rows="3"
+                    placeholder="Type or paste your pantry list (foods and amounts, if known)…"
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label">How aggressively should we use your pantry?</label>
+                  <select name="pantry_aggressive" class="select-input">
+                    <option value="1">1 — Don’t worry about it</option>
+                    <option value="2">2</option>
+                    <option value="3">3 — Mix of pantry &amp; new items</option>
+                    <option value="4">4</option>
+                    <option value="5">5 — Use pantry first whenever possible</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label">Primary grocery stores</label>
+                  <div class="checkbox-group">
+                    <label><input type="checkbox" name="stores[]" value="walmart" />Walmart</label>
+                    <label><input type="checkbox" name="stores[]" value="aldi" />Aldi</label>
+                    <label><input type="checkbox" name="stores[]" value="kroger" />Kroger / local supermarket</label>
+                    <label><input type="checkbox" name="stores[]" value="costco" />Costco / Sam’s</label>
+                    <label><input type="checkbox" name="stores[]" value="dollar" />Dollar store</label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label">Visit more than one store to save money?</label>
+                  <select name="multi_store" class="select-input">
+                    <option value="no">No, one store only</option>
+                    <option value="maybe">Maybe, if savings are big</option>
+                    <option value="yes">Yes, I’m fine with 2+ stores</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label">Store choice priority</label>
+                  <select name="budget_priority" class="select-input">
+                    <option value="value">Lowest total cost</option>
+                    <option value="convenience">Closest / easiest</option>
+                    <option value="quality">Best brands / selection</option>
+                    <option value="balanced">Balance cost &amp; convenience</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label">Sodium focus (restating for clarity)</label>
+                  <select name="sodium_focus" class="select-input">
+                    <option value="none">Normal / no special focus</option>
+                    <option value="mild">Mild reduction</option>
+                    <option value="moderate">Moderate reduction</option>
+                    <option value="aggressive">Aggressive reduction (priority)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label">Movement days per week</label>
+                  <select name="movement_days" class="select-input">
+                    <option value="3">3 days</option>
+                    <option value="4">4 days</option>
+                    <option value="5" selected>5 days</option>
+                    <option value="6">6 days</option>
+                    <option value="7">7 days</option>
+                  </select>
+                </div>
+              </section>
+              <!-- ========================== STEP 13: SCHEDULE, LEFTOVERS & PLAN STYLE ========================== -->
+              <section class="wizard-step" data-step="13">
+                <h2 class="wizard-step-heading">Schedule, leftovers &amp; plan style</h2>
+                <p class="wizard-intro">
+                  Finally, we shape how the plan fits into your real week, including timing and leftovers.
+                </p>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="field-label">Wake time (typical)</label>
+                    <input type="time" name="wake_time" class="text-input" />
+                  </div>
+                  <div class="form-group">
+                    <label class="field-label">Bedtime (typical)</label>
+                    <input type="time" name="bed_time" class="text-input" />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="field-label">Breakfast time</label>
+                    <input type="time" name="breakfast_time" class="text-input" />
+                  </div>
+                  <div class="form-group">
+                    <label class="field-label">Lunch time</label>
+                    <input type="time" name="lunch_time" class="text-input" />
+                  </div>
+                  <div class="form-group">
+                    <label class="field-label">Dinner time</label>
+                    <input type="time" name="dinner_time" class="text-input" />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label">Busy / different days</label>
+                  <div class="checkbox-group">
+                    <label><input type="checkbox" name="busy[]" value="mon" />Mon</label>
+                    <label><input type="checkbox" name="busy[]" value="tue" />Tue</label>
+                    <label><input type="checkbox" name="busy[]" value="wed" />Wed</label>
+                    <label><input type="checkbox" name="busy[]" value="thu" />Thu</label>
+                    <label><input type="checkbox" name="busy[]" value="fri" />Fri</label>
+                    <label><input type="checkbox" name="busy[]" value="sat" />Sat</label>
+                    <label><input type="checkbox" name="busy[]" value="sun" />Sun</label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label">How do you feel about leftovers?</label>
+                  <select name="leftovers" class="select-input">
+                    <option value="love">Love them — plan them on purpose</option>
+                    <option value="okay">Okay sometimes</option>
+                    <option value="fresh">Prefer fresh meals, minimal leftovers</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label">Maximum days in a row for leftovers</label>
+                  <select name="leftovers_days" class="select-input">
+                    <option value="1">1 day</option>
+                    <option value="2">2 days</option>
+                    <option value="3">3 days</option>
+                    <option value="4">4 days</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label">How detailed should cooking instructions be?</label>
+                  <select name="instruction_detail" class="select-input">
+                    <option value="detailed">Very detailed (step-by-step)</option>
+                    <option value="moderate">Moderately detailed</option>
+                    <option value="simple">Short &amp; simple</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label">Overall plan strictness vs. flexibility</label>
+                  <select name="flexibility" class="select-input">
+                    <option value="1">1 — Very flexible suggestions</option>
+                    <option value="2">2</option>
+                    <option value="3">3 — Middle of the road</option>
+                    <option value="4">4</option>
+                    <option value="5">5 — Very strict schedule</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label" for="final_notes">Anything else we should know?</label>
+                  <textarea id="final_notes" name="final_notes" class="textarea-input" rows="3"></textarea>
+                </div>
+              </section>
+              <!-- =============== NAVIGATION BUTTONS =============== -->
+              <div class="wizard-nav">
+                <button type="button" class="btn btn-outline js-prev-step">Back</button>
+                <button type="button" class="btn btn-primary js-next-step">Next</button>
+              </div>
+
+            </form>
+          </section>
+        </div>
+      </main>
+
+      <!-- ======================== FOOTER ======================== -->
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-left">
+            <img src="images/tkm-logo.png" class="footer-logo" alt="TKM logo small" />
+            <div>
+              <div class="footer-text-main">TKM VITALMETRIC WELLNESS</div>
+              <div class="footer-text-sub">Prototype demonstration — not medical advice</div>
+            </div>
+          </div>
+          <div class="footer-right">
+            © <span id="year-onboard"></span> TKM VitalMetric Wellness
+          </div>
+        </div>
+      </footer>
+    </div> <!-- /.page -->
+
+    <script>
+      (function () {
+        var el = document.getElementById("year-onboard");
+        if (el) el.textContent = new Date().getFullYear();
+      })();
+    </script>
+  </body>
+</html>
