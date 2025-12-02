@@ -2,353 +2,526 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>TKM VitalMetric Wellness – Weekly Mission Control</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TKM VitalMetric Wellness – Weekly Wellness Mission Control</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="TKM VitalMetric Wellness helps you build a weekly, low-sodium, budget-aware meal and movement plan driven by your real pantry and goals."
+  />
   <link rel="stylesheet" href="style.css" />
-  <script src="app.js" defer></script>
+  <script defer src="app.js"></script>
 </head>
 <body>
   <div class="page">
-    <!-- Shared header -->
+    <!-- ===============================
+         Header / Navigation
+         =============================== -->
     <header class="site-header">
       <div class="header-inner">
         <a href="index.html" class="brand">
-          <div class="brand-logo">
-            <img src="images/tkm-logo.png" alt="TKM VitalMetric Wellness logo" />
-          </div>
-          <div class="brand-text">
-            <div class="brand-name">TKM VITALMETRIC WELLNESS</div>
-            <div class="brand-tagline">Weekly wellness mission control</div>
-          </div>
+          <span class="brand-logo">
+            <img
+              src="images/tkm-logo.png"
+              alt="TKM VitalMetric Wellness logo"
+            />
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">TKM VitalMetric Wellness</span>
+            <span class="brand-tagline">Weekly wellness mission control</span>
+          </span>
         </a>
-
         <nav class="main-nav">
           <a href="index.html" class="nav-link active">Home</a>
           <a href="onboarding.html" class="nav-link">Start Plan</a>
           <a href="dashboard.html" class="nav-link">Demo Dashboard</a>
-          <a href="login.html" class="nav-link">Sign In</a>
-          <a href="signup.html" class="nav-link nav-pill nav-pill--trial">
-            7-day free trial · then $9.99/wk
-          </a>
+          <a href="login.html" class="nav-link nav-pill">Sign In</a>
+          <span class="nav-link nav-pill nav-pill--trial">
+            7-day free trial · then $9.99/week
+          </span>
         </nav>
       </div>
     </header>
 
     <main class="main-content">
-      <!-- Hero / Weekly Mission Control -->
+      <!-- ===============================
+           Hero + Snapshot
+           =============================== -->
       <section class="section section-light">
-        <div class="section-inner hero-layout">
-          <div class="hero-main">
-            <div class="prototype-badge">
-              PROTOTYPE · UI ONLY · NO REAL DATA STORED
-            </div>
+        <div class="section-inner">
+          <div class="hero-layout">
+            <div class="hero-main">
+              <span class="prototype-badge">
+                PROTOTYPE · UI ONLY · NO REAL DATA STORED
+              </span>
+              <h1 class="hero-title">
+                Your Weekly Wellness Mission Control.
+              </h1>
+              <p class="hero-subtitle">
+                Plan a full week of low-sodium, budget-aware meals and gentle
+                movement in one place. Built for real life, real pantries, and
+                real time constraints.
+              </p>
+              <p class="hero-price-note">
+                Start free for 7 days, then just <strong>$9.99/week</strong> to
+                keep your plan updated, organized, and on track.
+              </p>
 
-            <h1 class="hero-title">
-              Your Weekly Wellness Mission Control
-            </h1>
-
-            <p class="hero-subtitle">
-              Build a full week of meals, snacks, and movement that respects your
-              calories, sodium, budget, and real life — powered by your pantry and
-              local stores.
-            </p>
-
-            <p class="hero-price-note">
-              Try it for <strong>7 days free</strong>, then just
-              <strong>$9.99/week</strong> to keep a coach-style plan at your fingertips.
-            </p>
-
-            <div class="hero-actions">
-              <a href="onboarding.html" class="btn btn-primary">
-                Start your weekly plan
-              </a>
-              <a href="dashboard.html" class="btn btn-secondary">
-                Preview demo dashboard
-              </a>
-            </div>
-
-            <p class="hero-trial-meta">
-              No real payments or accounts in this prototype. In the full version,
-              your subscription would unlock real plans, shopping lists, and reports.
-            </p>
-          </div>
-          <div class="hero-side">
-            <!-- Weekly Snapshot preview card -->
-            <article class="snapshot-card">
-              <header class="snapshot-header">
-                <div class="snapshot-eyebrow">WEEKLY SNAPSHOT · DEMO PREVIEW</div>
-                <h2 class="snapshot-title">Your mission control for the week</h2>
-                <p class="snapshot-subtitle">
-                  Here’s a sample of what members see every week.
-                </p>
-              </header>
-
-              <dl class="snapshot-rows">
-                <div class="snapshot-row">
-                  <dt>DATE RANGE</dt>
-                  <dd>Dec 1 – Dec 7 (example)</dd>
-                </div>
-                <div class="snapshot-row">
-                  <dt>CALORIE TARGET</dt>
-                  <dd>2,200 kcal / day</dd>
-                </div>
-                <div class="snapshot-row">
-                  <dt>SODIUM FOCUS</dt>
-                  <dd><span class="tag tag-sodium">Aggressive reduction</span></dd>
-                </div>
-                <div class="snapshot-row">
-                  <dt>WEEKLY BUDGET</dt>
-                  <dd>$75.00 (example)</dd>
-                </div>
-                <div class="snapshot-row">
-                  <dt>MOVEMENT STACK</dt>
-                  <dd>Radio Taiso · Tai Chi · 2,500 steps</dd>
-                </div>
-                <div class="snapshot-row">
-                  <dt>REPORT STYLE</dt>
-                  <dd>Printable multi-page PDF-style summary</dd>
-                </div>
-              </dl>
-
-              <div class="snapshot-footer">
-                <p>
-                  <strong>Members see:</strong> a weekly plan, pantry-aware recipes,
-                  shopping list, and movement stack all in one “mission control”
-                  dashboard.
-                </p>
-                <a href="dashboard.html" class="btn btn-ghost btn-full">
-                  View the demo Weekly Snapshot
+              <div class="hero-actions">
+                <a
+                  href="onboarding.html"
+                  class="btn btn-primary"
+                  id="hero-start-plan"
+                >
+                  Start your weekly plan
+                </a>
+                <a
+                  href="dashboard.html"
+                  class="btn btn-secondary"
+                  id="hero-view-demo"
+                >
+                  View demo dashboard
                 </a>
               </div>
-            </article>
+
+              <p class="hero-trial-meta">
+                No real accounts yet—this demo shows the layout and flow your
+                members will use once the full AI engine is wired up.
+              </p>
+            </div>
+
+            <aside class="hero-side">
+              <article class="snapshot-card">
+                <header class="snapshot-header">
+                  <div class="snapshot-eyebrow">
+                    Weekly Snapshot · Demo Preview
+                  </div>
+                  <h2 class="snapshot-title">What members see every week</h2>
+                  <p class="snapshot-subtitle">
+                    Sample values below—your real snapshot will reflect your
+                    sodium goals, budget, pantry, and movement stack.
+                  </p>
+                </header>
+
+                <div class="snapshot-card-main">
+                  <dl class="snapshot-rows">
+                    <div class="snapshot-row">
+                      <dt>DATE RANGE</dt>
+                      <dd>
+                        Dec 1 – Dec 7
+                        <span class="snapshot-note">
+                          Generated from your chosen start/end dates.
+                        </span>
+                      </dd>
+                    </div>
+                    <div class="snapshot-row">
+                      <dt>CALORIE TARGET</dt>
+                      <dd>
+                        2,200 kcal / day
+                        <span class="snapshot-note">
+                          Adjustable based on your goals and movement.
+                        </span>
+                      </dd>
+                    </div>
+                    <div class="snapshot-row">
+                      <dt>SODIUM FOCUS</dt>
+                      <dd>
+                        Aggressive reduction
+                        <span class="snapshot-note tag tag-sodium">
+                          Member priority: lower blood pressure
+                        </span>
+                      </dd>
+                    </div>
+                    <div class="snapshot-row">
+                      <dt>WEEKLY BUDGET</dt>
+                      <dd>
+                        $75.00 (example)
+                        <span class="snapshot-note">
+                          Plans lean on pantry items to stretch your budget.
+                        </span>
+                      </dd>
+                    </div>
+                    <div class="snapshot-row">
+                      <dt>MOVEMENT STACK</dt>
+                      <dd>
+                        Radio Taiso · Tai Chi · 2,500 steps
+                        <span class="snapshot-note">
+                          Broken into gentle, repeatable daily blocks.
+                        </span>
+                      </dd>
+                    </div>
+                    <div class="snapshot-row">
+                      <dt>REPORT STYLE</dt>
+                      <dd>
+                        Printable multi-page PDF
+                        <span class="snapshot-note">
+                          Meals, snacks, movement, and shopping list all in one
+                          weekly printout.
+                        </span>
+                      </dd>
+                    </div>
+                  </dl>
+
+                  <footer class="snapshot-footer">
+                    This is your “mission control&quot; tile—on the real
+                    dashboard it updates each week as your plan changes.
+                  </footer>
+                </div>
+              </article>
+            </aside>
           </div>
         </div>
       </section>
-      <!-- How it works -->
-      <section class="section">
+      <!-- ===============================
+           What members get / Why $9.99
+           =============================== -->
+      <section class="section section-light">
         <div class="section-inner">
-          <header class="section-header">
-            <h2>How it works</h2>
+          <div class="section-header">
+            <h2>What members get for $9.99/week</h2>
             <p>
-              Four simple steps to turn your pantry, budget, and health goals into
-              a realistic weekly plan.
+              The goal is simple: help you protect your health, simplify your
+              week, and save enough on groceries to more than cover the cost of
+              the plan.
             </p>
-          </header>
-
-          <div class="step-grid">
-            <article class="step-card-mini">
-              <div class="step-card-mini-icon step-icon-1" aria-hidden="true"></div>
-              <h3>Step 1 · Create your account</h3>
-              <p>
-                Start a free 7-day trial, then just $9.99/week. In the full system,
-                your profile stays with you from week to week.
-              </p>
-            </article>
-
-            <article class="step-card-mini">
-              <div class="step-card-mini-icon step-icon-2" aria-hidden="true"></div>
-              <h3>Step 2 · Complete your onboarding</h3>
-              <p>
-                Tell us about your likes, dislikes, sodium goals, budget, stores,
-                movement preferences, and schedule — once, then adjust as needed.
-              </p>
-            </article>
-
-            <article class="step-card-mini">
-              <div class="step-card-mini-icon step-icon-3" aria-hidden="true"></div>
-              <h3>Step 3 · Generate your weekly plan</h3>
-              <p>
-                The engine builds a full week of meals, snacks, movement, and a
-                shopping list that uses your pantry before sending you to the store.
-              </p>
-            </article>
-
-            <article class="step-card-mini">
-              <div class="step-card-mini-icon step-icon-4" aria-hidden="true"></div>
-              <h3>Step 4 · Follow your mission dashboard</h3>
-              <p>
-                Use the Weekly Snapshot as your control panel, make quick swaps, and
-                keep an eye on calories, sodium, budget, and movement in one place.
-              </p>
-            </article>
           </div>
-        </div>
-      </section>
-      <!-- Healthy meals built around your real life -->
-      <section class="section section-alt">
-        <div class="section-inner">
-          <header class="section-header">
-            <h2>Healthy meals built around your real life</h2>
-            <p>
-              TKM VitalMetric Wellness is built for real calendars, real pantries,
-              and real budgets — not imaginary perfect weeks.
-            </p>
-          </header>
-
-          <div class="feature-grid">
-            <article class="feature-card">
-              <div class="feature-icon feature-icon-pantry" aria-hidden="true"></div>
-              <h3>Smart pantry-aware planning</h3>
-              <p>
-                Use what you already have before you buy more. Future versions will
-                read full pantry lists and store sales to minimize waste.
-              </p>
-            </article>
-
-            <article class="feature-card">
-              <div class="feature-icon feature-icon-sodium" aria-hidden="true"></div>
-              <h3>Low-sodium, budget-conscious menus</h3>
-              <p>
-                Plan meals that gently or aggressively reduce sodium while staying
-                inside a weekly dollar amount you set.
-              </p>
-            </article>
-
-            <article class="feature-card">
-              <div class="feature-icon feature-icon-movement" aria-hidden="true"></div>
-              <h3>Built-in movement stack</h3>
-              <p>
-                Layer in Radio Taiso, Tai Chi, gentle walking, or your preferred
-                movements so your activity matches your eating plan.
-              </p>
-            </article>
-
-            <article class="feature-card">
-              <div class="feature-icon feature-icon-pdf" aria-hidden="true"></div>
-              <h3>Printable weekly PDF &amp; reports</h3>
-              <p>
-                Turn your plan and Weekly Snapshot into a printable, multi-page PDF
-                you can take to appointments or keep on the fridge.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- What you get every week -->
-      <section class="section">
-        <div class="section-inner">
-          <header class="section-header">
-            <h2>What you get every week as a member</h2>
-            <p>
-              The goal is that your small weekly fee is paid back in <em>saved money</em>,
-              less food waste, and fewer “what’s for dinner?” emergencies.
-            </p>
-          </header>
 
           <div class="weekly-benefits">
             <div class="weekly-benefits-column">
+              <div class="footer-brand" style="margin-bottom: 0.75rem;">
+                <div class="footer-logo-pill">
+                  <img
+                    src="images/tkm-logo.png"
+                    alt="TKM VitalMetric Wellness logo"
+                  />
+                </div>
+                <div class="footer-text">
+                  <div class="footer-name">TKM VitalMetric Wellness</div>
+                  <div class="footer-tagline">
+                    A weekly wellness mission control for real life.
+                  </div>
+                </div>
+              </div>
               <ul>
-                <li>Full 7-day meal &amp; snack plan built around your goals</li>
-                <li>Weekly Snapshot “mission control” dashboard</li>
-                <li>Shopping list that uses pantry items first</li>
-                <li>Movement stack suggestions matched to your capacity</li>
+                <li>
+                  A full 7-day meal and snack structure tuned to your sodium and
+                  calorie targets.
+                </li>
+                <li>
+                  A weekly grocery list that leans on your existing pantry to
+                  reduce waste.
+                </li>
+                <li>
+                  A gentle movement stack that fits your joints, schedule, and
+                  energy level.
+                </li>
               </ul>
             </div>
+
             <div class="weekly-benefits-column">
               <ul>
-                <li>Focus on calories <em>and</em> sodium, not just one number</li>
-                <li>Budget-conscious recipe selection</li>
-                <li>Support for leftovers &amp; batch cooking if you want it</li>
-                <li>Printable plan you can bring to your doctor or coach</li>
+                <li>
+                  A “Weekly Snapshot” tile that summarizes your plan in one
+                  glance.
+                </li>
+                <li>
+                  A printable multi-page PDF you can stick on the fridge or
+                  bring to appointments.
+                </li>
+                <li>
+                  Quick-swap meal ideas when life changes and you need a new
+                  plan on the fly.
+                </li>
               </ul>
             </div>
           </div>
 
           <p class="weekly-benefits-note">
-            In this prototype, these are represented with sample/demo data. In the
-            full system, they would be generated from your onboarding answers and
-            your personal recipe library.
+            In many cases, simply planning ahead cuts impulse takeout, reduces
+            duplicate purchases, and prevents food from going to waste—often
+            saving more than the $9.99/week membership.
           </p>
         </div>
       </section>
-      <!-- Quick-swap meal helper (concept) -->
+
+      <!-- ===============================
+           How it works
+           =============================== -->
       <section class="section section-alt">
-        <div class="section-inner quickswap-layout">
-          <div class="quickswap-text">
-            <h2>Quick-swap meal helper (concept)</h2>
+        <div class="section-inner">
+          <div class="section-header">
+            <h2>How it works (once the full system is live)</h2>
             <p>
-              Busy day? Doctor’s appointment? In the full version, you’ll be able to
-              say “I only have 5 minutes and these ingredients” and get a quick meal
-              suggestion that still fits your weekly plan.
-            </p>
-
-            <ul class="quickswap-list">
-              <li>Choose how much time you have (5, 10, 20 minutes, etc.)</li>
-              <li>Tell it what’s available (or use your saved pantry)</li>
-              <li>Get a fast, realistic option that respects your goals</li>
-            </ul>
-
-            <p class="quickswap-note">
-              This prototype only shows the concept. In a future release, this will
-              be a live tool connected to your pantry and preferences.
+              This prototype shows the exact flow your members will use—from
+              creating an account to reviewing their weekly mission control
+              dashboard.
             </p>
           </div>
-          <div class="quickswap-visual">
-            <div class="quickswap-card">
-              <div class="quickswap-pill">Coming Soon</div>
-              <h3>“I’ve got 10 minutes and leftover chicken…”</h3>
+
+          <div class="step-grid">
+            <article class="step-card-mini">
+              <div class="step-card-mini-icon step-icon-1"></div>
+              <h3>Step 1 · Create your account</h3>
               <p>
-                Imagine tapping a button and getting 2–3 quick, low-sodium ideas
-                using ingredients you already have — without blowing your plan.
+                You’ll sign up, confirm your email, and start a 7-day free trial
+                so you can explore the full planner without commitment.
               </p>
-            </div>
+            </article>
+
+            <article class="step-card-mini">
+              <div class="step-card-mini-icon step-icon-2"></div>
+              <h3>Step 2 · Complete onboarding</h3>
+              <p>
+                You’ll answer questions about food preferences, sodium goals,
+                pantry, budget, stores, movement, and schedule in a guided
+                wizard.
+              </p>
+            </article>
+
+            <article class="step-card-mini">
+              <div class="step-card-mini-icon step-icon-3"></div>
+              <h3>Step 3 · Generate your weekly plan</h3>
+              <p>
+                The system selects recipes, builds a meal map, and creates your
+                Weekly Snapshot, shopping list, and movement stack for the week.
+              </p>
+            </article>
+
+            <article class="step-card-mini">
+              <div class="step-card-mini-icon step-icon-4"></div>
+              <h3>Step 4 · Follow your mission dashboard</h3>
+              <p>
+                Your dashboard keeps everything in one place so you can quickly
+                see your day, swap meals, and print an updated PDF whenever your
+                week changes.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- ===============================
+           Healthy meals built around real life
+           =============================== -->
+      <section class="section section-light">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2>Healthy meals built around your real life</h2>
+            <p>
+              TKM VitalMetric Wellness starts with your pantry, your stores, and
+              your movement capacity—then builds a weekly plan that fits you
+              instead of fighting you.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="feature-icon feature-icon-pantry"></div>
+              <h3>Smart pantry-aware planning</h3>
+              <p>
+                Uses what you already have first, then adds only what you need
+                to complete low-sodium, balanced meals that fit your skills and
+                time.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon feature-icon-sodium"></div>
+              <h3>Low-sodium, budget-conscious menus</h3>
+              <p>
+                Helps you push sodium down while keeping ingredients familiar
+                and affordable, with options for mild, moderate, or aggressive
+                reduction.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon feature-icon-movement"></div>
+              <h3>Built-in movement stack</h3>
+              <p>
+                Integrates gentle movements like Radio Taiso, Tai Chi, and
+                walking into your weekly plan, with realistic time blocks and
+                energy in mind.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon feature-icon-pdf"></div>
+              <h3>Printable weekly PDF</h3>
+              <p>
+                Combines meals, snacks, movement, and shopping lists into a
+                simple, printable report you can keep visible all week.
+              </p>
+            </article>
           </div>
         </div>
       </section>
 
-      <!-- Brand / marketing band -->
+      <!-- ===============================
+           QuickSwap meal helper
+           =============================== -->
+      <section class="section section-alt">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2>QuickSwap · “I only have 10 minutes, what can I eat?”</h2>
+            <p>
+              Some days don’t go according to plan. QuickSwap is a simple helper
+              you can use when your schedule changes and you need a fast, safer
+              option using what you already have.
+            </p>
+          </div>
+
+          <div class="quickswap-layout">
+            <div class="quickswap-text">
+              <p>
+                In the full system, you’ll be able to tell QuickSwap how much
+                time you have, what equipment is available, and which items you
+                want to prioritize from your pantry.
+              </p>
+              <ul class="quickswap-list">
+                <li>“I only have 5 minutes for lunch.”</li>
+                <li>
+                  “I have a microwave and toaster, but I don’t want to cook
+                  from scratch.”
+                </li>
+                <li>
+                  “Use my pantry peanut butter, bread, and fruit if possible.”
+                </li>
+              </ul>
+              <p class="quickswap-note">
+                This demo doesn’t generate real recipes yet, but the flow below
+                shows how the QuickSwap helper will feel when connected to your
+                real recipe database.
+              </p>
+            </div>
+
+            <div class="quickswap-visual">
+              <div class="quickswap-card">
+                <div class="quickswap-pill">QuickSwap · Demo</div>
+                <p style="margin: 0 0 0.6rem 0;">
+                  Tell QuickSwap about your moment:
+                </p>
+                <form id="quickswap-form">
+                  <label class="form-label" style="font-size: 0.82rem;">
+                    Time available
+                    <select class="form-input" name="time">
+                      <option value="5">5 minutes</option>
+                      <option value="10" selected>10 minutes</option>
+                      <option value="15">15 minutes</option>
+                      <option value="20+">20+ minutes</option>
+                    </select>
+                  </label>
+
+                  <label class="form-label" style="font-size: 0.82rem;">
+                    Equipment
+                    <select class="form-input" name="equipment">
+                      <option value="microwave">Microwave only</option>
+                      <option value="stovetop">Stovetop</option>
+                      <option value="toaster">Toaster / toaster oven</option>
+                      <option value="no-cook">No-cook / grab-and-go</option>
+                    </select>
+                  </label>
+
+                  <label class="form-label" style="font-size: 0.82rem;">
+                    Priority
+                    <select class="form-input" name="priority">
+                      <option value="sodium">Lowest sodium first</option>
+                      <option value="budget">Lowest cost first</option>
+                      <option value="pantry">Use pantry items first</option>
+                    </select>
+                  </label>
+
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-full"
+                    id="quickswap-generate"
+                    style="margin-top: 0.4rem;"
+                  >
+                    Show a demo meal idea
+                  </button>
+                </form>
+
+                <p
+                  id="quickswap-result"
+                  style="margin: 0.7rem 0 0 0; font-size: 0.82rem;"
+                >
+                  In the live app, this will show a quick suggested meal or
+                  snack pulled from your plan and pantry.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===============================
+           Why TKM VitalMetric Wellness?
+           =============================== -->
       <section class="section section-brand-band">
-        <div class="section-inner brand-band-inner">
-          <div class="brand-band-left">
-            <div class="brand-band-logo">
-              <img src="images/tkm-logo.png" alt="TKM VitalMetric Wellness logo" />
+        <div class="section-inner">
+          <div class="brand-band-inner">
+            <div class="brand-band-left">
+              <div class="brand-band-logo">
+                <img
+                  src="images/tkm-logo.png"
+                  alt="TKM VitalMetric Wellness logo"
+                />
+              </div>
+              <div class="brand-band-text">
+                <h2>Why TKM VitalMetric Wellness?</h2>
+                <p>
+                  Because real change happens when your plan fits your life,
+                  your pantry, and your budget—not someone else’s idea of a
+                  “perfect” week.
+                </p>
+              </div>
             </div>
-            <div class="brand-band-text">
-              <h2>Why TKM VitalMetric Wellness?</h2>
-              <p>
-                Because your week is more than macros. It’s pantry reality, sodium,
-                budget, movement, and your life — all on one map.
-              </p>
-            </div>
-          </div>
 
-          <div class="brand-band-cta">
-            <p class="brand-band-price">
-              7-day free trial · then $9.99/week
-            </p>
-            <a href="signup.html" class="btn btn-primary btn-full">
-              Start your free trial (prototype)
-            </a>
-            <p class="brand-band-meta">
-              This demo doesn’t process payments yet. In the full version, you’d use
-              secure billing and unlock your personal Weekly Snapshot.
-            </p>
+            <div class="brand-band-cta">
+              <p class="brand-band-price">
+                Start with a 7-day free trial, then $9.99/week.
+              </p>
+              <p class="brand-band-meta">
+                This prototype doesn’t store real data yet—but the flow you see
+                here is the same one we’ll use once the backend, recipes, and
+                AI planner are fully wired into your account.
+              </p>
+              <div style="margin-top: 0.7rem; display: flex; gap: 0.6rem; flex-wrap: wrap;">
+                <a href="signup.html" class="btn btn-primary">
+                  Start free trial (demo)
+                </a>
+                <a href="onboarding.html" class="btn btn-secondary">
+                  Start your weekly plan
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      </main>
+    </main>
 
-    <!-- Footer -->
+    <!-- ===============================
+         Footer
+         =============================== -->
     <footer class="site-footer">
       <div class="footer-inner">
         <div class="footer-brand">
           <div class="footer-logo-pill">
-            <img src="images/tkm-logo.png" alt="TKM VitalMetric Wellness logo" />
+            <img
+              src="images/tkm-logo.png"
+              alt="TKM VitalMetric Wellness logo"
+            />
           </div>
           <div class="footer-text">
-            <div class="footer-name">TKM VITALMETRIC WELLNESS</div>
+            <div class="footer-name">TKM VitalMetric Wellness</div>
             <div class="footer-tagline">
-              Prototype demonstration — not medical advice.
+              Weekly meal, movement, and sodium mission control.
             </div>
           </div>
         </div>
-
         <div class="footer-meta">
-          <span>© 2025 TKM VitalMetric Wellness. All rights reserved.</span>
+          Prototype UI only · No medical advice · No real accounts or payments
+          yet.
         </div>
       </div>
     </footer>
-  </div> <!-- /.page -->
+  </div>
 </body>
 </html>
