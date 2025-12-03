@@ -310,3 +310,33 @@ footer small {
   font-size: 0.78rem;
   opacity: 0.7;
 }
+/* --- Improve secondary hero pill + mobile menu --- */
+
+/* Make the white pill readable and still “soft” */
+.hero-actions .btn-secondary,
+.hero-actions .button-secondary {
+  background: rgba(255, 255, 255, 0.96);
+  color: #047857;
+  border: 1px solid rgba(4, 120, 87, 0.18);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.14);
+  font-weight: 600;
+}
+
+/* Slightly darker hover so it feels clickable */
+.hero-actions .btn-secondary:hover,
+.hero-actions .button-secondary:hover {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+/* Make the mobile dropdown menu feel bigger and easier to tap */
+.mobile-nav,
+.site-nav--mobile {
+  font-size: 1.1rem;
+}
+
+.mobile-nav a,
+.site-nav--mobile a {
+  padding: 0.85rem 0;
+  display: block;
+}
