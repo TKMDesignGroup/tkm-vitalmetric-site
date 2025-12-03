@@ -1,1547 +1,1786 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Wellness Pilot · Start Plan (Onboarding)</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="app.js"></script>
-</head>
-<body class="onboarding-body">
-<header class="site-header">
-    <div class="header-inner">
-        <a href="index.html" class="brand">
-            <img src="images/wp-logo-horizontal.png" alt="Wellness Pilot logo" class="brand-logo">
-            <div class="brand-text">
-                <span class="brand-title">Wellness Pilot</span>
-                <span class="brand-subtitle">A TKM Group Company</span>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Wellness Pilot · Start Plan (Onboarding)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Take the Wellness Pilot 13-step onboarding wizard so we can build a realistic weekly meal, snack, movement, and grocery plan that fits your life."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
+  </head>
+
+  <body class="page page-onboarding">
+    <!-- Shared site header -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="header-brand">
+          <img
+            src="images/wp-logo-dark-square.png"
+            alt="Wellness Pilot logo"
+            class="header-logo"
+          />
+          <div class="header-text">
+            <span class="header-title">Wellness Pilot</span>
+            <span class="header-subtitle">A TKM Group Company</span>
+          </div>
         </a>
 
-        <nav class="main-nav">
-            <a href="index.html">Home</a>
-            <a href="onboarding.html" class="active">Start Plan</a>
-            <a href="dashboard.html">Demo Dashboard</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="login.html">Sign In</a>
-        </nav>
-
         <button class="nav-toggle" aria-label="Toggle navigation">
-            <span></span><span></span><span></span>
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
         </button>
-    </div>
-</header>
 
-<main class="onboarding-main">
-    <section class="onboarding-shell">
-        <div class="onboarding-intro">
-            <h1>Your Wellness Pilot Weekly Plan</h1>
+        <nav class="site-nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="pricing.html" class="nav-link">Pricing</a>
+          <a href="dashboard.html" class="nav-link">Demo Dashboard</a>
+          <a href="onboarding.html" class="nav-link nav-link-current">
+            Start Plan
+          </a>
+          <a href="login.html" class="nav-link">Sign In</a>
+        </nav>
+      </div>
+
+      <!-- Mobile dropdown panel -->
+      <nav class="site-nav-overlay">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="dashboard.html" class="nav-link">Demo Dashboard</a>
+        <a href="onboarding.html" class="nav-link nav-link-current">
+          Start Plan
+        </a>
+        <a href="login.html" class="nav-link">Sign In</a>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <!-- Page intro -->
+      <section class="page-hero page-hero--compact">
+        <div class="page-hero-inner">
+          <p class="page-kicker">Start Plan · Prototype only</p>
+          <h1>Your Wellness Pilot Weekly Plan</h1>
+          <p class="page-lead">
+            We’ll walk through a few steps about your goals, food preferences,
+            pantry, budget, schedule, and activity so we can design a realistic
+            weekly plan.
+          </p>
+          <p class="page-note">
+            Prototype only – your answers are not saved on a real server yet.
+          </p>
+        </div>
+      </section>
+
+      <!-- Wizard shell -->
+      <section class="wizard-shell">
+        <!-- Step index bar -->
+        <div class="wizard-index">
+          <button type="button" class="wizard-index-step" data-step="1">
+            1<br />Welcome
+          </button>
+          <button type="button" class="wizard-index-step" data-step="2">
+            2<br />Profile
+          </button>
+          <button type="button" class="wizard-index-step" data-step="3">
+            3<br />Plan Basics
+          </button>
+          <button type="button" class="wizard-index-step" data-step="4">
+            4<br />Cooking
+          </button>
+          <button type="button" class="wizard-index-step" data-step="5">
+            5<br />Proteins
+          </button>
+          <button type="button" class="wizard-index-step" data-step="6">
+            6<br />Dairy &amp; Grains
+          </button>
+          <button type="button" class="wizard-index-step" data-step="7">
+            7<br />Veg &amp; Fruit
+          </button>
+          <button type="button" class="wizard-index-step" data-step="8">
+            8<br />Snacks &amp; Sauces
+          </button>
+          <button type="button" class="wizard-index-step" data-step="9">
+            9<br />Avoid &amp; Health
+          </button>
+          <button type="button" class="wizard-index-step" data-step="10">
+            10<br />Pantry &amp; Stores
+          </button>
+          <button type="button" class="wizard-index-step" data-step="11">
+            11<br />Exercise
+          </button>
+          <button type="button" class="wizard-index-step" data-step="12">
+            12<br />Schedule &amp; Style
+          </button>
+          <button type="button" class="wizard-index-step" data-step="13">
+            13<br />Review
+          </button>
+        </div>
+        <!-- Wizard form -->
+        <form class="wizard-form">
+          <!-- STEP 1 -->
+          <section class="wizard-step" data-step="1">
+            <h2>Step 1 – Welcome &amp; Consent</h2>
             <p>
-                We’ll walk through a few steps about your goals, food preferences, pantry, schedule,
-                and exercise so we can design a realistic weekly plan.
+              Welcome to <strong>Wellness Pilot</strong>. We’ll ask about your
+              goals, food preferences, pantry, budget, stores, schedule, and
+              movement so we can build a weekly plan that fits your real life.
             </p>
-            <p class="prototype-note">
-                Prototype only – your answers are not saved on a real server yet.
-            </p>
-        </div>
 
-        <!-- PROGRESS BAR + STEP TABS -->
-        <div class="onboarding-progress">
-            <div class="progress-bar">
-                <div class="progress-bar-fill" style="width: 8%;"></div>
+            <label class="form-check">
+              <input type="checkbox" name="prototype_ack" />
+              <span>
+                I understand this is a prototype and not medical or financial
+                advice.
+              </span>
+            </label>
+
+            <label class="form-label" for="main-goal">
+              What’s your main goal right now?
+            </label>
+            <select id="main-goal" name="main_goal">
+              <option value="">Select one…</option>
+              <option>Weight loss</option>
+              <option>Weight maintenance</option>
+              <option>Better blood pressure / sodium control</option>
+              <option>Better blood sugar / diabetes control</option>
+              <option>More energy &amp; less fatigue</option>
+              <option>Better organization &amp; budget</option>
+              <option>Other (I’ll explain later)</option>
+            </select>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary" disabled>
+                Back
+              </button>
+              <button type="button" class="btn-primary wizard-next">
+                Next
+              </button>
+            </div>
+          </section>
+          <!-- STEP 2 -->
+          <section class="wizard-step" data-step="2">
+            <h2>Step 2 – Basic Profile &amp; Goals</h2>
+
+            <div class="form-grid">
+              <label class="form-label">
+                What should we call you?
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your name or nickname"
+                />
+              </label>
+
+              <label class="form-label">
+                Age (optional)
+                <input
+                  type="number"
+                  name="age"
+                  min="10"
+                  max="120"
+                  inputmode="numeric"
+                />
+              </label>
+
+              <label class="form-label">
+                Height (optional)
+                <input
+                  type="text"
+                  name="height"
+                  placeholder="e.g., 5'9&quot; or 175 cm"
+                />
+              </label>
+
+              <label class="form-label">
+                Current weight (optional)
+                <input
+                  type="number"
+                  name="current_weight"
+                  step="0.1"
+                  inputmode="decimal"
+                />
+              </label>
+
+              <label class="form-label form-label--full">
+                Target weight or main health outcome (optional)
+                <input
+                  type="text"
+                  name="target_outcome"
+                  placeholder="e.g., 220 lbs, ‘better energy’, ‘support kidneys’, etc."
+                />
+              </label>
             </div>
 
-            <div class="progress-steps">
-                <button type="button" class="progress-step active" data-step="1">1<br>Welcome</button>
-                <button type="button" class="progress-step" data-step="2">2<br>Profile</button>
-                <button type="button" class="progress-step" data-step="3">3<br>Plan Basics</button>
-                <button type="button" class="progress-step" data-step="4">4<br>Proteins</button>
-                <button type="button" class="progress-step" data-step="5">5<br>Dairy &amp; Grains</button>
-                <button type="button" class="progress-step" data-step="6">6<br>Veg &amp; Fruit</button>
-                <button type="button" class="progress-step" data-step="7">7<br>Snacks &amp; Sauces</button>
-                <button type="button" class="progress-step" data-step="8">8<br>Avoid / Health</button>
-                <button type="button" class="progress-step" data-step="9">9<br>Pantry &amp; Stores</button>
-                <button type="button" class="progress-step" data-step="10">10<br>Exercise</button>
-                <button type="button" class="progress-step" data-step="11">11<br>Schedule</button>
-                <button type="button" class="progress-step" data-step="12">12<br>Plan Style</button>
-                <button type="button" class="progress-step" data-step="13">13<br>Review</button>
+            <label class="form-label" for="progress-speed">
+              How quickly are you hoping to see progress?
+            </label>
+            <select id="progress-speed" name="progress_speed">
+              <option value="">Select one…</option>
+              <option>Nice and slow (6+ months)</option>
+              <option>Steady and realistic (3–6 months)</option>
+              <option>Faster but still safe (1–3 months)</option>
+              <option>Not sure – just build something realistic</option>
+            </select>
+
+            <label class="form-label">
+              If weight loss is a goal, how many pounds per week would you
+              like to aim for?
+            </label>
+            <div class="slider-row">
+              <span>0.5</span>
+              <input
+                type="range"
+                name="loss_rate"
+                min="0.5"
+                max="3"
+                step="0.5"
+              />
+              <span>3.0</span>
             </div>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary wizard-back">
+                Back
+              </button>
+              <button type="button" class="btn-primary wizard-next">
+                Next
+              </button>
+            </div>
+          </section>
+          <!-- STEP 3 -->
+          <section class="wizard-step" data-step="3">
+            <h2>Step 3 – Plan Basics</h2>
+
+            <div class="form-grid">
+              <label class="form-label">
+                Plan start date
+                <input type="date" name="plan_start" />
+              </label>
+
+              <label class="form-label">
+                Plan end date
+                <input type="date" name="plan_end" />
+              </label>
+            </div>
+
+            <fieldset class="form-fieldset">
+              <legend>Which meals and snacks should we plan each day?</legend>
+              <label class="form-check">
+                <input type="checkbox" name="meal_breakfast" checked />
+                <span>Breakfast</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" name="meal_lunch" checked />
+                <span>Lunch</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" name="meal_dinner" checked />
+                <span>Dinner</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" name="meal_morning_snack" />
+                <span>Morning snack</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" name="meal_afternoon_snack" />
+                <span>Afternoon snack</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" name="meal_evening_snack" />
+                <span>Evening snack</span>
+              </label>
+            </fieldset>
+
+            <div class="form-grid">
+              <label class="form-label">
+                Daily calorie target (approx.)
+                <input
+                  type="number"
+                  name="daily_calories"
+                  placeholder="e.g., 2200"
+                  inputmode="numeric"
+                />
+              </label>
+
+              <label class="form-label">
+                Weekly food budget ($)
+                <input
+                  type="number"
+                  name="weekly_budget"
+                  step="0.01"
+                  placeholder="e.g., 75"
+                  inputmode="decimal"
+                />
+              </label>
+            </div>
+
+            <label class="form-label">
+              How important is staying on or under that budget?
+            </label>
+            <div class="slider-row">
+              <span>Not strict</span>
+              <input
+                type="range"
+                name="budget_strictness"
+                min="1"
+                max="5"
+                step="1"
+              />
+              <span>Very strict</span>
+            </div>
+
+            <label class="form-label" for="nutrition-focus">
+              Any main nutrition focus areas?
+            </label>
+            <select id="nutrition-focus" name="nutrition_focus" multiple>
+              <option>Lower sodium</option>
+              <option>Lower added sugar</option>
+              <option>Higher fiber</option>
+              <option>Higher protein</option>
+              <option>Lower saturated fat</option>
+              <option>More fruits &amp; vegetables</option>
+              <option>Just keep things balanced</option>
+            </select>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary wizard-back">
+                Back
+              </button>
+              <button type="button" class="btn-primary wizard-next">
+                Next
+              </button>
+            </div>
+          </section>
+          <!-- STEP 4 -->
+          <section class="wizard-step" data-step="4">
+            <h2>Step 4 – Cooking Context &amp; Kitchen Setup</h2>
+
+            <div class="form-grid">
+              <label class="form-label">
+                How many people are you planning for (including you)?
+                <input
+                  type="number"
+                  name="household_size"
+                  min="1"
+                  max="10"
+                  inputmode="numeric"
+                />
+              </label>
+
+              <label class="form-label">
+                Cooking skill level
+                <select name="cooking_skill">
+                  <option value="">Select one…</option>
+                  <option>Very beginner – need simple step-by-step</option>
+                  <option>Beginner</option>
+                  <option>Intermediate</option>
+                  <option>Comfortable in the kitchen</option>
+                  <option>Advanced / enjoy complex recipes</option>
+                </select>
+              </label>
+            </div>
+
+            <fieldset class="form-fieldset">
+              <legend>Typical time available to cook</legend>
+              <div class="form-grid">
+                <label class="form-label">
+                  Breakfast
+                  <select name="time_breakfast">
+                    <option value="">Select…</option>
+                    <option>5 minutes</option>
+                    <option>10 minutes</option>
+                    <option>15 minutes</option>
+                    <option>20+ minutes</option>
+                  </select>
+                </label>
+                <label class="form-label">
+                  Lunch
+                  <select name="time_lunch">
+                    <option value="">Select…</option>
+                    <option>5 minutes</option>
+                    <option>10 minutes</option>
+                    <option>20 minutes</option>
+                    <option>30+ minutes</option>
+                  </select>
+                </label>
+                <label class="form-label">
+                  Dinner
+                  <select name="time_dinner">
+                    <option value="">Select…</option>
+                    <option>15 minutes</option>
+                    <option>20 minutes</option>
+                    <option>30 minutes</option>
+                    <option>45+ minutes</option>
+                  </select>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-fieldset">
+              <legend>Kitchen equipment available</legend>
+              <div class="form-grid form-grid--wrap">
+                <label class="form-check">
+                  <input type="checkbox" name="equip_oven" />
+                  <span>Oven</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="equip_stovetop" />
+                  <span>Stovetop</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="equip_microwave" />
+                  <span>Microwave</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="equip_slow_cooker" />
+                  <span>Slow cooker / Crock-Pot</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="equip_instant_pot" />
+                  <span>Instant Pot / pressure cooker</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="equip_air_fryer" />
+                  <span>Air fryer</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="equip_toaster" />
+                  <span>Toaster / toaster oven</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="equip_blender" />
+                  <span>Blender</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="equip_food_processor" />
+                  <span>Food processor</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="equip_grill" />
+                  <span>Grill / grill pan</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <label class="form-label">
+              Any kitchen limitations or notes?
+              <textarea
+                name="kitchen_notes"
+                rows="3"
+                placeholder="E.g., tiny fridge, no oven, limited cookware, can’t stand long, etc."
+              ></textarea>
+            </label>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary wizard-back">
+                Back
+              </button>
+              <button type="button" class="btn-primary wizard-next">
+                Next
+              </button>
+            </div>
+          </section>
+          <!-- STEP 5 -->
+          <section class="wizard-step" data-step="5">
+            <h2>Step 5 – Food Preferences: Proteins</h2>
+            <p>
+              For each protein, choose <strong>Like</strong>,
+              <strong>Neutral</strong>, or <strong>Dislike</strong>. This helps
+              us match recipes to what you’ll actually eat.
+            </p>
+
+            <div class="preference-group">
+              <h3>Chicken &amp; Turkey</h3>
+
+              <div class="preference-row">
+                <span>Chicken breast</span>
+                <label><input type="radio" name="prot_chicken_breast" value="like" /> Like</label>
+                <label><input type="radio" name="prot_chicken_breast" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="prot_chicken_breast" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Chicken thighs</span>
+                <label><input type="radio" name="prot_chicken_thighs" value="like" /> Like</label>
+                <label><input type="radio" name="prot_chicken_thighs" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="prot_chicken_thighs" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Ground chicken</span>
+                <label><input type="radio" name="prot_ground_chicken" value="like" /> Like</label>
+                <label><input type="radio" name="prot_ground_chicken" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="prot_ground_chicken" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Turkey breast / cutlets</span>
+                <label><input type="radio" name="prot_turkey_breast" value="like" /> Like</label>
+                <label><input type="radio" name="prot_turkey_breast" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="prot_turkey_breast" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Ground turkey</span>
+                <label><input type="radio" name="prot_ground_turkey" value="like" /> Like</label>
+                <label><input type="radio" name="prot_ground_turkey" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="prot_ground_turkey" value="dislike" /> Dislike</label>
+              </div>
+            </div>
+
+            <div class="preference-group">
+              <h3>Beef &amp; Pork</h3>
+
+              <div class="preference-row">
+                <span>Lean ground beef</span>
+                <label><input type="radio" name="prot_lean_beef" value="like" /> Like</label>
+                <label><input type="radio" name="prot_lean_beef" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="prot_lean_beef" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Beef roasts / steak</span>
+                <label><input type="radio" name="prot_beef_steak" value="like" /> Like</label>
+                <label><input type="radio" name="prot_beef_steak" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="prot_beef_steak" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Pork chops / roasts</span>
+                <label><input type="radio" name="prot_pork_chops" value="like" /> Like</label>
+                <label><input type="radio" name="prot_pork_chops" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="prot_pork_chops" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Ham</span>
+                <label><input type="radio" name="prot_ham" value="like" /> Like</label>
+                <label><input type="radio" name="prot_ham" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="prot_ham" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Bacon</span>
+                <label><input type="radio" name="prot_bacon" value="like" /> Like</label>
+                <label><input type="radio" name="prot_bacon" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="prot_bacon" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Sausage (breakfast)</span>
+                <label><input type="radio" name="prot_sausage_breakfast" value="like" /> Like</label>
+                <label><input type="radio" name="prot_sausage_breakfast" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="prot_sausage_breakfast" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Smoked sausage / kielbasa</span>
+                <label><input type="radio" name="prot_sausage_smoked" value="like" /> Like</label>
+                <label><input type="radio" name="prot_sausage_smoked" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="prot_sausage_smoked" value="dislike" /> Dislike</label>
+              </div>
+            </div>
+
+            <div class="preference-group">
+              <h3>Deli &amp; Other Proteins</h3>
+
+              <div class="preference-row">
+                <span>Deli meats (ham, turkey, etc.)</span>
+                <label><input type="radio" name="prot_deli_meats" value="like" /> Like</label>
+                <label><input type="radio" name="prot_deli_meats" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="prot_deli_meats" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Eggs (whole)</span>
+                <label><input type="radio" name="prot_eggs" value="like" /> Like</label>
+                <label><input type="radio" name="prot_eggs" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="prot_eggs" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Egg whites / egg substitute</span>
+                <label><input type="radio" name="prot_egg_whites" value="like" /> Like</label>
+                <label><input type="radio" name="prot_egg_whites" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="prot_egg_whites" value="dislike" /> Dislike</label>
+              </div>
+            </div>
+
+            <div class="preference-group">
+              <h3>Fish, Seafood &amp; Plant Proteins</h3>
+
+              <div class="preference-row">
+                <span>Fish – mild (cod, tilapia, etc.)</span>
+                <label><input type="radio" name="prot_fish_mild" value="like" /> Like</label>
+                <label><input type="radio" name="prot_fish_mild" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="prot_fish_mild" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Fish – stronger (salmon, tuna, etc.)</span>
+                <label><input type="radio" name="prot_fish_strong" value="like" /> Like</label>
+                <label><input type="radio" name="prot_fish_strong" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="prot_fish_strong" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Shellfish (shrimp, crab, etc.)</span>
+                <label><input type="radio" name="prot_shellfish" value="like" /> Like</label>
+                <label><input type="radio" name="prot_shellfish" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="prot_shellfish" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Beans (black, pinto, kidney, etc.)</span>
+                <label><input type="radio" name="prot_beans" value="like" /> Like</label>
+                <label><input type="radio" name="prot_beans" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="prot_beans" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Lentils</span>
+                <label><input type="radio" name="prot_lentils" value="like" /> Like</label>
+                <label><input type="radio" name="prot_lentils" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="prot_lentils" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Chickpeas / garbanzo beans</span>
+                <label><input type="radio" name="prot_chickpeas" value="like" /> Like</label>
+                <label><input type="radio" name="prot_chickpeas" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="prot_chickpeas" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Tofu</span>
+                <label><input type="radio" name="prot_tofu" value="like" /> Like</label>
+                <label><input type="radio" name="prot_tofu" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="prot_tofu" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Tempeh / other plant proteins</span>
+                <label><input type="radio" name="prot_tempeh" value="like" /> Like</label>
+                <label><input type="radio" name="prot_tempeh" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="prot_tempeh" value="dislike" /> Dislike</label>
+              </div>
+            </div>
+
+            <label class="form-label">
+              Any other proteins you especially love or want to avoid?
+              <textarea
+                name="prot_other_notes"
+                rows="3"
+                placeholder="E.g., love meatballs, dislike lamb, only eat fish once per week, etc."
+              ></textarea>
+            </label>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary wizard-back">
+                Back
+              </button>
+              <button type="button" class="btn-primary wizard-next">
+                Next
+              </button>
+            </div>
+          </section>
+          <!-- STEP 6 -->
+          <section class="wizard-step" data-step="6">
+            <h2>Step 6 – Food Preferences: Dairy &amp; Grains</h2>
+
+            <div class="preference-group">
+              <h3>Dairy &amp; Alternatives</h3>
+
+              <div class="preference-row">
+                <span>Skim / 1% milk</span>
+                <label><input type="radio" name="dairy_skim" value="like" /> Like</label>
+                <label><input type="radio" name="dairy_skim" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="dairy_skim" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>2% milk</span>
+                <label><input type="radio" name="dairy_2pct" value="like" /> Like</label>
+                <label><input type="radio" name="dairy_2pct" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="dairy_2pct" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Whole milk</span>
+                <label><input type="radio" name="dairy_whole" value="like" /> Like</label>
+                <label><input type="radio" name="dairy_whole" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="dairy_whole" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Lactose-free milk</span>
+                <label><input type="radio" name="dairy_lactose_free" value="like" /> Like</label>
+                <label><input type="radio" name="dairy_lactose_free" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="dairy_lactose_free" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Yogurt – plain</span>
+                <label><input type="radio" name="dairy_yogurt_plain" value="like" /> Like</label>
+                <label><input type="radio" name="dairy_yogurt_plain" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="dairy_yogurt_plain" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Yogurt – flavored</span>
+                <label><input type="radio" name="dairy_yogurt_flavored" value="like" /> Like</label>
+                <label><input type="radio" name="dairy_yogurt_flavored" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="dairy_yogurt_flavored" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Cottage cheese</span>
+                <label><input type="radio" name="dairy_cottage" value="like" /> Like</label>
+                <label><input type="radio" name="dairy_cottage" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="dairy_cottage" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Cheddar / hard cheeses</span>
+                <label><input type="radio" name="dairy_cheddar" value="like" /> Like</label>
+                <label><input type="radio" name="dairy_cheddar" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="dairy_cheddar" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Mozzarella / softer cheeses</span>
+                <label><input type="radio" name="dairy_mozzarella" value="like" /> Like</label>
+                <label><input type="radio" name="dairy_mozzarella" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="dairy_mozzarella" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Non-dairy milks (almond, soy, oat, etc.)</span>
+                <label><input type="radio" name="dairy_alt_milks" value="like" /> Like</label>
+                <label><input type="radio" name="dairy_alt_milks" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="dairy_alt_milks" value="dislike" /> Dislike</label>
+              </div>
+            </div>
+
+            <div class="preference-group">
+              <h3>Grains, Starches &amp; Breads</h3>
+
+              <div class="preference-row">
+                <span>White bread</span>
+                <label><input type="radio" name="grain_white_bread" value="like" /> Like</label>
+                <label><input type="radio" name="grain_white_bread" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="grain_white_bread" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Whole-wheat / whole-grain bread</span>
+                <label><input type="radio" name="grain_whole_bread" value="like" /> Like</label>
+                <label><input type="radio" name="grain_whole_bread" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="grain_whole_bread" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Buns / rolls</span>
+                <label><input type="radio" name="grain_buns" value="like" /> Like</label>
+                <label><input type="radio" name="grain_buns" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="grain_buns" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Tortillas – flour</span>
+                <label><input type="radio" name="grain_tortilla_flour" value="like" /> Like</label>
+                <label><input type="radio" name="grain_tortilla_flour" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="grain_tortilla_flour" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Tortillas – corn</span>
+                <label><input type="radio" name="grain_tortilla_corn" value="like" /> Like</label>
+                <label><input type="radio" name="grain_tortilla_corn" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="grain_tortilla_corn" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>White rice</span>
+                <label><input type="radio" name="grain_white_rice" value="like" /> Like</label>
+                <label><input type="radio" name="grain_white_rice" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="grain_white_rice" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Brown rice</span>
+                <label><input type="radio" name="grain_brown_rice" value="like" /> Like</label>
+                <label><input type="radio" name="grain_brown_rice" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="grain_brown_rice" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Pasta – regular</span>
+                <label><input type="radio" name="grain_pasta_regular" value="like" /> Like</label>
+                <label><input type="radio" name="grain_pasta_regular" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="grain_pasta_regular" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Pasta – whole wheat</span>
+                <label><input type="radio" name="grain_pasta_whole" value="like" /> Like</label>
+                <label><input type="radio" name="grain_pasta_whole" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="grain_pasta_whole" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Potatoes (baked / roasted)</span>
+                <label><input type="radio" name="grain_potatoes" value="like" /> Like</label>
+                <label><input type="radio" name="grain_potatoes" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="grain_potatoes" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Sweet potatoes</span>
+                <label><input type="radio" name="grain_sweet_potatoes" value="like" /> Like</label>
+                <label><input type="radio" name="grain_sweet_potatoes" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="grain_sweet_potatoes" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Oatmeal</span>
+                <label><input type="radio" name="grain_oatmeal" value="like" /> Like</label>
+                <label><input type="radio" name="grain_oatmeal" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="grain_oatmeal" value="dislike" /> Dislike</label>
+              </div>
+            </div>
+
+            <label class="form-label">
+              Any other grains, breads or starches to note?
+              <textarea
+                name="grain_other_notes"
+                rows="3"
+                placeholder="E.g., love quinoa, dislike couscous, etc."
+              ></textarea>
+            </label>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary wizard-back">
+                Back
+              </button>
+              <button type="button" class="btn-primary wizard-next">
+                Next
+              </button>
+            </div>
+                         </section>
+                         <!-- STEP 7 -->
+          <section class="wizard-step" data-step="7">
+            <h2>Step 7 – Food Preferences: Vegetables &amp; Fruits</h2>
+
+            <div class="preference-group">
+              <h3>Vegetables</h3>
+
+              <div class="preference-row">
+                <span>Onions</span>
+                <label><input type="radio" name="veg_onions" value="like" /> Like</label>
+                <label><input type="radio" name="veg_onions" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="veg_onions" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Garlic</span>
+                <label><input type="radio" name="veg_garlic" value="like" /> Like</label>
+                <label><input type="radio" name="veg_garlic" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="veg_garlic" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Carrots</span>
+                <label><input type="radio" name="veg_carrots" value="like" /> Like</label>
+                <label><input type="radio" name="veg_carrots" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="veg_carrots" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Celery</span>
+                <label><input type="radio" name="veg_celery" value="like" /> Like</label>
+                <label><input type="radio" name="veg_celery" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="veg_celery" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Broccoli</span>
+                <label><input type="radio" name="veg_broccoli" value="like" /> Like</label>
+                <label><input type="radio" name="veg_broccoli" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="veg_broccoli" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Cauliflower</span>
+                <label><input type="radio" name="veg_cauliflower" value="like" /> Like</label>
+                <label><input type="radio" name="veg_cauliflower" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="veg_cauliflower" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Green beans</span>
+                <label><input type="radio" name="veg_green_beans" value="like" /> Like</label>
+                <label><input type="radio" name="veg_green_beans" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="veg_green_beans" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Corn</span>
+                <label><input type="radio" name="veg_corn" value="like" /> Like</label>
+                <label><input type="radio" name="veg_corn" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="veg_corn" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Peas</span>
+                <label><input type="radio" name="veg_peas" value="like" /> Like</label>
+                <label><input type="radio" name="veg_peas" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="veg_peas" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Spinach</span>
+                <label><input type="radio" name="veg_spinach" value="like" /> Like</label>
+                <label><input type="radio" name="veg_spinach" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="veg_spinach" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Lettuce / salad greens</span>
+                <label><input type="radio" name="veg_lettuce" value="like" /> Like</label>
+                <label><input type="radio" name="veg_lettuce" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="veg_lettuce" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Tomatoes (fresh)</span>
+                <label><input type="radio" name="veg_tomatoes_fresh" value="like" /> Like</label>
+                <label><input type="radio" name="veg_tomatoes_fresh" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="veg_tomatoes_fresh" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Tomatoes (in sauces &amp; dishes)</span>
+                <label><input type="radio" name="veg_tomatoes_sauce" value="like" /> Like</label>
+                <label><input type="radio" name="veg_tomatoes_sauce" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="veg_tomatoes_sauce" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Bell peppers</span>
+                <label><input type="radio" name="veg_peppers" value="like" /> Like</label>
+                <label><input type="radio" name="veg_peppers" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="veg_peppers" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Cucumbers</span>
+                <label><input type="radio" name="veg_cucumbers" value="like" /> Like</label>
+                <label><input type="radio" name="veg_cucumbers" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="veg_cucumbers" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Zucchini / squash</span>
+                <label><input type="radio" name="veg_zucchini" value="like" /> Like</label>
+                <label><input type="radio" name="veg_zucchini" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="veg_zucchini" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Mushrooms</span>
+                <label><input type="radio" name="veg_mushrooms" value="like" /> Like</label>
+                <label><input type="radio" name="veg_mushrooms" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="veg_mushrooms" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Cabbage / coleslaw mix</span>
+                <label><input type="radio" name="veg_cabbage" value="like" /> Like</label>
+                <label><input type="radio" name="veg_cabbage" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="veg_cabbage" value="dislike" /> Dislike</label>
+              </div>
+            </div>
+
+            <div class="preference-group">
+              <h3>Fruits</h3>
+
+              <div class="preference-row">
+                <span>Apples</span>
+                <label><input type="radio" name="fruit_apples" value="like" /> Like</label>
+                <label><input type="radio" name="fruit_apples" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="fruit_apples" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Bananas</span>
+                <label><input type="radio" name="fruit_bananas" value="like" /> Like</label>
+                <label><input type="radio" name="fruit_bananas" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="fruit_bananas" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Oranges / mandarins</span>
+                <label><input type="radio" name="fruit_oranges" value="like" /> Like</label>
+                <label><input type="radio" name="fruit_oranges" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="fruit_oranges" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Grapes</span>
+                <label><input type="radio" name="fruit_grapes" value="like" /> Like</label>
+                <label><input type="radio" name="fruit_grapes" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="fruit_grapes" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Strawberries</span>
+                <label><input type="radio" name="fruit_strawberries" value="like" /> Like</label>
+                <label><input type="radio" name="fruit_strawberries" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="fruit_strawberries" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Blueberries</span>
+                <label><input type="radio" name="fruit_blueberries" value="like" /> Like</label>
+                <label><input type="radio" name="fruit_blueberries" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="fruit_blueberries" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Pineapple</span>
+                <label><input type="radio" name="fruit_pineapple" value="like" /> Like</label>
+                <label><input type="radio" name="fruit_pineapple" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="fruit_pineapple" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Peaches / nectarines</span>
+                <label><input type="radio" name="fruit_peaches" value="like" /> Like</label>
+                <label><input type="radio" name="fruit_peaches" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="fruit_peaches" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Pears</span>
+                <label><input type="radio" name="fruit_pears" value="like" /> Like</label>
+                <label><input type="radio" name="fruit_pears" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="fruit_pears" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Melons (cantaloupe, honeydew, etc.)</span>
+                <label><input type="radio" name="fruit_melons" value="like" /> Like</label>
+                <label><input type="radio" name="fruit_melons" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="fruit_melons" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Canned fruit / fruit cups</span>
+                <label><input type="radio" name="fruit_canned" value="like" /> Like</label>
+                <label><input type="radio" name="fruit_canned" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="fruit_canned" value="dislike" /> Dislike</label>
+              </div>
+            </div>
+
+            <label class="form-label">
+              Any other veggie or fruit notes?
+              <textarea
+                name="vegfruit_other_notes"
+                rows="3"
+                placeholder="E.g., love roasted veggies, hate raw onions, only like fruit in smoothies, etc."
+              ></textarea>
+            </label>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary wizard-back">
+                Back
+              </button>
+              <button type="button" class="btn-primary wizard-next">
+                Next
+              </button>
+            </div>
+          </section>
+          <!-- STEP 8 -->
+          <section class="wizard-step" data-step="8">
+            <h2>Step 8 – Snacks, Treats &amp; Sauces</h2>
+
+            <div class="preference-group">
+              <h3>Snacks &amp; Treats</h3>
+
+              <div class="preference-row">
+                <span>Peanut butter</span>
+                <label><input type="radio" name="snack_peanut_butter" value="like" /> Like</label>
+                <label><input type="radio" name="snack_peanut_butter" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="snack_peanut_butter" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Crackers</span>
+                <label><input type="radio" name="snack_crackers" value="like" /> Like</label>
+                <label><input type="radio" name="snack_crackers" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="snack_crackers" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Popcorn</span>
+                <label><input type="radio" name="snack_popcorn" value="like" /> Like</label>
+                <label><input type="radio" name="snack_popcorn" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="snack_popcorn" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Pretzels</span>
+                <label><input type="radio" name="snack_pretzels" value="like" /> Like</label>
+                <label><input type="radio" name="snack_pretzels" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="snack_pretzels" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Chips</span>
+                <label><input type="radio" name="snack_chips" value="like" /> Like</label>
+                <label><input type="radio" name="snack_chips" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="snack_chips" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Granola / cereal bars</span>
+                <label><input type="radio" name="snack_bars" value="like" /> Like</label>
+                <label><input type="radio" name="snack_bars" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="snack_bars" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Yogurt cups</span>
+                <label><input type="radio" name="snack_yogurt_cups" value="like" /> Like</label>
+                <label><input type="radio" name="snack_yogurt_cups" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="snack_yogurt_cups" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Pudding / gelatin cups</span>
+                <label><input type="radio" name="snack_pudding" value="like" /> Like</label>
+                <label><input type="radio" name="snack_pudding" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="snack_pudding" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Applesauce cups</span>
+                <label><input type="radio" name="snack_applesauce" value="like" /> Like</label>
+                <label><input type="radio" name="snack_applesauce" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="snack_applesauce" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Frozen waffles / breakfast items</span>
+                <label><input type="radio" name="snack_frozen_waffles" value="like" /> Like</label>
+                <label><input type="radio" name="snack_frozen_waffles" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="snack_frozen_waffles" value="dislike" /> Dislike</label>
+              </div>
+            </div>
+
+            <div class="preference-group">
+              <h3>Condiments, Sauces &amp; Dressings</h3>
+
+              <div class="preference-row">
+                <span>Ketchup</span>
+                <label><input type="radio" name="sauce_ketchup" value="like" /> Like</label>
+                <label><input type="radio" name="sauce_ketchup" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="sauce_ketchup" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Mustard</span>
+                <label><input type="radio" name="sauce_mustard" value="like" /> Like</label>
+                <label><input type="radio" name="sauce_mustard" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="sauce_mustard" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Mayonnaise / light mayo</span>
+                <label><input type="radio" name="sauce_mayo" value="like" /> Like</label>
+                <label><input type="radio" name="sauce_mayo" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="sauce_mayo" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Barbecue sauce</span>
+                <label><input type="radio" name="sauce_bbq" value="like" /> Like</label>
+                <label><input type="radio" name="sauce_bbq" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="sauce_bbq" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Ranch dressing</span>
+                <label><input type="radio" name="sauce_ranch" value="like" /> Like</label>
+                <label><input type="radio" name="sauce_ranch" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="sauce_ranch" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Italian / vinaigrette dressing</span>
+                <label><input type="radio" name="sauce_italian" value="like" /> Like</label>
+                <label><input type="radio" name="sauce_italian" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="sauce_italian" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Salsa</span>
+                <label><input type="radio" name="sauce_salsa" value="like" /> Like</label>
+                <label><input type="radio" name="sauce_salsa" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="sauce_salsa" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Tomato / pasta sauce</span>
+                <label><input type="radio" name="sauce_tomato" value="like" /> Like</label>
+                <label><input type="radio" name="sauce_tomato" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="sauce_tomato" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Alfredo / creamy sauces</span>
+                <label><input type="radio" name="sauce_alfredo" value="like" /> Like</label>
+                <label><input type="radio" name="sauce_alfredo" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="sauce_alfredo" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Soy sauce (regular or low-sodium)</span>
+                <label><input type="radio" name="sauce_soy" value="like" /> Like</label>
+                <label><input type="radio" name="sauce_soy" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="sauce_soy" value="dislike" /> Dislike</label>
+              </div>
+
+              <div class="preference-row">
+                <span>Hot sauce</span>
+                <label><input type="radio" name="sauce_hot" value="like" /> Like</label>
+                <label><input type="radio" name="sauce_hot" value="neutral" checked /> Neutral</label>
+                <label><input type="radio" name="sauce_hot" value="dislike" /> Dislike</label>
+              </div>
+            </div>
+
+            <label class="form-label">
+              Any snacks or sauces you especially love or want to avoid?
+              <textarea
+                name="snack_sauce_notes"
+                rows="3"
+                placeholder="E.g., love popcorn, hate ketchup, no hot sauce, etc."
+              ></textarea>
+            </label>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary wizard-back">
+                Back
+              </button>
+              <button type="button" class="btn-primary wizard-next">
+                Next
+              </button>
+            </div>
+          </section>
+          <!-- STEP 9 -->
+          <section class="wizard-step" data-step="9">
+            <h2>Step 9 – Foods to Avoid &amp; Health Needs</h2>
+
+            <fieldset class="form-fieldset">
+              <legend>Allergies &amp; intolerances</legend>
+              <div class="form-grid form-grid--wrap">
+                <label class="form-check">
+                  <input type="checkbox" name="allergy_none" />
+                  <span>No known allergies/intolerances</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="allergy_gluten" />
+                  <span>Gluten</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="allergy_dairy" />
+                  <span>Dairy / lactose</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="allergy_eggs" />
+                  <span>Eggs</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="allergy_soy" />
+                  <span>Soy</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="allergy_peanuts" />
+                  <span>Peanuts</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="allergy_treenuts" />
+                  <span>Tree nuts</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="allergy_fish" />
+                  <span>Fish</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="allergy_shellfish" />
+                  <span>Shellfish</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <label class="form-label">
+              Any other allergies or intolerances?
+              <textarea
+                name="allergy_other"
+                rows="3"
+                placeholder="List anything else we must avoid."
+              ></textarea>
+            </label>
+
+            <fieldset class="form-fieldset">
+              <legend>Health conditions that affect food choices</legend>
+              <div class="form-grid form-grid--wrap">
+                <label class="form-check">
+                  <input type="checkbox" name="cond_htn" />
+                  <span>High blood pressure / hypertension</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="cond_diabetes" />
+                  <span>Diabetes / pre-diabetes</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="cond_cholesterol" />
+                  <span>High cholesterol</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="cond_kidney" />
+                  <span>Kidney disease / kidney concerns</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="cond_gerd" />
+                  <span>GERD / reflux</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="cond_other_flag" />
+                  <span>Other condition(s)</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <label class="form-label">
+              Any notes about these health conditions?
+              <textarea
+                name="cond_other_notes"
+                rows="3"
+                placeholder="E.g., doctor suggested lower sodium, prefer high-fiber, need gentle on stomach, etc."
+              ></textarea>
+            </label>
+
+            <label class="form-label">
+              Foods or ingredients you absolutely do NOT want in your plan
+              (for any reason)
+              <textarea
+                name="never_foods"
+                rows="3"
+                placeholder="E.g., no mushrooms, no liver, no artificial sweeteners, etc."
+              ></textarea>
+            </label>
+
+            <label class="form-label">
+              How strict should we be about avoiding these?
+            </label>
+            <div class="slider-row">
+              <span>Flexible</span>
+              <input
+                type="range"
+                name="avoid_strictness"
+                min="1"
+                max="5"
+                step="1"
+              />
+              <span>Never include</span>
+            </div>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary wizard-back">
+                Back
+              </button>
+              <button type="button" class="btn-primary wizard-next">
+                Next
+              </button>
+            </div>
+          </section>
+          <!-- STEP 10 -->
+          <section class="wizard-step" data-step="10">
+            <h2>Step 10 – Pantry, Stores &amp; Budget Details</h2>
+
+            <label class="form-label">
+              Pantry highlights (what you usually keep on hand)
+              <textarea
+                name="pantry_highlights"
+                rows="3"
+                placeholder="E.g., rice, beans, canned tomatoes, frozen veggies, pasta, cereal, eggs, peanut butter, etc."
+              ></textarea>
+            </label>
+
+            <label class="form-label">
+              How strongly should we prioritize using pantry items before
+              buying more?
+            </label>
+            <div class="slider-row">
+              <span>Don’t worry</span>
+              <input
+                type="range"
+                name="pantry_priority"
+                min="1"
+                max="5"
+                step="1"
+              />
+              <span>Use pantry first</span>
+            </div>
+
+            <fieldset class="form-fieldset">
+              <legend>Stores you shop at most often</legend>
+              <div class="form-grid form-grid--wrap">
+                <label class="form-check">
+                  <input type="checkbox" name="store_walmart" />
+                  <span>Walmart</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="store_aldi" />
+                  <span>Aldi</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="store_kroger" />
+                  <span>Kroger / local supermarket</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="store_costco" />
+                  <span>Costco / Sam’s</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="store_dollar" />
+                  <span>Dollar store</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <label class="form-label">
+              Other store names or notes
+              <textarea
+                name="store_other"
+                rows="2"
+                placeholder="E.g., local discount store, neighborhood market, etc."
+              ></textarea>
+            </label>
+
+            <label class="form-label">
+              When money is tight, how important is it for this plan to stretch
+              your budget?
+            </label>
+            <div class="slider-row">
+              <span>Not a big concern</span>
+              <input
+                type="range"
+                name="budget_priority"
+                min="1"
+                max="5"
+                step="1"
+              />
+              <span>Top priority</span>
+            </div>
+
+            <label class="form-label">
+              Any other budget or store notes?
+              <textarea
+                name="budget_store_notes"
+                rows="3"
+                placeholder="E.g., prefer store brands, like buying in bulk, want to use weekly sale ads, etc."
+              ></textarea>
+            </label>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary wizard-back">
+                Back
+              </button>
+              <button type="button" class="btn-primary wizard-next">
+                Next
+              </button>
+            </div>
+          </section>
+          <!-- STEP 11 -->
+          <section class="wizard-step" data-step="11">
+            <h2>Step 11 – Exercise &amp; Activity</h2>
+
+            <label class="form-label">
+              How active are you right now?
+              <select name="activity_level">
+                <option value="">Select one…</option>
+                <option>Mostly sedentary</option>
+                <option>Lightly active (some walking)</option>
+                <option>Moderately active</option>
+                <option>Very active</option>
+              </select>
+            </label>
+
+            <fieldset class="form-fieldset">
+              <legend>Types of movement you’d like included</legend>
+              <div class="form-grid form-grid--wrap">
+                <label class="form-check">
+                  <input type="checkbox" name="mv_stretching" />
+                  <span>Gentle stretching</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="mv_tai_chi" />
+                  <span>Tai Chi / Qigong</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="mv_walking_short" />
+                  <span>Short walks (5–15 mins)</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="mv_walking_long" />
+                  <span>Longer walks (20–40 mins)</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="mv_bike" />
+                  <span>Stationary bike</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="mv_strength_light" />
+                  <span>Light resistance / bands</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="mv_strength_heavier" />
+                  <span>Heavier strength / weights</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" name="mv_other_flag" />
+                  <span>Other movement</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <label class="form-label">
+              If “Other”, what kind of movement?
+              <textarea
+                name="mv_other"
+                rows="2"
+                placeholder="E.g., swimming, chair workouts, yoga, etc."
+              ></textarea>
+            </label>
+
+            <div class="form-grid">
+              <label class="form-label">
+                Days per week you’d like activity
+                <input
+                  type="number"
+                  name="mv_days_per_week"
+                  min="1"
+                  max="7"
+                  inputmode="numeric"
+                />
+              </label>
+
+              <label class="form-label">
+                Minutes per day you can realistically commit
+                <input
+                  type="number"
+                  name="mv_minutes_per_day"
+                  min="5"
+                  max="120"
+                  inputmode="numeric"
+                />
+              </label>
+            </div>
+
+            <label class="form-label">
+              Any joint/mobility issues we should respect?
+              <textarea
+                name="mv_limitations"
+                rows="3"
+                placeholder="E.g., bad knees, back pain, balance issues, limited standing, etc."
+              ></textarea>
+            </label>
+
+            <label class="form-label">
+              How challenging should the activity plan feel?
+            </label>
+            <div class="slider-row">
+              <span>Very gentle</span>
+              <input
+                type="range"
+                name="mv_intensity"
+                min="1"
+                max="5"
+                step="1"
+              />
+              <span>Challenging but safe</span>
+            </div>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary wizard-back">
+                Back
+              </button>
+              <button type="button" class="btn-primary wizard-next">
+                Next
+              </button>
+            </div>
+          </section>
+
+          <!-- STEP 12 -->
+          <section class="wizard-step" data-step="12">
+            <h2>Step 12 – Schedule &amp; Plan Style</h2>
+
+            <div class="form-grid">
+              <label class="form-label">
+                Usual wake time (approx.)
+                <input type="time" name="time_wake" />
+              </label>
+
+              <label class="form-label">
+                Usual bedtime (approx.)
+                <input type="time" name="time_bed" />
+              </label>
+            </div>
+
+            <label class="form-label">
+              Busy days or unusual schedule notes
+              <textarea
+                name="schedule_notes"
+                rows="3"
+                placeholder="E.g., late shifts, long commute, nights you’re too tired to cook, etc."
+              ></textarea>
+            </label>
+
+            <label class="form-label">
+              How detailed should the cooking instructions be?
+              <select name="plan_detail_level">
+                <option value="">Select one…</option>
+                <option>Very detailed, step-by-step</option>
+                <option>Moderately detailed is fine</option>
+                <option>Short, high-level steps are fine</option>
+              </select>
+            </label>
+
+            <label class="form-label">
+              Do you prefer a strict schedule or flexible suggestions?
+            </label>
+            <div class="slider-row">
+              <span>Very flexible</span>
+              <input
+                type="range"
+                name="plan_flexibility"
+                min="1"
+                max="5"
+                step="1"
+              />
+              <span>Very strict</span>
+            </div>
+
+            <label class="form-label">
+              What overall style of eating sounds closest to what you want?
+              <select name="plan_style">
+                <option value="">Select one…</option>
+                <option>Classic balanced meals</option>
+                <option>Lower sodium focus</option>
+                <option>Lower carb emphasis</option>
+                <option>Higher protein emphasis</option>
+                <option>Higher fiber / gut-friendly</option>
+                <option>Intermittent fasting style (time windows)</option>
+                <option>Not sure – just keep it realistic</option>
+              </select>
+            </label>
+
+            <label class="form-label">
+              Anything else we should know about your habits or goals?
+              <textarea
+                name="plan_notes"
+                rows="3"
+                placeholder="Any final notes or instructions to your ‘coach’."
+              ></textarea>
+            </label>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary wizard-back">
+                Back
+              </button>
+              <button type="button" class="btn-primary wizard-next">
+                Next
+              </button>
+            </div>
+          </section>
+          <!-- STEP 13 -->
+          <section class="wizard-step" data-step="13">
+            <h2>Step 13 – Review &amp; Finish</h2>
+            <p>
+              That’s it for the prototype onboarding wizard. In the full
+              version, this step would show a summarized view of your answers,
+              including:
+            </p>
+            <ul class="summary-hints">
+              <li>Your main goal, calorie range, and weekly budget</li>
+              <li>Top likes/dislikes for proteins, grains, veggies &amp; fruits</li>
+              <li>Allergies and “never include” foods</li>
+              <li>Pantry priority and store preferences</li>
+              <li>Activity days, minutes, and movement types</li>
+              <li>Schedule notes and plan style</li>
+            </ul>
+
+            <label class="form-check">
+              <input type="checkbox" name="review_confirm" />
+              <span>
+                I’ve reviewed my answers and I’m ready to see a demo of my
+                weekly “mission control” dashboard.
+              </span>
+            </label>
+
+            <p class="page-note">
+              In this prototype, finishing will take you to the demo dashboard
+              with sample values.
+            </p>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary wizard-back">
+                Back
+              </button>
+              <button type="submit" class="btn-primary">
+                Finish &amp; view demo dashboard
+              </button>
+            </div>
+          </section>
+        </form>
+      </section>
+    </main>
+    <!-- Shared footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img
+            src="images/wp-logo-dark-square.png"
+            alt="Wellness Pilot logo"
+            class="footer-logo"
+          />
+          <div class="footer-text">
+            <div class="footer-title">Wellness Pilot</div>
+            <div class="footer-subtitle">
+              © 2025 Wellness Pilot — A TKM Group Company
+            </div>
+          </div>
         </div>
 
-        <form class="onboarding-form" id="onboarding-form">
-            <!-- STEP 1 – Welcome & Consent -->
-            <section class="onboarding-step active" data-step="1">
-                <h3>Step 1 – Welcome &amp; Consent</h3>
-
-                <div class="form-group">
-                    <p>
-                        Welcome to <strong>Wellness Pilot</strong>. We’ll use this wizard to learn about
-                        your food preferences, pantry, budget, schedule, and movement so we can build
-                        a weekly plan that fits your real life.
-                    </p>
-                </div>
-
-                <div class="form-group">
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="consent_prototype" name="consent_prototype">
-                        <span>I understand this is a prototype and not medical advice.</span>
-                    </label>
-                </div>
-
-                <div class="form-group">
-                    <label for="main_goal">What’s your main goal right now?</label>
-                    <select id="main_goal" name="main_goal">
-                        <option value="">Select one…</option>
-                        <option value="weight_loss">Weight loss</option>
-                        <option value="maintenance">Weight maintenance</option>
-                        <option value="bp_sodium">Improve blood pressure / sodium control</option>
-                        <option value="budget">Better organization &amp; budget</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-
-                <div class="form-group" id="main_goal_other_group" style="display:none;">
-                    <label for="main_goal_other">Tell us more about your goal</label>
-                    <textarea id="main_goal_other" name="main_goal_other" rows="2"></textarea>
-                </div>
-
-                <div class="onboarding-actions">
-                    <button type="button" class="btn-primary next-step">Start</button>
-                </div>
-            </section>
-          <!-- STEP 2 – Basic Profile & Goals -->
-            <section class="onboarding-step" data-step="2">
-                <h3>Step 2 – Basic Profile &amp; Goals</h3>
-
-                <div class="form-group">
-                    <label for="name">What should we call you?</label>
-                    <input type="text" id="name" name="name" placeholder="Your name or nickname">
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group half">
-                        <label for="age">Age (optional)</label>
-                        <input type="number" id="age" name="age" min="1" max="120">
-                    </div>
-                    <div class="form-group half">
-                        <label for="height">Height (optional)</label>
-                        <input type="text" id="height" name="height" placeholder="e.g., 5'9&quot; or 175 cm">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group half">
-                        <label for="weight">Current weight (optional)</label>
-                        <input type="number" id="weight" name="weight" step="0.1">
-                    </div>
-                    <div class="form-group half">
-                        <label for="target_weight">Target weight or main outcome (optional)</label>
-                        <input type="text" id="target_weight" name="target_weight" placeholder="e.g., 220 lbs or 'better energy'">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="timeframe">How quickly are you hoping to see progress?</label>
-                    <select id="timeframe" name="timeframe">
-                        <option value="">Select one…</option>
-                        <option value="slow">Slow and steady (6+ months)</option>
-                        <option value="moderate">Moderate (3–6 months)</option>
-                        <option value="faster">Faster (1–3 months)</option>
-                        <option value="unsure">Not sure / just starting</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="weekly_loss_goal">
-                        If weight loss is a goal, how many pounds per week would you like to aim for?
-                    </label>
-                    <input type="range" id="weekly_loss_goal" name="weekly_loss_goal"
-                           min="0.5" max="3" step="0.5" value="1.5">
-                    <div class="range-labels">
-                        <span>0.5</span>
-                        <span>1.5–2.0</span>
-                        <span>3.0</span>
-                    </div>
-                </div>
-
-                <div class="onboarding-actions">
-                    <button type="button" class="btn-secondary prev-step">Back</button>
-                    <button type="button" class="btn-primary next-step">Next</button>
-                </div>
-            </section>
-          <!-- STEP 3 – Plan Basics (Dates, Calories, Budget) -->
-            <section class="onboarding-step" data-step="3">
-                <h3>Step 3 – Plan Basics</h3>
-
-                <div class="form-row">
-                    <div class="form-group half">
-                        <label for="plan_start">Plan start date</label>
-                        <input type="date" id="plan_start" name="plan_start">
-                    </div>
-                    <div class="form-group half">
-                        <label for="plan_end">Plan end date</label>
-                        <input type="date" id="plan_end" name="plan_end">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Which meals and snacks should we plan each day?</label>
-                    <div class="checkbox-grid">
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="meals[]" value="breakfast" checked>
-                            <span>Breakfast</span>
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="meals[]" value="lunch" checked>
-                            <span>Lunch</span>
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="meals[]" value="dinner" checked>
-                            <span>Dinner</span>
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="meals[]" value="snack_morning">
-                            <span>Morning snack</span>
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="meals[]" value="snack_afternoon">
-                            <span>Afternoon snack</span>
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="meals[]" value="snack_evening">
-                            <span>Evening snack</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group half">
-                        <label for="calorie_target">Daily calorie target (approx.)</label>
-                        <input type="number" id="calorie_target" name="calorie_target" placeholder="e.g., 2200">
-                    </div>
-                    <div class="form-group half">
-                        <label for="weekly_budget">Weekly food budget</label>
-                        <input type="number" id="weekly_budget" name="weekly_budget" placeholder="e.g., 75">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="budget_strictness">How important is staying under budget?</label>
-                    <input type="range" id="budget_strictness" name="budget_strictness"
-                           min="1" max="5" step="1" value="3">
-                    <div class="range-labels">
-                        <span>1 – Not strict</span>
-                        <span>3 – Balanced</span>
-                        <span>5 – Very strict</span>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="sodium_focus">What should we prioritize nutritionally?</label>
-                    <select id="sodium_focus" name="sodium_focus">
-                        <option value="">Select one…</option>
-                        <option value="balanced">Balanced – follow general guidelines</option>
-                        <option value="lower_sodium">Lower sodium</option>
-                        <option value="lower_fat">Lower saturated fat</option>
-                        <option value="higher_protein">Higher protein</option>
-                        <option value="lower_sugar">Lower added sugar</option>
-                        <option value="custom">Custom mix (I’ll explain)</option>
-                    </select>
-                </div>
-
-                <div class="form-group" id="nutrition_custom_group" style="display:none;">
-                    <label for="nutrition_custom">Tell us more about your nutrition priorities</label>
-                    <textarea id="nutrition_custom" name="nutrition_custom" rows="2"
-                              placeholder="Example: pre-diabetic, want to keep sodium low and protein moderate…"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Any other areas to focus on?</label>
-                    <div class="checkbox-grid">
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="nutrition_focus[]" value="more_fiber">
-                            <span>More fiber</span>
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="nutrition_focus[]" value="more_produce">
-                            <span>More fruits &amp; vegetables</span>
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="nutrition_focus[]" value="heart_health">
-                            <span>Heart health</span>
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="nutrition_focus[]" value="blood_sugar">
-                            <span>Blood sugar control</span>
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="nutrition_focus[]" value="none">
-                            <span>None / not sure</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="onboarding-actions">
-                    <button type="button" class="btn-secondary prev-step">Back</button>
-                    <button type="button" class="btn-primary next-step">Next</button>
-                </div>
-            </section>
-          <!-- STEP 4 – Food Preferences: Proteins -->
-            <section class="onboarding-step" data-step="4">
-                <h3>Step 4 – Food Preferences: Proteins</h3>
-                <p class="step-hint">
-                    For each item, choose <strong>Like</strong>, <strong>Neutral</strong>, or <strong>Dislike</strong>.
-                    This helps us match recipes to your tastes.
-                </p>
-
-                <div class="preference-group">
-                    <h4>Animal &amp; Plant Proteins</h4>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Chicken breast</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option">
-                                <input type="radio" name="protein_chicken_breast" value="like">
-                                <span>Like</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_chicken_breast" value="neutral" checked>
-                                <span>Neutral</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_chicken_breast" value="dislike">
-                                <span>Dislike</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Chicken thighs</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option">
-                                <input type="radio" name="protein_chicken_thighs" value="like">
-                                <span>Like</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_chicken_thighs" value="neutral" checked>
-                                <span>Neutral</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_chicken_thighs" value="dislike">
-                                <span>Dislike</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Ground chicken</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option">
-                                <input type="radio" name="protein_ground_chicken" value="like">
-                                <span>Like</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_ground_chicken" value="neutral" checked>
-                                <span>Neutral</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_ground_chicken" value="dislike">
-                                <span>Dislike</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Turkey breast</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option">
-                                <input type="radio" name="protein_turkey_breast" value="like">
-                                <span>Like</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_turkey_breast" value="neutral" checked>
-                                <span>Neutral</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_turkey_breast" value="dislike">
-                                <span>Dislike</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Ground turkey</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option">
-                                <input type="radio" name="protein_ground_turkey" value="like">
-                                <span>Like</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_ground_turkey" value="neutral" checked>
-                                <span>Neutral</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_ground_turkey" value="dislike">
-                                <span>Dislike</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Lean ground beef</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option">
-                                <input type="radio" name="protein_lean_beef" value="like">
-                                <span>Like</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_lean_beef" value="neutral" checked>
-                                <span>Neutral</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_lean_beef" value="dislike">
-                                <span>Dislike</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Steak / beef cuts</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option">
-                                <input type="radio" name="protein_steak" value="like">
-                                <span>Like</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_steak" value="neutral" checked>
-                                <span>Neutral</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_steak" value="dislike">
-                                <span>Dislike</span>
-                            </label>
-                        </div>
-                    </div>
-                  <div class="preference-row">
-                        <span class="preference-label">Pork chops</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option">
-                                <input type="radio" name="protein_pork_chops" value="like">
-                                <span>Like</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_pork_chops" value="neutral" checked>
-                                <span>Neutral</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_pork_chops" value="dislike">
-                                <span>Dislike</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Ham</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option">
-                                <input type="radio" name="protein_ham" value="like">
-                                <span>Like</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_ham" value="neutral" checked>
-                                <span>Neutral</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_ham" value="dislike">
-                                <span>Dislike</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Bacon</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option">
-                                <input type="radio" name="protein_bacon" value="like">
-                                <span>Like</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_bacon" value="neutral" checked>
-                                <span>Neutral</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_bacon" value="dislike">
-                                <span>Dislike</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Sausage (breakfast)</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option">
-                                <input type="radio" name="protein_sausage_breakfast" value="like">
-                                <span>Like</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_sausage_breakfast" value="neutral" checked>
-                                <span>Neutral</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_sausage_breakfast" value="dislike">
-                                <span>Dislike</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Sausage (smoked / kielbasa)</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option">
-                                <input type="radio" name="protein_sausage_smoked" value="like">
-                                <span>Like</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_sausage_smoked" value="neutral" checked>
-                                <span>Neutral</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_sausage_smoked" value="dislike">
-                                <span>Dislike</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Deli meats (ham/turkey)</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option">
-                                <input type="radio" name="protein_deli_meats" value="like">
-                                <span>Like</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_deli_meats" value="neutral" checked>
-                                <span>Neutral</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_deli_meats" value="dislike">
-                                <span>Dislike</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Fish – mild (cod, tilapia, etc.)</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option">
-                                <input type="radio" name="protein_fish_mild" value="like">
-                                <span>Like</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_fish_mild" value="neutral" checked>
-                                <span>Neutral</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_fish_mild" value="dislike">
-                                <span>Dislike</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Fish – stronger (salmon, tuna)</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option">
-                                <input type="radio" name="protein_fish_strong" value="like">
-                                <span>Like</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_fish_strong" value="neutral" checked>
-                                <span>Neutral</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_fish_strong" value="dislike">
-                                <span>Dislike</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Shellfish (shrimp, crab, etc.)</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option">
-                                <input type="radio" name="protein_shellfish" value="like">
-                                <span>Like</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_shellfish" value="neutral" checked>
-                                <span>Neutral</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_shellfish" value="dislike">
-                                <span>Dislike</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Eggs</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option">
-                                <input type="radio" name="protein_eggs" value="like">
-                                <span>Like</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_eggs" value="neutral" checked>
-                                <span>Neutral</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_eggs" value="dislike">
-                                <span>Dislike</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Egg whites</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option">
-                                <input type="radio" name="protein_egg_whites" value="like">
-                                <span>Like</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_egg_whites" value="neutral" checked>
-                                <span>Neutral</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_egg_whites" value="dislike">
-                                <span>Dislike</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Tofu / tempeh</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option">
-                                <input type="radio" name="protein_tofu" value="like">
-                                <span>Like</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_tofu" value="neutral" checked>
-                                <span>Neutral</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_tofu" value="dislike">
-                                <span>Dislike</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Beans (black, pinto, kidney)</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option">
-                                <input type="radio" name="protein_beans" value="like">
-                                <span>Like</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_beans" value="neutral" checked>
-                                <span>Neutral</span>
-                            </label>
-                            <label class="pill-option">
-                                <input type="radio" name="protein_beans" value="dislike">
-                                <span>Dislike</span>
-                            </label>
-                        </div>
-                    </div>
-                </div><!-- end preference-group -->
-
-                <div class="form-group">
-                    <label for="protein_custom">
-                        Any other proteins to include or avoid? (optional)
-                    </label>
-                    <textarea id="protein_custom" name="protein_custom" rows="2"></textarea>
-                </div>
-
-                <div class="onboarding-actions">
-                    <button type="button" class="btn-secondary prev-step">Back</button>
-                    <button type="button" class="btn-primary next-step">Next</button>
-                </div>
-            </section>
-          <!-- STEP 5 – Dairy & Grains / Carbs -->
-            <section class="onboarding-step" data-step="5">
-                <h3>Step 5 – Dairy, Grains &amp; Carbs</h3>
-                <p class="step-hint">
-                    Same idea: choose <strong>Like</strong>, <strong>Neutral</strong>, or <strong>Dislike</strong>.
-                </p>
-
-                <div class="preference-group">
-                    <h4>Dairy &amp; Alternatives</h4>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Skim milk</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="dairy_skim" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="dairy_skim" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="dairy_skim" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                    <div class="preference-row">
-                        <span class="preference-label">1–2% milk</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="dairy_12" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="dairy_12" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="dairy_12" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                    <div class="preference-row">
-                        <span class="preference-label">Whole milk</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="dairy_whole" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="dairy_whole" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="dairy_whole" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                    <div class="preference-row">
-                        <span class="preference-label">Lactose-free milk</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="dairy_lactose_free" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="dairy_lactose_free" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="dairy_lactose_free" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                    <div class="preference-row">
-                        <span class="preference-label">Yogurt – plain</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="dairy_yogurt_plain" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="dairy_yogurt_plain" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="dairy_yogurt_plain" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                    <div class="preference-row">
-                        <span class="preference-label">Yogurt – flavored / fruit</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="dairy_yogurt_flavored" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="dairy_yogurt_flavored" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="dairy_yogurt_flavored" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                    <div class="preference-row">
-                        <span class="preference-label">Cottage cheese</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="dairy_cottage" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="dairy_cottage" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="dairy_cottage" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                    <div class="preference-row">
-                        <span class="preference-label">Hard cheeses (cheddar, Swiss, etc.)</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="dairy_hard_cheese" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="dairy_hard_cheese" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="dairy_hard_cheese" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                    <div class="preference-row">
-                        <span class="preference-label">Soft cheeses (mozzarella, provolone)</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="dairy_soft_cheese" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="dairy_soft_cheese" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="dairy_soft_cheese" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                    <div class="preference-row">
-                        <span class="preference-label">Non-dairy milk (almond, soy, oat, etc.)</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="dairy_non_dairy" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="dairy_non_dairy" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="dairy_non_dairy" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="preference-group">
-                    <h4>Grains, Starches &amp; Carbs</h4>
-
-                    <div class="preference-row">
-                        <span class="preference-label">White bread</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="grain_white_bread" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="grain_white_bread" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="grain_white_bread" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Wheat / whole-grain bread</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="grain_whole_bread" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="grain_whole_bread" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="grain_whole_bread" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Tortillas (flour or corn)</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="grain_tortillas" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="grain_tortillas" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="grain_tortillas" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Rice (white, brown, instant cups)</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="grain_rice" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="grain_rice" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="grain_rice" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Pasta (regular / whole-wheat)</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="grain_pasta" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="grain_pasta" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="grain_pasta" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Potatoes (baked, mashed, roasted)</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="grain_potatoes" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="grain_potatoes" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="grain_potatoes" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Oatmeal / hot cereal</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="grain_oatmeal" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="grain_oatmeal" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="grain_oatmeal" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Cold cereal</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="grain_cereal" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="grain_cereal" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="grain_cereal" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="grains_custom">Any other grain / carb notes? (optional)</label>
-                    <textarea id="grains_custom" name="grains_custom" rows="2"></textarea>
-                </div>
-
-                <div class="onboarding-actions">
-                    <button type="button" class="btn-secondary prev-step">Back</button>
-                    <button type="button" class="btn-primary next-step">Next</button>
-                </div>
-            </section>
-          <!-- STEP 6 – Vegetables & Fruits -->
-            <section class="onboarding-step" data-step="6">
-                <h3>Step 6 – Vegetables &amp; Fruits</h3>
-
-                <div class="preference-group">
-                    <h4>Vegetables</h4>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Onions &amp; garlic (in cooking)</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="veg_onions_garlic" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="veg_onions_garlic" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="veg_onions_garlic" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Carrots &amp; celery</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="veg_carrots_celery" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="veg_carrots_celery" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="veg_carrots_celery" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Broccoli / cauliflower</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="veg_broccoli_cauliflower" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="veg_broccoli_cauliflower" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="veg_broccoli_cauliflower" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Green beans / peas / corn</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="veg_greenbeans_peas_corn" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="veg_greenbeans_peas_corn" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="veg_greenbeans_peas_corn" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Leafy greens (spinach, salads)</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="veg_leafy" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="veg_leafy" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="veg_leafy" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Tomatoes (fresh / in dishes)</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="veg_tomatoes" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="veg_tomatoes" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="veg_tomatoes" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Bell peppers / cucumbers / squash</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="veg_peppers_cukes_squash" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="veg_peppers_cukes_squash" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="veg_peppers_cukes_squash" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Mixed frozen veggies / blends</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="veg_mixed" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="veg_mixed" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="veg_mixed" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="preference-group">
-                    <h4>Fruits</h4>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Apples / applesauce</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="fruit_apples" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="fruit_apples" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="fruit_apples" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Bananas</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="fruit_bananas" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="fruit_bananas" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="fruit_bananas" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Oranges / mandarins</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="fruit_oranges" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="fruit_oranges" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="fruit_oranges" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Grapes / berries</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="fruit_grapes_berries" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="fruit_grapes_berries" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="fruit_grapes_berries" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Pineapple / tropical fruit</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="fruit_pineapple" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="fruit_pineapple" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="fruit_pineapple" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Melons (cantaloupe, etc.)</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="fruit_melons" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="fruit_melons" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="fruit_melons" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="produce_custom">Any other fruit / veg notes? (optional)</label>
-                    <textarea id="produce_custom" name="produce_custom" rows="2"></textarea>
-                </div>
-
-                <div class="onboarding-actions">
-                    <button type="button" class="btn-secondary prev-step">Back</button>
-                    <button type="button" class="btn-primary next-step">Next</button>
-                </div>
-            </section>
-          <!-- STEP 7 – Snacks, Treats & Sauces -->
-            <section class="onboarding-step" data-step="7">
-                <h3>Step 7 – Snacks, Treats &amp; Sauces</h3>
-
-                <div class="preference-group">
-                    <h4>Snacks &amp; Convenience Foods</h4>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Peanut butter / nut butters</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="snack_peanut_butter" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="snack_peanut_butter" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="snack_peanut_butter" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                    <div class="preference-row">
-                        <span class="preference-label">Crackers / cheese &amp; crackers</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="snack_crackers" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="snack_crackers" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="snack_crackers" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                    <div class="preference-row">
-                        <span class="preference-label">Popcorn</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="snack_popcorn" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="snack_popcorn" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="snack_popcorn" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                    <div class="preference-row">
-                        <span class="preference-label">Chips / salty snacks</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="snack_chips" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="snack_chips" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="snack_chips" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                    <div class="preference-row">
-                        <span class="preference-label">Granola / snack bars</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="snack_bars" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="snack_bars" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="snack_bars" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                    <div class="preference-row">
-                        <span class="preference-label">Pudding / gelatin cups</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="snack_pudding" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="snack_pudding" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="snack_pudding" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                    <div class="preference-row">
-                        <span class="preference-label">Frozen waffles / quick breakfasts</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="snack_waffles" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="snack_waffles" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="snack_waffles" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                    <div class="preference-row">
-                        <span class="preference-label">Frozen dinners / entrées</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="snack_frozen_dinners" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="snack_frozen_dinners" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="snack_frozen_dinners" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="preference-group">
-                    <h4>Condiments, Sauces &amp; Dressings</h4>
-
-                    <div class="preference-row">
-                        <span class="preference-label">Ketchup / mustard</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="sauce_ketchup_mustard" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="sauce_ketchup_mustard" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="sauce_ketchup_mustard" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                    <div class="preference-row">
-                        <span class="preference-label">Mayonnaise / light mayo</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="sauce_mayo" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="sauce_mayo" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="sauce_mayo" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                    <div class="preference-row">
-                        <span class="preference-label">BBQ sauce / marinades</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="sauce_bbq" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="sauce_bbq" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="sauce_bbq" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                    <div class="preference-row">
-                        <span class="preference-label">Ranch / creamy dressings</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="sauce_ranch" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="sauce_ranch" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="sauce_ranch" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                    <div class="preference-row">
-                        <span class="preference-label">Italian / vinaigrette dressings</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="sauce_italian" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="sauce_italian" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="sauce_italian" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                    <div class="preference-row">
-                        <span class="preference-label">Tomato / pasta sauces</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="sauce_tomato" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="sauce_tomato" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="sauce_tomato" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                    <div class="preference-row">
-                        <span class="preference-label">Soy sauce / teriyaki / stir-fry sauces</span>
-                        <div class="preference-options" role="group">
-                            <label class="pill-option"><input type="radio" name="sauce_soy" value="like"><span>Like</span></label>
-                            <label class="pill-option"><input type="radio" name="sauce_soy" value="neutral" checked><span>Neutral</span></label>
-                            <label class="pill-option"><input type="radio" name="sauce_soy" value="dislike"><span>Dislike</span></label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="snacks_sauces_custom">Any other snack / sauce notes? (optional)</label>
-                    <textarea id="snacks_sauces_custom" name="snacks_sauces_custom" rows="2"></textarea>
-                </div>
-
-                <div class="onboarding-actions">
-                    <button type="button" class="btn-secondary prev-step">Back</button>
-                    <button type="button" class="btn-primary next-step">Next</button>
-                </div>
-                              </section>
-          <!-- STEP 8 – Foods to Avoid & Health Constraints -->
-            <section class="onboarding-step" data-step="8">
-                <h3>Step 8 – Foods to Avoid &amp; Health Constraints</h3>
-
-                <div class="form-group">
-                    <label>Allergies or intolerances</label>
-                    <div class="checkbox-grid">
-                        <label class="checkbox-label"><input type="checkbox" name="allergies[]" value="none"><span>None</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="allergies[]" value="gluten"><span>Gluten</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="allergies[]" value="dairy"><span>Dairy / lactose</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="allergies[]" value="eggs"><span>Eggs</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="allergies[]" value="soy"><span>Soy</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="allergies[]" value="peanuts"><span>Peanuts</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="allergies[]" value="tree_nuts"><span>Tree nuts</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="allergies[]" value="fish"><span>Fish</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="allergies[]" value="shellfish"><span>Shellfish</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="allergies[]" value="other"><span>Other</span></label>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="allergies_other">If “Other”, list here (optional)</label>
-                    <textarea id="allergies_other" name="allergies_other" rows="2"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Medical / health conditions that affect food choices</label>
-                    <div class="checkbox-grid">
-                        <label class="checkbox-label"><input type="checkbox" name="conditions[]" value="hypertension"><span>High blood pressure</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="conditions[]" value="diabetes"><span>Diabetes / pre-diabetes</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="conditions[]" value="cholesterol"><span>High cholesterol</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="conditions[]" value="kidney"><span>Kidney disease</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="conditions[]" value="gerd"><span>GERD / reflux</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="conditions[]" value="other"><span>Other</span></label>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="conditions_other">Anything else we should know? (optional)</label>
-                    <textarea id="conditions_other" name="conditions_other" rows="2"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="never_include">Foods or ingredients you never want in your plan</label>
-                    <textarea id="never_include" name="never_include" rows="2"
-                              placeholder="Example: olives, mushrooms, spicy foods, etc."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="avoid_strictness">How strict should we be about avoiding these?</label>
-                    <input type="range" id="avoid_strictness" name="avoid_strictness" min="1" max="5" step="1" value="5">
-                    <div class="range-labels">
-                        <span>1 – Flexible</span>
-                        <span>3 – Try to avoid</span>
-                        <span>5 – Never include</span>
-                    </div>
-                </div>
-
-                <div class="onboarding-actions">
-                    <button type="button" class="btn-secondary prev-step">Back</button>
-                    <button type="button" class="btn-primary next-step">Next</button>
-                </div>
-            </section>
-          <!-- STEP 9 – Pantry, Stores & Budget Style -->
-            <section class="onboarding-step" data-step="9">
-                <h3>Step 9 – Pantry, Stores &amp; Budget Style</h3>
-
-                <div class="form-group">
-                    <label for="pantry_text">
-                        Tell us what you usually have in your pantry, fridge, or freezer
-                    </label>
-                    <textarea id="pantry_text" name="pantry_text" rows="3"
-                              placeholder="Example: eggs, frozen chicken, rice, pasta, canned beans, frozen veggies…"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="pantry_aggressiveness">How strongly should we prioritize using pantry items?</label>
-                    <input type="range" id="pantry_aggressiveness" name="pantry_aggressiveness" min="1" max="5" step="1" value="4">
-                    <div class="range-labels">
-                        <span>1 – Not important</span>
-                        <span>3 – Balanced</span>
-                        <span>5 – Use pantry first</span>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Where do you usually shop?</label>
-                    <div class="checkbox-grid">
-                        <label class="checkbox-label"><input type="checkbox" name="stores[]" value="walmart"><span>Walmart</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="stores[]" value="aldi"><span>Aldi</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="stores[]" value="kroger"><span>Kroger / local supermarket</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="stores[]" value="warehouse"><span>Costco / Sam’s Club</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="stores[]" value="dollar"><span>Dollar store</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="stores[]" value="other"><span>Other</span></label>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="stores_other">If “Other”, list here (optional)</label>
-                    <textarea id="stores_other" name="stores_other" rows="2"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="store_priority">What matters most about your store choice?</label>
-                    <select id="store_priority" name="store_priority">
-                        <option value="">Select one…</option>
-                        <option value="lowest_cost">Lowest total cost</option>
-                        <option value="closest">Closest / most convenient</option>
-                        <option value="selection">Best selection / brands</option>
-                        <option value="mix">Mix of value &amp; convenience</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="brand_preference">Do you prefer store brands or name brands?</label>
-                    <select id="brand_preference" name="brand_preference">
-                        <option value="">Select one…</option>
-                        <option value="store">Mostly store brands / generic is fine</option>
-                        <option value="mix">Mix of store and name brands</option>
-                        <option value="name">Prefer name brands when possible</option>
-                    </select>
-                </div>
-
-                <div class="onboarding-actions">
-                    <button type="button" class="btn-secondary prev-step">Back</button>
-                    <button type="button" class="btn-primary next-step">Next</button>
-                </div>
-            </section>
-          <!-- STEP 10 – Exercise & Activity -->
-            <section class="onboarding-step" data-step="10">
-                <h3>Step 10 – Exercise &amp; Activity</h3>
-
-                <div class="form-group">
-                    <label for="activity_level">How active are you currently?</label>
-                    <select id="activity_level" name="activity_level">
-                        <option value="">Select one…</option>
-                        <option value="sedentary">Mostly sedentary</option>
-                        <option value="light">Lightly active (some walking)</option>
-                        <option value="moderate">Moderately active</option>
-                        <option value="very_active">Very active</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>What types of movement are realistic for you?</label>
-                    <div class="checkbox-grid">
-                        <label class="checkbox-label"><input type="checkbox" name="movement_types[]" value="gentle_stretching"><span>Gentle stretching</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="movement_types[]" value="tai_chi"><span>Tai Chi / Qigong</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="movement_types[]" value="short_walks"><span>Short walks (5–15 minutes)</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="movement_types[]" value="longer_walks"><span>Longer walks (20–40 minutes)</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="movement_types[]" value="bike"><span>Stationary bike</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="movement_types[]" value="weights_bands"><span>Weights / resistance bands</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="movement_types[]" value="gym"><span>Gym workouts</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="movement_types[]" value="other"><span>Other</span></label>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="movement_other">If “Other”, describe (optional)</label>
-                    <textarea id="movement_other" name="movement_other" rows="2"></textarea>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group half">
-                        <label for="movement_days">Days per week for planned movement</label>
-                        <input type="range" id="movement_days" name="movement_days" min="3" max="7" step="1" value="5">
-                        <div class="range-labels">
-                            <span>3</span>
-                            <span>5</span>
-                            <span>7</span>
-                        </div>
-                    </div>
-                    <div class="form-group half">
-                        <label for="movement_minutes">Minutes per day (goal)</label>
-                        <input type="range" id="movement_minutes" name="movement_minutes" min="10" max="60" step="5" value="30">
-                        <div class="range-labels">
-                            <span>10</span>
-                            <span>30</span>
-                            <span>60+</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="movement_limitations">Any joint or mobility limitations?</label>
-                    <textarea id="movement_limitations" name="movement_limitations" rows="2"
-                              placeholder="Example: bad knees, back issues, balance concerns…"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="movement_intensity">How challenging should the plan feel?</label>
-                    <select id="movement_intensity" name="movement_intensity">
-                        <option value="">Select one…</option>
-                        <option value="very_gentle">Very gentle</option>
-                        <option value="gentle">Gentle / light</option>
-                        <option value="moderate">Moderate</option>
-                        <option value="challenging_safe">Challenging but safe</option>
-                    </select>
-                </div>
-
-                <div class="onboarding-actions">
-                    <button type="button" class="btn-secondary prev-step">Back</button>
-                    <button type="button" class="btn-primary next-step">Next</button>
-                </div>
-            </section>
-          <!-- STEP 11 – Daily Schedule & Meal Timing -->
-            <section class="onboarding-step" data-step="11">
-                <h3>Step 11 – Daily Schedule &amp; Meal Timing</h3>
-
-                <div class="form-row">
-                    <div class="form-group half">
-                        <label for="wake_time">Typical wake time</label>
-                        <input type="time" id="wake_time" name="wake_time">
-                    </div>
-                    <div class="form-group half">
-                        <label for="bed_time">Typical bedtime</label>
-                        <input type="time" id="bed_time" name="bed_time">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Rough meal times (optional)</label>
-                    <div class="form-row">
-                        <div class="form-group half">
-                            <label for="breakfast_time">Breakfast</label>
-                            <input type="time" id="breakfast_time" name="breakfast_time">
-                        </div>
-                        <div class="form-group half">
-                            <label for="lunch_time">Lunch</label>
-                            <input type="time" id="lunch_time" name="lunch_time">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group half">
-                            <label for="dinner_time">Dinner</label>
-                            <input type="time" id="dinner_time" name="dinner_time">
-                        </div>
-                        <div class="form-group half">
-                            <label for="snack_windows">Snack windows (optional)</label>
-                            <input type="text" id="snack_windows" name="snack_windows"
-                                   placeholder="e.g., mid-morning, mid-afternoon, evening TV time">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Are any days of the week “special” or busier?</label>
-                    <div class="checkbox-grid">
-                        <label class="checkbox-label"><input type="checkbox" name="busy_days[]" value="mon"><span>Mon</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="busy_days[]" value="tue"><span>Tue</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="busy_days[]" value="wed"><span>Wed</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="busy_days[]" value="thu"><span>Thu</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="busy_days[]" value="fri"><span>Fri</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="busy_days[]" value="sat"><span>Sat</span></label>
-                        <label class="checkbox-label"><input type="checkbox" name="busy_days[]" value="sun"><span>Sun</span></label>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="busy_notes">What’s different on those days? (optional)</label>
-                    <textarea id="busy_notes" name="busy_notes" rows="2"
-                              placeholder="Example: late work, kids’ activities, more takeout, etc."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="eating_out">How often do you plan to eat out?</label>
-                    <select id="eating_out" name="eating_out">
-                        <option value="">Select one…</option>
-                        <option value="none">Plan everything at home</option>
-                        <option value="1_2">1–2 meals out per week</option>
-                        <option value="3_plus">More than 2 meals out per week</option>
-                    </select>
-                </div>
-
-                <div class="onboarding-actions">
-                    <button type="button" class="btn-secondary prev-step">Back</button>
-                    <button type="button" class="btn-primary next-step">Next</button>
-                </div>
-            </section>
-
-            <!-- STEP 12 – Plan Style & Flexibility -->
-            <section class="onboarding-step" data-step="12">
-                <h3>Step 12 – Plan Style &amp; Flexibility</h3>
-
-                <div class="form-group">
-                    <label for="instruction_detail">How detailed should cooking instructions be?</label>
-                    <select id="instruction_detail" name="instruction_detail">
-                        <option value="">Select one…</option>
-                        <option value="very_detailed">Very detailed (step-by-step)</option>
-                        <option value="moderate">Moderately detailed</option>
-                        <option value="brief">Short, high-level steps</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="visual_style">How should your plan feel visually?</label>
-                    <select id="visual_style" name="visual_style">
-                        <option value="">Select one…</option>
-                        <option value="clean_simple">Clean and simple</option>
-                        <option value="visual_icons">More visual with icons and color</option>
-                        <option value="no_preference">No strong preference</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="flexibility">Do you want a strict schedule or flexible suggestions?</label>
-                    <input type="range" id="flexibility" name="flexibility" min="1" max="5" step="1" value="3">
-                    <div class="range-labels">
-                        <span>1 – Very flexible</span>
-                        <span>3 – Balanced</span>
-                        <span>5 – Very structured</span>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="notes_to_coach">Anything else we should know?</label>
-                    <textarea id="notes_to_coach" name="notes_to_coach" rows="3"
-                              placeholder="Habits, triggers, ideas, or special goals you want us to consider…"></textarea>
-                </div>
-
-                <div class="onboarding-actions">
-                    <button type="button" class="btn-secondary prev-step">Back</button>
-                    <button type="button" class="btn-primary next-step">Next</button>
-                </div>
-            </section>
-          <!-- STEP 13 – Summary & Confirmation -->
-            <section class="onboarding-step" data-step="13">
-                <h3>Step 13 – Review &amp; Confirmation</h3>
-
-                <p class="step-hint">
-                    Quick summary of your key settings. In the real app, this would show a full preview before generating your plan.
-                </p>
-
-                <div class="summary-grid">
-                    <div class="summary-card">
-                        <h4>Plan Basics</h4>
-                        <ul>
-                            <li><strong>Name:</strong> <span data-summary="name">—</span></li>
-                            <li><strong>Goal:</strong> <span data-summary="main_goal">—</span></li>
-                            <li><strong>Date range:</strong> <span data-summary="dates">—</span></li>
-                            <li><strong>Calories:</strong> <span data-summary="calories">—</span></li>
-                            <li><strong>Budget:</strong> <span data-summary="budget">—</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="summary-card">
-                        <h4>Food &amp; Nutrition</h4>
-                        <ul>
-                            <li><strong>Nutrition focus:</strong> <span data-summary="nutrition_focus">—</span></li>
-                            <li><strong>Allergies:</strong> <span data-summary="allergies">—</span></li>
-                            <li><strong>Never include:</strong> <span data-summary="never_include">—</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="summary-card">
-                        <h4>Pantry &amp; Stores</h4>
-                        <ul>
-                            <li><strong>Pantry priority:</strong> <span data-summary="pantry_priority">—</span></li>
-                            <li><strong>Stores:</strong> <span data-summary="stores">—</span></li>
-                            <li><strong>Brand preference:</strong> <span data-summary="brand_preference">—</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="summary-card">
-                        <h4>Exercise &amp; Schedule</h4>
-                        <ul>
-                            <li><strong>Activity level:</strong> <span data-summary="activity_level">—</span></li>
-                            <li><strong>Movement days:</strong> <span data-summary="movement_days">—</span></li>
-                            <li><strong>Minutes/day:</strong> <span data-summary="movement_minutes">—</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="final_confirm" name="final_confirm">
-                        <span>I’ve reviewed my answers and I’m ready to generate a weekly plan.</span>
-                    </label>
-                </div>
-
-                <div class="onboarding-actions">
-                    <button type="button" class="btn-secondary prev-step">Back</button>
-                    <button type="submit" class="btn-primary">Finish &amp; View Demo Dashboard</button>
-                </div>
-
-                <p class="prototype-note">
-                    In this prototype, clicking “Finish” will take you to the demo dashboard with sample data.
-                </p>
-            </section>
-          </form>
-    </section>
-</main>
-
-<footer class="footer">
-    <img src="images/wp-logo-square.png" alt="Wellness Pilot Logo" class="footer-logo">
-    <p>&copy; 2025 Wellness Pilot — A TKM Group Company</p>
-    <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="dashboard.html">Demo Dashboard</a>
-        <a href="#">Privacy</a>
-    </div>
-</footer>
-
-</body>
+        <nav class="footer-nav">
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="pricing.html" class="footer-link">Pricing</a>
+          <a href="dashboard.html" class="footer-link">Demo Dashboard</a>
+          <a href="onboarding.html" class="footer-link">Start Plan</a>
+          <a href="login.html" class="footer-link">Sign In</a>
+        </nav>
+      </div>
+
+      <p class="footer-note">
+        Prototype only – for demonstration purposes, not medical or financial
+        advice.
+      </p>
+    </footer>
+  </body>
 </html>
