@@ -1,345 +1,263 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Your Weekly Plan – TKM VitalMetric Wellness</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="app.js" defer></script>
-</head>
-<body>
-  <div class="page">
-    <!-- Shared header -->
-    <header class="site-header">
-      <div class="header-inner">
+<html lang="en" data-page="home">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Wellness Pilot – Weekly Wellness Mission Control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header" id="site-header">
+      <div class="site-header-inner">
         <a href="index.html" class="brand">
-          <div class="brand-logo">
-            <img src="images/tkm-logo.png" alt="TKM VitalMetric Wellness logo" />
-          </div>
+          <img
+            src="images/wp-logo-primary-square.png"
+            alt="Wellness Pilot logo"
+          />
           <div class="brand-text">
-            <div class="brand-name">TKM VITALMETRIC WELLNESS</div>
-            <div class="brand-tagline">Weekly wellness mission control</div>
+            <div class="brand-title">Wellness Pilot</div>
+            <div class="brand-subtitle">Weekly wellness mission control</div>
           </div>
         </a>
 
-        <nav class="main-nav">
-          <a href="index.html" class="nav-link active">Home</a>
-          <a href="onboarding.html" class="nav-link">Start Plan</a>
-          <a href="dashboard.html" class="nav-link">Demo Dashboard</a>
-          <a href="login.html" class="nav-link">Sign In</a>
-          <a href="signup.html" class="nav-link nav-cta">7-day free trial · then $9.99/wk</a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          id="nav-toggle"
+        >
+          ☰
+        </button>
+
+        <nav class="nav-links" id="nav-links">
+          <a href="index.html" class="is-active">Home</a>
+          <a href="onboarding.html">Start plan</a>
+          <a href="dashboard.html">Demo dashboard</a>
+          <a href="login.html">Sign in</a>
+          <a href="signup.html" class="nav-cta">7-day free trial</a>
         </nav>
       </div>
     </header>
 
-    <main class="main-content">
-      <!-- HERO / SNAPSHOT -->
-      <section class="hero">
-        <div class="hero-card">
-          <div class="hero-inner">
-            <div class="hero-main">
-              <div class="hero-kicker">Prototype · UI only · no real data stored</div>
-              <h1 class="hero-title">Your Weekly Wellness Mission Control.</h1>
-              <p class="hero-subtitle">
-                Build a full week of meals, snacks, and movement that respects your calories,
-                sodium, budget, and real life — powered by your pantry and local stores.
-              </p>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <span class="badge">Prototype · UI only · No real data</span>
+          <h1>Your weekly wellness mission control.</h1>
+          <p class="lead">
+            Build a full week of meals, snacks, movement, and grocery list that
+            respects your <strong>budget</strong>, <strong>time</strong>, and
+            <strong>preferences</strong> – all powered by your pantry and local
+            store sales.
+          </p>
 
-              <div class="button-row">
-                <a href="onboarding.html" class="btn btn-primary">Start your weekly plan</a>
-                <a href="dashboard.html" class="btn btn-secondary">Preview demo dashboard</a>
-              </div>
+          <div class="hero-buttons">
+            <a href="onboarding.html" class="btn btn-primary">
+              Start your weekly plan
+            </a>
+            <a href="dashboard.html" class="btn btn-secondary">
+              Preview demo dashboard
+            </a>
+          </div>
 
-              <p class="hero-subtle">
-                Try it free for 7 days, then just <strong>$9.99/week</strong> to keep your plan updated,
-                realistic, and on track.
-              </p>
-              <p class="hero-footnote">
-                In this prototype, values are fixed. In the full system your snapshot reflects your
-                onboarding answers and pantry data.
-              </p>
+          <p class="hero-note">
+            Try it free for 7 days, then <strong>$9.99/week</strong> or choose a
+            discounted multi-week bundle. Cancel anytime.
+          </p>
+        </div>
+
+        <aside class="hero-panel">
+          <h2>Weekly snapshot · Demo preview</h2>
+          <div class="preview-title">
+            What members see every week at a glance.
+          </div>
+
+          <div class="snapshot-grid">
+            <div class="snapshot-label">Date range</div>
+            <div class="snapshot-value">Dec 1 – Dec 7 (example)</div>
+
+            <div class="snapshot-label">Calorie target</div>
+            <div class="snapshot-value">2,200 kcal / day</div>
+
+            <div class="snapshot-label">Nutrition focus</div>
+            <div class="snapshot-value">Lower sodium · Higher fiber</div>
+
+            <div class="snapshot-label">Weekly food budget</div>
+            <div class="snapshot-value">$75.00 (example)</div>
+
+            <div class="snapshot-label">Movement stack</div>
+            <div class="snapshot-value">
+              Radio Taiso · Tai Chi · 2,500 steps
+            </div>
+          </div>
+
+          <footer>
+            Preview only — your real snapshot will reflect your
+            <strong>onboarding answers</strong>, pantry, and store sales.
+          </footer>
+        </aside>
+      </div>
+    </section>
+    <!-- MAIN CONTENT -->
+    <main class="page-shell">
+      <!-- Feature strip with icons -->
+      <section class="section">
+        <div class="section-header">
+          <span class="badge">How Wellness Pilot helps</span>
+          <h2>Four pieces that make your week feel doable.</h2>
+          <p>
+            You answer 13 quick steps. We turn it into a realistic weekly plan
+            you can actually follow.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <img
+              src="images/wp-icon-mealplanning.png"
+              alt="Meal planning icon"
+            />
+            <h3>Smart weekly meal planning</h3>
+            <p>
+              Turn your food preferences, schedule, and goals into a 7–28 day
+              meal plan with breakfast, lunch, dinner, and snacks mapped out.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <img src="images/wp-icon-pantry.png" alt="Pantry icon" />
+            <h3>Pantry-aware planning</h3>
+            <p>
+              Use what you already have first. Track pantry staples, leftovers,
+              and freezer items so less food — and money — goes to waste.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <img src="images/wp-icon-budget.png" alt="Budget icon" />
+            <h3>Budget and store sales</h3>
+            <p>
+              Set a weekly food budget, then add local grocery PDFs (PLUS plan)
+              so your shopping list leans on real-world deals.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <img src="images/wp-icon-movement.png" alt="Movement icon" />
+            <h3>Daily movement stack</h3>
+            <p>
+              Keep it low-impact and realistic: short sessions of walking,
+              stretching, Tai Chi, or your favorite routine — built right into
+              the plan.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Pricing & tiers -->
+      <section class="section">
+        <div class="section-header">
+          <span class="badge">Pricing · Prototype only</span>
+          <h2>Pick a plan length that fits your month.</h2>
+          <p>
+            Try 7 days, 14 days, 21 days, or a full 28-day month. Longer bundles
+            save you more per week.
+          </p>
+        </div>
+
+        <div class="pricing-layout">
+          <div class="pricing-summary">
+            <p>
+              Wellness Pilot builds a fresh plan every time you run it. During
+              your active subscription period, you can
+              <strong>reset your plan as often as you like</strong> — handy if
+              life happens and your pantry changes mid-week.
+            </p>
+
+            <div class="price-toggle">
+              <button class="is-active" type="button">
+                7-day week · $9.99
+              </button>
+              <button type="button">14-day bundle · $17.99</button>
+              <button type="button">21-day bundle · $24.99</button>
+              <button type="button">28-day month · $29.99</button>
             </div>
 
-            <div class="hero-preview">
-              <aside class="snapshot-card" aria-label="Example weekly snapshot">
-                <div class="snapshot-label">Weekly snapshot · demo preview</div>
-                <div class="snapshot-title">What members see every week</div>
+            <p style="font-size: 13px; color: var(--wp-text-subtle)">
+              All plans include one full run of the Wellness Pilot wizard and
+              unlimited re-runs during your active period. Pricing and features
+              shown here are for demo purposes only.
+            </p>
+          </div>
 
-                <div class="snapshot-table">
-                  <div class="snapshot-row">
-                    <div class="snapshot-label-cell">Date range</div>
-                    <div class="snapshot-value">Dec 1 – Dec 7 (demo)</div>
-                  </div>
-                  <div class="snapshot-row">
-                    <div class="snapshot-label-cell">Calorie target</div>
-                    <div class="snapshot-value">2,200 kcal / day</div>
-                  </div>
-                  <div class="snapshot-row">
-                    <div class="snapshot-label-cell">Sodium focus</div>
-                    <div class="snapshot-value">
-                      <span class="snapshot-chip">Aggressive reduction</span>
-                    </div>
-                  </div>
-                  <div class="snapshot-row">
-                    <div class="snapshot-label-cell">Weekly budget</div>
-                    <div class="snapshot-value">$75.00 (example)</div>
-                  </div>
-                  <div class="snapshot-row">
-                    <div class="snapshot-label-cell">Movement stack</div>
-                    <div class="snapshot-value">Radio Taiso · Tai Chi · 2,500 steps</div>
-                  </div>
+          <div class="pricing-grid">
+            <!-- BASIC -->
+            <article class="plan-card">
+              <div class="plan-name">
+                <h3>Basic</h3>
+                <div class="plan-price">
+                  $9.99 <span>/ week (7-day)</span>
                 </div>
-
-                <p class="snapshot-foot">
-                  Preview only — your real snapshot will update as your goals and pantry change.
-                </p>
-
-                <ul class="snapshot-bullets">
-                  <li>Pantry-aware menus tied to your sodium &amp; calorie targets.</li>
-                  <li>Weekly grocery list you can print or keep on your phone.</li>
-                  <li>One-tap swaps when your schedule changes mid-week.</li>
-                </ul>
-
-                <a href="dashboard.html" class="snapshot-cta">
-                  View the demo Weekly Snapshot
-                </a>
-              </aside>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- WHAT MEMBERS GET FOR $9.99/WEEK -->
-      <section class="section members-section">
-        <div class="card">
-          <div class="card-inner">
-            <div class="section-header">
-              <div class="section-kicker">Membership overview</div>
-              <h2 class="section-title">What members get for $9.99/week</h2>
-              <p class="section-subtitle">
-                The goal is simple: help you protect your health, simplify your week, and save
-                enough on groceries to more than cover the cost of the plan.
-              </p>
-            </div>
-
-            <div class="members-heading">
-              <div class="members-logo">
-                <img src="images/tkm-logo.png" alt="TKM VitalMetric Wellness" />
               </div>
-              <div class="members-brand-text">
-                <div class="members-brand-name">TKM VITALMETRIC WELLNESS</div>
-                <div class="members-brand-tag">A weekly wellness mission control for real life</div>
-              </div>
-            </div>
-
-            <div class="members-body">
-              <ul class="members-list">
-                <li>A full 7-day meal and snack structure tuned to your sodium and calorie targets.</li>
-                <li>A grocery list that leans on your existing pantry first to reduce waste.</li>
-                <li>
-                  A gentle movement stack that fits your joints, schedule, and energy level — no
-                  extreme workouts required.
-                </li>
-                <li>A Weekly Snapshot tile that summarizes your plan at a glance.</li>
-                <li>
-                  A printable multi-page PDF you can stick on the fridge or bring to appointments.
-                </li>
-                <li>
-                  Quick-swap meal ideas for busy days when your schedule or energy changes mid-week.
-                </li>
+              <ul class="plan-list">
+                <li>Full 13-step onboarding wizard</li>
+                <li>Weekly meal & snack plan (7–28 days)</li>
+                <li>Pantry-aware grocery list</li>
+                <li>Movement stack added to each day</li>
+                <li>Unlimited plan resets during your active week</li>
               </ul>
-
-              <p class="members-price-note">
-                In many cases, members save more in reduced food waste and fewer impulse purchases
-                than they spend on the subscription.
-              </p>
-            </div>
+              <div class="plan-cta-row">
+                <a href="signup.html" class="btn btn-secondary">
+                  Start basic free trial
+                </a>
+                <span>Upgrade to PLUS anytime.</span>
+              </div>
+            </article>
+            <!-- PLUS -->
+            <article class="plan-card highlight">
+              <div class="plan-badge">Most flexibility</div>
+              <div class="plan-name">
+                <h3>Plus</h3>
+                <div class="plan-price">
+                  $29.99 <span>/ 28-day month (example)</span>
+                </div>
+              </div>
+              <ul class="plan-list">
+                <li>Everything in Basic</li>
+                <li>
+                  Upload local grocery <strong>PDF ads</strong> so Wellness
+                  Pilot can highlight sale items in your plan.
+                </li>
+                <li>
+                  Choose one-store or multi-store options to balance savings and
+                  convenience.
+                </li>
+                <li>
+                  Unlimited plan resets during your active month — perfect when
+                  houseguests or schedule changes disrupt your week.
+                </li>
+                <li>Priority access to new features.</li>
+              </ul>
+              <div class="plan-cta-row">
+                <a href="signup.html" class="btn btn-primary">
+                  Try PLUS free for 7 days
+                </a>
+                <span>No long-term contracts. Cancel anytime.</span>
+              </div>
+            </article>
           </div>
         </div>
       </section>
-
-      <!-- HOW IT WORKS -->
-      <section class="section">
-        <div class="section-header">
-          <div class="section-kicker">Simple weekly rhythm</div>
-          <h2 class="section-title">How it works (once the full system is live)</h2>
-          <p class="section-subtitle">
-            This prototype shows the exact flow your members will use — from creating an account to
-            reviewing their Weekly Snapshot and updating next week’s plan.
-          </p>
-        </div>
-
-        <div class="steps-grid">
-          <article class="step-card">
-            <div class="step-header">
-              <div class="step-number">1</div>
-              <div class="step-title">Create your account</div>
-            </div>
-            <div class="step-body">
-              Sign up, confirm your email, and start a 7-day free trial so you can explore the full
-              planner without commitment.
-            </div>
-          </article>
-
-          <article class="step-card">
-            <div class="step-header">
-              <div class="step-number">2</div>
-              <div class="step-title">Complete onboarding</div>
-            </div>
-            <div class="step-body">
-              Answer guided questions about food preferences, sodium goals, pantry, budget, stores,
-              movement, and schedule.
-            </div>
-          </article>
-
-          <article class="step-card">
-            <div class="step-header">
-              <div class="step-number">3</div>
-              <div class="step-title">Generate your weekly plan</div>
-            </div>
-            <div class="step-body">
-              The system selects recipes, builds a meal map, and creates your Weekly Snapshot,
-              grocery list, and movement stack for the week.
-            </div>
-          </article>
-
-          <article class="step-card">
-            <div class="step-header">
-              <div class="step-number">4</div>
-              <div class="step-title">Follow your mission dashboard</div>
-            </div>
-            <div class="step-body">
-              Your dashboard keeps everything in one place so you can quickly see your day, swap
-              meals, and print an updated PDF whenever your week changes.
-            </div>
-          </article>
-        </div>
-      </section>
-<!-- HEALTHY MEALS FEATURES -->
-      <section class="section">
-        <div class="section-header">
-          <div class="section-kicker">Built for real calendars</div>
-          <h2 class="section-title">Healthy meals built around your real life</h2>
-          <p class="section-subtitle">
-            TKM VitalMetric Wellness starts with your pantry, your stores, and your movement
-            capacity — not an imaginary perfect week.
-          </p>
-        </div>
-
-        <div class="features-grid">
-          <article class="feature-card">
-            <div class="feature-icon-placeholder">Img</div>
-            <div class="feature-title">Smart pantry-aware planning</div>
-            <div class="feature-body">
-              Use what you already own first, then fill the gaps. Future versions will read full
-              pantry lists and store sales to minimize waste.
-            </div>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon-placeholder">Img</div>
-            <div class="feature-title">Low-sodium, budget-conscious menus</div>
-            <div class="feature-body">
-              Plan realistic meals that respect your sodium goals, calorie targets, and weekly food
-              budget — without starting from scratch every Sunday.
-            </div>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon-placeholder">Img</div>
-            <div class="feature-title">Built-in movement stack</div>
-            <div class="feature-body">
-              Radio Taiso, Tai Chi, and walking blocks are woven into your daily plan so movement
-              feels automatic instead of “extra.”
-            </div>
-          </article>
-
-          <article class="feature-card">
-            <div class="feature-icon-placeholder">Img</div>
-            <div class="feature-title">Printable weekly PDF &amp; reports</div>
-            <div class="feature-body">
-              A clean multi-page summary you can keep on the fridge, in a binder, or bring to
-              doctor visits to track progress over time.
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- QUICKSWAP CONCEPT -->
-      <section class="section">
-        <div class="section-header">
-          <div class="section-kicker">When life blows up your schedule</div>
-          <h2 class="section-title">Quick-swap meal helper (concept preview)</h2>
-          <p class="section-subtitle">
-            Busy day? Doctor’s appointment moved? In the full version, you’ll tap a button, choose
-            how many minutes you have, and get 2–3 low-sodium ideas using ingredients you already
-            own.
-          </p>
-        </div>
-
-        <div class="quickswap-layout">
-          <div class="quickswap-text">
-            <p>
-              Quick-swap will live inside your Weekly Snapshot. When real life changes, you won’t
-              have to scrap your whole plan — you’ll just swap a meal or snack.
-            </p>
-            <ul>
-              <li>Choose how much time you have (3–10, 10–20 minutes, etc.).</li>
-              <li>Tell it what equipment you can use right now.</li>
-              <li>
-                Get 2–3 realistic options that respect your sodium and calorie targets, using your
-                actual pantry items.
-              </li>
-            </ul>
-            <p>
-              In this prototype, Quick-swap is a concept only. The full version will connect to your
-              real pantry and recipe database.
-            </p>
-          </div>
-
-          <aside class="quickswap-card" aria-label="Quick-swap concept">
-            <div class="quickswap-pill">Coming soon</div>
-            <div class="quickswap-quote">
-              “I’ve got <span>10 minutes</span> and leftover chicken…”
-            </div>
-            <div class="quickswap-body">
-              Imagine tapping a button and getting two or three quick, low-sodium ideas that fit
-              your time, your tools, and your Weekly Snapshot targets — without blowing your plan.
-            </div>
-            <ul class="quickswap-mini-list">
-              <li>Uses your actual pantry and preferences.</li>
-              <li>Suggests swaps that keep sodium on track.</li>
-              <li>Respects tonight’s energy level and time window.</li>
-            </ul>
-            <div class="quickswap-note">
-              Prototype only — this card shows the direction of the feature, not live data.
-            </div>
-          </aside>
-        </div>
-      </section>
-      
-      </main>
+    </main>
 
     <!-- FOOTER -->
     <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="footer-left">
-          <div class="footer-logo">
-            <img src="images/tkm-logo.png" alt="TKM VitalMetric Wellness logo" />
-          </div>
-          <div>
-            <div class="footer-text-main">TKM VITALMETRIC WELLNESS</div>
-            <div class="footer-text-sub">
-              Prototype demonstration — not medical advice. Always consult your clinician about
-              diet, sodium, and movement changes.
-            </div>
-          </div>
-        </div>
-
-        <div class="footer-right">
-          &copy; 2025 TKM VitalMetric Wellness. All rights reserved.
-        </div>
-      </div>
+      Wellness Pilot is a prototype created by TKM Design Group using
+      AI-assisted planning. No medical advice is provided.
     </footer>
-  </div>
-</body>
+
+    <script src="app.js" defer></script>
+  </body>
 </html>
