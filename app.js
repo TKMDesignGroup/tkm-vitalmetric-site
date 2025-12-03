@@ -1,24 +1,12 @@
-// app.js - simple, stable mobile menu for Wellness Pilot
+// app.js — simple mobile navigation toggle
 
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.querySelector(".wp-menu-toggle");
-  const nav = document.querySelector(".wp-nav");
+document.addEventListener("DOMContentLoaded", function () {
+  var toggle = document.querySelector(".nav-toggle");
+  var body = document.body;
 
-  // If either is missing, quietly do nothing
-  if (!toggle || !nav) {
-    return;
-  }
+  if (!toggle) return;
 
-  // Open/close the mobile menu when the 3-line button is tapped
-  toggle.addEventListener("click", () => {
-    nav.classList.toggle("wp-nav-open");
-  });
-
-  // When the user taps a link in the menu, close the menu
-  const navLinks = nav.querySelectorAll("a");
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("wp-nav-open");
-    });
+  toggle.addEventListener("click", function () {
+    body.classList.toggle("nav-open");
   });
 });
