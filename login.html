@@ -7,109 +7,134 @@
   <link rel="stylesheet" href="style.css" />
   <script defer src="app.js"></script>
 </head>
-<body class="page page-auth page-login">
-    <!-- SITE HEADER -->
-    <header class="site-header">
-        <div class="container header-inner">
-            <a href="index.html" class="brand">
-                <img src="images/wp-main-logo.png" alt="Wellness Pilot logo" class="brand-logo" />
-                <div class="brand-text">
-                    <span class="brand-title">Wellness Pilot</span>
-                    <span class="brand-subtitle">A TKM Group Company</span>
-                </div>
-            </a>
-
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span class="nav-toggle-bar"></span>
-                <span class="nav-toggle-bar"></span>
-                <span class="nav-toggle-bar"></span>
-            </button>
-
-            <nav class="header-nav">
-                <a href="index.html">Home</a>
-                <a href="onboarding.html">Start Plan</a>
-                <a href="dashboard.html">Demo Dashboard</a>
-                <a href="login.html" class="is-active">Sign In</a>
-            </nav>
+<body class="page page-login">
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-brand">
+        <img
+          src="images/wp-logo-dark-square.png"
+          alt="Wellness Pilot logo"
+          class="header-logo"
+        />
+        <div class="header-text">
+          <span class="header-title">Wellness Pilot</span>
+          <span class="header-subtitle">A TKM Group Company</span>
         </div>
-    </header>
+      </a>
 
-    <!-- MAIN CONTENT -->
-    <main class="page-main">
-        <div class="container auth-container">
-            <section class="card auth-card">
-                <header class="card-header auth-header">
-                    <p class="eyebrow">Member access · Demo only</p>
-                    <h1>Sign in to Wellness Pilot</h1>
-                    <p class="auth-lede">
-                        This is a front-end prototype. No real accounts are created and no passwords are stored.
-                        Use this page to preview the sign-in experience and then jump to the demo dashboard.
-                    </p>
-                </header>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="dashboard.html" class="nav-link">Demo Dashboard</a>
+        <a href="onboarding.html" class="nav-link">Start Plan</a>
+        <a href="login.html" class="nav-link nav-link-current">Sign In</a>
+      </nav>
 
-                <div class="card-body">
-                    <form class="auth-form" action="dashboard.html" method="get">
-                        <div class="form-row">
-                            <label for="login_email">Email address</label>
-                            <input
-                                type="email"
-                                id="login_email"
-                                name="email"
-                                autocomplete="email"
-                                placeholder="you@example.com"
-                                required
-                            />
-                        </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
+    </div>
 
-                        <div class="form-row">
-                            <label for="login_password">Password</label>
-                            <input
-                                type="password"
-                                id="login_password"
-                                name="password"
-                                autocomplete="current-password"
-                                placeholder="••••••••"
-                                required
-                            />
-                        </div>
+    <nav class="site-nav-overlay">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <a href="dashboard.html" class="nav-link">Demo Dashboard</a>
+      <a href="onboarding.html" class="nav-link">Start Plan</a>
+      <a href="login.html" class="nav-link">Sign In</a>
+    </nav>
+  </header>
 
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-primary btn-wide">
-                                Sign in (demo only)
-                            </button>
-                        </div>
+  <main class="page-main">
+    <section class="page-hero page-hero--compact">
+      <div class="page-hero-inner">
+        <p class="page-kicker">Member access · Demo only</p>
+        <h1>Sign in to Wellness Pilot</h1>
+        <p class="page-lead">
+          This is a front-end prototype. No real accounts are created and no
+          passwords are stored. Use this page to preview the sign-in
+          experience and then jump to the demo dashboard.
+        </p>
+      </div>
+    </section>
 
-                        <div class="auth-divider">
-                            <span>or</span>
-                        </div>
+    <section class="section">
+      <div class="container">
+        <div class="card auth-card">
+          <header class="card-header">
+            <p class="eyebrow">Member access · Prototype</p>
+            <h2>Sign in (demo only)</h2>
+          </header>
+          <div class="card-body">
+            <form action="dashboard.html" method="get" class="auth-form">
+              <label class="form-label" for="login_email">
+                Email address
+                <input
+                  type="email"
+                  id="login_email"
+                  name="email"
+                  placeholder="you@example.com"
+                  required
+                />
+              </label>
 
-                        <div class="form-actions">
-                            <!-- Fake Google sign-in button – just a front-end demo -->
-                            <button
-                                type="button"
-                                class="btn btn-ghost btn-with-icon btn-google-demo"
-                                onclick="window.location.href='dashboard.html';"
-                            >
-                                <span class="btn-icon-circle">G</span>
-                                <span>Continue with Google (demo)</span>
-                            </button>
-                        </div>
-                    </form>
-                </div>
+              <label class="form-label" for="login_password">
+                Password
+                <input
+                  type="password"
+                  id="login_password"
+                  name="password"
+                  placeholder="••••••••"
+                  required
+                />
+              </label>
 
-                <footer class="card-footer auth-footer">
-                    <p class="auth-footnote">
-                        Prototype only – no real authentication happens here.
-                        In the full system, this page will connect to a secure backend and Stripe-powered
-                        subscriptions.
-                    </p>
-                    <p class="auth-switch">
-                        Don’t have an account yet?
-                        <a href="signup.html">Create one (demo)</a>
-                    </p>
-                </footer>
-            </section>
+              <button type="submit" class="btn btn-primary btn-block">
+                Sign in (demo only)
+              </button>
+
+              <p class="auth-note">
+                In the real app, this would verify your account and then take
+                you to your live dashboard.
+              </p>
+            </form>
+          </div>
         </div>
-    </main>
+      </div>
+    </section>
+  </main>
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img
+          src="images/wp-logo-dark-square.png"
+          alt="Wellness Pilot logo"
+          class="footer-logo"
+        />
+        <div>
+          <div class="footer-title">Wellness Pilot</div>
+          <div class="footer-subtitle">
+            © 2025 Wellness Pilot — A TKM Group Company
+          </div>
+        </div>
+      </div>
+
+      <nav class="footer-nav">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="pricing.html" class="footer-link">Pricing</a>
+        <a href="dashboard.html" class="footer-link">Demo Dashboard</a>
+        <a href="onboarding.html" class="footer-link">Start Plan</a>
+        <a href="login.html" class="footer-link">Sign In</a>
+      </nav>
+
+      <p class="footer-note">
+        Prototype only — for demonstration purposes, not medical or financial
+        advice.
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
