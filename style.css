@@ -891,3 +891,132 @@ body {
   color: #6b7280; /* muted grey */
   margin-top: 0.5rem;
 }
+/* ---------- HEADER LINK FIXES ---------- */
+
+.site-header a,
+.site-header a:visited {
+  color: #f8fbff;
+  text-decoration: none;
+}
+
+.site-header a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- ONBOARDING WIZARD LAYOUT ---------- */
+
+.onboarding-main {
+  padding-top: 2rem;
+}
+
+/* Pills across the top: 1 · Profile, 2 · Plan settings, etc. */
+.wizard-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.step-pill {
+  border-radius: 999px;
+  border: 1px solid #c7d4e8;
+  background: #f5f7fb;
+  font-size: 0.8rem;
+  padding: 0.35rem 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.step-pill.active {
+  background: #1d71f2;
+  color: #ffffff;
+  border-color: #1d71f2;
+}
+
+.step-pill.completed {
+  background: #d1ecff;
+  border-color: #62b3ff;
+}
+
+/* "Step X of 13" label under the pills */
+.wizard-step-label {
+  font-size: 0.85rem;
+  color: #5c6b86;
+  margin-bottom: 0.75rem;
+}
+
+/* Each step card – IMPORTANT: only the active one shows */
+.onboarding-step {
+  display: none;
+  margin-top: 1.5rem;
+}
+
+.onboarding-step.active {
+  display: block;
+}
+
+/* Card that wraps each step */
+.step-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid #dde5f3;
+  padding: 1.25rem 1.25rem 1.5rem;
+  box-shadow: 0 8px 24px rgba(10, 40, 80, 0.06);
+}
+
+/* Little gray note text under step titles */
+.step-note {
+  font-size: 0.9rem;
+  color: #5c6b86;
+  margin-bottom: 1rem;
+}
+
+/* Bottom navigation (Back / Next buttons) */
+.wizard-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.wizard-btn {
+  border-radius: 999px;
+  border: 1px solid #c7d4e8;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: #f5f7fb;
+}
+
+.wizard-btn:hover {
+  background: #e1e8f7;
+}
+
+.wizard-btn.primary-submit,
+.wizard-btn.next-btn {
+  background: #00a76f;
+  border-color: #00a76f;
+  color: #ffffff;
+}
+
+.wizard-btn.primary-submit:hover,
+.wizard-btn.next-btn:hover {
+  background: #008a5c;
+}
+
+/* On small screens keep cards nicely spaced */
+@media (max-width: 768px) {
+  .step-card {
+    padding: 1.1rem 1rem 1.35rem;
+  }
+
+  .wizard-steps {
+    gap: 0.4rem;
+  }
+
+  .step-pill {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.7rem;
+  }
+}
