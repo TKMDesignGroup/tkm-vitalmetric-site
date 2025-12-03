@@ -1,183 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Weekly Snapshot • TKM VitalMetric Wellness</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="app.js" defer></script>
-</head>
-<body>
-  <div class="page">
-    <!-- Shared header -->
-    <header class="site-header">
-      <div class="header-inner">
+<html lang="en" data-page="dashboard">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Wellness Pilot – Demo dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- shared header -->
+    <header class="site-header" id="site-header">
+      <div class="site-header-inner">
         <a href="index.html" class="brand">
-          <div class="brand-logo">
-            <img src="images/tkm-logo.png" alt="TKM VitalMetric Wellness logo" />
-          </div>
+          <img
+            src="images/wp-logo-primary-square.png"
+            alt="Wellness Pilot logo"
+          />
           <div class="brand-text">
-            <div class="brand-name">TKM VITALMETRIC WELLNESS</div>
-            <div class="brand-tagline">Weekly wellness mission control</div>
+            <div class="brand-title">Wellness Pilot</div>
+            <div class="brand-subtitle">Weekly wellness mission control</div>
           </div>
         </a>
 
-        <nav class="main-nav">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="onboarding.html" class="nav-link">Start Plan</a>
-          <a href="dashboard.html" class="nav-link active">Demo Dashboard</a>
-          <a href="login.html" class="nav-link">Sign In</a>
-          <a href="signup.html" class="nav-link nav-cta">7-day free trial · then $9.99/wk</a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          id="nav-toggle"
+        >
+          ☰
+        </button>
+
+        <nav class="nav-links" id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="onboarding.html">Start plan</a>
+          <a href="dashboard.html" class="is-active">Demo dashboard</a>
+          <a href="login.html">Sign in</a>
+          <a href="signup.html" class="nav-cta">7-day free trial</a>
         </nav>
       </div>
     </header>
 
-    <main class="main-content">
-      <!-- Dashboard intro -->
+    <main class="page-shell">
       <section class="section">
         <div class="section-header">
-          <div class="section-kicker">Weekly snapshot · demo only</div>
-          <h1 class="section-title">Your Weekly Wellness Mission Control (Demo)</h1>
-          <p class="section-subtitle">
-            This page shows a sample Weekly Snapshot using fixed demo values. In the full system,
-            your actual onboarding answers, pantry, and recipes will drive everything you see here.
+          <span class="badge">Demo preview</span>
+          <h2>Your Weekly Snapshot (example data only)</h2>
+          <p>
+            In the live app, this dashboard would be generated from your
+            onboarding answers, pantry, and chosen store ads.
           </p>
         </div>
-      </section>
-      <!-- Main snapshot card -->
-      <section class="section">
-        <div class="card">
-          <div class="card-inner">
-            <div class="section-header">
-              <div class="section-kicker">Core overview</div>
-              <h2 class="section-title">Weekly Snapshot · Demo Values</h2>
-              <p class="section-subtitle">
-                Think of this as your mission control tile. It keeps your key targets and focus areas
-                in one place so you always know what this week is trying to accomplish.
-              </p>
-            </div>
 
-            <div class="snapshot-table">
-              <div class="snapshot-row">
-                <div class="snapshot-label-cell">Date range</div>
-                <div class="snapshot-value">Dec 1 – Dec 7 (demo)</div>
-              </div>
-              <div class="snapshot-row">
-                <div class="snapshot-label-cell">Calorie target</div>
-                <div class="snapshot-value">2,200 kcal / day</div>
-              </div>
-              <div class="snapshot-row">
-                <div class="snapshot-label-cell">Sodium focus</div>
-                <div class="snapshot-value">
-                  <span class="snapshot-chip">Aggressive reduction</span>
+        <div class="dashboard-layout">
+          <div>
+            <article class="card snapshot-card">
+              <h3>Weekly snapshot</h3>
+              <table class="snapshot-table">
+                <thead>
+                  <tr>
+                    <th>Field</th>
+                    <th>Example value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Date range</td>
+                    <td><strong>Dec 1 – Dec 7</strong></td>
+                  </tr>
+                  <tr>
+                    <td>Daily calorie range</td>
+                    <td>2,100 – 2,300 kcal</td>
+                  </tr>
+                  <tr>
+                    <td>Focus</td>
+                    <td>Lower sodium · Added fiber</td>
+                  </tr>
+                  <tr>
+                    <td>Weekly food budget</td>
+                    <td>$75.00 (example)</td>
+                  </tr>
+                  <tr>
+                    <td>Stores</td>
+                    <td>Store A + Store B (PLUS multi-store)</td>
+                  </tr>
+                  <tr>
+                    <td>Movement stack</td>
+                    <td>Radio Taiso · Tai Chi · 2,500 steps</td>
+                  </tr>
+                </tbody>
+              </table>
+            </article>
+
+            <article class="card">
+              <h3>Today’s plan at a glance</h3>
+              <ul class="plan-list">
+                <li>Breakfast: Oatmeal with berries &amp; walnuts</li>
+                <li>Lunch: Turkey &amp; veggie wrap + apple</li>
+                <li>Dinner: Sheet-pan salmon, potatoes, and broccoli</li>
+                <li>Snack options: Yogurt cup, hummus + carrots, popcorn</li>
+                <li>Movement: 10-minute Radio Taiso + 15-minute walk</li>
+              </ul>
+            </article>
+          </div>
+
+          <aside class="card">
+            <h3>Quick actions (prototype)</h3>
+            <div class="quick-actions">
+              <div class="quick-action-card">
+                <img src="images/wp-icon-mealplanning.png" alt="" />
+                <div>
+                  <strong>Re-run this week’s plan</strong>
+                  <div>Update pantry, schedule, or goals and rebuild.</div>
                 </div>
               </div>
-              <div class="snapshot-row">
-                <div class="snapshot-label-cell">Weekly food budget</div>
-                <div class="snapshot-value">$75.00 (example)</div>
+
+              <div class="quick-action-card">
+                <img src="images/wp-icon-pantry.png" alt="" />
+                <div>
+                  <strong>Adjust pantry items</strong>
+                  <div>Add items you bought or mark things as used.</div>
+                </div>
               </div>
-              <div class="snapshot-row">
-                <div class="snapshot-label-cell">Movement stack</div>
-                <div class="snapshot-value">Radio Taiso · Tai Chi · 2,500 steps</div>
+
+              <div class="quick-action-card">
+                <img src="images/wp-icon-budget.png" alt="" />
+                <div>
+                  <strong>Upload store PDFs</strong>
+                  <div>Attach weekly ads (PLUS) to work in sale items.</div>
+                </div>
               </div>
-              <div class="snapshot-row">
-                <div class="snapshot-label-cell">Report style</div>
-                <div class="snapshot-value">Printable multi-page PDF</div>
+
+              <div class="quick-action-card">
+                <img src="images/wp-icon-reports.png" alt="" />
+                <div>
+                  <strong>Download weekly report</strong>
+                  <div>Prototype only — would generate your PDF report.</div>
+                </div>
               </div>
             </div>
 
-            <p class="snapshot-foot">
-              In the live version, these values will be generated from your onboarding answers and
-              updated whenever you change your weekly plan.
+            <p style="margin-top: 12px; font-size: 12px; color: #64748b">
+              This dashboard is a static demo. In the real system, all cards
+              here would be generated by AI from your answers and preferences.
             </p>
-          </div>
+          </aside>
         </div>
       </section>
+    </main>
 
-      <!-- Supporting panels -->
-      <section class="section">
-        <div class="section-header">
-          <div class="section-kicker">How this demo dashboard is organized</div>
-          <h2 class="section-title">Meals, sodium strategy, movement, and budget</h2>
-          <p class="section-subtitle">
-            Below are the core pieces that your future dashboard will show every week. This demo
-            uses placeholder text so you can see the layout and flow before the full AI system is
-            connected.
-          </p>
-        </div>
-
-        <div class="steps-grid">
-          <article class="step-card">
-            <div class="step-header">
-              <div class="step-number">A</div>
-              <div class="step-title">How the meals are structured</div>
-            </div>
-            <div class="step-body">
-              In the completed system, this panel would summarize how many breakfasts, lunches,
-              dinners, and snacks are planned each day, along with how leftovers are used and where
-              batch cooking appears.
-            </div>
-          </article>
-
-          <article class="step-card">
-            <div class="step-header">
-              <div class="step-number">B</div>
-              <div class="step-title">How sodium is being reduced</div>
-            </div>
-            <div class="step-body">
-              This panel will explain your sodium strategy for the week: which high-sodium items are
-              swapped out, how canned or packaged foods are limited, and where lower-sodium recipes
-              are prioritized.
-            </div>
-          </article>
-
-          <article class="step-card">
-            <div class="step-header">
-              <div class="step-number">C</div>
-              <div class="step-title">How movement is integrated</div>
-            </div>
-            <div class="step-body">
-              Here you’ll see how Radio Taiso, Tai Chi, and walking are distributed across the week,
-              with an estimated calorie burn based on your current weight and time-per-day choices.
-            </div>
-          </article>
-
-          <article class="step-card">
-            <div class="step-header">
-              <div class="step-number">D</div>
-              <div class="step-title">How budget is being respected</div>
-            </div>
-            <div class="step-body">
-              This panel will describe how the plan uses pantry items, store brands, and sale-friendly
-              recipes to stay within your weekly grocery budget while still hitting your nutrition
-              targets.
-            </div>
-          </article>
-        </div>
-      </section>
-      </main>
-
-    <!-- Shared footer -->
     <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="footer-left">
-          <div class="footer-logo">
-            <img src="images/tkm-logo.png" alt="TKM VitalMetric Wellness logo" />
-          </div>
-          <div>
-            <div class="footer-text-main">TKM VITALMETRIC WELLNESS</div>
-            <div class="footer-text-sub">
-              Prototype demonstration — not medical advice. Always consult your clinician about
-              diet, sodium, and movement changes.
-            </div>
-          </div>
-        </div>
-
-        <div class="footer-right">
-          &copy; 2025 TKM VitalMetric Wellness. All rights reserved.
-        </div>
-      </div>
+      Wellness Pilot dashboard demo · Prototype only.
     </footer>
-  </div>
-</body>
+
+    <script src="app.js" defer></script>
+  </body>
 </html>
