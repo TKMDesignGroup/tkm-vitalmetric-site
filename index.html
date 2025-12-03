@@ -2,23 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Wellness Pilot – Weekly Wellness Mission Control</title>
+  <title>Wellness Pilot – Weekly wellness mission control</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Wellness Pilot turns your pantry, budget, and schedule into a realistic weekly wellness plan with meals, snacks, movement, and a smart grocery list."
-  />
   <link rel="stylesheet" href="style.css" />
-  <script defer src="app.js"></script>
 </head>
 <body class="wp-body">
-  <!-- Site header + navigation -->
+  <!-- Site shell -->
   <header class="wp-header">
-    <div class="wp-container wp-nav">
+    <div class="wp-header-inner">
       <a href="index.html" class="wp-brand">
         <img
           src="images/wp-logo-primary-square.png"
-          alt="Wellness Pilot Logo"
+          alt="Wellness Pilot logo"
           class="wp-brand-logo"
         />
         <div class="wp-brand-text">
@@ -27,292 +22,302 @@
         </div>
       </a>
 
-      <nav class="wp-nav-links" id="primaryNav">
-        <a href="index.html" class="wp-nav-link wp-nav-link-active">Home</a>
-        <a href="onboarding.html" class="wp-nav-link">Start Plan</a>
-        <a href="dashboard.html" class="wp-nav-link">Demo Dashboard</a>
-        <a href="pricing.html" class="wp-nav-link">Pricing</a>
-        <a href="login.html" class="wp-nav-link wp-nav-link-outline">Sign In</a>
-        <a href="signup.html" class="wp-nav-link wp-nav-link-primary">Get Started</a>
-      </nav>
-
-      <button
-        class="wp-nav-toggle"
-        id="navToggle"
-        aria-label="Toggle navigation menu"
-        aria-expanded="false"
-      >
-        <span class="wp-nav-toggle-bar"></span>
-        <span class="wp-nav-toggle-bar"></span>
-        <span class="wp-nav-toggle-bar"></span>
+      <button class="wp-menu-toggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
+
+      <nav class="wp-nav">
+        <a href="index.html" class="wp-nav-link wp-nav-link-active">Home</a>
+        <a href="pricing.html" class="wp-nav-link">Pricing</a>
+        <a href="dashboard.html" class="wp-nav-link">Demo Dashboard</a>
+        <a href="onboarding.html" class="wp-nav-link">Start Plan</a>
+        <a href="login.html" class="wp-nav-link">Sign In</a>
+      </nav>
     </div>
   </header>
-  <!-- Hero section -->
+
   <main>
-    <section
-      class="wp-hero"
-      style="background-image: url('images/wp-bg-hero-abstract.png');"
-    >
-      <div class="wp-hero-overlay">
-        <div class="wp-container wp-hero-grid">
-          <div class="wp-hero-text">
-            <p class="wp-pill">Prototype · UI only · No real data</p>
-            <h1 class="wp-hero-title">
-              Your weekly wellness<br />
-              mission control.
-            </h1>
-            <p class="wp-hero-subtitle">
-              Build a full week of meals, snacks, exercise, and a smart grocery
-              list that respects your <strong>budget</strong>,
-              <strong>time</strong>, and <strong>preferences</strong> – all
-              powered by your pantry and local store sales.
-            </p>
-
-            <div class="wp-hero-actions">
-              <a href="onboarding.html" class="wp-btn wp-btn-primary">
-                Start your weekly plan
-              </a>
-              <a href="dashboard.html" class="wp-btn wp-btn-ghost">
-                Preview demo dashboard
-              </a>
-            </div>
-
-            <p class="wp-hero-footnote">
-              Try it free for 7 days, then from <strong>$5.99/month</strong>.
-              Longer bundles (14, 21, or 28 days) save more per week.
-            </p>
+    <!-- HERO -->
+    <section class="wp-hero">
+      <div class="wp-hero-gradient"></div>
+      <div class="wp-hero-inner">
+        <div class="wp-hero-copy">
+          <div class="wp-pill-label">
+            Prototype · UI only · No real data
           </div>
-          <!-- Right side hero card -->
-          <aside class="wp-hero-card">
-            <h2 class="wp-hero-card-title">Weekly snapshot · Demo preview</h2>
-            <dl class="wp-hero-card-list">
-              <div class="wp-hero-row">
-                <dt>Date range</dt>
-                <dd>Dec 1 – Dec 7 (example)</dd>
-              </div>
-              <div class="wp-hero-row">
-                <dt>Calorie target</dt>
-                <dd>2,200 kcal / day</dd>
-              </div>
-              <div class="wp-hero-row">
-                <dt>Nutrition focus</dt>
-                <dd>Balance of protein, carbs, and fiber</dd>
-              </div>
-              <div class="wp-hero-row">
-                <dt>Weekly food budget</dt>
-                <dd>$75.00 (example)</dd>
-              </div>
-              <div class="wp-hero-row">
-                <dt>Exercise & activity</dt>
-                <dd>Daily walking + light strength sessions</dd>
-              </div>
-            </dl>
-            <p class="wp-hero-card-note">
-              Preview only – your real snapshot will reflect your onboarding
-              answers, pantry, and store sales.
-            </p>
-          </aside>
+          <h1 class="wp-hero-title">
+            Your weekly wellness mission control.
+          </h1>
+          <p class="wp-hero-text">
+            Build a full week of meals, snacks, exercise, and a smart grocery
+            list that respects your <strong>budget</strong>,
+            <strong>time</strong>, and <strong>preferences</strong> – all
+            powered by your pantry and local store sales.
+          </p>
+
+          <div class="wp-hero-actions">
+            <a href="onboarding.html" class="wp-btn wp-btn-primary">
+              Start your weekly plan
+            </a>
+            <a href="dashboard.html" class="wp-btn wp-btn-ghost">
+              Preview demo dashboard
+            </a>
+          </div>
+
+          <p class="wp-hero-footnote">
+            Try it free for 7 days, then from <strong>$5.99/month</strong>.
+            Longer bundles (14, 21, or 28 days) save more per week.
+          </p>
         </div>
+
+        <aside class="wp-hero-card" aria-label="Weekly snapshot demo">
+          <h2 class="wp-card-title">Weekly snapshot · Demo preview</h2>
+          <p class="wp-card-subtitle">
+            What members see every week at a glance.
+          </p>
+          <dl class="wp-snapshot-list">
+            <div class="wp-snapshot-row">
+              <dt>Date range</dt>
+              <dd>Dec 1 – Dec 7 (example)</dd>
+            </div>
+            <div class="wp-snapshot-row">
+              <dt>Calorie target</dt>
+              <dd>2,200 kcal / day</dd>
+            </div>
+            <div class="wp-snapshot-row">
+              <dt>Nutrition focus</dt>
+              <dd>Balance of protein, carbs, and fiber</dd>
+            </div>
+            <div class="wp-snapshot-row">
+              <dt>Weekly food budget</dt>
+              <dd>$75.00 (example)</dd>
+            </div>
+            <div class="wp-snapshot-row">
+              <dt>Exercise &amp; activity</dt>
+              <dd>Daily walking + light strength sessions</dd>
+            </div>
+          </dl>
+          <p class="wp-card-footnote">
+            Preview only – your real snapshot will reflect your onboarding
+            answers, pantry, and store sales.
+          </p>
+        </aside>
       </div>
     </section>
-    <!-- Four core features -->
+
+    <!-- WHAT WELLNESS PILOT HANDLES -->
     <section class="wp-section">
-      <div class="wp-container">
+      <div class="wp-section-inner">
         <h2 class="wp-section-title">What Wellness Pilot handles for you</h2>
-        <p class="wp-section-subtitle">
+        <p class="wp-section-lead">
           Answer a short onboarding wizard once. We turn it into realistic,
           pantry-first plans you can actually follow.
         </p>
 
         <div class="wp-feature-grid">
-          <!-- Smart weekly meal planning -->
+          <!-- Card 1 -->
           <article class="wp-feature-card">
             <img
               src="images/wp-icon-mealplanning.png"
-              alt="Smart weekly meal planning icon"
+              alt="Meal planning calendar icon"
               class="wp-feature-icon"
             />
-            <h3>Smart weekly meal planning</h3>
-            <p>
-              Turn your food preferences, schedule, and goals into a 7–28 day
-              plan with breakfast, lunch, dinner, snacks, and leftovers mapped
-              out.
-            </p>
+            <div class="wp-feature-content">
+              <h3 class="wp-feature-title">Smart weekly meal planning</h3>
+              <p class="wp-feature-text">
+                Turn your food preferences, schedule, and goals into a 7–28 day
+                plan with breakfast, lunch, dinner, snacks, and leftovers
+                mapped out.
+              </p>
+            </div>
           </article>
 
-          <!-- Pantry-aware planning -->
+          <!-- Card 2 -->
           <article class="wp-feature-card">
             <img
               src="images/wp-icon-pantry.png"
-              alt="Pantry-aware planning icon"
+              alt="Pantry and storage icon"
               class="wp-feature-icon"
             />
-            <h3>Pantry-aware planning</h3>
-            <p>
-              Use what you already have first. Track pantry staples, leftovers,
-              and freezer items so less food — and money — goes to waste.
-            </p>
+            <div class="wp-feature-content">
+              <h3 class="wp-feature-title">Pantry-aware planning</h3>
+              <p class="wp-feature-text">
+                Use what you already have first. Track pantry staples,
+                leftovers, and freezer items so less food — and money — goes to
+                waste.
+              </p>
+            </div>
           </article>
-
-          <!-- Budget & store sales -->
+          <!-- Card 3 -->
           <article class="wp-feature-card">
             <img
               src="images/wp-icon-budget.png"
-              alt="Budget and store sales icon"
+              alt="Budget clipboard icon"
               class="wp-feature-icon"
             />
-            <h3>Budget & store sales</h3>
-            <p>
-              Set a weekly food budget. In the PLUS plan, you can upload local
-              grocery PDFs so your shopping list leans on real-world deals.
-            </p>
+            <div class="wp-feature-content">
+              <h3 class="wp-feature-title">Budget &amp; store sales</h3>
+              <p class="wp-feature-text">
+                Set a weekly food budget. In the PLUS plan, you can upload
+                local grocery PDFs so your shopping list leans on real-world
+                deals.
+              </p>
+            </div>
           </article>
 
-          <!-- Exercise & activity -->
+          <!-- Card 4 -->
           <article class="wp-feature-card">
             <img
               src="images/wp-icon-movement.png"
               alt="Exercise and activity icon"
               class="wp-feature-icon"
             />
-            <h3>Exercise &amp; activity</h3>
-            <p>
-              Keep it low-impact or train hard. Build in walking, stretching,
-              Tai Chi, gym workouts, or training blocks — matched to your
-              realistic week.
-            </p>
+            <div class="wp-feature-content">
+              <h3 class="wp-feature-title">Exercise &amp; activity</h3>
+              <p class="wp-feature-text">
+                Keep it low-impact or train hard. Build in walking, stretching,
+                Tai Chi, gym workouts, or training blocks — matched to your
+                realistic week.
+              </p>
+            </div>
           </article>
         </div>
       </div>
     </section>
-    <!-- How it works -->
-    <section class="wp-section wp-section-alt">
-      <div class="wp-container wp-how-grid">
-        <div>
-          <h2 class="wp-section-title">How it works</h2>
-          <ol class="wp-how-steps">
-            <li>
-              <strong>Answer the onboarding wizard.</strong>
-              Share your goals, food likes/dislikes, pantry, budget, schedule,
-              and exercise preferences.
-            </li>
-            <li>
-              <strong>Review your weekly dashboard.</strong>
-              See a clear snapshot of meals, snacks, movement, and your
-              estimated grocery total.
-            </li>
-            <li>
-              <strong>Shop your smart list.</strong>
-              Take a grocery list that respects your budget and uses what you
-              already have in your pantry and freezer.
-            </li>
-            <li>
-              <strong>Reset plans when life happens.</strong>
-              During an active subscription, you can rerun your plan as often as
-              you like when your pantry or schedule changes.
-            </li>
-          </ol>
-        </div>
 
-        <aside class="wp-card wp-pricing-teaser">
+    <!-- HOW IT WORKS -->
+    <section class="wp-section wp-section-alt">
+      <div class="wp-section-inner">
+        <h2 class="wp-section-title">How it works</h2>
+        <ol class="wp-how-list">
+          <li>
+            <strong>Answer the onboarding wizard.</strong> Share your goals,
+            food likes/dislikes, pantry, budget, schedule, and exercise
+            preferences.
+          </li>
+          <li>
+            <strong>Review your weekly dashboard.</strong> See a clear snapshot
+            of meals, snacks, movement, and your estimated grocery total.
+          </li>
+          <li>
+            <strong>Shop your smart list.</strong> Take a grocery list that
+            respects your budget and uses what you already have in your pantry
+            and freezer.
+          </li>
+          <li>
+            <strong>Reset plans when life happens.</strong> During an active
+            subscription, you can rerun your plan as often as you like when
+            your pantry or schedule changes.
+          </li>
+        </ol>
+
+        <div class="wp-plan-summary">
           <h3>Plans that fit your month</h3>
-          <ul class="wp-pricing-teaser-list">
+          <ul>
             <li>7-day week · from $5.99 / month (Basic)</li>
             <li>14-day bundle · save per week</li>
             <li>21-day bundle · extra savings</li>
             <li>28-day month · best effective weekly price</li>
           </ul>
-          <p class="wp-pricing-teaser-note">
+          <p class="wp-plan-note">
             Compare <strong>Basic</strong> vs <strong>PLUS</strong> and see
             example bundles on the full pricing page.
           </p>
-          <a href="pricing.html" class="wp-btn wp-btn-primary wp-btn-block">
-            View full pricing &amp; features
-          </a>
-        </aside>
+          <p class="wp-plan-link">
+            <a href="pricing.html">View full pricing &amp; features</a>
+          </p>
+        </div>
       </div>
     </section>
-    <!-- Diet & exercise flexibility -->
+
+    <!-- EXERCISE + DIET PHILOSOPHY -->
     <section class="wp-section">
-      <div class="wp-container wp-flex-grid">
-        <div>
-          <h2 class="wp-section-title">Your goals, your style of eating.</h2>
-          <p>
-            Wellness Pilot isn’t married to one diet. Use it as a smart planner
-            for classic balanced meals or popular approaches like
-            <strong>low-carb</strong>, <strong>high-protein</strong>,
-            <strong>Atkins-style</strong>, <strong>intermittent fasting</strong>,
-            or <strong>standard USDA patterns</strong>.
-          </p>
-          <p>
-            Choose whether to focus more on calories, macros, sodium, or other
-            constraints — we’ll weave those priorities into your weekly plan.
-          </p>
-        </div>
-        <div>
-          <h2 class="wp-section-title">Exercise & activity, integrated.</h2>
-          <p>
-            From couch-friendly recovery movement to triathlon training blocks,
-            Wellness Pilot helps you layer realistic activity into your week.
-          </p>
-          <p>
-            Track daily activity targets, movement stacks, or workouts alongside
-            your meals so your plan supports your real energy needs.
-          </p>
-        </div>
+      <div class="wp-section-inner">
+        <h2 class="wp-section-title">Exercise &amp; activity, integrated.</h2>
+        <p class="wp-section-lead">
+          From couch-friendly recovery movement to triathlon training blocks,
+          Wellness Pilot helps you layer realistic activity into your week.
+        </p>
+        <p>
+          Track daily activity targets, movement stacks, or workouts alongside
+          your meals so your plan supports your real energy needs.
+        </p>
       </div>
     </section>
-    <!-- Final call-to-action -->
+
     <section class="wp-section wp-section-alt">
-      <div class="wp-container wp-cta-final">
-        <div>
-          <h2 class="wp-section-title">
-            Ready to see your weekly wellness mission control?
-          </h2>
-          <p>
-            Take the 13-step wizard, preview a demo dashboard, and imagine your
-            pantry, budget, and schedule all working together instead of
-            against you.
-          </p>
-        </div>
-        <div class="wp-cta-buttons">
+      <div class="wp-section-inner">
+        <h2 class="wp-section-title">Your goals, your style of eating.</h2>
+        <p class="wp-section-lead">
+          Wellness Pilot isn’t married to one diet. Use it as a smart planner
+          for classic balanced meals or popular approaches like low carb,
+          high-protein, Atkins-style, intermittent fasting windows, and more.
+        </p>
+        <p>
+          You choose whether to focus on calories, sodium, fat, carbs, or a mix
+          — your plan adjusts while still respecting your pantry, budget, and
+          schedule.
+        </p>
+      </div>
+    </section>
+
+    <!-- FINAL CTA (extra padding so buttons aren’t cut off) -->
+    <section class="wp-section wp-section-final">
+      <div class="wp-section-inner">
+        <h2 class="wp-section-title">
+          Ready to see your weekly wellness mission control?
+        </h2>
+        <p class="wp-section-lead">
+          Take the 13-step wizard, preview a demo dashboard, and imagine your
+          pantry, budget, and schedule all working together instead of against
+          you.
+        </p>
+
+        <div class="wp-hero-actions wp-hero-actions-center">
           <a href="signup.html" class="wp-btn wp-btn-primary">
-            Get started – free demo
+            Get started — free demo
           </a>
           <a href="onboarding.html" class="wp-btn wp-btn-ghost">
-            Skip signup – try the wizard
+            Skip signup — try the wizard
           </a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="wp-footer">
-    <div class="wp-container wp-footer-grid">
+    <div class="wp-footer-inner">
       <div class="wp-footer-brand">
         <img
-          src="images/wp-logo-primary-square.png"
-          alt="Wellness Pilot Logo"
+          src="images/wp-logo-dark-square.png"
+          alt="Wellness Pilot logo"
           class="wp-footer-logo"
         />
         <div>
-          <p class="wp-footer-title">Wellness Pilot</p>
-          <p class="wp-footer-subtitle">© 2025 Wellness Pilot — A TKM Group Company</p>
+          <div class="wp-footer-name">Wellness Pilot</div>
+          <div class="wp-footer-meta">
+            © 2025 Wellness Pilot — A TKM Group Company
+          </div>
         </div>
       </div>
-      <nav class="wp-footer-links">
+
+      <nav class="wp-footer-nav">
         <a href="index.html">Home</a>
         <a href="pricing.html">Pricing</a>
         <a href="dashboard.html">Demo Dashboard</a>
         <a href="onboarding.html">Start Plan</a>
         <a href="login.html">Sign In</a>
       </nav>
+
+      <p class="wp-footer-note">
+        Prototype only – for demonstration purposes, not medical or financial
+        advice.
+      </p>
     </div>
-    <p class="wp-footer-disclaimer">
-      Prototype only – for demonstration purposes, not medical or financial advice.
-    </p>
   </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
