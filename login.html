@@ -1,111 +1,115 @@
 <!DOCTYPE html>
-<html lang="en" data-page="login">
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8" />
-    <title>Wellness Pilot – Sign in</title>
+    <title>Sign In · Wellness Pilot</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- shared header -->
-    <header class="site-header" id="site-header">
-      <div class="site-header-inner">
-        <a href="index.html" class="brand">
-          <img
-            src="images/wp-logo-primary-square.png"
-            alt="Wellness Pilot logo"
-          />
-          <div class="brand-text">
-            <div class="brand-title">Wellness Pilot</div>
-            <div class="brand-subtitle">Weekly wellness mission control</div>
-          </div>
-        </a>
+    <script defer src="app.js"></script>
+</head>
+<body class="page page-auth page-login">
+    <!-- SITE HEADER -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand">
+                <img src="images/wp-main-logo.png" alt="Wellness Pilot logo" class="brand-logo" />
+                <div class="brand-text">
+                    <span class="brand-title">Wellness Pilot</span>
+                    <span class="brand-subtitle">A TKM Group Company</span>
+                </div>
+            </a>
 
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-label="Toggle navigation"
-          id="nav-toggle"
-        >
-          ☰
-        </button>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
 
-        <nav class="nav-links" id="nav-links">
-          <a href="index.html">Home</a>
-          <a href="onboarding.html">Start plan</a>
-          <a href="dashboard.html">Demo dashboard</a>
-          <a href="login.html" class="is-active">Sign in</a>
-          <a href="signup.html" class="nav-cta">Get started</a>
-        </nav>
-      </div>
+            <nav class="header-nav">
+                <a href="index.html">Home</a>
+                <a href="onboarding.html">Start Plan</a>
+                <a href="dashboard.html">Demo Dashboard</a>
+                <a href="login.html" class="is-active">Sign In</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="page-shell">
-      <section class="section">
-        <div class="auth-shell">
-          <div>
-            <article class="card">
-              <div class="auth-card-header">
-                <img
-                  src="images/wp-logo-primary-square.png"
-                  alt="Wellness Pilot logo"
-                  class="auth-logo"
-                />
-                <h1 class="auth-title">Welcome back</h1>
-                <p class="auth-subtitle">
-                  Sign in to view your active weekly plans and rerun the
-                  Wellness Pilot wizard.
-                </p>
-              </div>
+    <!-- MAIN CONTENT -->
+    <main class="page-main">
+        <div class="container auth-container">
+            <section class="card auth-card">
+                <header class="card-header auth-header">
+                    <p class="eyebrow">Member access · Demo only</p>
+                    <h1>Sign in to Wellness Pilot</h1>
+                    <p class="auth-lede">
+                        This is a front-end prototype. No real accounts are created and no passwords are stored.
+                        Use this page to preview the sign-in experience and then jump to the demo dashboard.
+                    </p>
+                </header>
 
-              <button type="button" class="auth-google">
-                <span>🔵</span>
-                <span>Continue with Google (UI only)</span>
-              </button>
+                <div class="card-body">
+                    <form class="auth-form" action="dashboard.html" method="get">
+                        <div class="form-row">
+                            <label for="login_email">Email address</label>
+                            <input
+                                type="email"
+                                id="login_email"
+                                name="email"
+                                autocomplete="email"
+                                placeholder="you@example.com"
+                                required
+                            />
+                        </div>
 
-              <div class="auth-divider">
-                <span>or sign in with email</span>
-              </div>
+                        <div class="form-row">
+                            <label for="login_password">Password</label>
+                            <input
+                                type="password"
+                                id="login_password"
+                                name="password"
+                                autocomplete="current-password"
+                                placeholder="••••••••"
+                                required
+                            />
+                        </div>
 
-              <form class="form-grid" autocomplete="off">
-                <div class="form-group">
-                  <label for="login-email">Email</label>
-                  <input id="login-email" type="email" />
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-wide">
+                                Sign in (demo only)
+                            </button>
+                        </div>
+
+                        <div class="auth-divider">
+                            <span>or</span>
+                        </div>
+
+                        <div class="form-actions">
+                            <!-- Fake Google sign-in button – just a front-end demo -->
+                            <button
+                                type="button"
+                                class="btn btn-ghost btn-with-icon btn-google-demo"
+                                onclick="window.location.href='dashboard.html';"
+                            >
+                                <span class="btn-icon-circle">G</span>
+                                <span>Continue with Google (demo)</span>
+                            </button>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                  <label for="login-password">Password</label>
-                  <input id="login-password" type="password" />
-                </div>
-                <button type="submit" class="btn btn-primary">
-                  Sign in (prototype)
-                </button>
-                <p style="font-size: 12px; color: #64748b">
-                  Prototype only — this demo doesn’t store accounts. In a real
-                  app, this would connect to a secure auth service.
-                </p>
-                <p style="font-size: 13px">
-                  Don’t have an account?
-                  <a href="signup.html">Create one</a>.
-                </p>
-              </form>
-            </article>
-          </div>
 
-          <div class="auth-hero">
-            <article class="card">
-              <h3>Why sign in?</h3>
-              <ul class="plan-list">
-                <li>Save your onboarding answers for faster re-runs.</li>
-                <li>Keep past weekly plans and reports in one place.</li>
-                <li>Sync across devices so your plan is always handy.</li>
-              </ul>
-            </article>
-          </div>
+                <footer class="card-footer auth-footer">
+                    <p class="auth-footnote">
+                        Prototype only – no real authentication happens here.
+                        In the full system, this page will connect to a secure backend and Stripe-powered
+                        subscriptions.
+                    </p>
+                    <p class="auth-switch">
+                        Don’t have an account yet?
+                        <a href="signup.html">Create one (demo)</a>
+                    </p>
+                </footer>
+            </section>
         </div>
-      </section>
     </main>
-
-    <footer class="site-footer">Wellness Pilot · Sign-in prototype.</footer>
-    <script src="app.js" defer></script>
-  </body>
+</body>
 </html>
