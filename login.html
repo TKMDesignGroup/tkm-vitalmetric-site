@@ -1,104 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Sign In • TKM VitalMetric Wellness</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="app.js" defer></script>
-</head>
-<body>
-  <div class="page">
-    <!-- Shared header -->
-    <header class="site-header">
-      <div class="header-inner">
+<html lang="en" data-page="login">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Wellness Pilot – Sign in</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- shared header -->
+    <header class="site-header" id="site-header">
+      <div class="site-header-inner">
         <a href="index.html" class="brand">
-          <div class="brand-logo">
-            <img src="images/tkm-logo.png" alt="TKM VitalMetric Wellness logo" />
-          </div>
+          <img
+            src="images/wp-logo-primary-square.png"
+            alt="Wellness Pilot logo"
+          />
           <div class="brand-text">
-            <div class="brand-name">TKM VITALMETRIC WELLNESS</div>
-            <div class="brand-tagline">Weekly wellness mission control</div>
+            <div class="brand-title">Wellness Pilot</div>
+            <div class="brand-subtitle">Weekly wellness mission control</div>
           </div>
         </a>
 
-        <nav class="main-nav">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="onboarding.html" class="nav-link">Start Plan</a>
-          <a href="dashboard.html" class="nav-link">Demo Dashboard</a>
-          <a href="login.html" class="nav-link active">Sign In</a>
-          <a href="signup.html" class="nav-link nav-cta">7-day free trial · then $9.99/wk</a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          id="nav-toggle"
+        >
+          ☰
+        </button>
+
+        <nav class="nav-links" id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="onboarding.html">Start plan</a>
+          <a href="dashboard.html">Demo dashboard</a>
+          <a href="login.html" class="is-active">Sign in</a>
+          <a href="signup.html" class="nav-cta">Get started</a>
         </nav>
       </div>
     </header>
 
-    <main class="main-content auth-page">
-      <section class="card">
-        <div class="card-inner">
-          <h1 class="section-title">Sign in to your account</h1>
-          <p class="section-subtitle">
-            This is a prototype sign-in screen. No real accounts are created yet — we’ll send you
-            to the demo dashboard after a fake “sign in.”
-          </p>
-          <form id="login-form" class="auth-form">
-            <div class="form-section">
-              <div class="form-group">
-                <label class="field-label" for="login_email">Email</label>
-                <input
-                  type="email"
-                  id="login_email"
-                  name="login_email"
-                  class="text-input"
-                  required
+    <main class="page-shell">
+      <section class="section">
+        <div class="auth-shell">
+          <div>
+            <article class="card">
+              <div class="auth-card-header">
+                <img
+                  src="images/wp-logo-primary-square.png"
+                  alt="Wellness Pilot logo"
+                  class="auth-logo"
                 />
+                <h1 class="auth-title">Welcome back</h1>
+                <p class="auth-subtitle">
+                  Sign in to view your active weekly plans and rerun the
+                  Wellness Pilot wizard.
+                </p>
               </div>
 
-              <div class="form-group">
-                <label class="field-label" for="login_password">Password</label>
-                <input
-                  type="password"
-                  id="login_password"
-                  name="login_password"
-                  class="text-input"
-                  required
-                />
-              </div>
-
-              <button type="submit" class="btn btn-primary">
-                Sign In (demo)
+              <button type="button" class="auth-google">
+                <span>🔵</span>
+                <span>Continue with Google (UI only)</span>
               </button>
 
-              <p class="auth-note">
-                Prototype only — this does not create or validate real credentials yet.
-              </p>
-            </div>
-          </form>
+              <div class="auth-divider">
+                <span>or sign in with email</span>
+              </div>
 
-          <div class="auth-alt-links">
-            <p>Don't have an account? <a href="signup.html">Create one</a></p>
+              <form class="form-grid" autocomplete="off">
+                <div class="form-group">
+                  <label for="login-email">Email</label>
+                  <input id="login-email" type="email" />
+                </div>
+                <div class="form-group">
+                  <label for="login-password">Password</label>
+                  <input id="login-password" type="password" />
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Sign in (prototype)
+                </button>
+                <p style="font-size: 12px; color: #64748b">
+                  Prototype only — this demo doesn’t store accounts. In a real
+                  app, this would connect to a secure auth service.
+                </p>
+                <p style="font-size: 13px">
+                  Don’t have an account?
+                  <a href="signup.html">Create one</a>.
+                </p>
+              </form>
+            </article>
+          </div>
+
+          <div class="auth-hero">
+            <article class="card">
+              <h3>Why sign in?</h3>
+              <ul class="plan-list">
+                <li>Save your onboarding answers for faster re-runs.</li>
+                <li>Keep past weekly plans and reports in one place.</li>
+                <li>Sync across devices so your plan is always handy.</li>
+              </ul>
+            </article>
           </div>
         </div>
       </section>
     </main>
-    <!-- Shared footer -->
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="footer-left">
-          <div class="footer-logo">
-            <img src="images/tkm-logo.png" alt="TKM VitalMetric Wellness logo" />
-          </div>
-          <div>
-            <div class="footer-text-main">TKM VITALMETRIC WELLNESS</div>
-            <div class="footer-text-sub">
-              Prototype demonstration — not medical advice.</div>
-          </div>
-        </div>
 
-        <div class="footer-right">
-          &copy; 2025 TKM VitalMetric Wellness. All rights reserved.
-        </div>
-      </div>
-    </footer>
-  </div>
-</body>
+    <footer class="site-footer">Wellness Pilot · Sign-in prototype.</footer>
+    <script src="app.js" defer></script>
+  </body>
 </html>
