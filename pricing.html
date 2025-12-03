@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" data-page="pricing">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing • Wellness Pilot</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand">
+          <img
+            src="images/wp-logo-primary-horizontal.png"
+            alt="Wellness Pilot logo"
+            class="brand-logo"
+          />
+        </a>
+
+        <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav id="nav-links" class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="onboarding.html">Start your plan</a>
+          <a href="dashboard.html">Demo dashboard</a>
+          <a href="pricing.html" class="is-active">Pricing</a>
+          <a href="login.html">Sign in</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="pricing-page">
+      <!-- HERO / INTRO -->
+      <section class="pricing-hero">
+        <div class="container pricing-hero-inner">
+          <div class="pricing-hero-copy">
+            <h1>Plans starting at just $5.99/month</h1>
+            <p>
+              Wellness Pilot turns your pantry, budget, and preferences into realistic weekly
+              meal plans. Choose a plan that fits how often you want to plan — and how much you
+              want to save.
+            </p>
+            <ul class="pricing-hero-list">
+              <li>AI-assisted weekly meal planning</li>
+              <li>Pantry-aware shopping lists</li>
+              <li>Low-friction movement stacks woven into each week</li>
+            </ul>
+            <p class="pricing-hero-note">
+              All plans include a 7-day free trial. Cancel anytime.
+            </p>
+          </div>
+
+          <div class="pricing-hero-highlight">
+            <div class="pricing-highlight-card">
+              <p class="highlight-label">Most popular</p>
+              <h2>$9.99<span>/month</span></h2>
+              <p class="highlight-subtitle">Plus Plan • Best for maximizing savings</p>
+              <ul>
+                <li>Unlimited plan resets during your subscription</li>
+                <li>Upload local PDF grocery ads (Plus)</li>
+                <li>Multi-week planning (14, 21, or 28 days)</li>
+                <li>Pantry-first, budget-conscious recommendations</li>
+              </ul>
+              <a href="signup.html" class="btn btn-primary btn-full">
+                Start free trial with Plus
+              </a>
+              <button class="btn btn-ghost btn-full" type="button">
+                View Basic for $5.99/month
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MONTHLY TIERS -->
+      <section class="pricing-section">
+        <div class="container">
+          <h2 class="section-title">Choose your monthly plan</h2>
+          <p class="section-subtitle">
+            Start simple with Basic, or unlock advanced savings tools with Plus.
+          </p>
+
+          <div class="pricing-grid">
+            <!-- BASIC -->
+            <article class="pricing-card">
+              <div class="pricing-card-header">
+                <h3>Basic</h3>
+                <p class="plan-tagline">Core weekly planning</p>
+                <p class="plan-price">
+                  $5.99<span>/month</span>
+                </p>
+              </div>
+              <ul class="plan-features">
+                <li>1 active weekly plan at a time</li>
+                <li>7–28 day meal plans (one at a time)</li>
+                <li>Breakfast, lunch, dinner, and snacks mapped out</li>
+                <li>Pantry-aware shopping list (basic)</li>
+                <li>Low-impact daily movement suggestions</li>
+                <li>Unlimited re-runs inside the same week</li>
+              </ul>
+              <a href="signup.html" class="btn btn-outline btn-full">Start Basic trial</a>
+            </article>
+
+            <!-- PLUS -->
+            <article class="pricing-card pricing-card--featured">
+              <div class="pricing-card-header">
+                <div class="badge">Most popular</div>
+                <h3>Plus</h3>
+                <p class="plan-tagline">Advanced savings & flexibility</p>
+                <p class="plan-price">
+                  $9.99<span>/month</span>
+                </p>
+              </div>
+              <ul class="plan-features">
+                <li>Everything in Basic, plus:</li>
+                <li>Unlimited plan resets during your subscription</li>
+                <li>Multi-week planning (14, 21, or 28 days)</li>
+                <li>Upload local PDF grocery ads for smarter shopping</li>
+                <li>Pantry-first recommendations to reduce waste</li>
+                <li>Budget-aware recipe selection</li>
+                <li>Early access to new features</li>
+                <li>Priority support</li>
+              </ul>
+              <a href="signup.html" class="btn btn-primary btn-full">Start Plus trial</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- MULTI-WEEK BUNDLES TABLE -->
+      <section class="pricing-section pricing-section--alt">
+        <div class="container">
+          <h2 class="section-title">Multi-week bundles & discounts</h2>
+          <p class="section-subtitle">
+            Commit to a longer planning window and save compared to paying week-to-week.
+          </p>
+
+          <div class="pricing-table-wrapper">
+            <table class="pricing-table">
+              <thead>
+                <tr>
+                  <th>Plan length</th>
+                  <th>Basic</th>
+                  <th>Plus</th>
+                  <th>Best for</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>7 days (standard)</td>
+                  <td>$5.99/mo equivalent</td>
+                  <td>$9.99/mo equivalent</td>
+                  <td>Trying Wellness Pilot for the first time</td>
+                </tr>
+                <tr>
+                  <td>14 days</td>
+                  <td>$9.99 total</td>
+                  <td>$16.99 total</td>
+                  <td>Two weeks of planning & shopping at once</td>
+                </tr>
+                <tr>
+                  <td>21 days</td>
+                  <td>$12.99 total</td>
+                  <td>$21.99 total</td>
+                  <td>Planning three weeks ahead on a budget</td>
+                </tr>
+                <tr>
+                  <td>28 days</td>
+                  <td>$14.99 total</td>
+                  <td>$26.99 total</td>
+                  <td>Monthly planners who want the best value</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="pricing-footnote">
+            All prices are shown in USD. During the prototype phase, billing is simulated only —
+            no real charges are processed yet.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img
+            src="images/wp-logo-dark-square.png"
+            alt="Wellness Pilot dark logo"
+            class="footer-logo"
+          />
+          <div>
+            <p class="footer-title">Wellness Pilot</p>
+            <p class="footer-subtitle">A TKM Group Company</p>
+          </div>
+        </div>
+        <p class="footer-copy">
+          Prototype only. Plans, pricing, and features are for demonstration and do not constitute
+          medical or financial advice.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
