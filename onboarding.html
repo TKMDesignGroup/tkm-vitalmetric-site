@@ -1,1965 +1,1222 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Start Your Plan – TKM VitalMetric Wellness</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="app.js" defer></script>
-</head>
-<body>
-  <div class="page">
-    <!-- Shared header -->
-    <header class="site-header">
-      <div class="header-inner">
-        <a href="index.html" class="brand-link">
-          <div class="brand-logo">
-            <img src="images/tkm-logo.png" alt="TKM VitalMetric Wellness logo" />
-          </div>
+<html lang="en" data-page="onboarding">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Wellness Pilot – Start your weekly plan (13-step flow)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- shared header -->
+    <header class="site-header" id="site-header">
+      <div class="site-header-inner">
+        <a href="index.html" class="brand">
+          <img
+            src="images/wp-logo-primary-square.png"
+            alt="Wellness Pilot logo"
+          />
           <div class="brand-text">
-            <div class="brand-name">TKM VITALMETRIC WELLNESS</div>
-            <div class="brand-tagline">Weekly wellness mission control</div>
+            <div class="brand-title">Wellness Pilot</div>
+            <div class="brand-subtitle">Weekly wellness mission control</div>
           </div>
         </a>
 
-        <nav class="main-nav">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="onboarding.html" class="nav-link nav-link-active">Start Plan</a>
-          <a href="dashboard.html" class="nav-link">Demo Dashboard</a>
-          <a href="login.html" class="nav-link">Sign In</a>
-          <a href="#" class="nav-link nav-pill">7-day free trial · then $9.99/wk</a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          id="nav-toggle"
+        >
+          ☰
+        </button>
+
+        <nav class="nav-links" id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="onboarding.html" class="is-active">Start plan</a>
+          <a href="dashboard.html">Demo dashboard</a>
+          <a href="login.html">Sign in</a>
+          <a href="signup.html" class="nav-cta">7-day free trial</a>
         </nav>
       </div>
     </header>
-
-    <main class="main-content">
-      <!-- Intro / hero for onboarding -->
-      <section class="section section-light">
-        <div class="section-inner">
-          <div class="onboarding-hero-card">
-            <p class="eyebrow">FULL ONBOARDING · PROTOTYPE ONLY</p>
-            <h1>Start your weekly plan (13-step flow)</h1>
-            <p>
-              This is the full, detailed version of the TKM VitalMetric Wellness onboarding wizard.
-              In the live system, your answers here would drive your Weekly Snapshot, weekly meal plan,
-              grocery list, movement stack, and printable report.
-            </p>
-            <p class="helper-text">
-              Prototype only — your answers are not stored. This walkthrough is to show the structure
-              and depth of the real system.
-            </p>
-
-            <!-- Step pills -->
-            <div class="step-pill-row" id="stepPills">
-              <button type="button" class="step-pill is-active" data-step="1">1 · Profile</button>
-              <button type="button" class="step-pill" data-step="2">2 · Plan settings</button>
-              <button type="button" class="step-pill" data-step="3">3 · Kitchen</button>
-              <button type="button" class="step-pill" data-step="4">4 · Food preferences</button>
-              <button type="button" class="step-pill" data-step="5">5 · Avoid / medical</button>
-              <button type="button" class="step-pill" data-step="6">6 · Pantry</button>
-              <button type="button" class="step-pill" data-step="7">7 · Stores & budget</button>
-              <button type="button" class="step-pill" data-step="8">8 · Sodium focus</button>
-              <button type="button" class="step-pill" data-step="9">9 · Movement</button>
-              <button type="button" class="step-pill" data-step="10">10 · Schedule</button>
-              <button type="button" class="step-pill" data-step="11">11 · Leftovers</button>
-              <button type="button" class="step-pill" data-step="12">12 · Plan style</button>
-              <button type="button" class="step-pill" data-step="13">13 · Confirm</button>
-            </div>
-
-            <!-- Progress bar -->
-            <div class="wizard-progress">
-              <div class="wizard-progress-label">
-                Step <span id="wizardStepCurrent">1</span> of <span id="wizardStepTotal">13</span>
-              </div>
-              <div class="wizard-progress-bar">
-                <div class="wizard-progress-fill" id="wizardProgressFill"></div>
-              </div>
-            </div>
-          </div>
+    <main class="page-shell">
+      <section class="section">
+        <div class="section-header">
+          <span class="badge">Full onboarding · Prototype only</span>
+          <h2>Start your weekly plan (13-step flow)</h2>
+          <p>
+            This is the full, detailed version of the Wellness Pilot onboarding.
+            Answers are not stored in this prototype &mdash; this walkthrough
+            shows the structure and depth of the real system.
+          </p>
         </div>
-      </section>
 
-      <!-- Actual onboarding form -->
-      <section class="section section-light">
-        <div class="section-inner">
-          <form id="onboardingForm" class="onboarding-form">
-            <!-- STEP 1 · BASIC PROFILE & GOALS -->
-            <div class="onboarding-step is-active" data-step="1">
-              <div class="step-card">
-                <h2>Step 1 – Basic profile & goals</h2>
-                <p class="step-intro">
-                  Tell us a bit about you so we can keep your weekly plan realistic and focused
-                  on what matters most right now.
-                </p>
+        <div class="onboard-shell">
+          <!-- left column: chips + summary -->
+          <aside class="onboard-summary">
+            <p>
+              You can move through the steps using the buttons at the bottom of
+              each card. In a live app you could also click these quick chips to
+              jump directly to any step:
+            </p>
+            <div class="onboard-steps">
+              <div class="chip is-active">1 · Profile</div>
+              <div class="chip">2 · Plan basics</div>
+              <div class="chip">3 · Kitchen</div>
+              <div class="chip">4 · Food likes</div>
+              <div class="chip">5 · Avoid / medical</div>
+              <div class="chip">6 · Pantry</div>
+              <div class="chip">7 · Stores &amp; budget</div>
+              <div class="chip">8 · Nutrition focus</div>
+              <div class="chip">9 · Movement</div>
+              <div class="chip">10 · Schedule</div>
+              <div class="chip">11 · Leftovers</div>
+              <div class="chip">12 · Plan style</div>
+              <div class="chip">13 · Confirm</div>
+            </div>
+          </aside>
 
-                <div class="form-grid">
-                  <div class="form-group">
-                    <label class="field-label" for="name">What should we call you?</label>
-                    <input id="name" name="name" type="text" class="text-input" />
+          <!-- right column: wizard steps -->
+          <div class="onboard-main">
+            <!-- STEP 1 – Basic profile & goals -->
+            <article class="step-card wizard-step is-active" data-step="1">
+              <div class="step-header">
+                <img src="images/wp-icon-apple.png" alt="" />
+                <div>
+                  <h1>Step 1 – About you &amp; your goals</h1>
+                  <div class="step-subtitle">
+                    This helps Wellness Pilot frame your weekly plan in a way
+                    that feels realistic for <em>you</em>, not some generic
+                    template.
                   </div>
+                </div>
+              </div>
 
-                  <div class="form-group">
-                    <label class="field-label" for="age">Age (optional)</label>
-                    <input id="age" name="age" type="number" min="10" max="110" class="text-input" />
-                  </div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="s1-name">First name or nickname</label>
+                  <input
+                    id="s1-name"
+                    type="text"
+                    placeholder="Todd, Sam, etc."
+                  />
+                </div>
 
-                  <div class="form-group">
-                    <label class="field-label" for="height">
-                      Height (optional)
+                <div class="form-group">
+                  <label for="s1-timezone">Time zone (for daily schedule)</label>
+                  <input
+                    id="s1-timezone"
+                    type="text"
+                    placeholder="e.g., Eastern (US)"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="s1-goal-primary"
+                    >What’s your primary goal for this plan?</label
+                  >
+                  <select id="s1-goal-primary">
+                    <option value="">Choose one...</option>
+                    <option>Lose weight gradually</option>
+                    <option>Maintain weight / eat more balanced</option>
+                    <option>Support specific health concerns</option>
+                    <option>Save money on groceries</option>
+                    <option>Reduce food waste</option>
+                    <option>Get structure &amp; accountability</option>
+                    <option>Other / not sure yet</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label"
+                    >Secondary priorities (optional)</label
+                  >
+                  <div class="control-grid">
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Spending less per week
                     </label>
-                    <input
-                      id="height"
-                      name="height"
-                      type="text"
-                      class="text-input"
-                      placeholder="e.g., 5' 10&quot; or 178 cm"
-                    />
-                  </div>
-
-                  <div class="form-group">
-                    <label class="field-label" for="weight">
-                      Current weight (optional)
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Less takeout / more home cooking
                     </label>
-                    <input
-                      id="weight"
-                      name="weight"
-                      type="number"
-                      min="50"
-                      max="700"
-                      class="text-input"
-                    />
-                  </div>
-
-                  <div class="form-group">
-                    <label class="field-label" for="target_outcome">
-                      Target weight or main outcome (optional)
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Less mental load &amp; planning
                     </label>
-                    <input
-                      id="target_outcome"
-                      name="target_outcome"
-                      type="text"
-                      class="text-input"
-                      placeholder="e.g., lose 20 lbs, lower blood pressure, more energy"
-                    />
-                  </div>
-
-                  <div class="form-group">
-                    <label class="field-label" for="progress_speed">
-                      How quickly are you hoping to see progress?
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> More consistent movement
                     </label>
-                    <select id="progress_speed" name="progress_speed" class="select-input">
-                      <option value="">Select one…</option>
-                      <option value="very_gentle">Very gentle – slow & steady</option>
-                      <option value="gentle">Gentle – about 1 lb/week</option>
-                      <option value="moderate">Moderate – 1–2 lbs/week</option>
-                      <option value="aggressive">Aggressive – more than 2 lbs/week</option>
-                      <option value="maintenance">Mostly maintenance / stability</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="field-label" for="main_focus">
-                      What’s your main focus right now?
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Better blood sugar / heart
+                      health
                     </label>
-                    <select id="main_focus" name="main_focus" class="select-input">
-                      <option value="">Select one…</option>
-                      <option value="weight_loss">Weight loss</option>
-                      <option value="bp_sodium">Blood pressure / sodium control</option>
-                      <option value="blood_sugar">Blood sugar / diabetes</option>
-                      <option value="cholesterol">Cholesterol / heart health</option>
-                      <option value="maintenance">Weight maintenance</option>
-                      <option value="energy">Energy & mood</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="field-label" for="main_focus_other">
-                      If “Other”, briefly describe:
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Kidney-friendly / gentle on
+                      sodium
                     </label>
-                    <textarea
-                      id="main_focus_other"
-                      name="main_focus_other"
-                      class="text-area"
-                      rows="3"
-                    ></textarea>
                   </div>
                 </div>
 
-                <div class="step-actions">
-                  <button type="button" class="btn-secondary step-prev" disabled>Back</button>
-                  <button type="button" class="btn-primary step-next" data-next-step="2">
-                    Next: Plan settings
+                <div class="form-group">
+                  <label for="s1-notes">Anything else we should know?</label>
+                  <textarea
+                    id="s1-notes"
+                    placeholder="Optional notes about your situation, preferences, or what has/hasn’t worked before."
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="step-nav">
+                <div>Step 1 of 13</div>
+                <div class="step-nav-buttons">
+                  <button
+                    type="button"
+                    class="btn-ghost"
+                    data-step-back
+                    disabled
+                  >
+                    Back
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-step-next
+                  >
+                    Next: Plan basics
                   </button>
                 </div>
               </div>
-            </div>
-            <!-- STEP 2 · PLAN SETTINGS -->
-            <div class="onboarding-step" data-step="2">
-              <div class="step-card">
-                <h2>Step 2 – Plan settings: dates, calories, budget & sodium</h2>
-                <p class="step-intro">
-                  Set the basics for this weekly plan so your meals, snacks, and grocery list match
-                  your real-life limits.
-                </p>
-
-                <div class="form-grid">
-                  <div class="form-group">
-                    <label class="field-label" for="plan_start">
-                      Plan start date
-                    </label>
-                    <input id="plan_start" name="plan_start" type="date" class="text-input" />
+            </article>
+            <!-- STEP 2 – Plan basics: dates & length -->
+            <article class="step-card wizard-step" data-step="2">
+              <div class="step-header">
+                <img src="images/wp-icon-mealplanning.png" alt="" />
+                <div>
+                  <h1>Step 2 – Plan basics: dates &amp; length</h1>
+                  <div class="step-subtitle">
+                    Choose your start date, how long you want Wellness Pilot to
+                    plan, and the basic structure of your week.
                   </div>
+                </div>
+              </div>
 
-                  <div class="form-group">
-                    <label class="field-label" for="plan_end">
-                      Plan end date
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="s2-start">Plan start date</label>
+                  <input id="s2-start" type="date" />
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label">Plan length</label>
+                  <div class="control-inline">
+                    <label class="control-radio">
+                      <input type="radio" name="s2-length" /> 7 days
                     </label>
-                    <input id="plan_end" name="plan_end" type="date" class="text-input" />
+                    <label class="control-radio">
+                      <input type="radio" name="s2-length" /> 14 days
+                    </label>
+                    <label class="control-radio">
+                      <input type="radio" name="s2-length" /> 21 days
+                    </label>
+                    <label class="control-radio">
+                      <input type="radio" name="s2-length" /> 28 days (month)
+                    </label>
                   </div>
+                  <p style="font-size: 12px; color: #64748b; margin: 4px 0 0;">
+                    Longer bundles are cheaper per week in the pricing section;
+                    this step is just telling Wellness Pilot how far ahead to
+                    plan.
+                  </p>
+                </div>
 
-                  <div class="form-group">
-                    <label class="field-label">
-                      Which meals/snacks should we plan each day?
+                <div class="form-group">
+                  <label class="field-label">Meals to include each day</label>
+                  <div class="control-grid">
+                    <label class="control-checkbox">
+                      <input type="checkbox" checked /> Breakfast
                     </label>
-                    <div class="control-grid">
-                      <label class="control-checkbox">
-                        <input type="checkbox" name="meals_planned" value="breakfast" />
-                        <span>Breakfast</span>
-                      </label>
-                      <label class="control-checkbox">
-                        <input type="checkbox" name="meals_planned" value="lunch" />
-                        <span>Lunch</span>
-                      </label>
-                      <label class="control-checkbox">
-                        <input type="checkbox" name="meals_planned" value="dinner" />
-                        <span>Dinner</span>
-                      </label>
-                      <label class="control-checkbox">
-                        <input type="checkbox" name="meals_planned" value="snacks" />
-                        <span>Snacks</span>
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="field-label" for="calorie_target">
-                      Daily calorie target (approximate)
+                    <label class="control-checkbox">
+                      <input type="checkbox" checked /> Lunch
                     </label>
-                    <select id="calorie_target" name="calorie_target" class="select-input">
-                      <option value="">Select one…</option>
-                      <option value="1600">Around 1,600 kcal/day</option>
-                      <option value="1800">Around 1,800 kcal/day</option>
-                      <option value="2000">Around 2,000 kcal/day</option>
-                      <option value="2200">Around 2,200 kcal/day</option>
-                      <option value="2400">Around 2,400 kcal/day</option>
-                      <option value="2600">2,600+ kcal/day</option>
-                      <option value="unsure">Not sure / let the system decide</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="field-label" for="weekly_budget">
-                      Weekly food budget for groceries (USD)
+                    <label class="control-checkbox">
+                      <input type="checkbox" checked /> Dinner
                     </label>
-                    <input
-                      id="weekly_budget"
-                      name="weekly_budget"
-                      type="number"
-                      min="10"
-                      max="500"
-                      step="1"
-                      class="text-input"
-                      placeholder="e.g., 75"
-                    />
-                  </div>
-
-                  <div class="form-group">
-                    <label class="field-label" for="budget_importance">
-                      How important is staying under this budget? (1–5)
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Snacks
                     </label>
-                    <input
-                      id="budget_importance"
-                      name="budget_importance"
-                      type="range"
-                      min="1"
-                      max="5"
-                      step="1"
-                      class="range-input"
-                    />
-                  </div>
-
-                  <div class="form-group">
-                    <label class="field-label" for="sodium_focus_level">
-                      Sodium reduction goal
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Desserts / treats
                     </label>
-                    <select
-                      id="sodium_focus_level"
-                      name="sodium_focus_level"
-                      class="select-input"
-                    >
-                      <option value="">Select one…</option>
-                      <option value="none">Normal / no special focus</option>
-                      <option value="gentle">Gentle reduction</option>
-                      <option value="moderate">Moderate reduction</option>
-                      <option value="aggressive">Aggressive reduction</option>
-                    </select>
                   </div>
                 </div>
 
-                <div class="step-actions">
-                  <button type="button" class="btn-secondary step-prev" data-prev-step="1">
+                <div class="form-group">
+                  <label for="s2-household"
+                    >How many people are you usually planning for?</label
+                  >
+                  <select id="s2-household">
+                    <option value="">Choose...</option>
+                    <option>Just me</option>
+                    <option>2 people</option>
+                    <option>3–4 people</option>
+                    <option>5+ people</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="s2-calories"
+                    >Optional daily calorie range or target</label
+                  >
+                  <input
+                    id="s2-calories"
+                    type="text"
+                    placeholder="e.g., 2,000–2,300 kcal, or 'not tracking'"
+                  />
+                </div>
+              </div>
+
+              <div class="step-nav">
+                <div>Step 2 of 13</div>
+                <div class="step-nav-buttons">
+                  <button type="button" class="btn-ghost" data-step-back>
                     Back
                   </button>
-                  <button type="button" class="btn-primary step-next" data-next-step="3">
-                    Next: Kitchen setup
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-step-next
+                  >
+                    Next: Kitchen &amp; cooking style
                   </button>
                 </div>
               </div>
-            </div>
-            <!-- STEP 3 · COOKING CONTEXT & KITCHEN SETUP -->
-            <div class="onboarding-step" data-step="3">
-              <div class="step-card">
-                <h2>Step 3 – Cooking comfort & kitchen setup</h2>
-                <p class="step-intro">
-                  Help us understand what you’re working with in your kitchen and schedule so
-                  recipes match your real life.
-                </p>
+            </article>
 
-                <div class="form-grid">
-                  <div class="form-group">
-                    <label class="field-label" for="cooking_comfort">
-                      How comfortable are you in the kitchen?
-                    </label>
-                    <select
-                      id="cooking_comfort"
-                      name="cooking_comfort"
-                      class="select-input"
-                    >
-                      <option value="">Select one…</option>
-                      <option value="beginner">Very beginner (need simple, guided recipes)</option>
-                      <option value="basic">Comfortable with basic recipes</option>
-                      <option value="confident">Confident with most recipes</option>
-                      <option value="advanced">Very comfortable / advanced</option>
-                    </select>
+            <!-- STEP 3 – Kitchen & effort -->
+            <article class="step-card wizard-step" data-step="3">
+              <div class="step-header">
+                <img src="images/wp-icon-pantry.png" alt="" />
+                <div>
+                  <h1>Step 3 – Kitchen &amp; cooking style</h1>
+                  <div class="step-subtitle">
+                    Be honest about your equipment, energy, and what you
+                    realistically want to do in the kitchen.
                   </div>
+                </div>
+              </div>
 
-                  <div class="form-group">
-                    <label class="field-label">
-                      Time available on a typical weekday
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="field-label">Available cooking tools</label>
+                  <div class="control-grid">
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Oven
                     </label>
-                    <div class="control-grid">
-                      <label class="control-radio">
-                        <input type="radio" name="weekday_time" value="15" />
-                        <span>About 15 minutes</span>
-                      </label>
-                      <label class="control-radio">
-                        <input type="radio" name="weekday_time" value="30" />
-                        <span>About 30 minutes</span>
-                      </label>
-                      <label class="control-radio">
-                        <input type="radio" name="weekday_time" value="45" />
-                        <span>About 45 minutes</span>
-                      </label>
-                      <label class="control-radio">
-                        <input type="radio" name="weekday_time" value="60_plus" />
-                        <span>60+ minutes</span>
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="field-label">
-                      Which of these do you have available?
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Stove / cooktop
                     </label>
-                    <div class="control-grid">
-                      <label class="control-checkbox">
-                        <input type="checkbox" name="kitchen_tools" value="oven" />
-                        <span>Oven</span>
-                      </label>
-                      <label class="control-checkbox">
-                        <input type="checkbox" name="kitchen_tools" value="stovetop" />
-                        <span>Stovetop</span>
-                      </label>
-                      <label class="control-checkbox">
-                        <input type="checkbox" name="kitchen_tools" value="microwave" />
-                        <span>Microwave</span>
-                      </label>
-                      <label class="control-checkbox">
-                        <input type="checkbox" name="kitchen_tools" value="slow_cooker" />
-                        <span>Slow cooker / Crock-Pot</span>
-                      </label>
-                      <label class="control-checkbox">
-                        <input type="checkbox" name="kitchen_tools" value="instant_pot" />
-                        <span>Instant Pot / pressure cooker</span>
-                      </label>
-                      <label class="control-checkbox">
-                        <input type="checkbox" name="kitchen_tools" value="air_fryer" />
-                        <span>Air fryer</span>
-                      </label>
-                      <label class="control-checkbox">
-                        <input type="checkbox" name="kitchen_tools" value="toaster" />
-                        <span>Toaster / toaster oven</span>
-                      </label>
-                      <label class="control-checkbox">
-                        <input type="checkbox" name="kitchen_tools" value="blender" />
-                        <span>Blender</span>
-                      </label>
-                      <label class="control-checkbox">
-                        <input type="checkbox" name="kitchen_tools" value="food_processor" />
-                        <span>Food processor</span>
-                      </label>
-                      <label class="control-checkbox">
-                        <input type="checkbox" name="kitchen_tools" value="grill" />
-                        <span>Grill / grill pan</span>
-                      </label>
-                      <label class="control-checkbox">
-                        <input
-                          type="checkbox"
-                          name="kitchen_tools"
-                          value="basic_knives"
-                        />
-                        <span>Basic knives & cutting board</span>
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="field-label" for="kitchen_limits">
-                      Any kitchen limitations or notes?
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Microwave
                     </label>
-                    <textarea
-                      id="kitchen_limits"
-                      name="kitchen_limits"
-                      class="text-area"
-                      rows="3"
-                      placeholder="e.g., no oven, tiny fridge, limited cookware"
-                    ></textarea>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Slow cooker / Crockpot
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Instant Pot / pressure cooker
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Air fryer
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Grill
+                    </label>
                   </div>
                 </div>
 
-                <div class="step-actions">
-                  <button type="button" class="btn-secondary step-prev" data-prev-step="2">
+                <div class="form-group">
+                  <label class="field-label"
+                    >Average weeknight cooking effort</label
+                  >
+                  <div class="control-grid">
+                    <label class="control-radio">
+                      <input type="radio" name="s3-effort" /> 10–15 minutes,
+                      very simple
+                    </label>
+                    <label class="control-radio">
+                      <input type="radio" name="s3-effort" /> 20–30 minutes,
+                      simple recipes
+                    </label>
+                    <label class="control-radio">
+                      <input type="radio" name="s3-effort" /> 30–45 minutes,
+                      okay with some prep
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="s3-batch"
+                    >Are you open to batch-cooking (cook once, eat 2–3
+                    times)?</label
+                  >
+                  <select id="s3-batch">
+                    <option>Yes, please build that in</option>
+                    <option>Sometimes, mix of fresh &amp; leftovers</option>
+                    <option>No, I prefer fresh variety</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="s3-notes"
+                    >Any kitchen limitations (small fridge, no oven, etc.)?</label
+                  >
+                  <textarea
+                    id="s3-notes"
+                    placeholder="Optional details that might affect your plan."
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="step-nav">
+                <div>Step 3 of 13</div>
+                <div class="step-nav-buttons">
+                  <button type="button" class="btn-ghost" data-step-back>
                     Back
                   </button>
-                  <button type="button" class="btn-primary step-next" data-next-step="4">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-step-next
+                  >
                     Next: Food preferences
                   </button>
                 </div>
               </div>
-            </div>
-            <!-- STEP 4 · FOOD PREFERENCES -->
-            <div class="onboarding-step" data-step="4">
-              <div class="step-card">
-                <h2>Step 4 – Food preferences (like / neutral / dislike)</h2>
-                <p class="step-intro">
-                  For each category, tell us how you feel about each item. In the real app,
-                  these choices would influence recipe selection and meal planning.
-                </p>
-
-                <!-- 4.1 PROTEINS -->
-                <h3 class="category-heading">4.1 Proteins</h3>
-                <p class="category-description">
-                  For each protein, choose Like, Neutral, or Dislike.
-                </p>
-
-                <div class="form-group">
-                  <label class="field-label">Animal & plant proteins</label>
-
-                  <div class="control-grid-3col">
-                    <label class="control-radio3">
-                      Chicken breast:
-                      <input type="radio" name="protein_chicken_breast" value="like" /> Like
-                      <input type="radio" name="protein_chicken_breast" value="neutral" /> Neutral
-                      <input type="radio" name="protein_chicken_breast" value="dislike" /> Dislike
-                    </label>
-
-                    <label class="control-radio3">
-                      Chicken thighs:
-                      <input type="radio" name="protein_chicken_thighs" value="like" /> Like
-                      <input type="radio" name="protein_chicken_thighs" value="neutral" /> Neutral
-                      <input type="radio" name="protein_chicken_thighs" value="dislike" /> Dislike
-                    </label>
-
-                    <label class="control-radio3">
-                      Ground chicken:
-                      <input type="radio" name="protein_ground_chicken" value="like" /> Like
-                      <input type="radio" name="protein_ground_chicken" value="neutral" /> Neutral
-                      <input type="radio" name="protein_ground_chicken" value="dislike" /> Dislike
-                    </label>
-
-                    <label class="control-radio3">
-                      Ground turkey:
-                      <input type="radio" name="protein_ground_turkey" value="like" /> Like
-                      <input type="radio" name="protein_ground_turkey" value="neutral" /> Neutral
-                      <input type="radio" name="protein_ground_turkey" value="dislike" /> Dislike
-                    </label>
-
-                    <label class="control-radio3">
-                      Turkey breast:
-                      <input type="radio" name="protein_turkey_breast" value="like" /> Like
-                      <input type="radio" name="protein_turkey_breast" value="neutral" /> Neutral
-                      <input type="radio" name="protein_turkey_breast" value="dislike" /> Dislike
-                    </label>
-
-                    <label class="control-radio3">
-                      Lean ground beef:
-                      <input type="radio" name="protein_ground_beef" value="like" /> Like
-                      <input type="radio" name="protein_ground_beef" value="neutral" /> Neutral
-                      <input type="radio" name="protein_ground_beef" value="dislike" /> Dislike
-                    </label>
-
-                    <label class="control-radio3">
-                      Pork loin or chops:
-                      <input type="radio" name="protein_pork" value="like" /> Like
-                      <input type="radio" name="protein_pork" value="neutral" /> Neutral
-                      <input type="radio" name="protein_pork" value="dislike" /> Dislike
-                    </label>
-
-                    <label class="control-radio3">
-                      Eggs:
-                      <input type="radio" name="protein_eggs" value="like" /> Like
-                      <input type="radio" name="protein_eggs" value="neutral" /> Neutral
-                      <input type="radio" name="protein_eggs" value="dislike" /> Dislike
-                    </label>
-
-                    <label class="control-radio3">
-                      Egg whites:
-                      <input type="radio" name="protein_egg_whites" value="like" /> Like
-                      <input type="radio" name="protein_egg_whites" value="neutral" /> Neutral
-                      <input type="radio" name="protein_egg_whites" value="dislike" /> Dislike
-                    </label>
-
-                    <label class="control-radio3">
-                      Tofu:
-                      <input type="radio" name="protein_tofu" value="like" /> Like
-                      <input type="radio" name="protein_tofu" value="neutral" /> Neutral
-                      <input type="radio" name="protein_tofu" value="dislike" /> Dislike
-                    </label>
-
-                    <label class="control-radio3">
-                      Tempeh:
-                      <input type="radio" name="protein_tempeh" value="like" /> Like
-                      <input type="radio" name="protein_tempeh" value="neutral" /> Neutral
-                      <input type="radio" name="protein_tempeh" value="dislike" /> Dislike
-                    </label>
-
-                    <label class="control-radio3">
-                      Beans (black, pinto, kidney, etc.):
-                      <input type="radio" name="protein_beans" value="like" /> Like
-                      <input type="radio" name="protein_beans" value="neutral" /> Neutral
-                      <input type="radio" name="protein_beans" value="dislike" /> Dislike
-                    </label>
-
-                    <label class="control-radio3">
-                      Lentils:
-                      <input type="radio" name="protein_lentils" value="like" /> Like
-                      <input type="radio" name="protein_lentils" value="neutral" /> Neutral
-                      <input type="radio" name="protein_lentils" value="dislike" /> Dislike
-                    </label>
-
-                    <label class="control-radio3">
-                      Chickpeas / garbanzo beans:
-                      <input type="radio" name="protein_chickpeas" value="like" /> Like
-                      <input type="radio" name="protein_chickpeas" value="neutral" /> Neutral
-                      <input type="radio" name="protein_chickpeas" value="dislike" /> Dislike
-                    </label>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="field-label" for="protein_other">
-                      Any other proteins to include or avoid?
-                    </label>
-                    <input id="protein_other" name="protein_other" type="text" class="text-input" />
+                  </article>
+                  <!-- STEP 4 – Food likes & preferences -->
+            <article class="step-card wizard-step" data-step="4">
+              <div class="step-header">
+                <img src="images/wp-icon-apple.png" alt="" />
+                <div>
+                  <h1>Step 4 – Food likes &amp; preferences</h1>
+                  <div class="step-subtitle">
+                    Tell Wellness Pilot what you actually enjoy eating so the
+                    plan feels familiar and satisfying.
                   </div>
                 </div>
-                <!-- 4.2 DAIRY & ALTERNATIVES -->
-                <h3 class="category-heading">4.2 Dairy & alternatives</h3>
+              </div>
 
-                <div class="control-grid-3col">
-                  <label class="control-radio3">
-                    Skim milk:
-                    <input type="radio" name="dairy_skim" value="like" /> Like
-                    <input type="radio" name="dairy_skim" value="neutral" /> Neutral
-                    <input type="radio" name="dairy_skim" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    1–2% milk:
-                    <input type="radio" name="dairy_lowfat" value="like" /> Like
-                    <input type="radio" name="dairy_lowfat" value="neutral" /> Neutral
-                    <input type="radio" name="dairy_lowfat" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Whole milk:
-                    <input type="radio" name="dairy_whole" value="like" /> Like
-                    <input type="radio" name="dairy_whole" value="neutral" /> Neutral
-                    <input type="radio" name="dairy_whole" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Lactose-free milk:
-                    <input type="radio" name="dairy_lf" value="like" /> Like
-                    <input type="radio" name="dairy_lf" value="neutral" /> Neutral
-                    <input type="radio" name="dairy_lf" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Yogurt – plain:
-                    <input type="radio" name="dairy_yogurt_plain" value="like" /> Like
-                    <input type="radio" name="dairy_yogurt_plain" value="neutral" /> Neutral
-                    <input type="radio" name="dairy_yogurt_plain" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Yogurt – flavored:
-                    <input type="radio" name="dairy_yogurt_flavored" value="like" /> Like
-                    <input type="radio" name="dairy_yogurt_flavored" value="neutral" /> Neutral
-                    <input type="radio" name="dairy_yogurt_flavored" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Cottage cheese:
-                    <input type="radio" name="dairy_cottage" value="like" /> Like
-                    <input type="radio" name="dairy_cottage" value="neutral" /> Neutral
-                    <input type="radio" name="dairy_cottage" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Hard cheeses:
-                    <input type="radio" name="dairy_hard" value="like" /> Like
-                    <input type="radio" name="dairy_hard" value="neutral" /> Neutral
-                    <input type="radio" name="dairy_hard" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Soft cheeses:
-                    <input type="radio" name="dairy_soft" value="like" /> Like
-                    <input type="radio" name="dairy_soft" value="neutral" /> Neutral
-                    <input type="radio" name="dairy_soft" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Cream cheese:
-                    <input type="radio" name="dairy_cream" value="like" /> Like
-                    <input type="radio" name="dairy_cream" value="neutral" /> Neutral
-                    <input type="radio" name="dairy_cream" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Sour cream:
-                    <input type="radio" name="dairy_sour" value="like" /> Like
-                    <input type="radio" name="dairy_sour" value="neutral" /> Neutral
-                    <input type="radio" name="dairy_sour" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Non-dairy milks:
-                    <input type="radio" name="dairy_alt" value="like" /> Like
-                    <input type="radio" name="dairy_alt" value="neutral" /> Neutral
-                    <input type="radio" name="dairy_alt" value="dislike" /> Dislike
-                  </label>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="field-label">General food pattern</label>
+                  <div class="control-grid">
+                    <label class="control-radio">
+                      <input type="radio" name="s4-pattern" /> No specific
+                      pattern / everything
+                    </label>
+                    <label class="control-radio">
+                      <input type="radio" name="s4-pattern" /> Mostly
+                      plant-based
+                    </label>
+                    <label class="control-radio">
+                      <input type="radio" name="s4-pattern" /> Vegetarian
+                    </label>
+                    <label class="control-radio">
+                      <input type="radio" name="s4-pattern" /> Low-carb-ish
+                    </label>
+                    <label class="control-radio">
+                      <input type="radio" name="s4-pattern" /> Other pattern
+                    </label>
+                  </div>
                 </div>
 
                 <div class="form-group">
-                  <label class="field-label" for="dairy_other">
-                    Any other dairy or alternatives to include/avoid?
-                  </label>
-                  <input id="dairy_other" name="dairy_other" type="text" class="text-input" />
-                </div>
-
-                <!-- 4.3 GRAINS -->
-                <h3 class="category-heading">4.3 Grains, starches & carbs</h3>
-
-                <div class="control-grid-3col">
-                  <label class="control-radio3">
-                    White bread:
-                    <input type="radio" name="grain_white_bread" value="like" /> Like
-                    <input type="radio" name="grain_white_bread" value="neutral" /> Neutral
-                    <input type="radio" name="grain_white_bread" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Wheat / whole-grain bread:
-                    <input type="radio" name="grain_wheat_bread" value="like" /> Like
-                    <input type="radio" name="grain_wheat_bread" value="neutral" /> Neutral
-                    <input type="radio" name="grain_wheat_bread" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Buns / rolls:
-                    <input type="radio" name="grain_rolls" value="like" /> Like
-                    <input type="radio" name="grain_rolls" value="neutral" /> Neutral
-                    <input type="radio" name="grain_rolls" value="dislike" /> Dislike
-                  </label>
-                  <label class="control-radio3">
-                    Tortillas (flour):
-                    <input type="radio" name="grain_tortilla_flour" value="like" /> Like
-                    <input type="radio" name="grain_tortilla_flour" value="neutral" /> Neutral
-                    <input type="radio" name="grain_tortilla_flour" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Tortillas (corn):
-                    <input type="radio" name="grain_tortilla_corn" value="like" /> Like
-                    <input type="radio" name="grain_tortilla_corn" value="neutral" /> Neutral
-                    <input type="radio" name="grain_tortilla_corn" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    White rice:
-                    <input type="radio" name="grain_white_rice" value="like" /> Like
-                    <input type="radio" name="grain_white_rice" value="neutral" /> Neutral
-                    <input type="radio" name="grain_white_rice" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Brown rice:
-                    <input type="radio" name="grain_brown_rice" value="like" /> Like
-                    <input type="radio" name="grain_brown_rice" value="neutral" /> Neutral
-                    <input type="radio" name="grain_brown_rice" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Instant rice cups:
-                    <input type="radio" name="grain_rice_cups" value="like" /> Like
-                    <input type="radio" name="grain_rice_cups" value="neutral" /> Neutral
-                    <input type="radio" name="grain_rice_cups" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Pasta – regular:
-                    <input type="radio" name="grain_pasta_regular" value="like" /> Like
-                    <input type="radio" name="grain_pasta_regular" value="neutral" /> Neutral
-                    <input type="radio" name="grain_pasta_regular" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Pasta – whole wheat:
-                    <input type="radio" name="grain_pasta_whole" value="like" /> Like
-                    <input type="radio" name="grain_pasta_whole" value="neutral" /> Neutral
-                    <input type="radio" name="grain_pasta_whole" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Potatoes (baked / roasted / mashed):
-                    <input type="radio" name="grain_potatoes" value="like" /> Like
-                    <input type="radio" name="grain_potatoes" value="neutral" /> Neutral
-                    <input type="radio" name="grain_potatoes" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Sweet potatoes / yams:
-                    <input type="radio" name="grain_sweet_potatoes" value="like" /> Like
-                    <input type="radio" name="grain_sweet_potatoes" value="neutral" /> Neutral
-                    <input type="radio" name="grain_sweet_potatoes" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Oatmeal:
-                    <input type="radio" name="grain_oatmeal" value="like" /> Like
-                    <input type="radio" name="grain_oatmeal" value="neutral" /> Neutral
-                    <input type="radio" name="grain_oatmeal" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Cold cereal:
-                    <input type="radio" name="grain_cereal" value="like" /> Like
-                    <input type="radio" name="grain_cereal" value="neutral" /> Neutral
-                    <input type="radio" name="grain_cereal" value="dislike" /> Dislike
-                  </label>
+                  <label class="field-label">Proteins you like</label>
+                  <div class="control-grid">
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Chicken / turkey
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Beef / pork
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Fish / seafood
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Eggs
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Beans / lentils
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Tofu / tempeh
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Dairy (cheese, yogurt, milk)
+                    </label>
+                  </div>
                 </div>
 
                 <div class="form-group">
-                  <label class="field-label" for="grain_other">
-                    Any other grains / starches to include or avoid?
-                  </label>
-                  <input id="grain_other" name="grain_other" type="text" class="text-input" />
-                </div>
-
-                <!-- 4.4 FRUITS -->
-                <h3 class="category-heading">4.4 Fruits</h3>
-
-                <div class="control-grid-3col">
-                  <label class="control-radio3">
-                    Apples:
-                    <input type="radio" name="fruit_apples" value="like" /> Like
-                    <input type="radio" name="fruit_apples" value="neutral" /> Neutral
-                    <input type="radio" name="fruit_apples" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Bananas:
-                    <input type="radio" name="fruit_bananas" value="like" /> Like
-                    <input type="radio" name="fruit_bananas" value="neutral" /> Neutral
-                    <input type="radio" name="fruit_bananas" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Berries (strawberry, blueberry, etc.):
-                    <input type="radio" name="fruit_berries" value="like" /> Like
-                    <input type="radio" name="fruit_berries" value="neutral" /> Neutral
-                    <input type="radio" name="fruit_berries" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Grapes:
-                    <input type="radio" name="fruit_grapes" value="like" /> Like
-                    <input type="radio" name="fruit_grapes" value="neutral" /> Neutral
-                    <input type="radio" name="fruit_grapes" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Oranges / clementines:
-                    <input type="radio" name="fruit_oranges" value="like" /> Like
-                    <input type="radio" name="fruit_oranges" value="neutral" /> Neutral
-                    <input type="radio" name="fruit_oranges" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Canned fruit (in juice / light syrup):
-                    <input type="radio" name="fruit_canned" value="like" /> Like
-                    <input type="radio" name="fruit_canned" value="neutral" /> Neutral
-                    <input type="radio" name="fruit_canned" value="dislike" /> Dislike
-                  </label>
+                  <label class="field-label">Cuisines you enjoy</label>
+                  <div class="control-grid">
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> American comfort
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Italian / pasta / pizza
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Mexican / Tex-Mex
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Asian-inspired
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Mediterranean
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Breakfast-for-dinner
+                    </label>
+                  </div>
                 </div>
 
                 <div class="form-group">
-                  <label class="field-label" for="fruit_other">
-                    Any other fruits to include or avoid?
-                  </label>
-                  <input id="fruit_other" name="fruit_other" type="text" class="text-input" />
+                  <label for="s4-favorites"
+                    >Favorite meals or snacks (free text)</label
+                  >
+                  <textarea
+                    id="s4-favorites"
+                    placeholder="List a few meals/snacks you really like, so the system can mirror that style."
+                  ></textarea>
                 </div>
+              </div>
 
-                <!-- 4.5 VEGETABLES -->
-                <h3 class="category-heading">4.5 Vegetables</h3>
+              <div class="step-nav">
+                <div>Step 4 of 13</div>
+                <div class="step-nav-buttons">
+                  <button type="button" class="btn-ghost" data-step-back>
+                    Back
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-step-next
+                  >
+                    Next: Foods to avoid &amp; medical notes
+                  </button>
+                </div>
+              </div>
+            </article>
 
-                <div class="control-grid-3col">
-                  <label class="control-radio3">
-                    Leafy greens (spinach, romaine, etc.):
-                    <input type="radio" name="veg_greens" value="like" /> Like
-                    <input type="radio" name="veg_greens" value="neutral" /> Neutral
-                    <input type="radio" name="veg_greens" value="dislike" /> Dislike
-                  </label>
+            <!-- STEP 5 – Foods to avoid & medical -->
+            <article class="step-card wizard-step" data-step="5">
+              <div class="step-header">
+                <img src="images/wp-icon-reports.png" alt="" />
+                <div>
+                  <h1>Step 5 – Foods to avoid &amp; medical notes</h1>
+                  <div class="step-subtitle">
+                    This is where you can flag allergies, strong dislikes, and
+                    health-related considerations (like sodium or blood sugar).
+                  </div>
+                </div>
+              </div>
 
-                  <label class="control-radio3">
-                    Broccoli:
-                    <input type="radio" name="veg_broccoli" value="like" /> Like
-                    <input type="radio" name="veg_broccoli" value="neutral" /> Neutral
-                    <input type="radio" name="veg_broccoli" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Carrots:
-                    <input type="radio" name="veg_carrots" value="like" /> Like
-                    <input type="radio" name="veg_carrots" value="neutral" /> Neutral
-                    <input type="radio" name="veg_carrots" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Green beans:
-                    <input type="radio" name="veg_green_beans" value="like" /> Like
-                    <input type="radio" name="veg_green_beans" value="neutral" /> Neutral
-                    <input type="radio" name="veg_green_beans" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Peas:
-                    <input type="radio" name="veg_peas" value="like" /> Like
-                    <input type="radio" name="veg_peas" value="neutral" /> Neutral
-                    <input type="radio" name="veg_peas" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Corn:
-                    <input type="radio" name="veg_corn" value="like" /> Like
-                    <input type="radio" name="veg_corn" value="neutral" /> Neutral
-                    <input type="radio" name="veg_corn" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Mixed frozen veggies:
-                    <input type="radio" name="veg_mixed_frozen" value="like" /> Like
-                    <input type="radio" name="veg_mixed_frozen" value="neutral" /> Neutral
-                    <input type="radio" name="veg_mixed_frozen" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Salad kits:
-                    <input type="radio" name="veg_salad_kits" value="like" /> Like
-                    <input type="radio" name="veg_salad_kits" value="neutral" /> Neutral
-                    <input type="radio" name="veg_salad_kits" value="dislike" /> Dislike
-                  </label>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="field-label">Allergies / must-avoid items</label>
+                  <div class="control-grid">
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Peanuts / tree nuts
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Shellfish
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Dairy / lactose
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Gluten / wheat
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Soy
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Eggs
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Other (details below)
+                    </label>
+                  </div>
                 </div>
 
                 <div class="form-group">
-                  <label class="field-label" for="veg_other">
-                    Any other vegetables to include or avoid?
-                  </label>
-                  <input id="veg_other" name="veg_other" type="text" class="text-input" />
-                </div>
-                <!-- 4.6 SNACKS & TREATS -->
-                <h3 class="category-heading">4.6 Snacks & treats</h3>
-
-                <div class="control-grid-3col">
-                  <label class="control-radio3">
-                    Nuts / trail mix:
-                    <input type="radio" name="snacks_nuts" value="like" /> Like
-                    <input type="radio" name="snacks_nuts" value="neutral" /> Neutral
-                    <input type="radio" name="snacks_nuts" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Crackers:
-                    <input type="radio" name="snacks_crackers" value="like" /> Like
-                    <input type="radio" name="snacks_crackers" value="neutral" /> Neutral
-                    <input type="radio" name="snacks_crackers" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Chips / pretzels:
-                    <input type="radio" name="snacks_chips" value="like" /> Like
-                    <input type="radio" name="snacks_chips" value="neutral" /> Neutral
-                    <input type="radio" name="snacks_chips" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Popcorn:
-                    <input type="radio" name="snacks_popcorn" value="like" /> Like
-                    <input type="radio" name="snacks_popcorn" value="neutral" /> Neutral
-                    <input type="radio" name="snacks_popcorn" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Cookies / sweets:
-                    <input type="radio" name="snacks_cookies" value="like" /> Like
-                    <input type="radio" name="snacks_cookies" value="neutral" /> Neutral
-                    <input type="radio" name="snacks_cookies" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Ice cream / frozen treats:
-                    <input type="radio" name="snacks_icecream" value="like" /> Like
-                    <input type="radio" name="snacks_icecream" value="neutral" /> Neutral
-                    <input type="radio" name="snacks_icecream" value="dislike" /> Dislike
-                  </label>
+                  <label for="s5-dislikes"
+                    >Strong dislikes (foods you really don’t want in the plan)</label
+                  >
+                  <textarea
+                    id="s5-dislikes"
+                    placeholder="e.g., mushrooms, olives, spicy foods, etc."
+                  ></textarea>
                 </div>
 
                 <div class="form-group">
-                  <label class="field-label" for="snacks_other">
-                    Any snack habits we should know about?
-                  </label>
-                  <input id="snacks_other" name="snacks_other" type="text" class="text-input" />
+                  <label for="s5-health"
+                    >Optional health-related notes (no medical advice)</label
+                  >
+                  <textarea
+                    id="s5-health"
+                    placeholder="Kidneys, heart, blood sugar, etc. The plan will respect general guidelines but is not medical advice."
+                  ></textarea>
                 </div>
+              </div>
 
-                <!-- 4.7 FROZEN / CONVENIENCE MEALS -->
-                <h3 class="category-heading">4.7 Frozen & convenience meals</h3>
-
-                <div class="control-grid-3col">
-                  <label class="control-radio3">
-                    Frozen dinners / entrées:
-                    <input type="radio" name="frozen_dinners" value="like" /> Like
-                    <input type="radio" name="frozen_dinners" value="neutral" /> Neutral
-                    <input type="radio" name="frozen_dinners" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Frozen pizza:
-                    <input type="radio" name="frozen_pizza" value="like" /> Like
-                    <input type="radio" name="frozen_pizza" value="neutral" /> Neutral
-                    <input type="radio" name="frozen_pizza" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Hot dogs / chili dogs:
-                    <input type="radio" name="frozen_hotdogs" value="like" /> Like
-                    <input type="radio" name="frozen_hotdogs" value="neutral" /> Neutral
-                    <input type="radio" name="frozen_hotdogs" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Ready-made soups:
-                    <input type="radio" name="frozen_soups" value="like" /> Like
-                    <input type="radio" name="frozen_soups" value="neutral" /> Neutral
-                    <input type="radio" name="frozen_soups" value="dislike" /> Dislike
-                  </label>
+              <div class="step-nav">
+                <div>Step 5 of 13</div>
+                <div class="step-nav-buttons">
+                  <button type="button" class="btn-ghost" data-step-back>
+                    Back
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-step-next
+                  >
+                    Next: Pantry inventory
+                  </button>
                 </div>
-
-                <!-- 4.8 CONDIMENTS & SAUCES -->
-                <h3 class="category-heading">4.8 Condiments & sauces</h3>
-
-                <div class="control-grid-3col">
-                  <label class="control-radio3">
-                    Ketchup:
-                    <input type="radio" name="cond_ketchup" value="like" /> Like
-                    <input type="radio" name="cond_ketchup" value="neutral" /> Neutral
-                    <input type="radio" name="cond_ketchup" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Mustard:
-                    <input type="radio" name="cond_mustard" value="like" /> Like
-                    <input type="radio" name="cond_mustard" value="neutral" /> Neutral
-                    <input type="radio" name="cond_mustard" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Mayonnaise / salad dressing:
-                    <input type="radio" name="cond_mayo" value="like" /> Like
-                    <input type="radio" name="cond_mayo" value="neutral" /> Neutral
-                    <input type="radio" name="cond_mayo" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    BBQ sauce:
-                    <input type="radio" name="cond_bbq" value="like" /> Like
-                    <input type="radio" name="cond_bbq" value="neutral" /> Neutral
-                    <input type="radio" name="cond_bbq" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Hot sauce:
-                    <input type="radio" name="cond_hot_sauce" value="like" /> Like
-                    <input type="radio" name="cond_hot_sauce" value="neutral" /> Neutral
-                    <input type="radio" name="cond_hot_sauce" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Soy sauce / teriyaki:
-                    <input type="radio" name="cond_soy" value="like" /> Like
-                    <input type="radio" name="cond_soy" value="neutral" /> Neutral
-                    <input type="radio" name="cond_soy" value="dislike" /> Dislike
-                  </label>
+              </div>
+            </article>
+            <!-- STEP 6 – Pantry inventory -->
+            <article class="step-card wizard-step" data-step="6">
+              <div class="step-header">
+                <img src="images/wp-icon-pantry.png" alt="" />
+                <div>
+                  <h1>Step 6 – Pantry, fridge &amp; freezer</h1>
+                  <div class="step-subtitle">
+                    Wellness Pilot is pantry-aware. Start with your main
+                    categories so we can prioritize what you already own.
+                  </div>
                 </div>
+              </div>
 
-                <!-- 4.9 DRINKS -->
-                <h3 class="category-heading">4.9 Drinks</h3>
-
-                <div class="control-grid-3col">
-                  <label class="control-radio3">
-                    Water (plain):
-                    <input type="radio" name="drink_water" value="like" /> Like
-                    <input type="radio" name="drink_water" value="neutral" /> Neutral
-                    <input type="radio" name="drink_water" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Flavored water / seltzer:
-                    <input type="radio" name="drink_seltzer" value="like" /> Like
-                    <input type="radio" name="drink_seltzer" value="neutral" /> Neutral
-                    <input type="radio" name="drink_seltzer" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Diet soda:
-                    <input type="radio" name="drink_diet_soda" value="like" /> Like
-                    <input type="radio" name="drink_diet_soda" value="neutral" /> Neutral
-                    <input type="radio" name="drink_diet_soda" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Regular soda:
-                    <input type="radio" name="drink_soda" value="like" /> Like
-                    <input type="radio" name="drink_soda" value="neutral" /> Neutral
-                    <input type="radio" name="drink_soda" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Juice:
-                    <input type="radio" name="drink_juice" value="like" /> Like
-                    <input type="radio" name="drink_juice" value="neutral" /> Neutral
-                    <input type="radio" name="drink_juice" value="dislike" /> Dislike
-                  </label>
-
-                  <label class="control-radio3">
-                    Coffee / tea (sweetened):
-                    <input type="radio" name="drink_coffee_sweet" value="like" /> Like
-                    <input type="radio" name="drink_coffee_sweet" value="neutral" /> Neutral
-                    <input type="radio" name="drink_coffee_sweet" value="dislike" /> Dislike
-                  </label>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="s6-pantry-text"
+                    >Paste or describe your pantry list</label
+                  >
+                  <textarea
+                    id="s6-pantry-text"
+                    placeholder="You can paste your full pantry text here (as you’ve been maintaining), or briefly describe what you usually keep on hand."
+                  ></textarea>
                 </div>
 
                 <div class="form-group">
-                  <label class="field-label" for="drink_other">
-                    Any other drinks we should know about?
-                  </label>
-                  <input id="drink_other" name="drink_other" type="text" class="text-input" />
+                  <label class="field-label">How aggressive should we be about using things up?</label>
+                  <div class="control-grid">
+                    <label class="control-radio">
+                      <input type="radio" name="s6-aggressive" /> Light – use
+                      some items, but not pushy
+                    </label>
+                    <label class="control-radio">
+                      <input type="radio" name="s6-aggressive" /> Medium – good
+                      balance of pantry and new items
+                    </label>
+                    <label class="control-radio">
+                      <input type="radio" name="s6-aggressive" /> Strong – use
+                      up lots of pantry items
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step-nav">
+                <div>Step 6 of 13</div>
+                <div class="step-nav-buttons">
+                  <button type="button" class="btn-ghost" data-step-back>
+                    Back
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-step-next
+                  >
+                    Next: Stores &amp; budget
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- STEP 7 – Stores, budget & PDFs (PLUS features) -->
+            <article class="step-card wizard-step" data-step="7">
+              <div class="step-header">
+                <img src="images/wp-icon-budget.png" alt="" />
+                <div>
+                  <h1>Step 7 – Stores, budget &amp; local ads</h1>
+                  <div class="step-subtitle">
+                    Set your weekly budget and tell Wellness Pilot where you
+                    like to shop. PLUS members can upload store PDFs so the plan
+                    can lean on weekly sales.
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="s7-budget"
+                    >Weekly food budget (for this plan)</label
+                  >
+                  <input
+                    id="s7-budget"
+                    type="number"
+                    min="0"
+                    step="1"
+                    placeholder="e.g., 75"
+                  />
+                  <p style="font-size: 12px; color: #64748b; margin: 4px 0 0;">
+                    This is a target, not a guarantee. The system will aim to
+                    keep recipes and grocery list within this range.
+                  </p>
                 </div>
 
-              </div> <!-- /step-card -->
-            </div> <!-- /onboarding-step 4 -->
-            <!-- STEP 5 — AVOID / MEDICAL RESTRICTIONS -->
-        <div class="onboarding-step" data-step="5">
-          <div class="step-card">
-            <h2>Step 5 – Avoid / medical restrictions</h2>
+                <div class="form-group">
+                  <label for="s7-stores"
+                    >Which grocery stores do you usually shop at?</label
+                  >
+                  <textarea
+                    id="s7-stores"
+                    placeholder="List a few stores (e.g., Giant Eagle, Aldi, Walmart, local shop)."
+                  ></textarea>
+                </div>
 
-            <p class="step-note">
-              Tell us if there are any foods you <strong>must avoid</strong> for medical, allergy,
-              or personal reasons.
-            </p>
+                <div class="form-group">
+                  <label class="field-label"
+                    >How many stores are you willing to visit for this plan?</label
+                  >
+                  <div class="control-grid">
+                    <label class="control-radio">
+                      <input type="radio" name="s7-count" /> 1 store only (most
+                      convenient)
+                    </label>
+                    <label class="control-radio">
+                      <input type="radio" name="s7-count" /> Up to 2 stores
+                    </label>
+                    <label class="control-radio">
+                      <input type="radio" name="s7-count" /> Up to 3 stores if
+                      it saves real money
+                    </label>
+                  </div>
+                </div>
 
-            <div class="form-group">
-              <label class="field-label">
-                Do you have any allergies?
-              </label>
-
-              <div class="control-grid">
-                <label class="control-checkbox">
-                  <input type="checkbox" name="avoid_allergy" value="nuts" />
-                  <span>Tree nuts / peanuts</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="avoid_allergy" value="shellfish" />
-                  <span>Shellfish</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="avoid_allergy" value="gluten" />
-                  <span>Gluten</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="avoid_allergy" value="soy" />
-                  <span>Soy</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="avoid_allergy" value="dairy" />
-                  <span>Dairy</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="avoid_allergy" value="eggs" />
-                  <span>Eggs</span>
-                </label>
+                <div class="form-group">
+                  <label for="s7-pdf"
+                    >Upload local grocery PDF ads (PLUS feature – demo only)</label
+                  >
+                  <input
+                    id="s7-pdf"
+                    type="file"
+                    accept="application/pdf"
+                    multiple
+                  />
+                  <p style="font-size: 12px; color: #64748b; margin: 4px 0 0;">
+                    In the real PLUS version, Wellness Pilot would scan these
+                    PDFs, tag sale items, and tilt your weekly plan toward the
+                    best deals at your chosen stores. This demo doesn’t process
+                    uploads yet.
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label class="field-label" for="avoid_medical">
-                Any medically-restricted foods? (e.g., low-potassium, low-phosphorus, no grapefruit)
-              </label>
-              <textarea id="avoid_medical" name="avoid_medical" class="text-area"></textarea>
-            </div>
+              <div class="step-nav">
+                <div>Step 7 of 13</div>
+                <div class="step-nav-buttons">
+                  <button type="button" class="btn-ghost" data-step-back>
+                    Back
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-step-next
+                  >
+                    Next: Nutrition focus
+                  </button>
+                </div>
+              </div>
+            </article>
+            <!-- STEP 8 – Nutrition focus -->
+            <article class="step-card wizard-step" data-step="8">
+              <div class="step-header">
+                <img src="images/wp-icon-apple-dark.png" alt="" />
+                <div>
+                  <h1>Step 8 – Nutrition focus (pick up to 3)</h1>
+                  <div class="step-subtitle">
+                    This isn’t medical advice, but it helps Wellness Pilot lean
+                    your week in the direction you care about most.
+                  </div>
+                </div>
+              </div>
 
-            <div class="form-group">
-              <label class="field-label" for="avoid_other">
-                Any foods you avoid for personal or religious reasons?
-              </label>
-              <textarea id="avoid_other" name="avoid_other" class="text-area"></textarea>
-            </div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="field-label">Top nutrition priorities</label>
+                  <div class="control-grid">
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Calorie awareness (within a
+                      range)
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> More protein
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> More fiber / plants
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Gentle on sodium (not extreme)
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Lower added sugar
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Heart-friendly pattern
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Blood-sugar-friendly pattern
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> I’m not focused on nutrition
+                      details right now
+                    </label>
+                  </div>
+                </div>
 
-            <div class="wizard-nav">
-              <button class="wizard-btn prev-btn" data-prev="4">Back</button>
-              <button class="wizard-btn next-btn" data-next="6">Next</button>
-            </div>
+                <div class="form-group">
+                  <label for="s8-notes"
+                    >Any specific targets or extra context?</label
+                  >
+                  <textarea
+                    id="s8-notes"
+                    placeholder="Optional: note any lab numbers, advice from your care team, or rough targets you keep in mind."
+                  ></textarea>
+                </div>
+              </div>
 
-          </div>
+              <div class="step-nav">
+                <div>Step 8 of 13</div>
+                <div class="step-nav-buttons">
+                  <button type="button" class="btn-ghost" data-step-back>
+                    Back
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-step-next
+                  >
+                    Next: Movement stack
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- STEP 9 – Movement stack -->
+            <article class="step-card wizard-step" data-step="9">
+              <div class="step-header">
+                <img src="images/wp-icon-movement.png" alt="" />
+                <div>
+                  <h1>Step 9 – Movement stack</h1>
+                  <div class="step-subtitle">
+                    Build a realistic, low-impact movement routine that fits
+                    around your food plan.
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="field-label">Weekly movement pattern</label>
+                  <div class="control-grid">
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Gentle stretching
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Walking
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Radio Taiso
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Tai Chi / Qigong
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Light strength / bands
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Other movement (describe below)
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="s9-steps">Average daily steps (if known)</label>
+                  <input
+                    id="s9-steps"
+                    type="text"
+                    placeholder="e.g., 2,500 steps, or a typical range"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="s9-minutes"
+                    >Daily movement minutes you’re aiming for</label
+                  >
+                  <input
+                    id="s9-minutes"
+                    type="text"
+                    placeholder="e.g., 20–30 minutes total per day"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="s9-notes"
+                    >Movement limitations or preferences</label
+                  >
+                  <textarea
+                    id="s9-notes"
+                    placeholder="Joint issues, balance, preferred time of day, etc."
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="step-nav">
+                <div>Step 9 of 13</div>
+                <div class="step-nav-buttons">
+                  <button type="button" class="btn-ghost" data-step-back>
+                    Back
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-step-next
+                  >
+                    Next: Weekly schedule
+                  </button>
+                </div>
+              </div>
+            </article>
+            <!-- STEP 10 – Weekly schedule & time windows -->
+            <article class="step-card wizard-step" data-step="10">
+              <div class="step-header">
+                <img src="images/wp-icon-apple.png" alt="" />
+                <div>
+                  <h1>Step 10 – Weekly schedule &amp; time windows</h1>
+                  <div class="step-subtitle">
+                    Let Wellness Pilot know when you’re usually home, busy, or
+                    more open to cooking and movement.
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="s10-work"
+                    >Short description of your typical week</label
+                  >
+                  <textarea
+                    id="s10-work"
+                    placeholder="e.g., Work Mon–Fri 9–5, late nights Tue/Thu, busy weekends, etc."
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="s10-cookdays"
+                    >Which days are best for cooking or prep?</label
+                  >
+                  <textarea
+                    id="s10-cookdays"
+                    placeholder="e.g., Sunday batch cook, simple on weeknights, more time on Saturday."
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="s10-move-time"
+                    >Preferred time of day for movement</label
+                  >
+                  <select id="s10-move-time">
+                    <option value="">Choose...</option>
+                    <option>Morning</option>
+                    <option>Midday</option>
+                    <option>Afternoon / early evening</option>
+                    <option>Evening</option>
+                    <option>No preference</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="step-nav">
+                <div>Step 10 of 13</div>
+                <div class="step-nav-buttons">
+                  <button type="button" class="btn-ghost" data-step-back>
+                    Back
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-step-next
+                  >
+                    Next: Leftovers &amp; repeats
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- STEP 11 – Leftovers & repeats -->
+            <article class="step-card wizard-step" data-step="11">
+              <div class="step-header">
+                <img src="images/wp-icon-pantry.png" alt="" />
+                <div>
+                  <h1>Step 11 – Leftovers, repeats &amp; simplicity</h1>
+                  <div class="step-subtitle">
+                    Decide how much variety vs. repetition you want and how
+                    leftovers should show up.
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="field-label"
+                    >Comfort level with leftovers</label
+                  >
+                  <div class="control-grid">
+                    <label class="control-radio">
+                      <input type="radio" name="s11-leftovers" /> Love them –
+                      happy to reheat several times
+                    </label>
+                    <label class="control-radio">
+                      <input type="radio" name="s11-leftovers" /> Okay with some
+                      leftovers, not every day
+                    </label>
+                    <label class="control-radio">
+                      <input type="radio" name="s11-leftovers" /> Prefer mostly
+                      fresh / minimal repeats
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label"
+                    >How often can the same meal repeat in a week?</label
+                  >
+                  <div class="control-grid">
+                    <label class="control-radio">
+                      <input type="radio" name="s11-repeat" /> Up to 3–4 times
+                    </label>
+                    <label class="control-radio">
+                      <input type="radio" name="s11-repeat" /> Up to 2–3 times
+                    </label>
+                    <label class="control-radio">
+                      <input type="radio" name="s11-repeat" /> 1–2 times only
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="s11-notes"
+                    >Any specific leftover habits we should respect?</label
+                  >
+                  <textarea
+                    id="s11-notes"
+                    placeholder="e.g., prefer leftovers at lunch, not dinner; freeze extra portions, etc."
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="step-nav">
+                <div>Step 11 of 13</div>
+                <div class="step-nav-buttons">
+                  <button type="button" class="btn-ghost" data-step-back>
+                    Back
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-step-next
+                  >
+                    Next: Plan style &amp; output
+                  </button>
+                </div>
+              </div>
+            </article>
+            <!-- STEP 12 – Plan style & output format -->
+            <article class="step-card wizard-step" data-step="12">
+              <div class="step-header">
+                <img src="images/wp-icon-apple.png" alt="" />
+                <div>
+                  <h1>Step 12 – Plan style &amp; report output</h1>
+                  <div class="step-subtitle">
+                    Choose how you want your final weekly plan, grocery list,
+                    and movement stack to look.
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="field-label">Plan layout preference</label>
+                  <div class="control-grid">
+                    <label class="control-radio">
+                      <input type="radio" name="s12-layout" /> One-page weekly
+                      overview (compact)
+                    </label>
+                    <label class="control-radio">
+                      <input type="radio" name="s12-layout" /> Detailed daily
+                      layout with notes
+                    </label>
+                    <label class="control-radio">
+                      <input type="radio" name="s12-layout" /> Both overview and
+                      detailed pages
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label">Recipe detail level</label>
+                  <div class="control-grid">
+                    <label class="control-radio">
+                      <input type="radio" name="s12-detail" /> Simple: meal
+                      title + quick notes
+                    </label>
+                    <label class="control-radio">
+                      <input type="radio" name="s12-detail" /> Standard: title +
+                      ingredients + quick steps
+                    </label>
+                    <label class="control-radio">
+                      <input type="radio" name="s12-detail" /> Detailed:
+                      step-by-step instructions
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="field-label">Output formats (demo)</label>
+                  <div class="control-grid">
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> On-screen dashboard view
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Printable PDF weekly report
+                    </label>
+                    <label class="control-checkbox">
+                      <input type="checkbox" /> Grocery list view
+                    </label>
+                  </div>
+                  <p style="font-size: 12px; color: #64748b; margin: 4px 0 0;">
+                    In this prototype, we show a dashboard-style summary. The
+                    full app would also generate PDFs and exportable lists.
+                  </p>
+                </div>
+              </div>
+
+              <div class="step-nav">
+                <div>Step 12 of 13</div>
+                <div class="step-nav-buttons">
+                  <button type="button" class="btn-ghost" data-step-back>
+                    Back
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-step-next
+                  >
+                    Next: Confirm &amp; generate
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- STEP 13 – Confirm & summary -->
+            <article class="step-card wizard-step" data-step="13">
+              <div class="step-header">
+                <img src="images/wp-icon-apple.png" alt="" />
+                <div>
+                  <h1>Step 13 – Confirm &amp; generate (demo only)</h1>
+                  <div class="step-subtitle">
+                    In the live version, this step would summarize everything
+                    you've told Wellness Pilot and then build your weekly plan.
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="field-label">Review checklist</label>
+                  <ul class="plan-list">
+                    <li>Your plan dates &amp; length look correct.</li>
+                    <li>
+                      Food likes, dislikes, and medical notes reflect your
+                      current reality.
+                    </li>
+                    <li>
+                      Pantry text and store choices feel right for this week.
+                    </li>
+                    <li>
+                      Budget range, movement stack, and schedule match what you
+                      can realistically do.
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="form-group">
+                  <label for="s13-notes"
+                    >Final notes for this plan run (optional)</label
+                  >
+                  <textarea
+                    id="s13-notes"
+                    placeholder="Anything special about this week (company visiting, holidays, travel, etc.)?"
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <p style="font-size: 13px; color: #64748b;">
+                    This prototype does not actually generate a real plan. In
+                    the full app, clicking the button below would:
+                  </p>
+                  <ul class="plan-list">
+                    <li>Build your weekly meal &amp; snack plan.</li>
+                    <li>Create a grocery list aligned with your pantry.</li>
+                    <li>
+                      Layer your daily movement stack onto each day’s schedule.
+                    </li>
+                    <li>
+                      Produce a dashboard view and downloadable weekly report.
+                    </li>
+                  </ul>
+                </div>
+
+                <button type="button" class="btn btn-primary" disabled>
+                  Generate my weekly Wellness Pilot plan (demo)
+                </button>
+              </div>
+
+              <div class="step-nav">
+                <div>Step 13 of 13</div>
+                <div class="step-nav-buttons">
+                  <button type="button" class="btn-ghost" data-step-back>
+                    Back
+                  </button>
+                  <button type="button" class="btn btn-secondary" disabled>
+                    Done – this is a prototype
+                  </button>
+                </div>
+              </div>
+            </article>
+            </div>
+          <!-- end .onboard-main -->
         </div>
-        <!-- STEP 6 — PANTRY -->
-        <div class="onboarding-step" data-step="6">
-          <div class="step-card">
-            <h2>Step 6 – Pantry</h2>
-
-            <p class="step-note">
-              A big part of the plan uses the food you <strong>already have</strong>.
-              This helps cut grocery costs and reduces waste.
-            </p>
-
-            <div class="form-group">
-              <label class="field-label">
-                Do you usually keep these pantry staples?
-              </label>
-
-              <div class="control-grid">
-                <label class="control-checkbox">
-                  <input type="checkbox" name="pantry_staples" value="oil" />
-                  <span>Cooking oil</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="pantry_staples" value="salt" />
-                  <span>Salt (regular)</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="pantry_staples" value="pepper" />
-                  <span>Black pepper</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="pantry_staples" value="pasta" />
-                  <span>Pasta</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="pantry_staples" value="rice" />
-                  <span>Rice</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="pantry_staples" value="beans" />
-                  <span>Canned beans</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="pantry_staples" value="tomato_sauce" />
-                  <span>Tomato sauce</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="pantry_staples" value="spices" />
-                  <span>Basic spices</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="field-label" for="pantry_notes">
-                Anything unique about your pantry? (e.g., bulk frozen meats, lots of canned goods)
-              </label>
-              <textarea id="pantry_notes" name="pantry_notes" class="text-area"></textarea>
-            </div>
-
-            <div class="wizard-nav">
-              <button class="wizard-btn prev-btn" data-prev="5">Back</button>
-              <button class="wizard-btn next-btn" data-next="7">Next</button>
-            </div>
-
-          </div>
-        </div>
-        <!-- STEP 7 — STORES & BUDGET BEHAVIOR -->
-        <div class="onboarding-step" data-step="7">
-          <div class="step-card">
-            <h2>Step 7 – Where you shop & how you budget</h2>
-
-            <p class="step-note">
-              This helps the plan lean into the stores and habits you already use, instead of
-              pretending you shop at fancy places you never visit.
-            </p>
-
-            <div class="form-group">
-              <label class="field-label">
-                Which stores do you shop at most often?
-              </label>
-
-              <div class="control-grid">
-                <label class="control-checkbox">
-                  <input type="checkbox" name="stores" value="walmart" />
-                  <span>Walmart</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="stores" value="aldi" />
-                  <span>Aldi</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="stores" value="kroger" />
-                  <span>Kroger / local supermarket</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="stores" value="costco" />
-                  <span>Costco / Sam’s Club</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="stores" value="dollar" />
-                  <span>Dollar store</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="stores" value="other" />
-                  <span>Other / local favorites</span>
-                </label>
-              </div>
-
-              <input
-                type="text"
-                id="stores_other_text"
-                name="stores_other_text"
-                class="text-input"
-                placeholder="If other, list here (optional)…"
-              />
-            </div>
-
-            <div class="form-group">
-              <label class="field-label">
-                Would you visit more than one store to save money?
-              </label>
-
-              <div class="control-grid">
-                <label class="control-radio">
-                  <input type="radio" name="multi_store" value="no" />
-                  <span>No, one store only</span>
-                </label>
-
-                <label class="control-radio">
-                  <input type="radio" name="multi_store" value="maybe" />
-                  <span>Maybe two stores if savings are big</span>
-                </label>
-
-                <label class="control-radio">
-                  <input type="radio" name="multi_store" value="yes" />
-                  <span>Yes, I’m okay with multiple stops</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="field-label">
-                When choosing where to shop, what matters most?
-              </label>
-
-              <div class="control-grid">
-                <label class="control-radio">
-                  <input type="radio" name="store_priority" value="lowest_cost" />
-                  <span>Lowest total cost</span>
-                </label>
-
-                <label class="control-radio">
-                  <input type="radio" name="store_priority" value="closest" />
-                  <span>Closest / easiest to reach</span>
-                </label>
-
-                <label class="control-radio">
-                  <input type="radio" name="store_priority" value="selection" />
-                  <span>Best selection / brands</span>
-                </label>
-
-                <label class="control-radio">
-                  <input type="radio" name="store_priority" value="mix" />
-                  <span>Mix of value and convenience</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="field-label">
-                How often do you look for sales, coupons, or digital deals?
-              </label>
-
-              <div class="control-grid">
-                <label class="control-radio">
-                  <input type="radio" name="sales_habit" value="rarely" />
-                  <span>Rarely / almost never</span>
-                </label>
-
-                <label class="control-radio">
-                  <input type="radio" name="sales_habit" value="sometimes" />
-                  <span>Sometimes when I see them</span>
-                </label>
-
-                <label class="control-radio">
-                  <input type="radio" name="sales_habit" value="often" />
-                  <span>Often / I chase deals</span>
-                </label>
-
-                <label class="control-radio">
-                  <input type="radio" name="sales_habit" value="very_often" />
-                  <span>Very often / I plan around sales</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="wizard-nav">
-              <button class="wizard-btn prev-btn" data-prev="6">Back</button>
-              <button class="wizard-btn next-btn" data-next="8">Next</button>
-            </div>
-
-          </div>
-        </div>
-        <!-- STEP 8 — SODIUM & NUTRITION FOCUS -->
-        <div class="onboarding-step" data-step="8">
-          <div class="step-card">
-            <h2>Step 8 – Sodium & nutrition focus</h2>
-
-            <p class="step-note">
-              This step controls how aggressively the plan tries to lower sodium, and what
-              other nutrition goals it should keep in mind.
-            </p>
-
-            <div class="form-group">
-              <label class="field-label">
-                How aggressive should we be with sodium reduction?
-              </label>
-
-              <div class="control-grid">
-                <label class="control-radio">
-                  <input type="radio" name="sodium_goal" value="none" />
-                  <span>No special focus</span>
-                </label>
-
-                <label class="control-radio">
-                  <input type="radio" name="sodium_goal" value="gentle" />
-                  <span>Gentle reduction</span>
-                </label>
-
-                <label class="control-radio">
-                  <input type="radio" name="sodium_goal" value="moderate" />
-                  <span>Moderate reduction</span>
-                </label>
-
-                <label class="control-radio">
-                  <input type="radio" name="sodium_goal" value="aggressive" />
-                  <span>Aggressive reduction (priority)</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="field-label">
-                Which salty items do you most want to cut back on?
-              </label>
-
-              <div class="control-grid">
-                <label class="control-checkbox">
-                  <input type="checkbox" name="sodium_sources" value="processed_meats" />
-                  <span>Processed meats (bacon, sausage, deli)</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="sodium_sources" value="canned_soups" />
-                  <span>Canned soups & instant noodles</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="sodium_sources" value="frozen_meals" />
-                  <span>Frozen dinners / entrées</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="sodium_sources" value="snacks" />
-                  <span>Salty snacks (chips, pretzels, etc.)</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="sodium_sources" value="restaurant" />
-                  <span>Restaurant / takeout food</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="sodium_sources" value="sauces" />
-                  <span>Sauces & condiments (soy sauce, etc.)</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="field-label">
-                Are there any other nutrition focus areas you care about?
-              </label>
-
-              <div class="control-grid">
-                <label class="control-checkbox">
-                  <input type="checkbox" name="nutri_focus" value="lower_sugar" />
-                  <span>Lower added sugar</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="nutri_focus" value="more_fiber" />
-                  <span>More fiber</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="nutri_focus" value="higher_protein" />
-                  <span>Higher protein</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="nutri_focus" value="lower_sat_fat" />
-                  <span>Lower saturated fat</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="nutri_focus" value="more_produce" />
-                  <span>More fruits & vegetables</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="field-label" for="nutri_other">
-                Anything else we should know about your nutrition goals?
-              </label>
-              <textarea id="nutri_other" name="nutri_other" class="text-area"></textarea>
-            </div>
-
-            <div class="wizard-nav">
-              <button class="wizard-btn prev-btn" data-prev="7">Back</button>
-              <button class="wizard-btn next-btn" data-next="9">Next</button>
-            </div>
-
-          </div>
-                    </div>
-                    <!-- STEP 9 — MOVEMENT / EXERCISE -->
-        <div class="onboarding-step" data-step="9">
-          <div class="step-card">
-            <h2>Step 9 – Movement stack & exercise comfort</h2>
-
-            <p class="step-note">
-              This doesn’t have to be fancy. We just want realistic movement that helps your
-              health and works with your body.
-            </p>
-
-            <div class="form-group">
-              <label class="field-label">
-                How active are you right now?
-              </label>
-
-              <div class="control-grid">
-                <label class="control-radio">
-                  <input type="radio" name="activity_level" value="sedentary" />
-                  <span>Mostly sedentary</span>
-                </label>
-
-                <label class="control-radio">
-                  <input type="radio" name="activity_level" value="light" />
-                  <span>Lightly active (some walking)</span>
-                </label>
-
-                <label class="control-radio">
-                  <input type="radio" name="activity_level" value="moderate" />
-                  <span>Moderately active</span>
-                </label>
-
-                <label class="control-radio">
-                  <input type="radio" name="activity_level" value="high" />
-                  <span>Very active</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="field-label">
-                Which movement types are you okay with?
-              </label>
-
-              <div class="control-grid">
-                <label class="control-checkbox">
-                  <input type="checkbox" name="movement_types" value="radio_taiso" />
-                  <span>Radio Taiso / similar routines</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="movement_types" value="tai_chi" />
-                  <span>Tai Chi / gentle flow</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="movement_types" value="short_walks" />
-                  <span>Short walks (5–15 minutes)</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="movement_types" value="longer_walks" />
-                  <span>Longer walks (20–40 minutes)</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="movement_types" value="bike" />
-                  <span>Stationary bike</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="movement_types" value="bands" />
-                  <span>Light resistance bands</span>
-                </label>
-
-                <label class="control-checkbox">
-                  <input type="checkbox" name="movement_types" value="weights" />
-                  <span>Light weights / gym machines</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="field-label" for="movement_days">
-                Target days per week for movement (3–7)
-              </label>
-              <input
-                id="movement_days"
-                name="movement_days"
-                type="range"
-                min="3"
-                max="7"
-                step="1"
-                class="range-input"
-              />
-            </div>
-
-            <div class="form-group">
-              <label class="field-label" for="movement_minutes">
-                About how many minutes per active day?
-              </label>
-              <input
-                id="movement_minutes"
-                name="movement_minutes"
-                type="range"
-                min="10"
-                max="60"
-                step="5"
-                class="range-input"
-              />
-            </div>
-
-            <div class="form-group">
-              <label class="field-label" for="movement_limits">
-                Any joint or mobility limitations? (e.g., knees, back, balance)
-              </label>
-              <textarea
-                id="movement_limits"
-                name="movement_limits"
-                class="text-area"
-              ></textarea>
-            </div>
-
-            <div class="wizard-nav">
-              <button class="wizard-btn prev-btn" data-prev="8">Back</button>
-              <button class="wizard-btn next-btn" data-next="10">Next</button>
-            </div>
-
-          </div>
-        </div>
-        <!-- STEP 10 — DAILY SCHEDULE & MEAL TIMING -->
-        <div class="onboarding-step" data-step="10">
-          <div class="step-card">
-            <h2>Step 10 – Daily schedule & meal timing</h2>
-
-            <p class="step-note">
-              This helps the plan land meals and snacks in the windows that actually work for you.
-            </p>
-
-            <div class="form-group">
-              <label class="field-label" for="wake_time">
-                Usual wake time
-              </label>
-              <input id="wake_time" name="wake_time" type="time" class="text-input" />
-            </div>
-
-            <div class="form-group">
-              <label class="field-label" for="bed_time">
-                Usual bedtime
-              </label>
-              <input id="bed_time" name="bed_time" type="time" class="text-input" />
-            </div>
-
-            <div class="form-group">
-              <label class="field-label">
-                Are there days that feel different from the rest of the week?
-              </label>
-
-              <div class="control-grid">
-                <label class="control-checkbox">
-                  <input type="checkbox" name="busy_days" value="monday" />
-                  <span>Monday</span>
-                </label>
-                <label class="control-checkbox">
-                  <input type="checkbox" name="busy_days" value="tuesday" />
-                  <span>Tuesday</span>
-                </label>
-                <label class="control-checkbox">
-                  <input type="checkbox" name="busy_days" value="wednesday" />
-                  <span>Wednesday</span>
-                </label>
-                <label class="control-checkbox">
-                  <input type="checkbox" name="busy_days" value="thursday" />
-                  <span>Thursday</span>
-                </label>
-                <label class="control-checkbox">
-                  <input type="checkbox" name="busy_days" value="friday" />
-                  <span>Friday</span>
-                </label>
-                <label class="control-checkbox">
-                  <input type="checkbox" name="busy_days" value="saturday" />
-                  <span>Saturday</span>
-                </label>
-                <label class="control-checkbox">
-                  <input type="checkbox" name="busy_days" value="sunday" />
-                  <span>Sunday</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="field-label" for="busy_notes">
-                What’s different about those days? (late work, appointments, etc.)
-              </label>
-              <textarea id="busy_notes" name="busy_notes" class="text-area"></textarea>
-            </div>
-
-            <div class="form-group">
-              <label class="field-label">
-                How often do you eat out or order takeout?
-              </label>
-
-              <div class="control-grid">
-                <label class="control-radio">
-                  <input type="radio" name="eat_out" value="rarely" />
-                  <span>Rarely / almost never</span>
-                </label>
-                <label class="control-radio">
-                  <input type="radio" name="eat_out" value="weekly_1_2" />
-                  <span>About 1–2 meals per week</span>
-                </label>
-                <label class="control-radio">
-                  <input type="radio" name="eat_out" value="weekly_3plus" />
-                  <span>More than 2 meals per week</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="wizard-nav">
-              <button class="wizard-btn prev-btn" data-prev="9">Back</button>
-              <button class="wizard-btn next-btn" data-next="11">Next</button>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- STEP 11 — LEFTOVERS, BATCH COOKING & REPETITION -->
-        <div class="onboarding-step" data-step="11">
-          <div class="step-card">
-            <h2>Step 11 – Leftovers, batch cooking & repetition</h2>
-
-            <p class="step-note">
-              Some people love leftovers, some people hate them. We’ll match your style.
-            </p>
-
-            <div class="form-group">
-              <label class="field-label">
-                How do you feel about leftovers?
-              </label>
-
-              <div class="control-grid">
-                <label class="control-radio">
-                  <input type="radio" name="leftovers_feel" value="love" />
-                  <span>Love them – plan them on purpose</span>
-                </label>
-
-                <label class="control-radio">
-                  <input type="radio" name="leftovers_feel" value="ok" />
-                  <span>Okay sometimes</span>
-                </label>
-
-                <label class="control-radio">
-                  <input type="radio" name="leftovers_feel" value="no" />
-                  <span>Prefer fresh meals, minimal leftovers</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="field-label" for="leftover_days">
-                How many days in a row are you okay eating the same main dish?
-              </label>
-              <input
-                id="leftover_days"
-                name="leftover_days"
-                type="range"
-                min="1"
-                max="4"
-                step="1"
-                class="range-input"
-              />
-            </div>
-
-            <div class="form-group">
-              <label class="field-label">
-                Do you want batch-cooked recipes (cook once, eat multiple times)?
-              </label>
-
-              <div class="control-grid">
-                <label class="control-radio">
-                  <input type="radio" name="batch_interest" value="yes" />
-                  <span>Yes, please</span>
-                </label>
-
-                <label class="control-radio">
-                  <input type="radio" name="batch_interest" value="maybe" />
-                  <span>Maybe a few</span>
-                </label>
-
-                <label class="control-radio">
-                  <input type="radio" name="batch_interest" value="no" />
-                  <span>No, keep things more varied</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="wizard-nav">
-              <button class="wizard-btn prev-btn" data-prev="10">Back</button>
-              <button class="wizard-btn next-btn" data-next="12">Next</button>
-            </div>
-
-          </div>
-        </div>
-        <!-- STEP 12 — GUIDANCE & PLAN STYLE -->
-        <div class="onboarding-step" data-step="12">
-          <div class="step-card">
-            <h2>Step 12 – Guidance & plan style</h2>
-
-            <p class="step-note">
-              Last few style questions about how the plan should look and feel for you.
-            </p>
-
-            <div class="form-group">
-              <label class="field-label">
-                How detailed do you want instructions and guidance to be?
-              </label>
-
-              <div class="control-grid">
-                <label class="control-radio">
-                  <input type="radio" name="detail_level" value="very_detailed" />
-                  <span>Very detailed – step-by-step</span>
-                </label>
-
-                <label class="control-radio">
-                  <input type="radio" name="detail_level" value="moderate" />
-                  <span>Moderately detailed</span>
-                </label>
-
-                <label class="control-radio">
-                  <input type="radio" name="detail_level" value="simple" />
-                  <span>Simple, big-picture steps</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="field-label">
-                How strict vs. flexible should your weekly schedule feel?
-              </label>
-
-              <div class="control-grid">
-                <label class="control-radio">
-                  <input type="radio" name="schedule_flex" value="very_flexible" />
-                  <span>Very flexible – suggestions, not rules</span>
-                </label>
-
-                <label class="control-radio">
-                  <input type="radio" name="schedule_flex" value="middle" />
-                  <span>In the middle – some structure, some flexibility</span>
-                </label>
-
-                <label class="control-radio">
-                  <input type="radio" name="schedule_flex" value="strict" />
-                  <span>Pretty strict – I want a clear schedule</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="field-label">
-                Visually, how do you prefer your plan to look?
-              </label>
-
-              <div class="control-grid">
-                <label class="control-radio">
-                  <input type="radio" name="visual_style" value="clean_simple" />
-                  <span>Clean and simple</span>
-                </label>
-
-                <label class="control-radio">
-                  <input type="radio" name="visual_style" value="more_visual" />
-                  <span>More visual with icons and color</span>
-                </label>
-
-                <label class="control-radio">
-                  <input type="radio" name="visual_style" value="no_preference" />
-                  <span>No strong preference</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="field-label" for="coach_notes">
-                Anything you’d like to say to your “coach” or the system?
-              </label>
-              <textarea id="coach_notes" name="coach_notes" class="text-area"></textarea>
-            </div>
-
-            <div class="wizard-nav">
-              <button class="wizard-btn prev-btn" data-prev="11">Back</button>
-              <button class="wizard-btn next-btn" data-next="13">Next</button>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- STEP 13 — SUMMARY & CONFIRMATION -->
-        <div class="onboarding-step" data-step="13">
-          <div class="step-card">
-            <h2>Step 13 – Summary & confirmation</h2>
-
-            <p class="step-note">
-              In the live system, this step would show a smart summary of your answers and
-              a preview of your upcoming weekly plan.
-            </p>
-
-            <div class="summary-placeholder">
-              <p>
-                <strong>Prototype note:</strong> This is a demo version of the wizard. In a
-                future version, this area would summarize:
-              </p>
-              <ul>
-                <li>Your date range and weekly calorie target</li>
-                <li>Your sodium focus and nutrition priorities</li>
-                <li>Your favorite foods and top “never include” items</li>
-                <li>Your pantry, stores, budget, and movement stack</li>
-                <li>How structured vs. flexible your plan will feel</li>
-              </ul>
-              <p>
-                For now, you can click “Finish onboarding (demo)” to jump to the demo
-                Weekly Snapshot dashboard.
-              </p>
-            </div>
-
-            <div class="form-group">
-              <label class="control-checkbox">
-                <input type="checkbox" name="confirm_ready" value="yes" />
-                <span>
-                  I understand this is a prototype, not medical advice, and I’m ready
-                  to see a demo Weekly Snapshot.
-                </span>
-              </label>
-            </div>
-
-            <div class="wizard-nav">
-              <button class="wizard-btn prev-btn" data-prev="12">Back</button>
-              <button type="submit" class="wizard-btn primary-submit">
-                Finish onboarding (demo)
-              </button>
-            </div>
-
-          </div>
-        </div>
-
-      </form>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="images/tkm-logo.png" alt="TKM VitalMetric Wellness logo small" />
-        <span>TKM VitalMetric Wellness</span>
-      </div>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="onboarding.html">Start Plan</a>
-        <a href="dashboard.html">Demo Dashboard</a>
-        <a href="login.html">Sign In</a>
-      </div>
-      <p class="footer-disclaimer">
-        Prototype only · UI demo · No medical advice · No real data stored yet.
-      </p>
-    </div>
-  </footer>
-
-</div> <!-- /page -->
-</body>
+        <!-- end .onboard-shell -->
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      Wellness Pilot onboarding wizard · Prototype only · No answers stored.
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
 </html>
