@@ -1,1 +1,1466 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wellness Pilot · Onboarding Wizard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="app.js"></script>
+</head>
+<body class="page page-onboarding">
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-brand">
+        <img
+          src="images/wp-logo-dark-square.png"
+          alt="Wellness Pilot logo"
+          class="header-logo"
+        />
+        <div class="header-text">
+          <span class="header-title">Wellness Pilot</span>
+          <span class="header-subtitle">A TKM Group Company</span>
+        </div>
+      </a>
+
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="dashboard.html" class="nav-link">Demo Dashboard</a>
+        <a href="onboarding.html" class="nav-link nav-link-current">Start Plan</a>
+        <a href="login.html" class="nav-link">Sign In</a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
+    </div>
+
+    <nav class="site-nav-overlay">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <a href="dashboard.html" class="nav-link">Demo Dashboard</a>
+      <a href="onboarding.html" class="nav-link">Start Plan</a>
+      <a href="login.html" class="nav-link">Sign In</a>
+    </nav>
+  </header>
+
+  <!-- PAGE HERO -->
+  <main class="page-main">
+    <section class="page-hero page-hero--compact">
+      <div class="page-hero-inner">
+        <p class="page-kicker">Step-by-step setup · Prototype only</p>
+        <h1>Tell Wellness Pilot how your real life works</h1>
+        <p class="page-lead">
+          We’ll ask about your goals, food preferences, pantry, budget, stores,
+          schedule, and movement so we can build a weekly plan that fits your
+          real life.
+        </p>
+        <p class="page-note">
+          This is a front-end demo – answers are not saved yet. In the full
+          system, these questions would power your AI planning engine.
+        </p>
+      </div>
+    </section>
+
+    <!-- WIZARD SHELL -->
+    <div class="wizard-shell">
+      <div class="container">
+        <!-- STEP INDEX BAR (1–13) -->
+        <div class="wizard-index">
+          <button
+            type="button"
+            class="wizard-index-step wizard-index-step-active"
+            data-step="1"
+          >
+            1<br />Welcome
+          </button>
+          <button type="button" class="wizard-index-step" data-step="2">
+            2<br />Profile
+          </button>
+          <button type="button" class="wizard-index-step" data-step="3">
+            3<br />Plan Basics
+          </button>
+          <button type="button" class="wizard-index-step" data-step="4">
+            4<br />Cooking
+          </button>
+          <button type="button" class="wizard-index-step" data-step="5">
+            5<br />Proteins
+          </button>
+          <button type="button" class="wizard-index-step" data-step="6">
+            6<br />Dairy &amp; Grains
+          </button>
+          <button type="button" class="wizard-index-step" data-step="7">
+            7<br />Veg &amp; Fruit
+          </button>
+          <button type="button" class="wizard-index-step" data-step="8">
+            8<br />Snacks &amp; Sauces
+          </button>
+          <button type="button" class="wizard-index-step" data-step="9">
+            9<br />Avoid &amp; Health
+          </button>
+          <button type="button" class="wizard-index-step" data-step="10">
+            10<br />Pantry &amp; Stores
+          </button>
+          <button type="button" class="wizard-index-step" data-step="11">
+            11<br />Exercise
+          </button>
+          <button type="button" class="wizard-index-step" data-step="12">
+            12<br />Schedule &amp; Style
+          </button>
+          <button type="button" class="wizard-index-step" data-step="13">
+            13<br />Review
+          </button>
+        </div>
+
+        <!-- WIZARD FORM -->
+        <form class="wizard-form" action="signup.html" method="get">
+          <!-- STEP 1: WELCOME & CONSENT -->
+          <section
+            class="card wizard-step wizard-step-active"
+            data-step="1"
+            aria-label="Step 1 Welcome & Consent"
+          >
+            <header class="card-header">
+              <p class="eyebrow">Step 1 · Welcome &amp; Consent</p>
+              <h2>Welcome to Wellness Pilot</h2>
+            </header>
+            <div class="card-body">
+              <p>
+                Welcome to <strong>Wellness Pilot</strong>. This prototype shows
+                how the full system will ask about your goals, food
+                preferences, pantry, budget, schedule, and movement to build a
+                weekly plan that fits your real life.
+              </p>
+
+              <div class="form-fieldset">
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    id="consent_prototype"
+                    name="consent_prototype"
+                    required
+                  />
+                  <label for="consent_prototype">
+                    I understand this is a prototype only and not medical,
+                    nutritional, or financial advice.
+                  </label>
+                </div>
+              </div>
+
+              <label class="form-label" for="main_goal">
+                What’s your main goal right now?
+                <select id="main_goal" name="main_goal">
+                  <option value="">Select one…</option>
+                  <option value="weight_loss">Lose weight steadily</option>
+                  <option value="blood_pressure">
+                    Support blood pressure or sodium goals
+                  </option>
+                  <option value="energy">Improve energy and focus</option>
+                  <option value="mobility">
+                    Support joints, pain, or mobility
+                  </option>
+                  <option value="budget">Stay on track with grocery budget</option>
+                  <option value="lab_numbers">
+                    Improve lab numbers (A1C, cholesterol, etc.)
+                  </option>
+                  <option value="maintenance">
+                    Maintain current weight and routine
+                  </option>
+                </select>
+              </label>
+
+              <label class="form-label" for="secondary_goals">
+                Any secondary goals or special notes?
+                <textarea
+                  id="secondary_goals"
+                  name="secondary_goals"
+                  rows="3"
+                  placeholder="Example: low-sodium focus, knee pain, wants simple breakfasts…"
+                ></textarea>
+              </label>
+            </div>
+
+            <div class="wizard-nav">
+              <button
+                type="button"
+                class="btn-secondary wizard-back"
+                disabled
+              >
+                Back
+              </button>
+              <button type="button" class="btn btn-primary wizard-next">
+                Next
+              </button>
+            </div>
+          </section>
+
+          <!-- STEP 2: BASIC PROFILE & GOALS -->
+          <section
+            class="card wizard-step"
+            data-step="2"
+            aria-label="Step 2 Basic Profile & Goals"
+          >
+            <header class="card-header">
+              <p class="eyebrow">Step 2 · Basic Profile &amp; Goals</p>
+              <h2>Basic profile</h2>
+            </header>
+            <div class="card-body">
+              <div class="form-grid">
+                <label class="form-label" for="age">
+                  Age
+                  <input
+                    type="number"
+                    id="age"
+                    name="age"
+                    min="10"
+                    max="120"
+                    inputmode="numeric"
+                  />
+                </label>
+
+                <label class="form-label" for="height">
+                  Height
+                  <input
+                    type="text"
+                    id="height"
+                    name="height"
+                    placeholder="e.g., 5'10&quot; or 178 cm"
+                  />
+                </label>
+
+                <label class="form-label" for="weight">
+                  Current weight
+                  <input
+                    type="text"
+                    id="weight"
+                    name="weight"
+                    placeholder="e.g., 325 lb"
+                  />
+                </label>
+
+                <label class="form-label" for="target_weight">
+                  Target or “happy” weight (optional)
+                  <input
+                    type="text"
+                    id="target_weight"
+                    name="target_weight"
+                    placeholder="Optional"
+                  />
+                </label>
+              </div>
+              <div class="form-fieldset">
+                <legend>How would you describe your current approach?</legend>
+                <div class="form-grid--wrap">
+                  <label class="form-check">
+                    <input
+                      type="radio"
+                      name="diet_approach"
+                      value="starting_fresh"
+                    />
+                    <span>Starting fresh or restarting</span>
+                  </label>
+                  <label class="form-check">
+                    <input
+                      type="radio"
+                      name="diet_approach"
+                      value="making_adjustments"
+                    />
+                    <span>Making adjustments to current habits</span>
+                  </label>
+                  <label class="form-check">
+                    <input
+                      type="radio"
+                      name="diet_approach"
+                      value="fine_tuning"
+                    />
+                    <span>Mostly fine-tuning and accountability</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="slider-row">
+                <span>How strict should the plan feel?</span>
+                <input
+                  type="range"
+                  name="strictness"
+                  min="1"
+                  max="5"
+                  value="3"
+                />
+                <span>Flexible</span>
+              </div>
+
+              <label class="form-label" for="profile_notes">
+                Anything else we should know about you or your goals?
+                <textarea
+                  id="profile_notes"
+                  name="profile_notes"
+                  rows="3"
+                ></textarea>
+              </label>
+            </div>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary wizard-back">
+                Back
+              </button>
+              <button type="button" class="btn btn-primary wizard-next">
+                Next
+              </button>
+            </div>
+          </section>
+
+          <!-- STEP 3: PLAN BASICS -->
+          <section
+            class="card wizard-step"
+            data-step="3"
+            aria-label="Step 3 Plan Basics"
+          >
+            <header class="card-header">
+              <p class="eyebrow">Step 3 · Plan Basics</p>
+              <h2>Plan basics</h2>
+            </header>
+            <div class="card-body">
+              <div class="form-grid">
+                <label class="form-label" for="plan_length">
+                  Initial plan length
+                  <select id="plan_length" name="plan_length">
+                    <option value="7">7 days · 1 week</option>
+                    <option value="14">14 days · 2 weeks</option>
+                    <option value="21">21 days · 3 weeks</option>
+                    <option value="28">28 days · 4 weeks</option>
+                  </select>
+                </label>
+
+                <label class="form-label" for="budget_level">
+                  Grocery budget (approx.)
+                  <select id="budget_level" name="budget_level">
+                    <option value="">Choose range…</option>
+                    <option value="tight">
+                      Tight budget – need pantry-first savings
+                    </option>
+                    <option value="moderate">
+                      Moderate – open to some extras
+                    </option>
+                    <option value="comfortable">
+                      Comfortable – focus more on convenience
+                    </option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="form-fieldset">
+                <legend>Nutrition focus (prototype only)</legend>
+                <div class="form-grid--wrap">
+                  <label class="form-check">
+                    <input
+                      type="checkbox"
+                      name="nutrition_focus"
+                      value="calories"
+                    />
+                    <span>Calories in a personal range</span>
+                  </label>
+                  <label class="form-check">
+                    <input
+                      type="checkbox"
+                      name="nutrition_focus"
+                      value="sodium"
+                    />
+                    <span>Lower sodium overall</span>
+                  </label>
+                  <label class="form-check">
+                    <input
+                      type="checkbox"
+                      name="nutrition_focus"
+                      value="protein"
+                    />
+                    <span>Higher protein for fullness and muscle</span>
+                  </label>
+                  <label class="form-check">
+                    <input
+                      type="checkbox"
+                      name="nutrition_focus"
+                      value="fiber"
+                    />
+                    <span>More fiber (veggies, beans, whole grains)</span>
+                  </label>
+                  <label class="form-check">
+                    <input
+                      type="checkbox"
+                      name="nutrition_focus"
+                      value="blood_sugar"
+                    />
+                    <span>Blood sugar / A1C support</span>
+                  </label>
+                </div>
+              </div>
+
+              <label class="form-label" for="plan_style_notes">
+                Any notes about grocery frequency, leftovers, or batch cooking?
+                <textarea
+                  id="plan_style_notes"
+                  name="plan_style_notes"
+                  rows="3"
+                ></textarea>
+              </label>
+            </div>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary wizard-back">
+                Back
+              </button>
+              <button type="button" class="btn btn-primary wizard-next">
+                Next
+              </button>
+            </div>
+          </section>
+          <!-- STEP 4: COOKING & KITCHEN ACCESS -->
+          <section
+            class="card wizard-step"
+            data-step="4"
+            aria-label="Step 4 Cooking & Kitchen Access"
+          >
+            <header class="card-header">
+              <p class="eyebrow">Step 4 · Cooking &amp; Kitchen Access</p>
+              <h2>Cooking and kitchen access</h2>
+            </header>
+            <div class="card-body">
+              <div class="form-fieldset">
+                <legend>How comfortable are you with cooking?</legend>
+                <div class="form-grid--wrap">
+                  <label class="form-check">
+                    <input
+                      type="radio"
+                      name="cooking_skill"
+                      value="very_basic"
+                    />
+                    <span>Very basic – need very simple steps</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="radio" name="cooking_skill" value="ok" />
+                    <span>OK – can follow simple recipes</span>
+                  </label>
+                  <label class="form-check">
+                    <input
+                      type="radio"
+                      name="cooking_skill"
+                      value="confident"
+                    />
+                    <span>Confident – comfortable trying new recipes</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-fieldset">
+                <legend>Which equipment do you usually have access to?</legend>
+                <div class="form-grid--wrap">
+                  <label class="form-check">
+                    <input type="checkbox" name="equipment" value="stove" />
+                    <span>Stovetop &amp; oven</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="equipment" value="microwave" />
+                    <span>Microwave</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="equipment" value="air_fryer" />
+                    <span>Air fryer</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="equipment" value="slow_cooker" />
+                    <span>Slow cooker / Crock-Pot</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="equipment" value="grill" />
+                    <span>Grill or electric grill</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="equipment" value="limited" />
+                    <span>Very limited – mostly microwave/toaster</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <label class="form-label" for="cook_time_weeknights">
+                  On a typical weeknight, how much time do you want to spend cooking?
+                  <select id="cook_time_weeknights" name="cook_time_weeknights">
+                    <option value="">Choose one…</option>
+                    <option value="10">About 10 minutes or less</option>
+                    <option value="20">Around 20 minutes</option>
+                    <option value="30">20–30 minutes</option>
+                    <option value="40">Up to 40 minutes if worth it</option>
+                  </select>
+                </label>
+
+                <label class="form-label" for="cook_time_weekends">
+                  On weekends, are you open to slightly longer cooking?
+                  <select id="cook_time_weekends" name="cook_time_weekends">
+                    <option value="">Choose one…</option>
+                    <option value="same">Keep it about the same</option>
+                    <option value="batch">
+                      OK with a longer batch-cooking session
+                    </option>
+                    <option value="ordering_out">
+                      Often order out on weekends
+                    </option>
+                  </select>
+                </label>
+              </div>
+
+              <label class="form-label" for="cooking_notes">
+                Any cooking limitations? (shared kitchen, night shifts, etc.)
+                <textarea
+                  id="cooking_notes"
+                  name="cooking_notes"
+                  rows="3"
+                ></textarea>
+              </label>
+            </div>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary wizard-back">
+                Back
+              </button>
+              <button type="button" class="btn btn-primary wizard-next">
+                Next
+              </button>
+            </div>
+          </section>
+          <!-- STEP 5: FOOD PREFERENCES — PROTEINS -->
+          <section
+            class="card wizard-step"
+            data-step="5"
+            aria-label="Step 5 Food Preferences Proteins"
+          >
+            <header class="card-header">
+              <p class="eyebrow">Step 5 · Food Preferences — Proteins</p>
+              <h2>Protein preferences</h2>
+              <p class="section-text">
+                Mark which proteins you’re happy to see in your weekly plans.
+                This list is intentionally complete so the AI can make good swaps.
+              </p>
+            </header>
+            <div class="card-body">
+              <div class="form-fieldset">
+                <legend>Poultry &amp; meat</legend>
+                <div class="form-grid--wrap">
+                  <label class="form-check">
+                    <input type="checkbox" name="proteins" value="chicken_breast" />
+                    <span>Chicken breast</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="proteins" value="chicken_thighs" />
+                    <span>Chicken thighs</span>
+                  </label>
+                  <label class="form-check">
+                    <input
+                      type="checkbox"
+                      name="proteins"
+                      value="ground_chicken"
+                    />
+                    <span>Ground chicken</span>
+                  </label>
+                  <label class="form-check">
+                    <input
+                      type="checkbox"
+                      name="proteins"
+                      value="turkey_breast"
+                    />
+                    <span>Turkey breast</span>
+                  </label>
+                  <label class="form-check">
+                    <input
+                      type="checkbox"
+                      name="proteins"
+                      value="ground_turkey"
+                    />
+                    <span>Ground turkey</span>
+                  </label>
+                  <label class="form-check">
+                    <input
+                      type="checkbox"
+                      name="proteins"
+                      value="lean_ground_beef"
+                    />
+                    <span>Lean ground beef</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="proteins" value="beef_cuts" />
+                    <span>Beef cuts (roast, steak, etc.)</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="proteins" value="pork_chops" />
+                    <span>Pork chops or pork loin</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="proteins" value="ham" />
+                    <span>Ham (sliced or diced)</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="proteins" value="bacon" />
+                    <span>Bacon</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="proteins" value="sausage" />
+                    <span>Sausage (links, patties, crumbles)</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="proteins" value="deli_meats" />
+                    <span>Deli meats (turkey, chicken, ham, etc.)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-fieldset">
+                <legend>Eggs, plant proteins, and seafood</legend>
+                <div class="form-grid--wrap">
+                  <label class="form-check">
+                    <input type="checkbox" name="proteins" value="eggs" />
+                    <span>Eggs</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="proteins" value="egg_whites" />
+                    <span>Egg whites / egg substitute</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="proteins" value="beans" />
+                    <span>Beans (black, pinto, kidney, etc.)</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="proteins" value="lentils" />
+                    <span>Lentils</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="proteins" value="chickpeas" />
+                    <span>Chickpeas / garbanzo beans</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="proteins" value="tofu" />
+                    <span>Tofu</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="proteins" value="tempeh" />
+                    <span>Tempeh</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="proteins" value="shellfish" />
+                    <span>Shellfish (shrimp, crab, etc.)</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="proteins" value="fish_mild" />
+                    <span>Fish – mild (tilapia, cod, pollock, etc.)</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="proteins" value="fish_strong" />
+                    <span>Fish – stronger flavor (salmon, tuna, etc.)</span>
+                  </label>
+                </div>
+              </div>
+
+              <label class="form-label" for="protein_notes">
+                Any protein items you love, dislike, or only want once in a
+                while?
+                <textarea
+                  id="protein_notes"
+                  name="protein_notes"
+                  rows="3"
+                ></textarea>
+              </label>
+            </div>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary wizard-back">
+                Back
+              </button>
+              <button type="button" class="btn btn-primary wizard-next">
+                Next
+              </button>
+            </div>
+          </section>
+          <!-- STEP 6: FOOD PREFERENCES — DAIRY & GRAINS -->
+          <section
+            class="card wizard-step"
+            data-step="6"
+            aria-label="Step 6 Food Preferences Dairy and Grains"
+          >
+            <header class="card-header">
+              <p class="eyebrow">Step 6 · Food Preferences — Dairy &amp; Grains</p>
+              <h2>Dairy &amp; grains</h2>
+            </header>
+            <div class="card-body">
+              <div class="form-fieldset">
+                <legend>Dairy</legend>
+                <div class="form-grid--wrap">
+                  <label class="form-check">
+                    <input type="checkbox" name="dairy" value="milk_skim" />
+                    <span>Milk – skim / 1%</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="dairy" value="milk_2" />
+                    <span>Milk – 2% / whole</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="dairy" value="milk_alt" />
+                    <span>Milk alternatives (almond, soy, oat, etc.)</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="dairy" value="yogurt" />
+                    <span>Yogurt (regular or Greek)</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="dairy" value="cheese" />
+                    <span>Cheese (slices, shredded, etc.)</span>
+                  </label>
+                  <label class="form-check">
+                    <input
+                      type="checkbox"
+                      name="dairy"
+                      value="cottage_cheese"
+                    />
+                    <span>Cottage cheese</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-fieldset">
+                <legend>Grains &amp; starches</legend>
+                <div class="form-grid--wrap">
+                  <label class="form-check">
+                    <input type="checkbox" name="grains" value="bread_white" />
+                    <span>Bread – white / sandwich bread</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="grains" value="bread_whole" />
+                    <span>Bread – whole grain / wheat</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="grains" value="bread_lowcarb" />
+                    <span>Low-carb or high-fiber breads</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="grains" value="tortillas" />
+                    <span>Tortillas (flour or corn)</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="grains" value="rice_white" />
+                    <span>Rice – white</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="grains" value="rice_brown" />
+                    <span>Rice – brown / wild</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="grains" value="pasta" />
+                    <span>Pasta (regular or whole grain)</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="grains" value="oats" />
+                    <span>Oats / oatmeal</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="grains" value="cereal" />
+                    <span>Cereals (cold cereal, granola, etc.)</span>
+                  </label>
+                </div>
+              </div>
+
+              <label class="form-label" for="dairy_grain_notes">
+                Any specific dairy or grain items you rely on or want limited?
+                <textarea
+                  id="dairy_grain_notes"
+                  name="dairy_grain_notes"
+                  rows="3"
+                ></textarea>
+              </label>
+            </div>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary wizard-back">
+                Back
+              </button>
+              <button type="button" class="btn btn-primary wizard-next">
+                Next
+              </button>
+            </div>
+          </section>
+          <!-- STEP 7: FOOD PREFERENCES — VEGETABLES & FRUIT -->
+          <section
+            class="card wizard-step"
+            data-step="7"
+            aria-label="Step 7 Food Preferences Vegetables and Fruit"
+          >
+            <header class="card-header">
+              <p class="eyebrow">
+                Step 7 · Food Preferences — Vegetables &amp; Fruit
+              </p>
+              <h2>Vegetables &amp; fruit</h2>
+            </header>
+            <div class="card-body">
+              <div class="form-fieldset">
+                <legend>Vegetable categories you’re usually OK with</legend>
+                <div class="form-grid--wrap">
+                  <label class="form-check">
+                    <input
+                      type="checkbox"
+                      name="veg"
+                      value="leafy_greens"
+                    />
+                    <span>Leafy greens (spinach, salad mixes, etc.)</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="veg" value="cruciferous" />
+                    <span>
+                      Cruciferous veggies (broccoli, cauliflower, cabbage)
+                    </span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="veg" value="root_veggies" />
+                    <span>Root veggies (potatoes, carrots, beets)</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="veg" value="squashes" />
+                    <span>Squashes (zucchini, butternut, etc.)</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="veg" value="peppers" />
+                    <span>Peppers (bell peppers, mild chiles)</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="veg" value="tomatoes" />
+                    <span>Tomatoes (fresh or canned)</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="veg" value="onions" />
+                    <span>Onions, scallions, shallots</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-fieldset">
+                <legend>Fruit categories you’re usually OK with</legend>
+                <div class="form-grid--wrap">
+                  <label class="form-check">
+                    <input type="checkbox" name="fruit" value="berries" />
+                    <span>Berries (strawberries, blueberries, etc.)</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="fruit" value="citrus" />
+                    <span>Citrus (oranges, grapefruit, etc.)</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="fruit" value="bananas" />
+                    <span>Bananas</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="fruit" value="apples" />
+                    <span>Apples / pears</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="fruit" value="grapes" />
+                    <span>Grapes</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="fruit" value="melons" />
+                    <span>Melons (cantaloupe, watermelon, etc.)</span>
+                  </label>
+                </div>
+              </div>
+
+              <label class="form-label" for="veg_fruit_notes">
+                Favorite or “never again” veggies or fruits?
+                <textarea
+                  id="veg_fruit_notes"
+                  name="veg_fruit_notes"
+                  rows="3"
+                ></textarea>
+              </label>
+            </div>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary wizard-back">
+                Back
+              </button>
+              <button type="button" class="btn btn-primary wizard-next">
+                Next
+              </button>
+            </div>
+          </section>
+
+          <!-- STEP 8: FOOD PREFERENCES — SNACKS & SAUCES -->
+          <section
+            class="card wizard-step"
+            data-step="8"
+            aria-label="Step 8 Food Preferences Snacks and Sauces"
+          >
+            <header class="card-header">
+              <p class="eyebrow">
+                Step 8 · Food Preferences — Snacks &amp; Sauces
+              </p>
+              <h2>Snacks &amp; sauces</h2>
+            </header>
+            <div class="card-body">
+              <div class="form-fieldset">
+                <legend>Snack-style foods</legend>
+                <div class="form-grid--wrap">
+                  <label class="form-check">
+                    <input type="checkbox" name="snacks" value="nuts" />
+                    <span>Nuts (almonds, peanuts, mixed nuts)</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="snacks" value="seeds" />
+                    <span>Seeds (sunflower, pumpkin, etc.)</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="snacks" value="chips" />
+                    <span>Chips / crisps</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="snacks" value="crackers" />
+                    <span>Crackers</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="snacks" value="protein_bars" />
+                    <span>Bars (granola, protein, snack bars)</span>
+                  </label>
+                </div>
+              </div>
+              <div class="form-fieldset">
+                <legend>Sauces &amp; condiments</legend>
+                <div class="form-grid--wrap">
+                  <label class="form-check">
+                    <input type="checkbox" name="sauces" value="salsa" />
+                    <span>Salsa / pico de gallo</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="sauces" value="ketchup" />
+                    <span>Ketchup</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="sauces" value="mustard" />
+                    <span>Mustard</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="sauces" value="bbq" />
+                    <span>BBQ sauce</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="sauces" value="soy_sauce" />
+                    <span>Soy sauce / tamari</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="sauces" value="hot_sauce" />
+                    <span>Hot sauce</span>
+                  </label>
+                </div>
+              </div>
+
+              <label class="form-label" for="snacks_notes">
+                Snacks or sauces you want to lean on – or keep to a minimum?
+                <textarea
+                  id="snacks_notes"
+                  name="snacks_notes"
+                  rows="3"
+                ></textarea>
+              </label>
+            </div>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary wizard-back">
+                Back
+              </button>
+              <button type="button" class="btn btn-primary wizard-next">
+                Next
+              </button>
+            </div>
+          </section>
+
+          <!-- STEP 9: AVOID / ALLERGIES / CONDITIONS -->
+          <section
+            class="card wizard-step"
+            data-step="9"
+            aria-label="Step 9 Avoid Allergies Conditions"
+          >
+            <header class="card-header">
+              <p class="eyebrow">Step 9 · Avoid / Allergies / Conditions</p>
+              <h2>Foods to avoid &amp; health considerations</h2>
+            </header>
+            <div class="card-body">
+              <div class="form-fieldset">
+                <legend>Allergies &amp; intolerances</legend>
+                <div class="form-grid--wrap">
+                  <label class="form-check">
+                    <input type="checkbox" name="avoid" value="gluten" />
+                    <span>Gluten or wheat issues</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="avoid" value="dairy" />
+                    <span>Dairy intolerance / lactose issues</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="avoid" value="nuts" />
+                    <span>Nut or peanut allergy</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="avoid" value="shellfish" />
+                    <span>Shellfish allergy</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="avoid" value="eggs" />
+                    <span>Egg allergy</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="avoid" value="other_allergy" />
+                    <span>Other significant allergy</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-fieldset">
+                <legend>Health-related limits (prototype only)</legend>
+                <div class="form-grid--wrap">
+                  <label class="form-check">
+                    <input
+                      type="checkbox"
+                      name="health_limits"
+                      value="low_sodium"
+                    />
+                    <span>Prefer lower sodium overall</span>
+                  </label>
+                  <label class="form-check">
+                    <input
+                      type="checkbox"
+                      name="health_limits"
+                      value="blood_sugar"
+                    />
+                    <span>Blood sugar / diabetes considerations</span>
+                  </label>
+                  <label class="form-check">
+                    <input
+                      type="checkbox"
+                      name="health_limits"
+                      value="cholesterol"
+                    />
+                    <span>Cholesterol / heart health focus</span>
+                  </label>
+                  <label class="form-check">
+                    <input
+                      type="checkbox"
+                      name="health_limits"
+                      value="digestive"
+                    />
+                    <span>Digestive issues / IBS / GERD</span>
+                  </label>
+                  <label class="form-check">
+                    <input
+                      type="checkbox"
+                      name="health_limits"
+                      value="pain_mobility"
+                    />
+                    <span>Pain, mobility, or joint issues</span>
+                  </label>
+                </div>
+              </div>
+
+              <label class="form-label" for="avoid_foods_text">
+                Foods you cannot eat or strongly dislike
+                <textarea
+                  id="avoid_foods_text"
+                  name="avoid_foods_text"
+                  rows="3"
+                ></textarea>
+              </label>
+
+              <label class="form-label" for="health_notes">
+                Any other medical conditions that affect your eating or
+                movement? (Share only what you’re comfortable sharing.)
+                <textarea
+                  id="health_notes"
+                  name="health_notes"
+                  rows="3"
+                ></textarea>
+              </label>
+            </div>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary wizard-back">
+                Back
+              </button>
+              <button type="button" class="btn btn-primary wizard-next">
+                Next
+              </button>
+            </div>
+          </section>
+          <!-- STEP 10: PANTRY & GROCERY STORES -->
+          <section
+            class="card wizard-step"
+            data-step="10"
+            aria-label="Step 10 Pantry and Grocery Stores"
+          >
+            <header class="card-header">
+              <p class="eyebrow">Step 10 · Pantry &amp; Grocery Stores</p>
+              <h2>Pantry &amp; stores</h2>
+            </header>
+            <div class="card-body">
+              <p class="section-text">
+                In the live system, this step would sync with your pantry
+                tracker and local grocery ads. Here, it helps the planner
+                understand how you usually shop.
+              </p>
+
+              <label class="form-label" for="pantry_basics">
+                Pantry basics you usually have (canned goods, staples)
+                <textarea
+                  id="pantry_basics"
+                  name="pantry_basics"
+                  rows="3"
+                  placeholder="Example: canned beans, tomatoes, rice, pasta, canned tuna…"
+                ></textarea>
+              </label>
+
+              <label class="form-label" for="fridge_items">
+                Fridge items you like to keep on hand
+                <textarea
+                  id="fridge_items"
+                  name="fridge_items"
+                  rows="3"
+                  placeholder="Example: eggs, yogurt, sliced cheese, salad mixes…"
+                ></textarea>
+              </label>
+
+              <label class="form-label" for="freezer_items">
+                Freezer items you like to keep on hand
+                <textarea
+                  id="freezer_items"
+                  name="freezer_items"
+                  rows="3"
+                  placeholder="Example: frozen veggies, chicken, pre-portioned meals…"
+                ></textarea>
+              </label>
+
+              <div class="form-fieldset">
+                <legend>Where do you usually shop?</legend>
+                <div class="form-grid--wrap">
+                  <label class="form-check">
+                    <input
+                      type="checkbox"
+                      name="stores"
+                      value="big_box"
+                    />
+                    <span>Big-box stores (Walmart, Target, etc.)</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="stores" value="grocery_chain" />
+                    <span>Regular grocery chains</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="stores" value="discount" />
+                    <span>Discount or salvage stores</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="stores" value="warehouse" />
+                    <span>Warehouse clubs (Costco, Sam’s, etc.)</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="stores" value="local" />
+                    <span>Local / specialty markets</span>
+                  </label>
+                </div>
+              </div>
+
+              <label class="form-label" for="store_notes">
+                Favorite stores or notes about sales and coupon habits?
+                <textarea
+                  id="store_notes"
+                  name="store_notes"
+                  rows="3"
+                ></textarea>
+              </label>
+            </div>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary wizard-back">
+                Back
+              </button>
+              <button type="button" class="btn btn-primary wizard-next">
+                Next
+              </button>
+            </div>
+          </section>
+
+          <!-- STEP 11: EXERCISE & ACTIVITY -->
+          <section
+            class="card wizard-step"
+            data-step="11"
+            aria-label="Step 11 Exercise and Activity"
+          >
+            <header class="card-header">
+              <p class="eyebrow">Step 11 · Exercise &amp; Activity</p>
+              <h2>Movement &amp; activity</h2>
+            </header>
+            <div class="card-body">
+              <div class="form-grid">
+                <label class="form-label" for="steps_per_day">
+                  Approximate daily steps (average)
+                  <input
+                    type="text"
+                    id="steps_per_day"
+                    name="steps_per_day"
+                    placeholder="Example: 2,500 steps per day"
+                  />
+                </label>
+
+                <label class="form-label" for="movement_goal">
+                  Step or movement goal (if any)
+                  <input
+                    type="text"
+                    id="movement_goal"
+                    name="movement_goal"
+                    placeholder="Example: reach 4,000–5,000 most days"
+                  />
+                </label>
+              </div>
+
+              <div class="form-fieldset">
+                <legend>Low-impact routines you’re open to</legend>
+                <div class="form-grid--wrap">
+                  <label class="form-check">
+                    <input type="checkbox" name="movement" value="walking" />
+                    <span>Walking (indoors or outdoors)</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="movement" value="stretching" />
+                    <span>Stretching / mobility</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="movement" value="tai_chi" />
+                    <span>Tai chi / gentle flow routines</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="movement" value="cycling" />
+                    <span>Cycling or stationary bike</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="movement" value="gym" />
+                    <span>Basic gym access (machines, treadmill)</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="movement" value="chair" />
+                    <span>Chair-based routines</span>
+                  </label>
+                </div>
+              </div>
+
+              <label class="form-label" for="exercise_notes">
+                Any limits we should respect? (knee/hip pain, balance issues,
+                etc.)
+                <textarea
+                  id="exercise_notes"
+                  name="exercise_notes"
+                  rows="3"
+                ></textarea>
+              </label>
+            </div>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary wizard-back">
+                Back
+              </button>
+              <button type="button" class="btn btn-primary wizard-next">
+                Next
+              </button>
+            </div>
+          </section>
+          <!-- STEP 12: SCHEDULE & STYLE -->
+          <section
+            class="card wizard-step"
+            data-step="12"
+            aria-label="Step 12 Schedule and Style"
+          >
+            <header class="card-header">
+              <p class="eyebrow">Step 12 · Schedule &amp; Style</p>
+              <h2>Your weekly schedule &amp; style</h2>
+            </header>
+            <div class="card-body">
+              <div class="form-grid">
+                <label class="form-label" for="meals_per_day">
+                  How many meals/snacks would you like planned most days?
+                  <select id="meals_per_day" name="meals_per_day">
+                    <option value="">Choose one…</option>
+                    <option value="2">2 main meals</option>
+                    <option value="3">3 main meals</option>
+                    <option value="3_plus_snacks">
+                      3 meals plus planned snacks
+                    </option>
+                  </select>
+                </label>
+
+                <label class="form-label" for="time_of_day_pref">
+                  When do you feel strongest / most motivated?
+                  <select id="time_of_day_pref" name="time_of_day_pref">
+                    <option value="">Choose one…</option>
+                    <option value="morning">Morning</option>
+                    <option value="afternoon">Afternoon</option>
+                    <option value="evening">Evening / night shift</option>
+                    <option value="varies">It varies a lot</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="form-fieldset">
+                <legend>Which days feel “busy” versus “lighter”?</legend>
+                <div class="form-grid--wrap">
+                  <label class="form-check">
+                    <input type="checkbox" name="busy_days" value="mon" />
+                    <span>Monday</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="busy_days" value="tue" />
+                    <span>Tuesday</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="busy_days" value="wed" />
+                    <span>Wednesday</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="busy_days" value="thu" />
+                    <span>Thursday</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="busy_days" value="fri" />
+                    <span>Friday</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="busy_days" value="sat" />
+                    <span>Saturday</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="checkbox" name="busy_days" value="sun" />
+                    <span>Sunday</span>
+                  </label>
+                </div>
+              </div>
+
+              <label class="form-label" for="schedule_notes">
+                Any regular appointments, shifts, or routines we should build
+                around?
+                <textarea
+                  id="schedule_notes"
+                  name="schedule_notes"
+                  rows="3"
+                ></textarea>
+              </label>
+
+              <label class="form-label" for="style_notes">
+                What “style” of plan do you prefer? (simple repeats, more
+                variety, slow-and-steady changes, etc.)
+                <textarea
+                  id="style_notes"
+                  name="style_notes"
+                  rows="3"
+                ></textarea>
+              </label>
+            </div>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary wizard-back">
+                Back
+              </button>
+              <button type="button" class="btn btn-primary wizard-next">
+                Next
+              </button>
+            </div>
+          </section>
+
+          <!-- STEP 13: REVIEW -->
+          <section
+            class="card wizard-step"
+            data-step="13"
+            aria-label="Step 13 Review"
+          >
+            <header class="card-header">
+              <p class="eyebrow">Step 13 · Review</p>
+              <h2>Review &amp; next steps</h2>
+            </header>
+            <div class="card-body">
+              <p>
+                In the live system, this step would show a summary of your
+                answers and let you tweak anything before generating your first
+                weekly plan.
+              </p>
+
+              <p class="section-text">
+                For this prototype, you can add any final notes or “must have /
+                must avoid” items you want your future planner to consider.
+              </p>
+
+              <label class="form-label" for="review_notes">
+                Final notes for your future Wellness Pilot plan
+                <textarea
+                  id="review_notes"
+                  name="review_notes"
+                  rows="4"
+                ></textarea>
+              </label>
+
+              <ul class="summary-hints">
+                <li>Anything that would make the plan feel realistic.</li>
+                <li>
+                  Foods you want to see every week versus “once in a while”
+                  treats.
+                </li>
+                <li>Schedule quirks, pain days, or backup meal ideas.</li>
+              </ul>
+            </div>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn-secondary wizard-back">
+                Back
+              </button>
+              <button type="submit" class="btn btn-primary">
+                Finish &amp; preview demo
+              </button>
+            </div>
+          </section>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img
+          src="images/wp-logo-dark-square.png"
+          alt="Wellness Pilot logo"
+          class="footer-logo"
+        />
+        <div>
+          <div class="footer-title">Wellness Pilot</div>
+          <div class="footer-subtitle">
+            © 2025 Wellness Pilot — A TKM Group Company
+          </div>
+        </div>
+      </div>
+
+      <nav class="footer-nav">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="pricing.html" class="footer-link">Pricing</a>
+        <a href="dashboard.html" class="footer-link">Demo Dashboard</a>
+        <a href="onboarding.html" class="footer-link">Start Plan</a>
+        <a href="login.html" class="footer-link">Sign In</a>
+      </nav>
+
+      <p class="footer-note">
+        Prototype only — for demonstration purposes, not medical or financial
+        advice.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
