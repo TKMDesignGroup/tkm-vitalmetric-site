@@ -8,257 +8,254 @@
   <script defer src="app.js"></script>
 </head>
 <body class="page page-dashboard">
-    <!-- SITE HEADER -->
-    <header class="site-header">
-        <div class="container header-inner">
-            <a href="index.html" class="brand">
-                <img src="images/wp-main-logo.png" alt="Wellness Pilot logo" class="brand-logo" />
-                <div class="brand-text">
-                    <span class="brand-title">Wellness Pilot</span>
-                    <span class="brand-subtitle">A TKM Group Company</span>
-                </div>
-            </a>
-
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span class="nav-toggle-bar"></span>
-                <span class="nav-toggle-bar"></span>
-                <span class="nav-toggle-bar"></span>
-            </button>
-
-            <nav class="header-nav">
-                <a href="index.html">Home</a>
-                <a href="onboarding.html">Start Plan</a>
-                <a href="dashboard.html" class="is-active">Demo Dashboard</a>
-                <a href="login.html">Sign In</a>
-            </nav>
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-brand">
+        <img
+          src="images/wp-logo-dark-square.png"
+          alt="Wellness Pilot logo"
+          class="header-logo"
+        />
+        <div class="header-text">
+          <span class="header-title">Wellness Pilot</span>
+          <span class="header-subtitle">A TKM Group Company</span>
         </div>
-    </header>
+      </a>
 
-    <!-- MAIN CONTENT -->
-    <main class="page-main">
-        <div class="container dashboard-container">
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="dashboard.html" class="nav-link nav-link-current">
+          Demo Dashboard
+        </a>
+        <a href="onboarding.html" class="nav-link">Start Plan</a>
+        <a href="login.html" class="nav-link">Sign In</a>
+      </nav>
 
-            <!-- PAGE TITLE + SMALL CONTEXT -->
-            <section class="dashboard-header">
-                <div class="dashboard-title-block">
-                    <p class="eyebrow">Demo view</p>
-                    <h1>Your Weekly Wellness Mission Control</h1>
-                    <p class="dashboard-lede">
-                        This is a sample of the weekly control panel members see after completing
-                        their onboarding. In the full system, your plan is built from your pantry,
-                        budget, schedule, and exercise goals.
-                    </p>
-                </div>
-                <div class="dashboard-meta-block">
-                    <p class="dashboard-meta-label">Plan type</p>
-                    <p class="dashboard-meta-value">Plus · 7-day Weekly Plan</p>
-                    <p class="dashboard-meta-note">
-                        All values on this page are sample data for demo purposes.
-                    </p>
-                </div>
-            </section>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
+    </div>
 
-            <!-- MAIN LAYOUT: SNAPSHOT + PANELS -->
-            <section class="dashboard-layout">
-                <!-- LEFT: WEEKLY SNAPSHOT CARD -->
-                <article class="card snapshot-card">
-                    <div class="card-header snapshot-header">
-                        <p class="eyebrow">Weekly Snapshot · Demo</p>
-                        <h2>This is your mission control for the week</h2>
-                        <p class="snapshot-subtitle">
-                            In the real app, this card updates automatically from your AI-generated plan.
-                        </p>
-                    </div>
+    <nav class="site-nav-overlay">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <a href="dashboard.html" class="nav-link">Demo Dashboard</a>
+      <a href="onboarding.html" class="nav-link">Start Plan</a>
+      <a href="login.html" class="nav-link">Sign In</a>
+    </nav>
+  </header>
 
-                    <div class="snapshot-body">
-                        <div class="snapshot-row">
-                            <div class="snapshot-label">Date range</div>
-                            <div class="snapshot-value">Dec 1 – Dec 7</div>
-                        </div>
-                        <div class="snapshot-row">
-                            <div class="snapshot-label">Calorie target</div>
-                            <div class="snapshot-value">2,200 kcal / day</div>
-                        </div>
-                        <div class="snapshot-row">
-                            <div class="snapshot-label">Nutrition focus</div>
-                            <div class="snapshot-pill-group">
-                                <span class="pill pill-strong">Lower sodium</span>
-                                <span class="pill pill-soft">Higher fiber</span>
-                            </div>
-                        </div>
-                        <div class="snapshot-row">
-                            <div class="snapshot-label">Weekly budget</div>
-                            <div class="snapshot-value">$75.00 (example)</div>
-                        </div>
-                        <div class="snapshot-row">
-                            <div class="snapshot-label">Pantry usage</div>
-                            <div class="snapshot-value">Use-pantry-first · Level 4/5</div>
-                        </div>
-                        <div class="snapshot-row">
-                            <div class="snapshot-label">Exercise & activity</div>
-                            <div class="snapshot-value">
-                                7-day movement stack · 30–40 min/day<br />
-                                (walking, light strength, stretching)
-                            </div>
-                        </div>
-                        <div class="snapshot-row">
-                            <div class="snapshot-label">Report format</div>
-                            <div class="snapshot-value">Printable multi-page PDF + dashboard</div>
-                        </div>
-                    </div>
+  <main class="page-main">
+    <section class="page-hero page-hero--compact">
+      <div class="page-hero-inner">
+        <p class="page-kicker">Demo view</p>
+        <h1>Your Weekly Wellness Mission Control</h1>
+        <p class="page-lead">
+          This is a sample of the weekly control panel members see after
+          completing their onboarding. In the full system, your plan is built
+          from your pantry, budget, schedule, and exercise goals.
+        </p>
+        <p class="page-note">
+          Plan type: <strong>Plus · 7-day Weekly Plan</strong> —
+          All values on this page are sample data for demo purposes.
+        </p>
+      </div>
+    </section>
 
-                    <footer class="snapshot-footer">
-                        <p class="snapshot-footer-text">
-                            In the full version, you’ll be able to regenerate this snapshot whenever your
-                            pantry, budget, or schedule changes.
-                        </p>
-                        <a href="onboarding.html" class="btn btn-primary">
-                            Start your real plan (prototype)
-                        </a>
-                    </footer>
-                </article>
+    <section class="section">
+      <div class="container">
+        <article class="card">
+          <header class="card-header">
+            <p class="eyebrow">Weekly snapshot · Demo</p>
+            <h2>This is your mission control for the week</h2>
+          </header>
+          <div class="card-body">
+            <p>
+              In the real app, this card updates automatically when you
+              regenerate your plan, tweak your pantry, or change your
+              schedule. It keeps the most important numbers in one place.
+            </p>
+            <ul class="bullet-list">
+              <li>7 days of meals planned with leftovers on purpose.</li>
+              <li>Movement blocks scheduled around your busy days.</li>
+              <li>Grocery list aligned to your preferred stores.</li>
+              <li>Targets tuned for your calorie and sodium goals.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
 
-                <!-- RIGHT: SUMMARY PANELS -->
-                <div class="dashboard-panels">
-                    <!-- MEAL STRUCTURE -->
-                    <article class="card dashboard-panel">
-                        <header class="card-header">
-                            <div class="panel-icon-wrap">
-                                <img
-                                    src="images/wp-meal-planning-icon.png"
-                                    alt="Meal planning icon"
-                                    class="panel-icon"
-                                />
-                            </div>
-                            <div>
-                                <p class="eyebrow">Meals overview</p>
-                                <h3>How your meals are structured</h3>
-                            </div>
-                        </header>
-                        <div class="card-body">
-                            <ul class="bullet-list">
-                                <li>7 days of breakfasts, lunches, dinners, and 1–2 snacks.</li>
-                                <li>Leftovers are planned on purpose to reduce cooking fatigue.</li>
-                                <li>Recipes are matched to your time, skill, and equipment.</li>
-                                <li>Each day stays close to your calorie and budget targets.</li>
-                            </ul>
-                        </div>
-                    </article>
+    <section class="section section-grid">
+      <div class="container dashboard-grid">
+        <!-- MEALS OVERVIEW CARD -->
+        <article class="card dashboard-card">
+          <header class="card-header card-header-with-icon">
+            <img
+              src="images/icon-meals.png"
+              alt="Meals overview icon"
+              class="card-icon"
+              style="width:40px;height:40px;"
+            />
+            <div>
+              <p class="eyebrow">Meals overview</p>
+              <h3>How your meals are structured</h3>
+            </div>
+          </header>
+          <div class="card-body">
+            <ul class="bullet-list">
+              <li>7 days of breakfasts, lunches, dinners, and 1–2 snacks.</li>
+              <li>Leftovers are planned on purpose to reduce cooking fatigue.</li>
+              <li>Recipes match your time, skill level, and equipment.</li>
+              <li>
+                Each day stays close to your calorie and budget targets, with
+                room for normal life.
+              </li>
+            </ul>
+          </div>
+        </article>
+        <!-- NUTRITION & DIETS CARD -->
+        <article class="card dashboard-card">
+          <header class="card-header card-header-with-icon">
+            <img
+              src="images/icon-nutrition.png"
+              alt="Nutrition icon"
+              class="card-icon"
+              style="width:40px;height:40px;"
+            />
+            <div>
+              <p class="eyebrow">Nutrition &amp; diets</p>
+              <h3>How your diet style is applied</h3>
+            </div>
+          </header>
+          <div class="card-body">
+            <ul class="bullet-list">
+              <li>
+                You choose your focus: calories, sodium, protein, fiber, or
+                “balanced.”
+              </li>
+              <li>Recipes are tagged to match those choices.</li>
+              <li>
+                The planner favors pantry items you already own before adding
+                extras.
+              </li>
+              <li>
+                In future versions, you’ll see sodium and calorie summaries per
+                day and per week.
+              </li>
+            </ul>
+          </div>
+        </article>
 
-                    <!-- NUTRITION / DIET STRATEGY -->
-                    <article class="card dashboard-panel">
-                        <header class="card-header">
-                            <div class="panel-icon-wrap">
-                                <img
-                                    src="images/wp-reports-icon.png"
-                                    alt="Nutrition strategy icon"
-                                    class="panel-icon"
-                                />
-                            </div>
-                            <div>
-                                <p class="eyebrow">Nutrition & diets</p>
-                                <h3>How your diet style is applied</h3>
-                            </div>
-                        </header>
-                        <div class="card-body">
-                            <ul class="bullet-list">
-                                <li>
-                                    You choose your focus: calories, macros, sodium, low-carb, or just
-                                    “balanced.”
-                                </li>
-                                <li>
-                                    Recipes are tagged (e.g., high-protein, lower-sodium, high-fiber) to match
-                                    your choices.
-                                </li>
-                                <li>
-                                    Different diet patterns (e.g., intermittent fasting, higher-protein) can be
-                                    layered onto your weekly plan.
-                                </li>
-                                <li>
-                                    Each plan comes with simple, plain-English explanations for why meals were
-                                    chosen.
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
+        <!-- BUDGET & STORES CARD -->
+        <article class="card dashboard-card">
+          <header class="card-header card-header-with-icon">
+            <img
+              src="images/icon-budget.png"
+              alt="Budget and stores icon"
+              class="card-icon"
+              style="width:40px;height:40px;"
+            />
+            <div>
+              <p class="eyebrow">Budget &amp; stores</p>
+              <h3>How your grocery budget is protected</h3>
+            </div>
+          </header>
+          <div class="card-body">
+            <ul class="bullet-list">
+              <li>
+                Plans are built against a weekly or multi-week budget you can
+                adjust.
+              </li>
+              <li>
+                Pantry-first logic uses what you already own before adding new
+                items.
+              </li>
+              <li>
+                In Plus plans, local ads and store preferences help prioritize
+                good value options.
+              </li>
+              <li>
+                Shopping lists are grouped by store section to make trips
+                faster and less stressful.
+              </li>
+            </ul>
+          </div>
+        </article>
 
-                    <!-- BUDGET & STORES -->
-                    <article class="card dashboard-panel">
-                        <header class="card-header">
-                            <div class="panel-icon-wrap">
-                                <img
-                                    src="images/wp-budget-icon.png"
-                                    alt="Budget icon"
-                                    class="panel-icon"
-                                />
-                            </div>
-                            <div>
-                                <p class="eyebrow">Budget & stores</p>
-                                <h3>How your grocery budget is protected</h3>
-                            </div>
-                        </header>
-                        <div class="card-body">
-                            <ul class="bullet-list">
-                                <li>Plans are built against a weekly or multi-week budget you control.</li>
-                                <li>Pantry-first logic uses what you already own before adding items.</li>
-                                <li>
-                                    In Plus plans, local ads and store preferences help prioritize value
-                                    options.
-                                </li>
-                                <li>
-                                    Shopping lists group items by store section to make trips faster and less
-                                    stressful.
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
+        <!-- EXERCISE & ACTIVITY CARD -->
+        <article class="card dashboard-card">
+          <header class="card-header card-header-with-icon">
+            <img
+              src="images/icon-exercise.png"
+              alt="Exercise icon"
+              class="card-icon"
+              style="width:40px;height:40px;"
+            />
+            <div>
+              <p class="eyebrow">Exercise &amp; activity</p>
+              <h3>How movement fits into your week</h3>
+            </div>
+          </header>
+          <div class="card-body">
+            <ul class="bullet-list">
+              <li>
+                You choose your baseline, from gentle recovery plans to
+                training-style plans.
+              </li>
+              <li>
+                Movement suggestions are scheduled around your meal times and
+                busy days.
+              </li>
+              <li>
+                Low-impact options (like walking, tai chi, or chair routines)
+                are always available.
+              </li>
+              <li>
+                Future versions will show estimated calories burned alongside
+                intake targets.
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
 
-                    <!-- EXERCISE & ACTIVITY -->
-                    <article class="card dashboard-panel">
-                        <header class="card-header">
-                            <div class="panel-icon-wrap">
-                                <img
-                                    src="images/wp-movement-icon.png"
-                                    alt="Exercise and activity icon"
-                                    class="panel-icon"
-                                />
-                            </div>
-                            <div>
-                                <p class="eyebrow">Exercise & activity</p>
-                                <h3>How movement fits into your week</h3>
-                            </div>
-                        </header>
-                        <div class="card-body">
-                            <ul class="bullet-list">
-                                <li>
-                                    You choose your baseline (from gentle recovery to training plans), and the
-                                    app adjusts.
-                                </li>
-                                <li>
-                                    Movement suggestions are scheduled around meal times and your busy days.
-                                </li>
-                                <li>
-                                    Progress is shown weekly — not just “did you exercise,” but how it fits
-                                    your overall plan.
-                                </li>
-                                <li>
-                                    Over time, the goal is sustainable activity that fits your real life, not
-                                    perfection.
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <!-- DISCLAIMER -->
-            <section class="dashboard-disclaimer">
-                <p class="disclaimer-text">
-                    This is a prototype dashboard. It is for demonstration and UI testing only and is not
-                    medical advice. Always talk to your healthcare provider about diet and exercise changes.
-                </p>
-            </section>
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img
+          src="images/wp-logo-dark-square.png"
+          alt="Wellness Pilot logo"
+          class="footer-logo"
+        />
+        <div>
+          <div class="footer-title">Wellness Pilot</div>
+          <div class="footer-subtitle">
+            © 2025 Wellness Pilot — A TKM Group Company
+          </div>
         </div>
-    </main>
+      </div>
+
+      <nav class="footer-nav">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="pricing.html" class="footer-link">Pricing</a>
+        <a href="dashboard.html" class="footer-link">Demo Dashboard</a>
+        <a href="onboarding.html" class="footer-link">Start Plan</a>
+        <a href="login.html" class="footer-link">Sign In</a>
+      </nav>
+
+      <p class="footer-note">
+        Prototype only — for demonstration purposes, not medical or financial
+        advice.
+      </p>
+    </div>
+  </footer>
 </body>
-  </html>
+</html>
