@@ -8,183 +8,229 @@
   <script defer src="app.js"></script>
 </head>
 <body class="page page-auth page-signup">
-    <!-- SITE HEADER -->
-    <header class="site-header">
-        <div class="container header-inner">
-            <a href="index.html" class="brand">
-                <img src="images/wp-main-logo.png" alt="Wellness Pilot logo" class="brand-logo" />
-                <div class="brand-text">
-                    <span class="brand-title">Wellness Pilot</span>
-                    <span class="brand-subtitle">A TKM Group Company</span>
-                </div>
-            </a>
-
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span class="nav-toggle-bar"></span>
-                <span class="nav-toggle-bar"></span>
-                <span class="nav-toggle-bar"></span>
-            </button>
-
-            <nav class="header-nav">
-                <a href="index.html">Home</a>
-                <a href="onboarding.html">Start Plan</a>
-                <a href="dashboard.html">Demo Dashboard</a>
-                <a href="login.html">Sign In</a>
-            </nav>
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-brand">
+        <img
+          src="images/wp-logo-dark-square.png"
+          alt="Wellness Pilot logo"
+          class="header-logo"
+        />
+        <div class="header-text">
+          <span class="header-title">Wellness Pilot</span>
+          <span class="header-subtitle">A TKM Group Company</span>
         </div>
-    </header>
+      </a>
 
-    <!-- MAIN CONTENT -->
-    <main class="page-main">
-        <div class="container auth-container">
-            <section class="card auth-card">
-                <header class="card-header auth-header">
-                    <p class="eyebrow">Start your journey · Demo only</p>
-                    <h1>Create your Wellness Pilot account</h1>
-                    <p class="auth-lede">
-                        This sign-up is part of a front-end prototype. No real accounts are stored yet.
-                        Use it to experience the flow, then preview the weekly dashboard.
-                    </p>
-                </header>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="dashboard.html" class="nav-link">Demo Dashboard</a>
+        <a href="onboarding.html" class="nav-link">Start Plan</a>
+        <a href="login.html" class="nav-link">Sign In</a>
+      </nav>
 
-                <div class="card-body">
-                    <form class="auth-form" action="dashboard.html" method="get">
-                        <div class="form-row">
-                            <label for="signup_name">Full name</label>
-                            <input
-                                type="text"
-                                id="signup_name"
-                                name="name"
-                                autocomplete="name"
-                                placeholder="Todd Myers"
-                                required
-                            />
-                        </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
+    </div>
 
-                        <div class="form-row">
-                            <label for="signup_email">Email address</label>
-                            <input
-                                type="email"
-                                id="signup_email"
-                                name="email"
-                                autocomplete="email"
-                                placeholder="you@example.com"
-                                required
-                            />
-                        </div>
+    <nav class="site-nav-overlay">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <a href="dashboard.html" class="nav-link">Demo Dashboard</a>
+      <a href="onboarding.html" class="nav-link">Start Plan</a>
+      <a href="login.html" class="nav-link">Sign In</a>
+    </nav>
+  </header>
 
-                        <div class="form-row form-row-inline">
-                            <div class="form-row-half">
-                                <label for="signup_password">Password</label>
-                                <input
-                                    type="password"
-                                    id="signup_password"
-                                    name="password"
-                                    autocomplete="new-password"
-                                    placeholder="Create a password"
-                                    required
-                                />
-                            </div>
-                            <div class="form-row-half">
-                                <label for="signup_password_confirm">Confirm password</label>
-                                <input
-                                    type="password"
-                                    id="signup_password_confirm"
-                                    name="password_confirm"
-                                    autocomplete="new-password"
-                                    placeholder="Repeat password"
-                                    required
-                                />
-                            </div>
-                        </div>
+  <!-- MAIN CONTENT -->
+  <main class="page-main">
+    <div class="container auth-container">
+      <section class="card auth-card">
+        <header class="card-header auth-header">
+          <p class="eyebrow">Start your journey · Demo only</p>
+          <h1>Create your Wellness Pilot account</h1>
+          <p class="auth-lede">
+            This sign-up is part of a front-end prototype. No real accounts are
+            stored yet. Use it to experience the flow, then preview the weekly
+            dashboard.
+          </p>
+        </header>
 
-                        <div class="form-row">
-                            <p class="field-label">Choose a plan type (demo)</p>
-                            <div class="plan-toggle-group">
-                                <label class="plan-toggle-option">
-                                    <input
-                                        type="radio"
-                                        name="plan_type"
-                                        value="basic"
-                                        checked
-                                    />
-                                    <span class="plan-toggle-visual">
-                                        <span class="plan-toggle-name">Basic</span>
-                                        <span class="plan-toggle-price">from $5.99 / month</span>
-                                        <span class="plan-toggle-detail">
-                                            Core weekly planning, pantry-first logic, printable plan.
-                                        </span>
-                                    </span>
-                                </label>
+        <div class="card-body">
+          <form class="auth-form" action="dashboard.html" method="get">
+            <div class="form-row">
+              <label for="signup_name">Full name</label>
+              <input
+                type="text"
+                id="signup_name"
+                name="name"
+                autocomplete="name"
+                placeholder="Todd Myers"
+                required
+              />
+            </div>
 
-                                <label class="plan-toggle-option">
-                                    <input
-                                        type="radio"
-                                        name="plan_type"
-                                        value="plus"
-                                    />
-                                    <span class="plan-toggle-visual">
-                                        <span class="plan-toggle-name">Plus</span>
-                                        <span class="plan-toggle-price">from $9.99 / month</span>
-                                        <span class="plan-toggle-detail">
-                                            Includes Basic features, advanced budgeting,
-                                            and local ad support (future feature).
-                                        </span>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
+            <div class="form-row">
+              <label for="signup_email">Email address</label>
+              <input
+                type="email"
+                id="signup_email"
+                name="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
 
-                        <div class="form-row">
-                            <label for="signup_plan_length">Initial plan length</label>
-                            <select id="signup_plan_length" name="plan_length">
-                                <option value="7">7 days · 1 week</option>
-                                <option value="14">14 days · 2 weeks</option>
-                                <option value="21">21 days · 3 weeks</option>
-                                <option value="28">28 days · 4 weeks</option>
-                            </select>
-                            <p class="field-help">
-                                In the full app, longer plans receive a better effective weekly price
-                                and can be broken into multiple weekly grocery runs.
-                            </p>
-                        </div>
+            <div class="form-row form-row-inline">
+              <div class="form-row-half">
+                <label for="signup_password">Password</label>
+                <input
+                  type="password"
+                  id="signup_password"
+                  name="password"
+                  autocomplete="new-password"
+                  placeholder="Create a password"
+                  required
+                />
+              </div>
+              <div class="form-row-half">
+                <label for="signup_password_confirm">Confirm password</label>
+                <input
+                  type="password"
+                  id="signup_password_confirm"
+                  name="password_confirm"
+                  autocomplete="new-password"
+                  placeholder="Repeat password"
+                  required
+                />
+              </div>
+            </div>
 
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-primary btn-wide">
-                                Create account (demo only)
-                            </button>
-                        </div>
+            <div class="form-row">
+              <p class="field-label">Choose a plan type (demo)</p>
+              <div class="plan-toggle-group">
+                <label class="plan-toggle-option">
+                  <input
+                    type="radio"
+                    name="plan_type"
+                    value="basic"
+                    checked
+                  />
+                  <span class="plan-toggle-visual">
+                    <span class="plan-toggle-name">Basic</span>
+                    <span class="plan-toggle-price">from $5.99 / month</span>
+                    <span class="plan-toggle-detail">
+                      Core weekly planning, pantry-first logic, printable plan.
+                    </span>
+                  </span>
+                </label>
 
-                        <div class="auth-divider">
-                            <span>or</span>
-                        </div>
+                <label class="plan-toggle-option">
+                  <input
+                    type="radio"
+                    name="plan_type"
+                    value="plus"
+                  />
+                  <span class="plan-toggle-visual">
+                    <span class="plan-toggle-name">Plus</span>
+                    <span class="plan-toggle-price">from $9.99 / month</span>
+                    <span class="plan-toggle-detail">
+                      Includes Basic features, advanced budgeting, and local ad
+                      support (future feature).
+                    </span>
+                  </span>
+                </label>
+              </div>
+            </div>
 
-                        <div class="form-actions">
-                            <!-- Fake Google sign-up button – front-end only -->
-                            <button
-                                type="button"
-                                class="btn btn-ghost btn-with-icon btn-google-demo"
-                                onclick="window.location.href='dashboard.html';"
-                            >
-                                <span class="btn-icon-circle">G</span>
-                                <span>Sign up with Google (demo)</span>
-                            </button>
-                        </div>
-                    </form>
-                </div>
+            <div class="form-row">
+              <label for="signup_plan_length">Initial plan length</label>
+              <select id="signup_plan_length" name="plan_length">
+                <option value="7">7 days · 1 week</option>
+                <option value="14">14 days · 2 weeks</option>
+                <option value="21">21 days · 3 weeks</option>
+                <option value="28">28 days · 4 weeks</option>
+              </select>
+              <p class="field-help">
+                In the full app, longer plans receive a better effective weekly
+                price and can be broken into multiple weekly grocery runs.
+              </p>
+            </div>
 
-                <footer class="card-footer auth-footer">
-                    <p class="auth-footnote">
-                        Prototype only – no real user accounts are created yet. In the full system, this page
-                        will connect to a secure backend, AI planner, and Stripe-powered subscriptions.
-                    </p>
-                    <p class="auth-switch">
-                        Already have an account?
-                        <a href="login.html">Sign in (demo)</a>
-                    </p>
-                </footer>
-            </section>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary btn-wide">
+                Create account (demo only)
+              </button>
+            </div>
+
+            <div class="auth-divider">
+              <span>or</span>
+            </div>
+
+            <div class="form-actions">
+              <!-- Fake Google sign-up button – front-end only -->
+              <button
+                type="button"
+                class="btn btn-ghost btn-with-icon btn-google-demo"
+                onclick="window.location.href='dashboard.html';"
+              >
+                <span class="btn-icon-circle">G</span>
+                <span>Sign up with Google (demo)</span>
+              </button>
+            </div>
+          </form>
         </div>
-    </main>
+
+        <footer class="card-footer auth-footer">
+          <p class="auth-footnote">
+            Prototype only – no real user accounts are created yet. In the full
+            system, this page will connect to a secure backend, AI planner, and
+            Stripe-powered subscriptions.
+          </p>
+          <p class="auth-switch">
+            Already have an account?
+            <a href="login.html">Sign in (demo)</a>
+          </p>
+        </footer>
+      </section>
+    </div>
+  </main>
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img
+          src="images/wp-logo-dark-square.png"
+          alt="Wellness Pilot logo"
+          class="footer-logo"
+        />
+        <div>
+          <div class="footer-title">Wellness Pilot</div>
+          <div class="footer-subtitle">
+            © 2025 Wellness Pilot — A TKM Group Company
+          </div>
+        </div>
+      </div>
+
+      <nav class="footer-nav">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="pricing.html" class="footer-link">Pricing</a>
+        <a href="dashboard.html" class="footer-link">Demo Dashboard</a>
+        <a href="onboarding.html" class="footer-link">Start Plan</a>
+        <a href="login.html" class="footer-link">Sign In</a>
+      </nav>
+
+      <p class="footer-note">
+        Prototype only — for demonstration purposes, not medical or financial
+        advice.
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
