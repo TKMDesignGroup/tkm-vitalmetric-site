@@ -1,101 +1,112 @@
 // app.js
-// Basic interactions for the TKM VitalMetric Wellness prototype
-// - Onboarding "wizard" (Next / Back / step pills)
-// - Smooth scrolling to top of current step
+// Shared behavior across pages + onboarding wizard logic
 
 document.addEventListener("DOMContentLoaded", () => {
-  setupOnboardingWizard();
+  const html = document.documentElement;
+  const page = html.dataset.page || "";
+
+  setupNavToggle();
+
+  if (page === "onboarding") {
+    initOnboardingWizard();
+  }
 });
 
-/**
- * ONBOARDING WIZARD
- * Shows one step at a time, uses the pills and Next / Back buttons
- */
-function setupOnboardingWizard() {
-  const steps = Array.from(document.querySelectorAll(".onboarding-step"));
-  if (!steps.length) {
-    return; // nothing to do on pages without onboarding
-  }
+// Mobile nav toggle
+function setupNavToggle() {
+  const navToggle = document.getElementById("nav-toggle");
+  const navLinks = document.getElementById("nav-links");
 
-  const totalSteps = steps.length;
-  let currentStep = 1;
+  if (!navToggle || !navLinks) return;
 
-  const pills = Array.from(
-    document.querySelectorAll(".wizard-steps .step-pill")
-  );
-  const stepLabel = document.querySelector(".wizard-step-label");
+  navToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("is-open");
+  });
 
-  function getStepNumberFromElement(el) {
-    const attr = el.dataset.step || el.dataset.next || el.dataset.prev;
-    const num = parseInt(attr, 10);
-    return Number.isNaN(num) ? null : num;
-  }
-  function showStep(stepNumber, options = { scroll: true }) {
-    if (stepNumber < 1 || stepNumber > totalSteps) return;
-
-    currentStep = stepNumber;
-
-    // Toggle visible step
-    steps.forEach((step) => {
-      const n = parseInt(step.dataset.step, 10);
-      step.classList.toggle("active", n === currentStep);
-    });
-
-    // Update pills (active / completed)
-    pills.forEach((pill) => {
-      const n = parseInt(pill.dataset.step, 10);
-      pill.classList.toggle("active", n === currentStep);
-      pill.classList.toggle("completed", n < currentStep);
-    });
-
-    // Update "Step X of Y" label
-    if (stepLabel) {
-      stepLabel.textContent = `Step ${currentStep} of ${totalSteps}`;
-    }
-
-    // Scroll so the active step is near the top
-    if (options.scroll) {
-      const target = steps.find(
-        (s) => parseInt(s.dataset.step, 10) === currentStep
-      );
-      if (target) {
-        const headerOffset = 140;
-        const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
-        window.scrollTo({ top, behavior: "smooth" });
-      }
-    }
-  }
-
-  // Delegate clicks for Next / Back buttons and pills
-  document.addEventListener("click", (event) => {
-    const nextBtn = event.target.closest(".next-btn");
-    const prevBtn = event.target.closest(".prev-btn");
-    const pill = event.target.closest(".step-pill");
-
-    if (nextBtn) {
-      const targetStep =
-        getStepNumberFromElement(nextBtn) ?? Math.min(currentStep + 1, totalSteps);
-      showStep(targetStep);
-      event.preventDefault();
-      return;
-    }
-
-    if (prevBtn) {
-      const targetStep =
-        getStepNumberFromElement(prevBtn) ?? Math.max(currentStep - 1, 1);
-      showStep(targetStep);
-      event.preventDefault();
-      return;
-    }
-
-    if (pill) {
-      const targetStep = getStepNumberFromElement(pill);
-      if (targetStep != null) {
-        showStep(targetStep);
-        event.preventDefault();
-      }
+  // Close nav when a link is clicked (mobile nicety)
+  navLinks.addEventListener("click", (event) => {
+    const target = event.target;
+    if (target.tagName === "A") {
+      navLinks.classList.remove("is-open");
     }
   });
-  // Start on Step 1 when the page loads
-  showStep(currentStep, { scroll: false });
+}
+// ------------------------
+// Onboarding wizard
+// ------------------------
+
+function initOnboardingWizard() {
+  const steps = Array.from(document.querySelectorAll(".wizard-step"));
+  const chips = Array.from(
+    document.querySelectorAll(".onboard-steps .chip")
+  );
+  const mainContainer = document.querySelector(".onboard-main");
+
+  if (!steps.length) return;
+
+  let currentIndex = 0;
+
+  function showStep(index) {
+    if (index < 0 || index >= steps.length) return;
+    currentIndex = index;
+
+    // Toggle active step card
+    steps.forEach((step, i) => {
+      step.classList.toggle("is-active", i === currentIndex);
+    });
+
+    // Toggle active chip in sidebar
+    if (chips.length === steps.length) {
+      chips.forEach((chip, i) => {
+        chip.classList.toggle("is-active", i === currentIndex);
+      });
+    }
+
+    // Enable/disable back/next buttons
+    const backButtons = document.querySelectorAll("[data-step-back]");
+    const nextButtons = document.querySelectorAll("[data-step-next]");
+
+    backButtons.forEach((btn) => {
+      btn.disabled = currentIndex === 0;
+    });
+
+    nextButtons.forEach((btn) => {
+      btn.disabled = currentIndex === steps.length - 1;
+    });
+
+    // Scroll the main wizard area into view (nice on mobile)
+    if (mainContainer) {
+      mainContainer.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  }
+  // Wire up all "Next" buttons
+  const nextButtons = document.querySelectorAll("[data-step-next]");
+  nextButtons.forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+      event.preventDefault();
+      showStep(currentIndex + 1);
+    });
+  });
+
+  // Wire up all "Back" buttons
+  const backButtons = document.querySelectorAll("[data-step-back]");
+  backButtons.forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+      event.preventDefault();
+      showStep(currentIndex - 1);
+    });
+  });
+
+  // Clicking chips jumps directly to that step
+  chips.forEach((chip, index) => {
+    chip.addEventListener("click", () => {
+      showStep(index);
+    });
+  });
+
+  // Start on the first step (in case classes get out of sync)
+  showStep(0);
 }
