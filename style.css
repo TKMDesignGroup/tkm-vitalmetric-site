@@ -340,3 +340,23 @@ footer small {
   padding: 0.85rem 0;
   display: block;
 }
+/* --- Fix oversized hero logo + top spacing --- */
+
+/* Constrain the big square Wellness Pilot logo in the hero */
+.hero img,
+.hero-logo img,
+.hero-main-logo {
+  max-width: 260px;      /* keeps it from getting huge */
+  width: 70%;            /* nice size on mobile */
+  height: auto;
+  display: block;
+  margin: 1.5rem auto 2rem;  /* space above/below, centered */
+  border-radius: 24px;
+}
+
+/* Make sure the content under the hero has breathing room */
+.hero + section,
+.hero + .section,
+.hero + .page-section {
+  margin-top: 1.5rem;
+}
