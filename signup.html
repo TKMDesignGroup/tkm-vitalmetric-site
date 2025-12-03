@@ -1,116 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Create Account • TKM VitalMetric Wellness</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="app.js" defer></script>
-</head>
-<body>
-  <div class="page">
-    <!-- Shared header -->
-    <header class="site-header">
-      <div class="header-inner">
+<html lang="en" data-page="signup">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Wellness Pilot – Create account</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header" id="site-header">
+      <div class="site-header-inner">
         <a href="index.html" class="brand">
-          <div class="brand-logo">
-            <img src="images/tkm-logo.png" alt="TKM VitalMetric Wellness logo" />
-          </div>
+          <img
+            src="images/wp-logo-primary-square.png"
+            alt="Wellness Pilot logo"
+          />
           <div class="brand-text">
-            <div class="brand-name">TKM VITALMETRIC WELLNESS</div>
-            <div class="brand-tagline">Weekly wellness mission control</div>
+            <div class="brand-title">Wellness Pilot</div>
+            <div class="brand-subtitle">Weekly wellness mission control</div>
           </div>
         </a>
 
-        <nav class="main-nav">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="onboarding.html" class="nav-link">Start Plan</a>
-          <a href="dashboard.html" class="nav-link">Demo Dashboard</a>
-          <a href="login.html" class="nav-link">Sign In</a>
-          <a href="signup.html" class="nav-link active">Sign Up</a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          id="nav-toggle"
+        >
+          ☰
+        </button>
+
+        <nav class="nav-links" id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="onboarding.html">Start plan</a>
+          <a href="dashboard.html">Demo dashboard</a>
+          <a href="login.html">Sign in</a>
+          <a href="signup.html" class="nav-cta">Get started</a>
         </nav>
       </div>
     </header>
 
-    <main class="main-content auth-page">
-      <section class="card">
-        <div class="card-inner">
-          <h1 class="section-title">Create your TKM account</h1>
-          <p class="section-subtitle">
-            In the full system, this account would store your onboarding answers, weekly plans, and
-            subscription status. Here, it’s a demo that forwards you to the dashboard.
-          </p>
-          <form id="signup-form" class="auth-form">
-            <div class="form-section">
-              <div class="form-group">
-                <label class="field-label" for="signup_email">Email</label>
-                <input
-                  type="email"
-                  id="signup_email"
-                  name="signup_email"
-                  class="text-input"
-                  required
+    <main class="page-shell">
+      <section class="section">
+        <div class="auth-shell">
+          <div>
+            <article class="card">
+              <div class="auth-card-header">
+                <img
+                  src="images/wp-logo-primary-square.png"
+                  alt="Wellness Pilot logo"
+                  class="auth-logo"
                 />
+                <h1 class="auth-title">Create your Wellness Pilot account</h1>
+                <p class="auth-subtitle">
+                  Start with a 7-day free trial, then choose Basic or Plus
+                  based on how many weeks you’d like us to plan.
+                </p>
               </div>
 
-              <div class="form-group">
-                <label class="field-label" for="signup_password">Password</label>
-                <input
-                  type="password"
-                  id="signup_password"
-                  name="signup_password"
-                  class="text-input"
-                  required
-                />
-              </div>
-
-              <div class="form-group">
-                <label class="field-label" for="signup_password2">Confirm password</label>
-                <input
-                  type="password"
-                  id="signup_password2"
-                  name="signup_password2"
-                  class="text-input"
-                  required
-                />
-              </div>
-
-              <button type="submit" class="btn btn-primary">
-                Create Account (demo)
+              <button type="button" class="auth-google">
+                <span>🔵</span>
+                <span>Sign up with Google (UI only)</span>
               </button>
 
-              <p class="auth-note">
-                Prototype only — accounts are not persisted yet. You’ll be routed to the demo
-                dashboard.
-              </p>
-            </div>
-          </form>
+              <div class="auth-divider">
+                <span>or sign up with email</span>
+              </div>
 
-          <div class="auth-alt-links">
-            <p>Already have an account? <a href="login.html">Sign in</a></p>
+              <form class="form-grid" autocomplete="off">
+                <div class="form-group">
+                  <label for="signup-name">First name</label>
+                  <input id="signup-name" type="text" />
+                </div>
+
+                <div class="form-group">
+                  <label for="signup-email">Email</label>
+                  <input id="signup-email" type="email" />
+                </div>
+
+                <div class="form-group">
+                  <label for="signup-password">Password</label>
+                  <input id="signup-password" type="password" />
+                </div>
+
+                <div class="form-group">
+                  <label for="signup-plan">Plan type (demo only)</label>
+                  <select id="signup-plan">
+                    <option>Basic · Weekly</option>
+                    <option>Plus · Monthly</option>
+                  </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                  Create account (prototype)
+                </button>
+
+                <p style="font-size: 12px; color: #64748b">
+                  No real accounts are created in this demo. In a live app, this
+                  would connect to a secure subscription + billing system.
+                </p>
+
+                <p style="font-size: 13px">
+                  Already have an account? <a href="login.html">Sign in</a>.
+                </p>
+              </form>
+            </article>
+          </div>
+
+          <div class="auth-hero">
+            <article class="card">
+              <h3>What you’ll be able to do</h3>
+              <ul class="plan-list">
+                <li>Run the full 13-step onboarding wizard.</li>
+                <li>Generate weekly plans and grocery lists.</li>
+                <li>Upload store PDFs (PLUS) for sale-aware planning.</li>
+              </ul>
+            </article>
           </div>
         </div>
       </section>
     </main>
-    <!-- Shared footer -->
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="footer-left">
-          <div class="footer-logo">
-            <img src="images/tkm-logo.png" alt="TKM VitalMetric Wellness logo" />
-          </div>
-          <div>
-            <div class="footer-text-main">TKM VITALMETRIC WELLNESS</div>
-            <div class="footer-text-sub">
-              Prototype demonstration — not medical advice.</div>
-          </div>
-        </div>
 
-        <div class="footer-right">
-          &copy; 2025 TKM VitalMetric Wellness. All rights reserved.
-        </div>
-      </div>
+    <footer class="site-footer">
+      Wellness Pilot · Sign-up prototype. No real billing or accounts yet.
     </footer>
-  </div>
-</body>
+    <script src="app.js" defer></script>
+  </body>
 </html>
