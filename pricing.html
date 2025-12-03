@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Wellness Pilot · Pricing &amp; Plans</title>
+  <title>Wellness Pilot · Pricing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
   <script defer src="app.js"></script>
@@ -47,230 +47,88 @@
     </nav>
   </header>
 
-  <!-- MAIN CONTENT -->
   <main class="page-main">
-    <div class="container pricing-container">
-      <!-- PRICING HERO -->
-      <section class="pricing-hero">
-        <p class="eyebrow">Plans starting at just $5.99 / month</p>
+    <section class="page-hero page-hero--compact">
+      <div class="page-hero-inner">
+        <p class="page-kicker">Plans starting at just $5.99 / month</p>
         <h1>Choose the Wellness Pilot plan that fits your life</h1>
-        <p class="pricing-lede">
+        <p class="page-lead">
           Both plans use your pantry, budget, and schedule to build realistic
           weekly meal and exercise plans. In this prototype, everything is
-          UI-only – no payments are processed yet.
+          UI-only — no payments are processed yet.
         </p>
-      </section>
+      </div>
+    </section>
 
-      <!-- PLAN LENGTH NOTE -->
-      <section class="pricing-length-note card">
-        <header class="card-header">
-          <h2>How plan length works</h2>
-        </header>
-        <div class="card-body">
-          <ul class="bullet-list">
-            <li>
-              You subscribe monthly, starting from
-              <strong>$5.99 / month</strong> for Basic or
-              <strong>$9.99 / month</strong> for Plus.
-            </li>
-            <li>
-              Inside that month, you can generate
-              <strong>7, 14, 21, or 28 day plans</strong> – it’s up to you.
-            </li>
-            <li>
-              Longer plans get a better effective weekly price and can be split
-              into multiple grocery runs if you prefer.
-            </li>
-            <li>
-              In the full system, subscriptions and free trials will be handled
-              by <strong>Stripe</strong> in a secure checkout flow.
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- PRICING GRID -->
-      <section class="pricing-grid-wrap">
-        <div class="pricing-grid">
-          <!-- BASIC PLAN -->
-          <article class="card pricing-card">
-            <header class="card-header pricing-card-header">
-              <p class="eyebrow">Starter plan</p>
-              <h2>Basic</h2>
-              <p class="pricing-price">
-                <span class="pricing-amount">$5.99</span>
-                <span class="pricing-period">per month</span>
-              </p>
-              <p class="pricing-tagline">
-                Core weekly planning, pantry-first savings, and printable
-                reports.
-              </p>
-            </header>
-            <div class="card-body">
-              <ul class="checklist">
-                <li>
-                  AI-assisted weekly meal plans based on your preferences.
-                </li>
-                <li>
-                  Support for 7, 14, 21, or 28 day planning windows.
-                </li>
-                <li>Pantry-first logic to use what you already have.</li>
-                <li>Budget-aware planning with weekly or monthly targets.</li>
-                <li>
-                  Exercise &amp; activity section integrated into your weekly
-                  view.
-                </li>
-                <li>
-                  Printable multi-page weekly plan (PDF-style layout concept).
-                </li>
-                <li>Unlimited plan resets during your active month.</li>
-              </ul>
-            </div>
-            <footer class="card-footer pricing-card-footer">
-              <a href="signup.html" class="btn btn-outline btn-wide">
-                Try Basic (demo)
-              </a>
-              <p class="pricing-footnote">
-                This prototype does not charge you. In the live system, you’ll
-                have a free trial before billing begins.
-              </p>
-            </footer>
-          </article>
-
-          <!-- PLUS PLAN -->
-          <article class="card pricing-card pricing-card-featured">
-            <header class="card-header pricing-card-header">
-              <p class="eyebrow">Most complete</p>
-              <h2>Plus</h2>
-              <p class="pricing-price">
-                <span class="pricing-amount">$9.99</span>
-                <span class="pricing-period">per month</span>
-              </p>
-              <p class="pricing-tagline">
-                Everything in Basic, plus advanced budgeting and grocery-ad
-                support.
-              </p>
-            </header>
-            <div class="card-body">
-              <ul class="checklist">
-                <li>
-                  <strong>All Basic features</strong> – weekly plans,
-                  pantry-first, budget targets, and exercise integration.
-                </li>
-                <li>
-                  Upload local <strong>grocery PDF ads</strong> (future feature)
-                  to find sale items that fit your plan.
-                </li>
-                <li>
-                  Smarter budget engine that tries to swap recipes and
-                  ingredients to fit your spending comfort.
-                </li>
-                <li>
-                  More flexibility to experiment with diet styles (e.g.,
-                  low-carb, high-protein, intermittent fasting) inside the same
-                  subscription.
-                </li>
-                <li>
-                  Deeper weekly summaries to show how your food &amp; activity
-                  support your goals.
-                </li>
-                <li>
-                  Priority for future features like saved custom templates and
-                  advanced progress views.
-                </li>
-              </ul>
-            </div>
-            <footer class="card-footer pricing-card-footer">
-              <a href="signup.html" class="btn btn-primary btn-wide">
-                Try Plus (demo)
-              </a>
-              <p class="pricing-footnote">
-                In the full app, this button would open Stripe Checkout in test
-                mode during development, then live mode later.
-              </p>
-            </footer>
-          </article>
-        </div>
-      </section>
-      <!-- ALL PLANS INCLUDE -->
-      <section class="pricing-include card">
-        <header class="card-header">
-          <h2>What every plan includes</h2>
-        </header>
-        <div class="card-body">
-          <div class="pricing-include-grid">
-            <div class="pricing-include-item">
-              <h3>Pantry-aware planning</h3>
-              <p>
-                The system is designed to start with what you already have on
-                hand. Your pantry, fridge, and freezer become the base for your
-                weekly plan, reducing waste and extra trips.
-              </p>
-            </div>
-            <div class="pricing-include-item">
-              <h3>Real-life scheduling</h3>
-              <p>
-                Busy days, changing routines, and unexpected events are part of
-                life. Plans are meant to flex with you, not demand perfection.
-              </p>
-            </div>
-            <div class="pricing-include-item">
-              <h3>Exercise &amp; activity integration</h3>
-              <p>
-                From gentle mobility to structured training, weekly movement
-                targets can be woven into your meal plan so food and activity
-                support the same direction.
-              </p>
-            </div>
-            <div class="pricing-include-item">
-              <h3>Reset-friendly design</h3>
-              <p>
-                If your week goes sideways – guests, appointments, or you just
-                change your mind – you can regenerate a new plan using updated
-                pantry and budget info.
-              </p>
-            </div>
+    <section class="section">
+      <div class="container pricing-layout">
+        <article class="card pricing-card">
+          <header class="card-header">
+            <p class="eyebrow">Most people start here</p>
+            <h2>Basic</h2>
+            <p class="pricing-price">
+              <span class="pricing-amount">$5.99</span>
+              <span class="pricing-interval">/ month</span>
+            </p>
+          </header>
+          <div class="card-body">
+            <ul class="pricing-list">
+              <li>Weekly meal plans matched to your pantry and budget.</li>
+              <li>Basic low-impact movement suggestions.</li>
+              <li>Grocery lists grouped by store section.</li>
+              <li>Pantry-first logic to use what you already own.</li>
+            </ul>
+            <a href="signup.html" class="btn btn-outline btn-block">
+              Start with Basic (demo)
+            </a>
           </div>
-        </div>
-      </section>
+        </article>
 
-      <!-- FUTURE BILLING EXPLAINER -->
-      <section class="pricing-future card">
-        <header class="card-header">
-          <h2>How billing will work in the live system</h2>
-        </header>
-        <div class="card-body">
-          <ol class="numbered-list">
-            <li>
-              You choose Basic or Plus and confirm the price on this page.
-            </li>
-            <li>
-              You are sent to a secure <strong>Stripe Checkout</strong> page to
-              start a <strong>free trial</strong>.
-            </li>
-            <li>
-              During the trial, you can generate plans, test resets, and see how
-              it fits your life.
-            </li>
-            <li>
-              When the trial ends, Stripe starts your subscription unless you
-              cancel.
-            </li>
-            <li>
-              You can upgrade or downgrade between Basic and Plus from a simple
-              account page.
-            </li>
-          </ol>
-          <p class="pricing-note">
-            Right now, this site is a UI prototype only – no real billing or
-            account data is stored. It’s designed to show what the experience
-            will feel like once the backend is connected.
-          </p>
-        </div>
-      </section>
-    </div>
+        <article class="card pricing-card pricing-card--highlight">
+          <header class="card-header">
+            <p class="eyebrow">Best value</p>
+            <h2>Plus</h2>
+            <p class="pricing-price">
+              <span class="pricing-amount">$9.99</span>
+              <span class="pricing-interval">/ month</span>
+            </p>
+          </header>
+          <div class="card-body">
+            <ul class="pricing-list">
+              <li>Everything in Basic, plus more frequent plan refreshes.</li>
+              <li>Extra tuning for sodium, calories, and exercise goals.</li>
+              <li>More detailed weekly dashboards and snapshots.</li>
+              <li>Priority support as the system evolves.</li>
+            </ul>
+            <a href="signup.html" class="btn btn-primary btn-block">
+              Try Plus in the demo
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-subtle">
+      <div class="container">
+        <h2>How plan length works (full system)</h2>
+        <ul class="bullet-list">
+          <li>You subscribe monthly at Basic or Plus level.</li>
+          <li>
+            Inside each month, you can generate 7, 14, 21, or 28 day plans as
+            needed.
+          </li>
+          <li>
+            Longer plans get a better effective weekly price and can be split
+            into multiple grocery runs.
+          </li>
+          <li>
+            In the live product, payments and free trials would be handled by
+            Stripe in a secure checkout.
+          </li>
+        </ul>
+      </div>
+    </section>
   </main>
-
   <!-- SITE FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
