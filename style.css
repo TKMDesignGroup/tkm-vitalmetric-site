@@ -498,3 +498,19 @@ main {
     gap: 0.6rem;
   }
        }
+/* --- Wizard behavior --- */
+
+.wizard-step {
+  display: none;
+}
+
+.wizard-step.wizard-step-active {
+  display: block;
+}
+
+/* Highlight current step in the index bar */
+.wizard-index-step.wizard-index-step-active {
+  background: rgba(15, 23, 42, 0.12);
+  border-color: #0f172a;
+  font-weight: 600;
+}
